@@ -60,4 +60,6 @@
 | Название мода | `packageId` | Версия | Ссылка на статью |
 |---|---|---|---|
 | **MedPod** | `sumghai.Medpod` | `1.6.7` (1.6) | 📄 **[medpod.md](medpod.md)** |
+| **EndlessGrowth** | `SlimeSenpai.EndlessGrowth` | `1.6` | 📄 **[endlessgrowth.md](endlessgrowth.md)** |
+
 
