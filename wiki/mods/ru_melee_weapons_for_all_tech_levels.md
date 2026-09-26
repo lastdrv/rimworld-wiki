@@ -1,0 +1,53 @@
+# Анализ мода: Melee Weapons For All Tech Levels Russian Translation
+
+## 1. Основные сведения
+* **Название мода**: Melee Weapons For All Tech Levels Russian Translation
+* **PackageId**: `Darklinechf.RussianTranslation.RU`
+* **Steam Workshop ID**: `3787052721`
+* **Автор**: Darkline_chf
+* **Поддерживаемые версии игры**: `1.6`
+
+---
+
+## 2. Цель мода
+Мод представляет собой любительский русификатор для мода **Melee Weapons For All Tech Levels** (`3726524693`). Он переводит на русский язык названия и описания всех тиров оружия ближнего боя, щитов, рецептов выпечки/ковки и проектов исследований.
+
+---
+
+## 3. Зависимости
+* **Обязательные моды**: 
+  * `bamba.allbambamelee.tiered` (Steam ID: `3726524693`)
+
+---
+
+## 4. Взаимодействие с ванильными DLC
+* Прямого кода взаимодействия нет. Переводит XML Defs базового мода.
+
+---
+
+## 5. Взаимодействие со сторонними библиотеками
+* Чистый XML-мод локализации. Код C# отсутствует.
+
+---
+
+## 6. Поддержка и статус русификации
+* **Наличие в Steam Workshop**: Да (`294100/3787052721`).
+* **Тип мода**: Является готовым сторонним модулем локализации для мода `3726524693`.
+* **Структура перевода**: 
+  * `Languages/Russian/DefInjected/RecipeDef/Bamba_Melee_Recipes.xml`
+  * `Languages/Russian/DefInjected/ResearchProjectDef/Bamba_Melee_Research.xml`
+  * `Languages/Russian/DefInjected/ThingDef/Bamba_Melee_Weapons.xml`
+* **Статус**: Перевод распространяется как отдельный мод. По умолчанию при анализе файлы в `russian/` не создавались. В случае запроса пользователя материалы могут быть перенесены в `russian/3726524693/` для установки поверх основного мода.
+
+---
+
+## 7. Дополнительная важная информация
+* Все термины различных тиров (Промышленный, Космический, Ультратехнологичный, Солнечный, Квазарный, Тенебральный) переведены стилистически грамотно и созвучно с ванильным терминологическим словарем RimWorld.
+
+---
+
+## 8. Примечания и технические данные
+* **Относительные пути файлов перевода**:
+  * `Languages/Russian/DefInjected/ThingDef/Bamba_Melee_Weapons.xml`
+  * `Languages/Russian/DefInjected/RecipeDef/Bamba_Melee_Recipes.xml`
+  * `Languages/Russian/DefInjected/ResearchProjectDef/Bamba_Melee_Research.xml`
