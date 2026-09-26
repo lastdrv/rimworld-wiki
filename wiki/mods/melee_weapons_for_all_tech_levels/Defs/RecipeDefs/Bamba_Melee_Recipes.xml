@@ -1,0 +1,2176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs><!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+	<RecipeDef Name="Bamba_Melee_MakeWeaponBase" Abstract="True"><!-- Определение рецепта изготовления на верстаке -->
+		<workSpeedStat>GeneralLaborSpeed<!-- Множитель скорости работы (зависит от навыка) --></workSpeedStat>
+		<workSkill>Crafting<!-- Навык, отвечающий за выполнение и скорость рецепта --></workSkill>
+		<effectWorking>Smith<!-- Визуальный эффект работы во время крафта --></effectWorking>
+		<soundWorking>Recipe_Smith<!-- Звуковой эффект работы при крафте --></soundWorking>
+		<unfinishedThingDef>UnfinishedWeapon<!-- Незавершенный предмет в процессе крафта --></unfinishedThingDef>
+	</RecipeDef>
+
+	<!-- Industrial tier -->
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Industrial_Knife<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make industrial knife<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an industrial knife.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>6000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>35<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Silver</li>
+					</thingDefs>
+				</filter>
+				<count>10<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Industrial_Knife>1</Bamba_Melee_Industrial_Knife>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Industrial<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>5</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FueledSmithy</li>
+			<li>ElectricSmithy</li>
+		</recipeUsers>
+		<displayPriority>605<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Industrial_Gladius<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make industrial gladius<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an industrial gladius.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>12000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>50<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Silver</li>
+					</thingDefs>
+				</filter>
+				<count>10<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Industrial_Gladius>1</Bamba_Melee_Industrial_Gladius>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Industrial<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>5</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FueledSmithy</li>
+			<li>ElectricSmithy</li>
+		</recipeUsers>
+		<displayPriority>610<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Industrial_Longsword<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make industrial longsword<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an industrial longsword.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>18000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>100<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Silver</li>
+					</thingDefs>
+				</filter>
+				<count>20<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Industrial_Longsword>1</Bamba_Melee_Industrial_Longsword>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Industrial<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>6</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FueledSmithy</li>
+			<li>ElectricSmithy</li>
+		</recipeUsers>
+		<displayPriority>620<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Industrial_Hammer<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make industrial hammer<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an industrial hammer.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>6000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>50<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Silver</li>
+					</thingDefs>
+				</filter>
+				<count>10<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Industrial_Hammer>1</Bamba_Melee_Industrial_Hammer>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Industrial<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>5</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FueledSmithy</li>
+			<li>ElectricSmithy</li>
+		</recipeUsers>
+		<displayPriority>630<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Industrial_Polehammer<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make industrial polehammer<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an industrial polehammer.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>7000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>70<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Silver</li>
+					</thingDefs>
+				</filter>
+				<count>10<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Industrial_Polehammer>1</Bamba_Melee_Industrial_Polehammer>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Industrial<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>5</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FueledSmithy</li>
+			<li>ElectricSmithy</li>
+		</recipeUsers>
+		<displayPriority>635<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Industrial_Mace<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make industrial mace<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an industrial mace.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>6500<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>50<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Silver</li>
+					</thingDefs>
+				</filter>
+				<count>10<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Industrial_Mace>1</Bamba_Melee_Industrial_Mace>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Industrial<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>5</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FueledSmithy</li>
+			<li>ElectricSmithy</li>
+		</recipeUsers>
+		<displayPriority>640<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Industrial_Baton<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make industrial baton<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an industrial baton.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>5000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>40<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Silver</li>
+					</thingDefs>
+				</filter>
+				<count>10<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Industrial_Baton>1</Bamba_Melee_Industrial_Baton>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Industrial<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>5</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FueledSmithy</li>
+			<li>ElectricSmithy</li>
+		</recipeUsers>
+		<displayPriority>650<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Industrial_Spear<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make industrial spear<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an industrial spear.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>12000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>75<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Silver</li>
+					</thingDefs>
+				</filter>
+				<count>15<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Industrial_Spear>1</Bamba_Melee_Industrial_Spear>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Industrial<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>6</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FueledSmithy</li>
+			<li>ElectricSmithy</li>
+		</recipeUsers>
+		<displayPriority>660<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<!-- Spacer tier -->
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Spacer_Knife<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make spacer knife<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a spacer knife.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>8000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>25<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Synthread</li>
+					</thingDefs>
+				</filter>
+				<count>10<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Spacer_Knife>1</Bamba_Melee_Spacer_Knife>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Spacer<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>7</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>ElectricSmithy</li>
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>705<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Spacer_Gladius<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make spacer gladius<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a spacer gladius.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>16000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>25<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>35<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Synthread</li>
+					</thingDefs>
+				</filter>
+				<count>10<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Spacer_Gladius>1</Bamba_Melee_Spacer_Gladius>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Spacer<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>7</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>ElectricSmithy</li>
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>710<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Spacer_Longsword<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make spacer longsword<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a spacer longsword.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>24000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>45<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>70<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Synthread</li>
+					</thingDefs>
+				</filter>
+				<count>16<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Spacer_Longsword>1</Bamba_Melee_Spacer_Longsword>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Spacer<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>8</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>ElectricSmithy</li>
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>720<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Spacer_Axe<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make spacer axe<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a spacer axe.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>10000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>30<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>35<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Synthread</li>
+					</thingDefs>
+				</filter>
+				<count>12<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Spacer_Axe>1</Bamba_Melee_Spacer_Axe>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Spacer<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>7</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>ElectricSmithy</li>
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>730<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Spacer_Polehammer<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make spacer mace<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a spacer polehammer.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>13000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>40<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>50<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Synthread</li>
+					</thingDefs>
+				</filter>
+				<count>15<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Spacer_Polehammer>1</Bamba_Melee_Spacer_Polehammer>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Spacer<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>5</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>ElectricSmithy</li>
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>735<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Spacer_Mace<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make spacer mace<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a spacer mace.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>11000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>30<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>40<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Synthread</li>
+					</thingDefs>
+				</filter>
+				<count>12<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Spacer_Mace>1</Bamba_Melee_Spacer_Mace>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Spacer<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>5</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>ElectricSmithy</li>
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>740<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Spacer_Baton<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make spacer baton<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a spacer baton.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>9000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>30<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>30<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>1<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Synthread</li>
+					</thingDefs>
+				</filter>
+				<count>12<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Spacer_Baton>1</Bamba_Melee_Spacer_Baton>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Spacer<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>5</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>ElectricSmithy</li>
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>750<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Spacer_Spear<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make spacer spear<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a spacer spear.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>18000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>35<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>55<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Synthread</li>
+					</thingDefs>
+				</filter>
+				<count>14<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Spacer_Spear>1</Bamba_Melee_Spacer_Spear>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Spacer<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>7</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>ElectricSmithy</li>
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>760<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<!-- Ultra tier -->
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Ultra_Knife<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make ultra knife<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an ultra knife.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>13000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>50<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>1<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Hyperweave</li>
+					</thingDefs>
+				</filter>
+				<count>10<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Ultra_Knife>1</Bamba_Melee_Ultra_Knife>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Ultra<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>10</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>805<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Ultra_Gladius<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make ultra gladius<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an ultra gladius.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>26000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>70<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>1<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Hyperweave</li>
+					</thingDefs>
+				</filter>
+				<count>12<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Ultra_Gladius>1</Bamba_Melee_Ultra_Gladius>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Ultra<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>10</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>810<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Ultra_Longsword<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make ultra longsword<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an ultra longsword.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>36000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>130<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>5<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Hyperweave</li>
+					</thingDefs>
+				</filter>
+				<count>18<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Ultra_Longsword>1</Bamba_Melee_Ultra_Longsword>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Ultra<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>11</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>820<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Ultra_Axe<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make ultra axe<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an ultra axe.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>17000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>80<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>1<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Hyperweave</li>
+					</thingDefs>
+				</filter>
+				<count>14<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Ultra_Axe>1</Bamba_Melee_Ultra_Axe>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Ultra<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>10</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>830<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Ultra_Polehammer<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make ultra polehammer<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an ultra polehammer.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>20000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>110<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>5<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>1<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Hyperweave</li>
+					</thingDefs>
+				</filter>
+				<count>15<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Ultra_Polehammer>1</Bamba_Melee_Ultra_Polehammer>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Ultra<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>10</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>835<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Ultra_Mace<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make ultra mace<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an ultra mace.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>18000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>90<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>5<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>1<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Hyperweave</li>
+					</thingDefs>
+				</filter>
+				<count>14<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Ultra_Mace>1</Bamba_Melee_Ultra_Mace>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Ultra<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>10</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>840<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Ultra_Baton<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make ultra baton<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an ultra baton.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>18000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>70<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>1<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Hyperweave</li>
+					</thingDefs>
+				</filter>
+				<count>14<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Ultra_Baton>1</Bamba_Melee_Ultra_Baton>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Ultra<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>10</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>850<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Ultra_Spear<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make ultra spear<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making an ultra spear.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>30000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>100<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>4<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>Hyperweave</li>
+					</thingDefs>
+				</filter>
+				<count>16<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Ultra_Spear>1</Bamba_Melee_Ultra_Spear>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Ultra<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>11</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<displayPriority>860<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<!-- Solar tier -->
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Solar_Knife<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make solar knife<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a solar knife.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>18000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunsteel</li>
+					</thingDefs>
+				</filter>
+				<count>50<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunweave</li>
+					</thingDefs>
+				</filter>
+				<count>10<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Solar_Knife>1</Bamba_Melee_Solar_Knife>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Solar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>13</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_I</li>
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>905<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Solar_Gladius<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make solar gladius<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a solar gladius.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>36000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunsteel</li>
+					</thingDefs>
+				</filter>
+				<count>70<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunweave</li>
+					</thingDefs>
+				</filter>
+				<count>12<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Solar_Gladius>1</Bamba_Melee_Solar_Gladius>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Solar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>13</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_I</li>
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>910<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Solar_Longsword<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make solar longsword<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a solar longsword.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>50000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunsteel</li>
+					</thingDefs>
+				</filter>
+				<count>130<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunweave</li>
+					</thingDefs>
+				</filter>
+				<count>18<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Solar_Longsword>1</Bamba_Melee_Solar_Longsword>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Solar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>14</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_I</li>
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>920<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Solar_Hammer<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make solar hammer<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a solar hammer.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>24000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunsteel</li>
+					</thingDefs>
+				</filter>
+				<count>80<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunweave</li>
+					</thingDefs>
+				</filter>
+				<count>14<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Solar_Hammer>1</Bamba_Melee_Solar_Hammer>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Solar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>13</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_I</li>
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>930<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Solar_Polehammer<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make solar polehammer<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a solar polehammer.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>27000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunsteel</li>
+					</thingDefs>
+				</filter>
+				<count>95<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunweave</li>
+					</thingDefs>
+				</filter>
+				<count>15<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Solar_Polehammer>1</Bamba_Melee_Solar_Polehammer>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Solar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>13</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_I</li>
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>935<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Solar_Mace<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make solar mace<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a solar mace.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>25000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunsteel</li>
+					</thingDefs>
+				</filter>
+				<count>70<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunweave</li>
+					</thingDefs>
+				</filter>
+				<count>14<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Solar_Mace>1</Bamba_Melee_Solar_Mace>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Solar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>13</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_I</li>
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>940<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Solar_Baton<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make solar baton<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a solar baton.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>24000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunsteel</li>
+					</thingDefs>
+				</filter>
+				<count>60<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>1<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunweave</li>
+					</thingDefs>
+				</filter>
+				<count>14<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Solar_Baton>1</Bamba_Melee_Solar_Baton>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Solar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>13</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_I</li>
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>950<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Solar_Spear<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make solar spear<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a solar spear.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>43000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunsteel</li>
+					</thingDefs>
+				</filter>
+				<count>100<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Sunweave</li>
+					</thingDefs>
+				</filter>
+				<count>16<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Solar_Spear>1</Bamba_Melee_Solar_Spear>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Solar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>14</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_I</li>
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>960<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<!-- kwazaari tier -->
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Quasar_Knife<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make kwazaari knife<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a kwazaari knife.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>26000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloy</li>
+					</thingDefs>
+				</filter>
+				<count>55<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentII</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloyWeave</li>
+					</thingDefs>
+				</filter>
+				<count>10<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Quasar_Knife>1</Bamba_Melee_Quasar_Knife>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Quasar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>16</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1005<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Quasar_Gladius<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make kwazaari gladius<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a kwazaari gladius.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>52000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloy</li>
+					</thingDefs>
+				</filter>
+				<count>80<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentII</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloyWeave</li>
+					</thingDefs>
+				</filter>
+				<count>12<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Quasar_Gladius>1</Bamba_Melee_Quasar_Gladius>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Quasar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>16</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1010<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Quasar_Longsword<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make kwazaari longsword<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a kwazaari longsword.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>70000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloy</li>
+					</thingDefs>
+				</filter>
+				<count>150<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentII</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloyWeave</li>
+					</thingDefs>
+				</filter>
+				<count>18<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Quasar_Longsword>1</Bamba_Melee_Quasar_Longsword>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Quasar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>17</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1020<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Quasar_Hammer<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make kwazaari hammer<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a kwazaari hammer.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>33000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloy</li>
+					</thingDefs>
+				</filter>
+				<count>90<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentII</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloyWeave</li>
+					</thingDefs>
+				</filter>
+				<count>14<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Quasar_Hammer>1</Bamba_Melee_Quasar_Hammer>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Quasar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>16</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1030<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Quasar_Polehammer<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make kwazaari polehammer<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a kwazaari polehammer.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>35000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloy</li>
+					</thingDefs>
+				</filter>
+				<count>110<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentII</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloyWeave</li>
+					</thingDefs>
+				</filter>
+				<count>15<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Quasar_Polehammer>1</Bamba_Melee_Quasar_Polehammer>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Quasar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>16</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1035<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Quasar_Mace<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make kwazaari mace<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a kwazaari mace.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>34000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloy</li>
+					</thingDefs>
+				</filter>
+				<count>80<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentII</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloyWeave</li>
+					</thingDefs>
+				</filter>
+				<count>14<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Quasar_Mace>1</Bamba_Melee_Quasar_Mace>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Quasar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>16</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1040<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Quasar_Baton<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make kwazaari baton<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a kwazaari baton.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>32000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloy</li>
+					</thingDefs>
+				</filter>
+				<count>70<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentII</li>
+					</thingDefs>
+				</filter>
+				<count>1<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloyWeave</li>
+					</thingDefs>
+				</filter>
+				<count>14<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Quasar_Baton>1</Bamba_Melee_Quasar_Baton>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Quasar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>16</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1050<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Quasar_Spear<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make kwazaari spear<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a kwazaari spear.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>62000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloy</li>
+					</thingDefs>
+				</filter>
+				<count>115<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentII</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_QuasarAlloyWeave</li>
+					</thingDefs>
+				</filter>
+				<count>16<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Quasar_Spear>1</Bamba_Melee_Quasar_Spear>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Quasar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>17</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_II</li>
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1060<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<!-- Tenebral tier -->
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Tenebral_Knife<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make tenebral knife<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a tenebral knife.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>76000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Tenebrite</li>
+					</thingDefs>
+				</filter>
+				<count>60<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentIII</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Tenebral_Knife>1</Bamba_Melee_Tenebral_Knife>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Tenebral<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>18</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1105<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Tenebral_Gladius<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make tenebral gladius<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a tenebral gladius.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>76000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Tenebrite</li>
+					</thingDefs>
+				</filter>
+				<count>90<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentIII</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Tenebral_Gladius>1</Bamba_Melee_Tenebral_Gladius>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Tenebral<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>18</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1110<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Tenebral_Longsword<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make tenebral longsword<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a tenebral longsword.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>102000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Tenebrite</li>
+					</thingDefs>
+				</filter>
+				<count>170<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentIII</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Tenebral_Longsword>1</Bamba_Melee_Tenebral_Longsword>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Tenebral<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>19</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1120<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Tenebral_Hammer<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make tenebral hammer<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a tenebral hammer.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>48000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Tenebrite</li>
+					</thingDefs>
+				</filter>
+				<count>100<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentIII</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Tenebral_Hammer>1</Bamba_Melee_Tenebral_Hammer>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Tenebral<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>18</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1130<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Tenebral_Polehammer<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make tenebral polehammer<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a tenebral polehammer.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>50000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Tenebrite</li>
+					</thingDefs>
+				</filter>
+				<count>120<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentIII</li>
+					</thingDefs>
+				</filter>
+				<count>2<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Tenebral_Polehammer>1</Bamba_Melee_Tenebral_Polehammer>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Tenebral<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>18</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1135<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Tenebral_Mace<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make tenebral mace<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a tenebral mace.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>49000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Tenebrite</li>
+					</thingDefs>
+				</filter>
+				<count>90<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentIII</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Tenebral_Mace>1</Bamba_Melee_Tenebral_Mace>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Tenebral<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>18</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1140<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Tenebral_Baton<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make tenebral baton<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a tenebral baton.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>49000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Tenebrite</li>
+					</thingDefs>
+				</filter>
+				<count>80<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentIII</li>
+					</thingDefs>
+				</filter>
+				<count>1<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Tenebral_Baton>1</Bamba_Melee_Tenebral_Baton>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Tenebral<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>18</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1150<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+	<RecipeDef ParentName="Bamba_Melee_MakeWeaponBase" MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение рецепта изготовления на верстаке -->
+		<defName>Make_Bamba_Melee_Tenebral_Spear<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>make tenebral spear<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<jobString>Making a tenebral spear.<!-- Строка работы поселенца во время крафта --></jobString>
+		<workAmount>90000<!-- Количество требуемой работы для создания предмета --></workAmount>
+		<ingredients><!-- Список требуемых ингредиентов для создания -->
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_Tenebrite</li>
+					</thingDefs>
+				</filter>
+				<count>130<!-- Количество требуемого ресурса --></count>
+			</li>
+			<li>
+				<filter><!-- Фильтр допустимых ресурсов для ингредиента -->
+					<thingDefs><!-- Конкретные типы материалов/предметов в фильтре -->
+						<li>BOR_ComponentIII</li>
+					</thingDefs>
+				</filter>
+				<count>3<!-- Количество требуемого ресурса --></count>
+			</li>
+		</ingredients>
+		<products><!-- Готовый результат/продукция рецепта -->
+			<Bamba_Melee_Tenebral_Spear>1</Bamba_Melee_Tenebral_Spear>
+		</products>
+		<researchPrerequisite>Bamba_Melee_Research_Tenebral<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+		<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+			<Crafting>19</Crafting>
+		</skillRequirements>
+		<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+			<li>BOR_Bench_III</li>
+		</recipeUsers>
+		<displayPriority>1160<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+	</RecipeDef>
+
+</Defs>

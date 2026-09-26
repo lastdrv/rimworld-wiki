@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs><!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+	<ThingDef ParentName="ShieldBase" MayRequire="ceteam.combatextended"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Industrial_Shield<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>industrial shield<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A piece of hard material that means to be put between you and your enemy. This one is made from industrial-grade steel and more sophisticated than the ones one could smith together from whatever material.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<techLevel>Industrial<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/shields/industrial<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+		</graphicData>
+		<costList><!-- Список стоимости материалов для создания -->
+			<Steel>70<!-- Требуемый материал: Сталь --></Steel>
+			<ComponentIndustrial>2<!-- Требуемые компоненты: Промышленные компоненты --></ComponentIndustrial>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>Bamba_Melee_Research_Industrial<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+			<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+				<li>TableMachining</li>
+			</recipeUsers>
+			<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+				<Crafting>6</Crafting>
+			</skillRequirements>
+			<displayPriority>670<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+		</recipeMaker>
+		<statBases><!-- Базовые характеристики предмета -->
+			<WorkToMake>15000<!-- Объем работы для изготовления --></WorkToMake>
+			<MaxHitPoints>150<!-- Максимальный запас прочности предмета --></MaxHitPoints>
+			<ArmorRating_Sharp>8<!-- Коэффициент защиты от колющего/режущего урона --></ArmorRating_Sharp>
+			<ArmorRating_Blunt>12<!-- Коэффициент защиты от дробящего урона --></ArmorRating_Blunt>
+			<Mass>9<!-- Масса предмета в килограммах --></Mass>
+			<Bulk>10<!-- Габариты/объем предмета (для Combat Extended) --></Bulk>
+			<WornBulk>7.5<!-- Габариты предмета при ношении (для Combat Extended) --></WornBulk>
+		</statBases>
+		<equippedStatOffsets><!-- Модификаторы характеристик при экипировке -->
+			<ReloadSpeed>-0.15<!-- Множитель скорости перезарядки оружия пешки --></ReloadSpeed>
+			<MeleeHitChance>-1<!-- Модификатор шанса попадания в ближнем бою --></MeleeHitChance>
+			<ShootingAccuracyPawn>-0.2<!-- Модификатор точности стрельбы пешки --></ShootingAccuracyPawn>
+			<AimingAccuracy>-0.12<!-- Модификатор точности прицеливания --></AimingAccuracy>
+			<Suppressability>-0.4<!-- Модификатор восприимчивости к подавлению огнем (CE) --></Suppressability>
+			<MeleeCritChance>-0.1<!-- Модификатор шанса критического удара в ближнем бою --></MeleeCritChance>
+			<MeleeParryChance>1.0<!-- Шанс парирования вражеских атак этим предметом --></MeleeParryChance>
+		</equippedStatOffsets>
+		<apparel><!-- Параметры одежды/экипировки -->
+			<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+			<tags>
+				<li>OutlanderShield</li>
+			</tags>
+			<renderNodeProperties><!-- Настройки отрисовки узлов одежды/щита на пешке -->
+				<li>
+					<nodeClass>CombatExtended.PawnRenderNode_Apparel</nodeClass>
+					<workerClass>CombatExtended.PawnRenderNodeWorker_Drafted</workerClass>
+					<texPath>Bamba_Melee/Weapons/shields/industrial<!-- Относительный путь к текстуре в папке Textures --></texPath>
+					<parentTagDef>ApparelBody</parentTagDef>
+					<drawData>
+						<scale>0.7</scale>
+						<defaultData>
+							<layer>80</layer>
+						</defaultData>
+						<dataEast>
+							<layer>-5</layer>
+							<offset>(0, 0, -0.1)</offset>
+							<rotationOffset>25</rotationOffset>
+						</dataEast>
+						<dataWest>
+							<rotationOffset>-25</rotationOffset>
+						</dataWest>
+						<dataNorth>
+							<layer>-5</layer>
+							<offset>(0.15, 0, -0.1)</offset>
+						</dataNorth>
+						<dataSouth>
+							<offset>(0.25, 0, -0.15)</offset>
+						</dataSouth>
+					</drawData>
+				</li>
+			</renderNodeProperties>
+		</apparel>
+		<modExtensions><!-- Кастомные C#-расширения мода -->
+			<li Class="CombatExtended.ShieldDefExtension">
+				<shieldCoverage>
+					<li>Hands<!-- Защищаемая область тела: Кисти рук --></li>
+					<li>Arms<!-- Защищаемая область тела: Руки --></li>
+					<li>Shoulders<!-- Защищаемая область тела: Плечи --></li>
+					<li>Torso<!-- Защищаемая область тела: Торс/Грудь --></li>
+					<li>Neck<!-- Защищаемая область тела: Шея --></li>
+				</shieldCoverage>
+				<crouchCoverage>
+					<li>Legs<!-- Защищаемая область в приседании/укрытии: Ноги --></li>
+				</crouchCoverage>
+			</li>
+		</modExtensions>
+		<tradeTags><!-- Торговые теги для торговцев и торговцев оружием -->
+			<li>Armor</li>
+		</tradeTags>
+	</ThingDef>
+
+	<ThingDef ParentName="ShieldBase" MayRequire="ceteam.combatextended"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Spacer_Shield<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>spacer shield<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A piece of hard material that means to be put between you and your enemy. Use of a mix of steel and plasteel gives this appliance a set of uniquely effective capabilities, with improved handling due to usage of synthread.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<techLevel>Spacer<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/shields/spacer<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+		</graphicData>
+		<costList><!-- Список стоимости материалов для создания -->
+			<Steel>30<!-- Требуемый материал: Сталь --></Steel>
+			<Plasteel>50<!-- Требуемый материал: Пласталь --></Plasteel>
+			<ComponentIndustrial>3<!-- Требуемые компоненты: Промышленные компоненты --></ComponentIndustrial>
+			<Synthread>15<!-- Требуемая ткань: Синткань (Synthread) --></Synthread>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>Bamba_Melee_Research_Spacer<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+			<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+				<Crafting>7</Crafting>
+			</skillRequirements>
+			<displayPriority>770<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+		</recipeMaker>
+		<statBases><!-- Базовые характеристики предмета -->
+			<WorkToMake>22000<!-- Объем работы для изготовления --></WorkToMake>
+			<MaxHitPoints>250<!-- Максимальный запас прочности предмета --></MaxHitPoints>
+			<ArmorRating_Sharp>16<!-- Коэффициент защиты от колющего/режущего урона --></ArmorRating_Sharp>
+			<ArmorRating_Blunt>24<!-- Коэффициент защиты от дробящего урона --></ArmorRating_Blunt>
+			<Mass>7<!-- Масса предмета в килограммах --></Mass>
+			<Bulk>10<!-- Габариты/объем предмета (для Combat Extended) --></Bulk>
+			<WornBulk>7.0<!-- Габариты предмета при ношении (для Combat Extended) --></WornBulk>
+		</statBases>
+		<equippedStatOffsets><!-- Модификаторы характеристик при экипировке -->
+			<ReloadSpeed>-0.12<!-- Множитель скорости перезарядки оружия пешки --></ReloadSpeed>
+			<MeleeHitChance>-0.08<!-- Модификатор шанса попадания в ближнем бою --></MeleeHitChance>
+			<ShootingAccuracyPawn>-0.15<!-- Модификатор точности стрельбы пешки --></ShootingAccuracyPawn>
+			<AimingAccuracy>-0.1<!-- Модификатор точности прицеливания --></AimingAccuracy>
+			<Suppressability>-0.45<!-- Модификатор восприимчивости к подавлению огнем (CE) --></Suppressability>
+			<MeleeCritChance>-0.08<!-- Модификатор шанса критического удара в ближнем бою --></MeleeCritChance>
+			<MeleeParryChance>1.0<!-- Шанс парирования вражеских атак этим предметом --></MeleeParryChance>
+		</equippedStatOffsets>
+		<apparel><!-- Параметры одежды/экипировки -->
+			<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+			<tags>
+				<li>SpacerShield</li>
+			</tags>
+			<renderNodeProperties><!-- Настройки отрисовки узлов одежды/щита на пешке -->
+				<li>
+					<nodeClass>CombatExtended.PawnRenderNode_Apparel</nodeClass>
+					<workerClass>CombatExtended.PawnRenderNodeWorker_Drafted</workerClass>
+					<texPath>Bamba_Melee/Weapons/shields/spacer<!-- Относительный путь к текстуре в папке Textures --></texPath>
+					<parentTagDef>ApparelBody</parentTagDef>
+					<drawData>
+						<scale>0.7</scale>
+						<defaultData>
+							<layer>80</layer>
+						</defaultData>
+						<dataEast>
+							<layer>-5</layer>
+							<offset>(0, 0, -0.1)</offset>
+							<rotationOffset>25</rotationOffset>
+						</dataEast>
+						<dataWest>
+							<rotationOffset>-25</rotationOffset>
+						</dataWest>
+						<dataNorth>
+							<layer>-5</layer>
+							<offset>(0.15, 0, -0.1)</offset>
+						</dataNorth>
+						<dataSouth>
+							<offset>(0.25, 0, -0.15)</offset>
+						</dataSouth>
+					</drawData>
+				</li>
+			</renderNodeProperties>
+		</apparel>
+		<modExtensions><!-- Кастомные C#-расширения мода -->
+			<li Class="CombatExtended.ShieldDefExtension">
+				<shieldCoverage>
+					<li>Hands<!-- Защищаемая область тела: Кисти рук --></li>
+					<li>Arms<!-- Защищаемая область тела: Руки --></li>
+					<li>Shoulders<!-- Защищаемая область тела: Плечи --></li>
+					<li>Torso<!-- Защищаемая область тела: Торс/Грудь --></li>
+					<li>Neck<!-- Защищаемая область тела: Шея --></li>
+				</shieldCoverage>
+				<crouchCoverage>
+					<li>Legs<!-- Защищаемая область в приседании/укрытии: Ноги --></li>
+				</crouchCoverage>
+			</li>
+		</modExtensions>
+		<tradeTags><!-- Торговые теги для торговцев и торговцев оружием -->
+			<li>Armor</li>
+		</tradeTags>
+	</ThingDef>
+
+	<ThingDef ParentName="ShieldBase" MayRequire="ceteam.combatextended"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Ultra_Shield<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>ultra shield<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A piece of hard material that means to be put between you and your enemy. Full plasteel - hyperweave build guarantees highest-tier of effectiveness available to humans.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<techLevel>Ultra<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/shields/ultra<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+		</graphicData>
+		<costList><!-- Список стоимости материалов для создания -->
+			<Plasteel>120<!-- Требуемый материал: Пласталь --></Plasteel>
+			<ComponentIndustrial>4<!-- Требуемые компоненты: Промышленные компоненты --></ComponentIndustrial>
+			<ComponentSpacer>1<!-- Требуемые компоненты: Улучшенные компоненты (Spacer) --></ComponentSpacer>
+			<Hyperweave>15<!-- Требуемая ткань: Гиперткань (Hyperweave) --></Hyperweave>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>Bamba_Melee_Research_Ultra<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+			<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+				<Crafting>11</Crafting>
+			</skillRequirements>
+			<displayPriority>870<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+		</recipeMaker>
+		<statBases><!-- Базовые характеристики предмета -->
+			<WorkToMake>35000<!-- Объем работы для изготовления --></WorkToMake>
+			<MaxHitPoints>400<!-- Максимальный запас прочности предмета --></MaxHitPoints>
+			<ArmorRating_Sharp>32<!-- Коэффициент защиты от колющего/режущего урона --></ArmorRating_Sharp>
+			<ArmorRating_Blunt>50<!-- Коэффициент защиты от дробящего урона --></ArmorRating_Blunt>
+			<Mass>5<!-- Масса предмета в килограммах --></Mass>
+			<Bulk>9<!-- Габариты/объем предмета (для Combat Extended) --></Bulk>
+			<WornBulk>6.0<!-- Габариты предмета при ношении (для Combat Extended) --></WornBulk>
+		</statBases>
+		<equippedStatOffsets><!-- Модификаторы характеристик при экипировке -->
+			<ReloadSpeed>-0.1<!-- Множитель скорости перезарядки оружия пешки --></ReloadSpeed>
+			<MeleeHitChance>-0.05<!-- Модификатор шанса попадания в ближнем бою --></MeleeHitChance>
+			<ShootingAccuracyPawn>-0.1<!-- Модификатор точности стрельбы пешки --></ShootingAccuracyPawn>
+			<AimingAccuracy>-0.05<!-- Модификатор точности прицеливания --></AimingAccuracy>
+			<Suppressability>-0.6<!-- Модификатор восприимчивости к подавлению огнем (CE) --></Suppressability>
+			<MeleeCritChance>-0.05<!-- Модификатор шанса критического удара в ближнем бою --></MeleeCritChance>
+			<MeleeParryChance>1.0<!-- Шанс парирования вражеских атак этим предметом --></MeleeParryChance>
+		</equippedStatOffsets>
+		<apparel><!-- Параметры одежды/экипировки -->
+			<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+			<tags>
+				<li>UltraShield</li>
+			</tags>
+			<renderNodeProperties><!-- Настройки отрисовки узлов одежды/щита на пешке -->
+				<li>
+					<nodeClass>CombatExtended.PawnRenderNode_Apparel</nodeClass>
+					<workerClass>CombatExtended.PawnRenderNodeWorker_Drafted</workerClass>
+					<texPath>Bamba_Melee/Weapons/shields/ultra<!-- Относительный путь к текстуре в папке Textures --></texPath>
+					<parentTagDef>ApparelBody</parentTagDef>
+					<drawData>
+						<scale>0.7</scale>
+						<defaultData>
+							<layer>80</layer>
+						</defaultData>
+						<dataEast>
+							<layer>-5</layer>
+							<offset>(0, 0, -0.1)</offset>
+							<rotationOffset>25</rotationOffset>
+						</dataEast>
+						<dataWest>
+							<rotationOffset>-25</rotationOffset>
+						</dataWest>
+						<dataNorth>
+							<layer>-5</layer>
+							<offset>(0.15, 0, -0.1)</offset>
+						</dataNorth>
+						<dataSouth>
+							<offset>(0.25, 0, -0.15)</offset>
+						</dataSouth>
+					</drawData>
+				</li>
+			</renderNodeProperties>
+		</apparel>
+		<modExtensions><!-- Кастомные C#-расширения мода -->
+			<li Class="CombatExtended.ShieldDefExtension">
+				<shieldCoverage>
+					<li>Hands<!-- Защищаемая область тела: Кисти рук --></li>
+					<li>Arms<!-- Защищаемая область тела: Руки --></li>
+					<li>Shoulders<!-- Защищаемая область тела: Плечи --></li>
+					<li>Torso<!-- Защищаемая область тела: Торс/Грудь --></li>
+					<li>Neck<!-- Защищаемая область тела: Шея --></li>
+				</shieldCoverage>
+				<crouchCoverage>
+					<li>Legs<!-- Защищаемая область в приседании/укрытии: Ноги --></li>
+				</crouchCoverage>
+			</li>
+		</modExtensions>
+		<tradeTags><!-- Торговые теги для торговцев и торговцев оружием -->
+			<li>Armor</li>
+		</tradeTags>
+	</ThingDef>
+
+	<ThingDef ParentName="ShieldBase" MayRequire="ceteam.combatextended,bambaryla.bor.redux"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Solar_Shield<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>solar shield<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A piece of hard material that means to be put between you and your enemy. Application of Sunweave to the handle and Sunsteel to the pain application device, puts this appliance beyond Ultratech territory. Solarite melee weapons are typically ornate.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<techLevel>Ultra<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/shields/solar<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+		</graphicData>
+		<costList><!-- Список стоимости материалов для создания -->
+			<BOR_Sunsteel>120<!-- Требуемый материал BOR: Солнечная сталь (Sunsteel) --></BOR_Sunsteel>
+			<ComponentSpacer>2<!-- Требуемые компоненты: Улучшенные компоненты (Spacer) --></ComponentSpacer>
+			<BOR_Sunweave>15<!-- Требуемая ткань BOR: Солнечная ткань (Sunweave) --></BOR_Sunweave>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>Bamba_Melee_Research_Solar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+			<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+				<li>BOR_Bench_I</li>
+				<li>BOR_Bench_II</li>
+				<li>BOR_Bench_III</li>
+			</recipeUsers>
+			<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+				<Crafting>14</Crafting>
+			</skillRequirements>
+			<displayPriority>970<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+		</recipeMaker>
+		<statBases><!-- Базовые характеристики предмета -->
+			<WorkToMake>46000<!-- Объем работы для изготовления --></WorkToMake>
+			<MaxHitPoints>600<!-- Максимальный запас прочности предмета --></MaxHitPoints>
+			<ArmorRating_Sharp>50<!-- Коэффициент защиты от колющего/режущего урона --></ArmorRating_Sharp>
+			<ArmorRating_Blunt>80<!-- Коэффициент защиты от дробящего урона --></ArmorRating_Blunt>
+			<Mass>4<!-- Масса предмета в килограммах --></Mass>
+			<Bulk>8<!-- Габариты/объем предмета (для Combat Extended) --></Bulk>
+			<WornBulk>5.5<!-- Габариты предмета при ношении (для Combat Extended) --></WornBulk>
+		</statBases>
+		<equippedStatOffsets><!-- Модификаторы характеристик при экипировке -->
+			<ReloadSpeed>-0.08<!-- Множитель скорости перезарядки оружия пешки --></ReloadSpeed>
+			<MeleeHitChance>-0.04<!-- Модификатор шанса попадания в ближнем бою --></MeleeHitChance>
+			<ShootingAccuracyPawn>-0.08<!-- Модификатор точности стрельбы пешки --></ShootingAccuracyPawn>
+			<AimingAccuracy>-0.04<!-- Модификатор точности прицеливания --></AimingAccuracy>
+			<Suppressability>-0.65<!-- Модификатор восприимчивости к подавлению огнем (CE) --></Suppressability>
+			<MeleeCritChance>-0.04<!-- Модификатор шанса критического удара в ближнем бою --></MeleeCritChance>
+			<MeleeParryChance>1.0<!-- Шанс парирования вражеских атак этим предметом --></MeleeParryChance>
+		</equippedStatOffsets>
+		<apparel><!-- Параметры одежды/экипировки -->
+			<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+			<tags>
+				<li>SolarShield</li>
+			</tags>
+			<renderNodeProperties><!-- Настройки отрисовки узлов одежды/щита на пешке -->
+				<li>
+					<nodeClass>CombatExtended.PawnRenderNode_Apparel</nodeClass>
+					<workerClass>CombatExtended.PawnRenderNodeWorker_Drafted</workerClass>
+					<texPath>Bamba_Melee/Weapons/shields/solar<!-- Относительный путь к текстуре в папке Textures --></texPath>
+					<parentTagDef>ApparelBody</parentTagDef>
+					<drawData>
+						<scale>0.7</scale>
+						<defaultData>
+							<layer>80</layer>
+						</defaultData>
+						<dataEast>
+							<layer>-5</layer>
+							<offset>(0, 0, -0.1)</offset>
+							<rotationOffset>25</rotationOffset>
+						</dataEast>
+						<dataWest>
+							<rotationOffset>-25</rotationOffset>
+						</dataWest>
+						<dataNorth>
+							<layer>-5</layer>
+							<offset>(0.15, 0, -0.1)</offset>
+						</dataNorth>
+						<dataSouth>
+							<offset>(0.25, 0, -0.15)</offset>
+						</dataSouth>
+					</drawData>
+				</li>
+			</renderNodeProperties>
+		</apparel>
+		<modExtensions><!-- Кастомные C#-расширения мода -->
+			<li Class="CombatExtended.ShieldDefExtension">
+				<shieldCoverage>
+					<li>Hands<!-- Защищаемая область тела: Кисти рук --></li>
+					<li>Arms<!-- Защищаемая область тела: Руки --></li>
+					<li>Shoulders<!-- Защищаемая область тела: Плечи --></li>
+					<li>Torso<!-- Защищаемая область тела: Торс/Грудь --></li>
+					<li>Neck<!-- Защищаемая область тела: Шея --></li>
+				</shieldCoverage>
+				<crouchCoverage>
+					<li>Legs<!-- Защищаемая область в приседании/укрытии: Ноги --></li>
+				</crouchCoverage>
+			</li>
+		</modExtensions>
+		<tradeTags><!-- Торговые теги для торговцев и торговцев оружием -->
+			<li>Armor</li>
+		</tradeTags>
+	</ThingDef>
+
+	<ThingDef ParentName="ShieldBase" MayRequire="ceteam.combatextended,bambaryla.bor.redux"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Quasar_Shield<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>kwazaari shield<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A piece of hard material that means to be put between you and your enemy. Beyond Solarite tech comes the Kwazaari utilitarian design. While better, they do not bring joy.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<techLevel>Ultra<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/shields/quasar<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+		</graphicData>
+		<costList><!-- Список стоимости материалов для создания -->
+			<BOR_QuasarAlloy>120<!-- Требуемый сплав BOR: Квазарный сплав (QuasarAlloy) --></BOR_QuasarAlloy>
+			<BOR_ComponentII>2<!-- Требуемые компоненты BOR: Квазарные компоненты II --></BOR_ComponentII>
+			<BOR_QuasarAlloyWeave>15<!-- Требуемая ткань BOR: Квазарная ткань (QuasarAlloyWeave) --></BOR_QuasarAlloyWeave>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>Bamba_Melee_Research_Quasar<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+			<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+				<li>BOR_Bench_II</li>
+				<li>BOR_Bench_III</li>
+			</recipeUsers>
+			<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+				<Crafting>17</Crafting>
+			</skillRequirements>
+			<displayPriority>1070<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+		</recipeMaker>
+		<statBases><!-- Базовые характеристики предмета -->
+			<WorkToMake>66000<!-- Объем работы для изготовления --></WorkToMake>
+			<MaxHitPoints>900<!-- Максимальный запас прочности предмета --></MaxHitPoints>
+			<ArmorRating_Sharp>65<!-- Коэффициент защиты от колющего/режущего урона --></ArmorRating_Sharp>
+			<ArmorRating_Blunt>100<!-- Коэффициент защиты от дробящего урона --></ArmorRating_Blunt>
+			<Mass>3<!-- Масса предмета в килограммах --></Mass>
+			<Bulk>8<!-- Габариты/объем предмета (для Combat Extended) --></Bulk>
+			<WornBulk>5<!-- Габариты предмета при ношении (для Combat Extended) --></WornBulk>
+		</statBases>
+		<equippedStatOffsets><!-- Модификаторы характеристик при экипировке -->
+			<ReloadSpeed>-0.07<!-- Множитель скорости перезарядки оружия пешки --></ReloadSpeed>
+			<MeleeHitChance>-0.03<!-- Модификатор шанса попадания в ближнем бою --></MeleeHitChance>
+			<ShootingAccuracyPawn>-0.07<!-- Модификатор точности стрельбы пешки --></ShootingAccuracyPawn>
+			<AimingAccuracy>-0.03<!-- Модификатор точности прицеливания --></AimingAccuracy>
+			<Suppressability>-0.7<!-- Модификатор восприимчивости к подавлению огнем (CE) --></Suppressability>
+			<MeleeCritChance>-0.03<!-- Модификатор шанса критического удара в ближнем бою --></MeleeCritChance>
+			<MeleeParryChance>1.0<!-- Шанс парирования вражеских атак этим предметом --></MeleeParryChance>
+		</equippedStatOffsets>
+		<apparel><!-- Параметры одежды/экипировки -->
+			<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+			<tags>
+				<li>QuasarShield</li>
+			</tags>
+			<renderNodeProperties><!-- Настройки отрисовки узлов одежды/щита на пешке -->
+				<li>
+					<nodeClass>CombatExtended.PawnRenderNode_Apparel</nodeClass>
+					<workerClass>CombatExtended.PawnRenderNodeWorker_Drafted</workerClass>
+					<texPath>Bamba_Melee/Weapons/shields/quasar<!-- Относительный путь к текстуре в папке Textures --></texPath>
+					<parentTagDef>ApparelBody</parentTagDef>
+					<drawData>
+						<scale>0.7</scale>
+						<defaultData>
+							<layer>80</layer>
+						</defaultData>
+						<dataEast>
+							<layer>-5</layer>
+							<offset>(0, 0, -0.1)</offset>
+							<rotationOffset>25</rotationOffset>
+						</dataEast>
+						<dataWest>
+							<rotationOffset>-25</rotationOffset>
+						</dataWest>
+						<dataNorth>
+							<layer>-5</layer>
+							<offset>(0.15, 0, -0.1)</offset>
+						</dataNorth>
+						<dataSouth>
+							<offset>(0.25, 0, -0.15)</offset>
+						</dataSouth>
+					</drawData>
+				</li>
+			</renderNodeProperties>
+		</apparel>
+		<modExtensions><!-- Кастомные C#-расширения мода -->
+			<li Class="CombatExtended.ShieldDefExtension">
+				<shieldCoverage>
+					<li>Hands<!-- Защищаемая область тела: Кисти рук --></li>
+					<li>Arms<!-- Защищаемая область тела: Руки --></li>
+					<li>Shoulders<!-- Защищаемая область тела: Плечи --></li>
+					<li>Torso<!-- Защищаемая область тела: Торс/Грудь --></li>
+					<li>Neck<!-- Защищаемая область тела: Шея --></li>
+				</shieldCoverage>
+				<crouchCoverage>
+					<li>Legs<!-- Защищаемая область в приседании/укрытии: Ноги --></li>
+				</crouchCoverage>
+			</li>
+		</modExtensions>
+		<tradeTags><!-- Торговые теги для торговцев и торговцев оружием -->
+			<li>Armor</li>
+		</tradeTags>
+	</ThingDef>
+
+	<ThingDef ParentName="ShieldBase" MayRequire="ceteam.combatextended,bambaryla.bor.redux"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Tenebral_Shield<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>tenebral shield<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A piece of hard material that means to be put between you and your enemy. It's shaped from a tenebrite crystal into a shape vaguely resembling the function.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<techLevel>Archotech<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/shields/tenebral<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+		</graphicData>
+		<costList><!-- Список стоимости материалов для создания -->
+			<BOR_Tenebrite>150<!-- Требуемый материал BOR: Тенебрит (Tenebrite) --></BOR_Tenebrite>
+			<BOR_ComponentIII>2<!-- Требуемые компоненты BOR: Тенебральные компоненты III --></BOR_ComponentIII>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>Bamba_Melee_Research_Tenebral<!-- Требуемый проект исследований для открытия рецепта --></researchPrerequisite>
+			<recipeUsers><!-- Список верстаков/станков, на которых доступен рецепт -->
+				<li>BOR_Bench_III</li>
+			</recipeUsers>
+			<skillRequirements><!-- Минимальные требования к навыкам ремесленника -->
+				<Crafting>19</Crafting>
+			</skillRequirements>
+			<displayPriority>1170<!-- Приоритет отображения рецепта в списке верстака --></displayPriority>
+		</recipeMaker>
+		<statBases><!-- Базовые характеристики предмета -->
+			<WorkToMake>100000<!-- Объем работы для изготовления --></WorkToMake>
+			<MaxHitPoints>1200<!-- Максимальный запас прочности предмета --></MaxHitPoints>
+			<ArmorRating_Sharp>80<!-- Коэффициент защиты от колющего/режущего урона --></ArmorRating_Sharp>
+			<ArmorRating_Blunt>120<!-- Коэффициент защиты от дробящего урона --></ArmorRating_Blunt>
+			<Mass>2<!-- Масса предмета в килограммах --></Mass>
+			<Bulk>8<!-- Габариты/объем предмета (для Combat Extended) --></Bulk>
+			<WornBulk>4<!-- Габариты предмета при ношении (для Combat Extended) --></WornBulk>
+		</statBases>
+		<equippedStatOffsets><!-- Модификаторы характеристик при экипировке -->
+			<ReloadSpeed>-0.05<!-- Множитель скорости перезарядки оружия пешки --></ReloadSpeed>
+			<MeleeHitChance>-0.02<!-- Модификатор шанса попадания в ближнем бою --></MeleeHitChance>
+			<ShootingAccuracyPawn>-0.05<!-- Модификатор точности стрельбы пешки --></ShootingAccuracyPawn>
+			<AimingAccuracy>-0.02<!-- Модификатор точности прицеливания --></AimingAccuracy>
+			<Suppressability>-0.8<!-- Модификатор восприимчивости к подавлению огнем (CE) --></Suppressability>
+			<MeleeCritChance>-0.02<!-- Модификатор шанса критического удара в ближнем бою --></MeleeCritChance>
+			<MeleeParryChance>1.0<!-- Шанс парирования вражеских атак этим предметом --></MeleeParryChance>
+		</equippedStatOffsets>
+		<apparel><!-- Параметры одежды/экипировки -->
+			<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+			<tags>
+				<li>TenebralShield</li>
+			</tags>
+			<renderNodeProperties><!-- Настройки отрисовки узлов одежды/щита на пешке -->
+				<li>
+					<nodeClass>CombatExtended.PawnRenderNode_Apparel</nodeClass>
+					<workerClass>CombatExtended.PawnRenderNodeWorker_Drafted</workerClass>
+					<texPath>Bamba_Melee/Weapons/shields/tenebral<!-- Относительный путь к текстуре в папке Textures --></texPath>
+					<parentTagDef>ApparelBody</parentTagDef>
+					<drawData>
+						<scale>0.7</scale>
+						<defaultData>
+							<layer>80</layer>
+						</defaultData>
+						<dataEast>
+							<layer>-5</layer>
+							<offset>(0, 0, -0.1)</offset>
+							<rotationOffset>25</rotationOffset>
+						</dataEast>
+						<dataWest>
+							<rotationOffset>-25</rotationOffset>
+						</dataWest>
+						<dataNorth>
+							<layer>-5</layer>
+							<offset>(0.15, 0, -0.1)</offset>
+						</dataNorth>
+						<dataSouth>
+							<offset>(0.25, 0, -0.15)</offset>
+						</dataSouth>
+					</drawData>
+				</li>
+			</renderNodeProperties>
+		</apparel>
+		<modExtensions><!-- Кастомные C#-расширения мода -->
+			<li Class="CombatExtended.ShieldDefExtension">
+				<shieldCoverage>
+					<li>Hands<!-- Защищаемая область тела: Кисти рук --></li>
+					<li>Arms<!-- Защищаемая область тела: Руки --></li>
+					<li>Shoulders<!-- Защищаемая область тела: Плечи --></li>
+					<li>Torso<!-- Защищаемая область тела: Торс/Грудь --></li>
+					<li>Neck<!-- Защищаемая область тела: Шея --></li>
+				</shieldCoverage>
+				<crouchCoverage>
+					<li>Legs<!-- Защищаемая область в приседании/укрытии: Ноги --></li>
+				</crouchCoverage>
+			</li>
+		</modExtensions>
+		<tradeTags><!-- Торговые теги для торговцев и торговцев оружием -->
+			<li>Armor</li>
+		</tradeTags>
+	</ThingDef>
+
+</Defs>

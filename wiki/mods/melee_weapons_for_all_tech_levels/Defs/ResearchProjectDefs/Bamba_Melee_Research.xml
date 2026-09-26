@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs><!-- Корневой контейнер для определения описательных структур (Defs) RimWorld -->
+  <ResearchTabDef><!-- Определение отдельной вкладки исследований в меню технологий -->
+    <defName>ABT_Research_Tab</defName><!-- Уникальный внутренний идентификатор вкладки исследований -->
+    <label>All-Bamba Tech</label><!-- Отображаемое название вкладки исследований в интерфейсе -->
+    <generalTitle>Researches for items in All-Bamba series</generalTitle><!-- Заголовок описания содержимого категории исследований -->
+    <generalDescription>Unlock weapons from all kinds of tech levels.</generalDescription><!-- Подробное описание назначения вкладки исследований -->
+  </ResearchTabDef>
+
+  <ResearchProjectDef><!-- Определение проекта исследований: Промышленный уровень оружия -->
+    <defName>Bamba_Melee_Research_Industrial</defName><!-- Идентификатор проекта исследования промышленного тира -->
+    <label>industrial tier melee weapons</label><!-- Название исследовательского проекта на древе технологий -->
+    <description>Industrialized production patterns for gladius, longsword, hammer, and spear weapon families.</description><!-- Описание открываемых технологий -->
+    <baseCost>1000</baseCost><!-- Базовая стоимость исследования в очках работы -->
+    <techLevel>Industrial</techLevel><!-- Технологический уровень проекта исследований -->
+    <tab>ABT_Research_Tab</tab><!-- Привязка к созданной вкладке исследований All-Bamba Tech -->
+    <prerequisites><!-- Список обязательных предварительных исследований -->
+      <li>Smithing</li><!-- Требует изученного ванильного кузнечного дела (Smithing) -->
+      <li>Machining</li><!-- Требует изученной ванильной металлообработки (Machining) -->
+    </prerequisites>
+    <researchViewX>0.00</researchViewX><!-- Позиция узла на сетке древа исследований по оси X -->
+    <researchViewY>7.00</researchViewY><!-- Позиция узла на сетке древа исследований по оси Y -->
+  </ResearchProjectDef>
+
+  <ResearchProjectDef><!-- Определение проекта исследований: Космический уровень оружия -->
+    <defName>Bamba_Melee_Research_Spacer</defName><!-- Идентификатор проекта исследования космического тира -->
+    <label>spacer tier melee weapons</label><!-- Отображаемое название исследовательского проекта -->
+    <description>Spacer-era metallurgy and component integration for advanced melee weapon lines.</description><!-- Описание открываемой технологии металлургии и компонентов -->
+    <baseCost>2000</baseCost><!-- Стоимость исследования в очках работы -->
+    <techLevel>Spacer</techLevel><!-- Технологический уровень исследования (Spacer) -->
+    <tab>ABT_Research_Tab</tab><!-- Привязка к категории исследований ABT_Research_Tab -->
+    <prerequisites><!-- Список пререквизитов для открытия космического оружия -->
+      <li>Bamba_Melee_Research_Industrial</li><!-- Требует изученного промышленного тира оружия -->
+      <li>MultiAnalyzer</li><!-- Требует построенного и изученного мультианализатора (MultiAnalyzer) -->
+    </prerequisites>
+    <researchViewX>2.00</researchViewX><!-- Координата X на сетке исследований -->
+    <researchViewY>7.00</researchViewY><!-- Координата Y на сетке исследований -->
+  </ResearchProjectDef>
+
+  <ResearchProjectDef><!-- Определение проекта исследований: Ультратехнологичный уровень оружия -->
+    <defName>Bamba_Melee_Research_Ultra</defName><!-- Идентификатор исследования ультратехнологичного тира -->
+    <label>ultra tier melee weapons</label><!-- Название проекта исследования -->
+    <description>Ultra-tech optimization of melee weapon architecture using advanced components and high-end textiles.</description><!-- Подробное описание технологии ультра-компонентов -->
+    <baseCost>3500</baseCost><!-- Стоимость исследования в очках работы -->
+    <techLevel>Ultra</techLevel><!-- Технологический уровень проекта (Ultra) -->
+    <tab>ABT_Research_Tab</tab><!-- Привязка к вкладке исследований -->
+    <prerequisites><!-- Список требуемых пререквизитов -->
+      <li>Bamba_Melee_Research_Spacer</li><!-- Требует открытого космического тира оружия -->
+      <li>Fabrication</li><!-- Требует ванильной технологии сборки (Fabrication) -->
+    </prerequisites>
+    <researchViewX>4.00</researchViewX><!-- Положение узла X на сетке -->
+    <researchViewY>7.00</researchViewY><!-- Положение узла Y на сетке -->
+  </ResearchProjectDef>
+
+  <ResearchProjectDef MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение проекта: Солнечный тир (загружается условно при наличии Beyond Our Reach) -->
+    <defName>Bamba_Melee_Research_Solar</defName><!-- Идентификатор исследования солнечного тира -->
+    <label>solar tier melee weapons</label><!-- Название исследовательского проекта -->
+    <description>Integrate Beyond Our Reach solar-tier materials and fabrication methods into your melee arsenal.</description><!-- Описание интегрируемой технологии материалов BOR -->
+    <baseCost>6000</baseCost><!-- Стоимость исследования в очках работы -->
+    <techLevel>Ultra</techLevel><!-- Уровень технологии -->
+    <tab>ABT_Research_Tab</tab><!-- Привязка к вкладке исследований -->
+    <prerequisites><!-- Требуемые предварительные исследования -->
+      <li>Bamba_Melee_Research_Ultra</li><!-- Требует ультра-тира оружия -->
+      <li>BOR_Research_Weapons_I</li><!-- Требует технологии исследований оружия I из мода BOR -->
+    </prerequisites>
+    <researchViewX>5.50</researchViewX><!-- Координата X -->
+    <researchViewY>7.00</researchViewY><!-- Координата Y -->
+  </ResearchProjectDef>
+
+  <ResearchProjectDef MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение проекта: Квазарный тир (условная загрузка с BOR) -->
+    <defName>Bamba_Melee_Research_Quasar</defName><!-- Идентификатор исследования квазарного тира -->
+    <label>kwazaari tier melee weapons</label><!-- Название проекта -->
+    <description>Apply quasar-tier weapon engineering and kwazaari universal part integration.</description><!-- Описание инженерии квазарного оружия -->
+    <baseCost>8000</baseCost><!-- Стоимость исследования в очках работы -->
+    <techLevel>Ultra</techLevel><!-- Уровень технологии -->
+    <tab>ABT_Research_Tab</tab><!-- Вкладка меню исследований -->
+    <prerequisites><!-- Список пререквизитов -->
+      <li>Bamba_Melee_Research_Solar</li><!-- Требует изученного солнечного тира -->
+      <li>BOR_Research_Weapons_II</li><!-- Требует технологии BOR Weapons II -->
+    </prerequisites>
+    <researchViewX>7.50</researchViewX><!-- Координата X -->
+    <researchViewY>7.00</researchViewY><!-- Координата Y -->
+  </ResearchProjectDef>
+
+  <ResearchProjectDef MayRequireAnyOf="bambaryla.bor.redux,bambaryla.bor"><!-- Определение проекта: Тенебральный тир (условная загрузка с BOR) -->
+    <defName>Bamba_Melee_Research_Tenebral</defName><!-- Идентификатор исследования тенебрального тира -->
+    <label>tenebral tier melee weapons</label><!-- Название проекта -->
+    <description>Tenebral crystallography and top-tier component design for peak melee weapon performance.</description><!-- Описание кристаллографии и высших компонентов -->
+    <baseCost>10000</baseCost><!-- Стоимость исследования -->
+    <techLevel>Archotech</techLevel><!-- Технологический уровень проекта (Archotech) -->
+    <tab>ABT_Research_Tab</tab><!-- Привязка к исследовательской вкладке -->
+    <prerequisites><!-- Список пререквизитов -->
+      <li>Bamba_Melee_Research_Quasar</li><!-- Требует изучения квазарного тира -->
+      <li>BOR_Research_Weapons_III</li><!-- Требует технологии BOR Weapons III -->
+    </prerequisites>
+    <researchViewX>9.00</researchViewX><!-- Координата X -->
+    <researchViewY>7.00</researchViewY><!-- Координата Y -->
+  </ResearchProjectDef>
+
+</Defs>

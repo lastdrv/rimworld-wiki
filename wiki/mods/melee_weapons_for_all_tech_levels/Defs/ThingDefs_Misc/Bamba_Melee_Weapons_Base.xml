@@ -1,0 +1,1113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs><!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+	<!-- Standalone melee parents with NO recipeMaker anywhere in the chain.
+       Inherits from BaseWeapon (safe) and manually replicates BaseMeleeWeapon +
+       BaseMeleeWeapon_Sharp/Blunt + *_Quality fields WITHOUT recipeMaker. -->
+
+	<ThingDef Name="Bamba_BaseMeleeWeapon_Sharp_NoRecipe" Abstract="True" ParentName="BaseWeapon"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<techLevel>Industrial<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<smeltable>false<!-- Возможность переплавки предмета в слитки --></smeltable>
+		<burnableByRecipe>true<!-- Возможность сжигания предмета по рецепту --></burnableByRecipe>
+		<thingCategories><!-- Категория хранения предмета на складе -->
+			<li>WeaponsMelee</li>
+		</thingCategories>
+		<weaponClasses><!-- Категории боевого применения оружия -->
+			<li>Melee</li>
+			<li>MeleePiercer</li>
+		</weaponClasses>
+		<relicChance>1<!-- Шанс появления предмета в качестве реликвии --></relicChance>
+		<inspectorTabs><!-- Вкладки инспектора при выборе предмета -->
+			<li>ITab_Art</li>
+		</inspectorTabs>
+		<tradeTags><!-- Торговые теги для торговцев и торговцев оружием -->
+			<li>WeaponMelee</li>
+		</tradeTags>
+		<comps><!-- Список C#-компонентов объекта -->
+			<li>
+				<compClass>CompQuality<!-- Класс C#-компонента --></compClass>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtWeaponMelee</nameMaker>
+				<descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef Name="Bamba_BaseMeleeWeapon_Blunt_NoRecipe" Abstract="True" ParentName="BaseWeapon"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<techLevel>Industrial<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<smeltable>false<!-- Возможность переплавки предмета в слитки --></smeltable>
+		<burnableByRecipe>true<!-- Возможность сжигания предмета по рецепту --></burnableByRecipe>
+		<thingCategories><!-- Категория хранения предмета на складе -->
+			<li>WeaponsMelee</li>
+		</thingCategories>
+		<weaponClasses><!-- Категории боевого применения оружия -->
+			<li>MeleeBlunt</li>
+		</weaponClasses>
+		<relicChance>1<!-- Шанс появления предмета в качестве реликвии --></relicChance>
+		<inspectorTabs><!-- Вкладки инспектора при выборе предмета -->
+			<li>ITab_Art</li>
+		</inspectorTabs>
+		<tradeTags><!-- Торговые теги для торговцев и торговцев оружием -->
+			<li>WeaponMelee</li>
+		</tradeTags>
+		<comps><!-- Список C#-компонентов объекта -->
+			<li>
+				<compClass>CompQuality<!-- Класс C#-компонента --></compClass>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtWeaponMelee</nameMaker>
+				<descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Industrial tier -->
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Sharp_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Industrial_Knife<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>industrial knife<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>One of the oldest tools in human history - a blade with a handle. Useful for stabbing people and there's not a single job that doesn't benefit from a knife. This one is made from industrial-grade steel and more sophisticated than the ones one could smith together from whatever material.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Knives/Knife_Industrial<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.25<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Industrial<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>0.4<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>100<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<equippedStatOffsets><!-- Модификаторы характеристик при экипировке -->
+			<<!-- Глобальный множитель скорости всех работ пешки -->WorkSpeedGlobal>0.05</<!-- Глобальный множитель скорости всех работ пешки -->WorkSpeedGlobal>
+		</equippedStatOffsets>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>10<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.8<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>point<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Stab</li>
+				</capacities>
+				<power>14<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.8<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>edge<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Cut</li>
+				</capacities>
+				<power>13<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.4<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Sharp_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Industrial_Gladius<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>industrial gladius<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>An industrial-era gladius pattern forged from a special steel-silver alloy for stable balance and reliable battlefield durability.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Gladius_Industrial<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.25<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Industrial<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>0.7<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>540<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>11<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.9<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>point<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Stab</li>
+				</capacities>
+				<power>18<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.9<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>edge<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Cut</li>
+				</capacities>
+				<power>18<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.9<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Sharp_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Industrial_Longsword<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>industrial longsword<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>An industrial-era longsword built around a special steel-silver alloy, tuned for improved balance and repeated field use.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Longsword_Industrial<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.5<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Industrial<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>1.6<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>720<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>11<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.4<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>point<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Stab</li>
+				</capacities>
+				<power>25<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.4<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>edge<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Cut</li>
+				</capacities>
+				<power>25<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.4<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Blunt_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Industrial_Hammer<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>industrial hammer<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>An industrial war hammer derived from the mace pattern, using a special steel-silver alloy and reinforced impact geometry.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Hammer_Industrial<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.25<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Industrial<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>1<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>600<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Poke</li>
+				</capacities>
+				<power>11<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.2<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>head<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>20<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.2<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Blunt_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Industrial_Polehammer<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>industrial polehammer<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A combination of two ancient designs: a hammer and a long stick - used to bludgeon enemies' armor inwards. This one is made from industrial-grade steel, more sophisticated than ones one could smith together from whatever material.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Polehammers/Polehammer_Industrial<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.25<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Industrial<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>2<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>800<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<equippedStatOffsets><!-- Модификаторы характеристик при экипировке -->
+			<MoveSpeed>-0.25<!-- Модификатор скорости перемещения пешки (в м/с) --></MoveSpeed>
+		</equippedStatOffsets>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Poke</li>
+				</capacities>
+				<power>12<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.5<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>head<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>24<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.5<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Blunt_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Industrial_Mace<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>industrial mace<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>An industrial mace, using a special steel-silver alloy and reinforced impact geometry.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/maces/mace_ind<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+		</graphicData>
+		<techLevel>Industrial<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>0.8<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>600<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Poke</li>
+				</capacities>
+				<power>9<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.9<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>head<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>16<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.9<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+				<extraMeleeDamages><!-- Дополнительные типы урона при ударе (EMP, Stun) -->
+					<li>
+						<def>EMP</def>
+						<amount>2</amount>
+					</li>
+				</extraMeleeDamages>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Blunt_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Industrial_Baton<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>industrial baton<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>An industrial baton, using a special steel-silver alloy and reinforced impact geometry.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/lethalnt/nonlethal_ind<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+		</graphicData>
+		<techLevel>Industrial<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>0.9<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>400<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Poke</li>
+				</capacities>
+				<power>5<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.0<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>head<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>8<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.0<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+				<extraMeleeDamages><!-- Дополнительные типы урона при ударе (EMP, Stun) -->
+					<li>
+						<def>Stun</def>
+						<amount>2</amount>
+					</li>
+				</extraMeleeDamages>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Sharp_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Industrial_Spear<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>industrial spear<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>An industrial spear with a hardened head and shaft assembly formed from a special steel-silver alloy.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Spear_Industrial<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>2.0<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Industrial<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>1.6<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>420<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+			<VEF_MeleeWeaponRange MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">2.5</VEF_MeleeWeaponRange>
+		</statBases>
+		<equippedAngleOffset>-25<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>shaft<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>15.0<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.4<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>point<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Stab</li>
+				</capacities>
+				<power>25<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<armorPenetration>0.58<!-- Коэффициент пробития брони при ударе --></armorPenetration>
+				<cooldownTime>2.4<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+
+	</ThingDef>
+
+	<!-- Spacer tier -->
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Sharp_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Spacer_Knife<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>spacer knife<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>One of the oldest tools in human history - a blade with a handle. Useful for stabbing people and there's not a single job that doesn't benefit from a knife. This one uses mixed steel and plasteel with a synthread grip, providing uniquely effective cutting capabilities and improved handling.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Knives/Knife_Spacer<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.25<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Spacer<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>0.38<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>250<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<equippedStatOffsets><!-- Модификаторы характеристик при экипировке -->
+			<<!-- Глобальный множитель скорости всех работ пешки -->WorkSpeedGlobal>0.07</<!-- Глобальный множитель скорости всех работ пешки -->WorkSpeedGlobal>
+		</equippedStatOffsets>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>11<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.7<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>point<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Stab</li>
+				</capacities>
+				<power>18<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.7<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>edge<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Cut</li>
+				</capacities>
+				<power>17<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.3<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Sharp_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Spacer_Gladius<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>spacer gladius<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A spacer-grade gladius built from mixed steel and plasteel with a synthread grip core.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Gladius_Spacer<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.25<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Spacer<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>0.55<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>1080<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>12<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.8<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>point<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Stab</li>
+				</capacities>
+				<power>22<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<armorPenetration>0.35<!-- Коэффициент пробития брони при ударе --></armorPenetration>
+				<cooldownTime>1.8<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>edge<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Cut</li>
+				</capacities>
+				<power>22<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.8<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Sharp_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Spacer_Longsword<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>spacer longsword<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A spacer-grade longsword forged with steel-plasteel laminate and componentized hilt architecture.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Longsword_Spacer<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.5<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Spacer<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>1.3<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>1440<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>12<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.2<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>point<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Stab</li>
+				</capacities>
+				<power>27<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<armorPenetration>0.5<!-- Коэффициент пробития брони при ударе --></armorPenetration>
+				<cooldownTime>2.2<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>edge<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Cut</li>
+				</capacities>
+				<power>27<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.2<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Sharp_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Spacer_Axe<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>spacer axe<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A spacer axe with a composite cutting head and reinforced striking mass for repeated chopping and smashing.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Axe_Spacer<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.25<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Spacer<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>0.8<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>1200<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>haft<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>12<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.6<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>head<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Cut</li>
+					<li>Blunt</li>
+				</capacities>
+				<power>20<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<armorPenetration>0.35<!-- Коэффициент пробития брони при ударе --></armorPenetration>
+				<cooldownTime>1.6<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Blunt_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Spacer_Polehammer<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>spacer polehammer<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A combination of two ancient designs: a hammer and a long stick, built for efficiency and utility. This spacer-tier version uses steel-plasteel construction with synthread reinforcement for superior blunt trauma delivery.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Polehammers/Polehammer_Spacer<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.25<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Spacer<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>1.8<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>1300<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<equippedStatOffsets><!-- Модификаторы характеристик при экипировке -->
+			<MoveSpeed>-0.22<!-- Модификатор скорости перемещения пешки (в м/с) --></MoveSpeed>
+		</equippedStatOffsets>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Poke</li>
+				</capacities>
+				<power>13<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.4<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>head<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>27<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.4<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Blunt_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Spacer_Mace<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>spacer mace<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A spacer mace, FLUFF ToDo.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/maces/mace_spc<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+		</graphicData>
+		<techLevel>Spacer<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>0.75<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>950<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Poke</li>
+				</capacities>
+				<power>10<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.8<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>head<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>18<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.8<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+				<extraMeleeDamages><!-- Дополнительные типы урона при ударе (EMP, Stun) -->
+					<li>
+						<def>EMP</def>
+						<amount>4</amount>
+					</li>
+				</extraMeleeDamages>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Blunt_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Spacer_Baton<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>spacer baton<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A spacer baton, FLUFF ToDo.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/lethalnt/nonlethal_spc<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+		</graphicData>
+		<techLevel>Spacer<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>0.8<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>750<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Poke</li>
+				</capacities>
+				<power>5<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.9<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>head<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>9<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.9<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+				<extraMeleeDamages><!-- Дополнительные типы урона при ударе (EMP, Stun) -->
+					<li>
+						<def>Stun</def>
+						<amount>4</amount>
+					</li>
+				</extraMeleeDamages>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Sharp_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Spacer_Spear<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>spacer spear<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A spacer spear combining dense head geometry and advanced grip materials for reliable penetration.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Spear_Spacer<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>2.0<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Spacer<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>1.3<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>840<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+			<VEF_MeleeWeaponRange MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">2.84</VEF_MeleeWeaponRange>
+		</statBases>
+		<equippedAngleOffset>-25<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>shaft<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>17<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.2<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>point<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Stab</li>
+				</capacities>
+				<power>28<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<armorPenetration>0.65<!-- Коэффициент пробития брони при ударе --></armorPenetration>
+				<cooldownTime>2.2<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+
+	</ThingDef>
+
+	<!-- Ultra tier -->
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Sharp_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Ultra_Knife<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>ultra knife<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>One of the oldest tools in human history - a blade with a handle. Useful for stabbing people and there's not a single job that doesn't benefit from a knife. This ultra-tier version is built from full plasteel with hyperweave construction, guaranteeing the highest-tier of cutting effectiveness available to humans.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Knives/Knife_Ultratech<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.25<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Ultra<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>0.35<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>450<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<equippedStatOffsets><!-- Модификаторы характеристик при экипировке -->
+			<<!-- Глобальный множитель скорости всех работ пешки -->WorkSpeedGlobal>0.1</<!-- Глобальный множитель скорости всех работ пешки -->WorkSpeedGlobal>
+		</equippedStatOffsets>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>12<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.4<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>point<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Stab</li>
+				</capacities>
+				<power>21<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.4<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>edge<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Cut</li>
+				</capacities>
+				<power>20<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.0<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Sharp_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Ultra_Gladius<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>ultra gladius<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A high-tech gladius made from pure plasteel with advanced internals and hyperweave grip architecture.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Gladius_Ultra<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.25<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Ultra<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>0.45<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>1620<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>13<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.5<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>point<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Stab</li>
+				</capacities>
+				<power>25<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<armorPenetration>0.45<!-- Коэффициент пробития брони при ударе --></armorPenetration>
+				<cooldownTime>1.5<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>edge<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Cut</li>
+				</capacities>
+				<power>25<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.5<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Sharp_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Ultra_Longsword<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>ultra longsword<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A high-tech longsword tuned for high-energy edge retention and accelerated strike cadence.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Longsword_Ultra<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.5<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Ultra<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>1.0<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>2160<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>13<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.0<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>point<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Stab</li>
+				</capacities>
+				<power>32<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<armorPenetration>0.55<!-- Коэффициент пробития брони при ударе --></armorPenetration>
+				<cooldownTime>2.0<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>edge<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Cut</li>
+				</capacities>
+				<power>32<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.0<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Sharp_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Ultra_Axe<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>ultra axe<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A high-tech war axe with dense plasteel core and precision geometry for both shearing cuts and crushing blows.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Axe_Ultra<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.25<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Ultra<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>0.65<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>1800<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>haft<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>13<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.4<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>head<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Cut</li>
+					<li>Blunt</li>
+				</capacities>
+				<power>25<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<armorPenetration>0.45<!-- Коэффициент пробития брони при ударе --></armorPenetration>
+				<cooldownTime>1.4<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Blunt_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Ultra_Polehammer<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>ultra polehammer<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A combination of two ancient designs: a hammer and a long stick, now upgraded for ultratech warfare. This version uses full plasteel construction with hyperweave reinforcement for unparalleled crushing force.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Polehammers/Polehammer_Ultratech<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>1.25<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Ultra<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>1.5<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>2000<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<equippedStatOffsets><!-- Модификаторы характеристик при экипировке -->
+			<MoveSpeed>-0.18<!-- Модификатор скорости перемещения пешки (в м/с) --></MoveSpeed>
+		</equippedStatOffsets>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Poke</li>
+				</capacities>
+				<power>15<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.1<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>head<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>30<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>2.1<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Blunt_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Ultra_Mace<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>ultra mace<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>An ultratech mace, FLUFF ToDo.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/maces/mace_ult<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+		</graphicData>
+		<techLevel>Ultra<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>0.65<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>1450<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Poke</li>
+				</capacities>
+				<power>11<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.5<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>head<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>21<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.5<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+				<extraMeleeDamages><!-- Дополнительные типы урона при ударе (EMP, Stun) -->
+					<li>
+						<def>EMP</def>
+						<amount>8</amount>
+					</li>
+				</extraMeleeDamages>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Blunt_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Ultra_Baton<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>ultra baton<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>An ultratech baton, FLUFF ToDo.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/lethalnt/nonlethal_ult<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+		</graphicData>
+		<techLevel>Ultra<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>0.7<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>1150<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+		</statBases>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-65<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>handle<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Poke</li>
+				</capacities>
+				<power>6<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.6<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>head<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+				</capacities>
+				<power>10<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.6<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+				<extraMeleeDamages><!-- Дополнительные типы урона при ударе (EMP, Stun) -->
+					<li>
+						<def>Stun</def>
+						<amount>8</amount>
+					</li>
+				</extraMeleeDamages>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="Bamba_BaseMeleeWeapon_Sharp_NoRecipe"><!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>Bamba_Melee_Ultra_Spear<!-- Уникальный внутренний идентификатор Def в коде --></defName>
+		<label>ultra spear<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+		<description>A high-tech spear optimized for deep puncture performance with low recovery time.<!-- Подробное текстовое описание предмета/технологии --></description>
+		<graphicData><!-- Параметры графического отображения предмета -->
+			<texPath>Bamba_Melee/Weapons/Spear_Ultra<!-- Относительный путь к текстуре в папке Textures --></texPath>
+			<graphicClass>Graphic_Single<!-- Класс графического рисовщика Unity --></graphicClass>
+			<drawSize>2.0<!-- Масштаб отрисовки текстуры предмета --></drawSize>
+		</graphicData>
+		<techLevel>Ultra<!-- Технологический уровень предмета/снаряжения --></techLevel>
+		<statBases><!-- Базовые характеристики предмета -->
+			<Mass>1.0<!-- Масса предмета в килограммах --></Mass>
+			<MarketValue>1260<!-- Базовая рыночная стоимость в серебре --></MarketValue>
+			<VEF_MeleeWeaponRange MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">2.84</VEF_MeleeWeaponRange>
+		</statBases>
+		<weaponTags><!-- Теги привязки оружия к фракциям и механикам -->
+			<li MayRequire="ceteam.combatextended">CE_OneHandedWeapon</li>
+		</weaponTags>
+		<equippedAngleOffset>-25<!-- Угол наклона текстуры при удержании в руках --></equippedAngleOffset>
+		<tools><!-- Список типов атак/ударов оружием ближнего боя -->
+			<li>
+				<label>shaft<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>20<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<cooldownTime>1.9<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+			<li>
+				<label>point<!-- Отображаемое название предмета/рецепта в интерфейсе --></label>
+				<capacities><!-- Тип нанесения урона (Stab, Cut, Blunt) -->
+					<li>Stab</li>
+				</capacities>
+				<power>35<!-- Базовая сила/урон конкретного типа атаки --></power>
+				<armorPenetration>0.9<!-- Коэффициент пробития брони при ударе --></armorPenetration>
+				<cooldownTime>1.9<!-- Задержка/перезарядка между ударами в секундах --></cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+</Defs>

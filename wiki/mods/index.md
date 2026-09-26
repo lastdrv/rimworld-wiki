@@ -129,7 +129,8 @@
 | **Rimsenal - Security Pack** | `rimsenal.security` | `1.6` (`736139206`) | 📄 **[rimsenal_security.md](rimsenal_security.md)** |
 | **Русский язык для Rimsenal Core** | `RU.rimsenal.core` | `1.6` (`2590686872`) | 📄 **[ru_rimsenal_core.md](ru_rimsenal_core.md)** |
 | **Русский язык для Rimsenal Security** | `RU.rimsenal.security` | `1.6` (`2590743724`) | 📄 **[ru_rimsenal_security.md](ru_rimsenal_security.md)** |
-| **Melee Weapons For All Tech Levels** | `bamba.allbambamelee.tiered` | `1.6` (`3726524693`) | 📄 **[melee_weapons_for_all_tech_levels.md](melee_weapons_for_all_tech_levels.md)** |
+| **Melee Weapons For All Tech Levels** | `bamba.allbambamelee.tiered` | `1.6` (`3726524693`) | 📄 **[melee_weapons_for_all_tech_levels](melee_weapons_for_all_tech_levels/melee_weapons_for_all_tech_levels.md)** |
+
 | **Melee Weapons RU Translation** | `Darklinechf.RussianTranslation.RU` | `1.6` (`3787052721`) | 📄 **[ru_melee_weapons_for_all_tech_levels.md](ru_melee_weapons_for_all_tech_levels.md)** |
 | **Turrets For All Tech Levels** | `bambaryla.AllBambaTurrets` | `1.6` (`3800286808`) | 📄 **[turrets_for_all_tech_levels.md](turrets_for_all_tech_levels.md)** |
 

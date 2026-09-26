@@ -58,14 +58,15 @@
 ## 7. Дополнительная важная информация
 * **Баланс**: Высокие тиры оружия (Quasar, Solar, Tenebral) требуют редких компонентов и передовых технологий, но компенсируют это огромным уроном и бронепробитием.
 * **Совместимость**: Благодаря использованию стандартных тегов RimWorld и патчей CE мод не вызывает конфликтов при сборке с другими оружейными паками.
+* **Раздел «Объяснение XML»**: В поддиректории `Defs/` данного каталога мода развернуто дерево комментированных XML-файлов параметров (Defs) с русскоязычным описанием назначения тегов.
 
 ---
 
 ## 8. Примечания и технические данные
 * **Ключевые XML-файлы**:
-  * `1.6/Defs/ThingDefs_Misc/Bamba_Melee_Weapons_*.xml`
-  * `1.6/Defs/ThingDefs_Misc/Bamba_Melee_Shields.xml`
-  * `1.6/Defs/RecipeDefs/Bamba_Melee_Recipes.xml`
-  * `1.6/Defs/ResearchProjectDefs/Bamba_Melee_Research.xml`
+  * `Defs/ThingDefs_Misc/Bamba_Melee_Weapons_Base.xml`
+  * `Defs/ThingDefs_Misc/Bamba_Melee_Shields.xml`
+  * `Defs/RecipeDefs/Bamba_Melee_Recipes.xml`
+  * `Defs/ResearchProjectDefs/Bamba_Melee_Research.xml`
 * **Структура именования Defs**:
   * Префикс `Bamba_Melee_` + уровень (`Industrial`, `Spacer`, `Ultra`, `Solar`, `Quasar`, `Tenebral`) + тип (`Gladius`, `Longsword`, `Hammer`, `Spear`, `Mace`, `Baton`, `Shield`).
