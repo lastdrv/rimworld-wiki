@@ -4,9 +4,11 @@
 |---|---|
 | **Полное название** | EndlessGrowth |
 | **Идентификатор (`packageId`)** | `SlimeSenpai.EndlessGrowth` |
+| **Идентификатор Workshop (ID)** | `2894613990` |
 | **Автор** | Slime-Senpai |
 | **Версия мода / Поддержка** | 1.4, 1.5, **1.6** *(исследуемая)* |
 | **Официальный репозиторий** | [GitHub EndlessGrowth](https://github.com/Slime-Senpai/EndlessGrowth) |
+
 
 ---
 
