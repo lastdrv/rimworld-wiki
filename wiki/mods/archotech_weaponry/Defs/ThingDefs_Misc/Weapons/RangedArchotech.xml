@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs> <!-- Корневой контейнер описаний (Defs) -->
+
+	<!-- ==== Archotech Minigun ==== -->
+	<ThingDef ParentName="BaseGunWithQuality"> <!-- Определение предмета/сущности (ThingDef) -->
+		<defName>AW_ArchotechMinigun</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>archotech minigun</label> <!-- Отображаемое наименование -->
+		<description>A heavy, powerful gun made by a mysterious archotech. This weapon is capable of dealing massive, devastating damage to any kind of target with its rapid fire rate.</description> <!-- Текстовое описание предмета или эффекта -->
+		<graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Weapons/AW_ArchotechMinigun</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+    <techLevel>Archotech</techLevel> <!-- Технологический уровень предмета -->
+	<smeltable>False</smeltable> <!-- Возможность переплавки предмета на ресурсы -->
+    <soundInteract>Interact_Rifle</soundInteract> <!-- Звук экипировки/взятия в руки -->
+    <weaponTags> <!-- Теги оружия для экипировки и генерации -->
+      <li>RangedArchotech</li> <!-- Элемент списка -->
+    </weaponTags>
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="ArchotechWeaponry.Comps.CompProperties_ArchotechWeapon"> <!-- Компонент уникальной механики и способностей архотек-оружия -->
+        <SelfNecrosisSeverity>0.25</SelfNecrosisSeverity> <!-- Тяжесть некроза, наносимая владельцу оружия при использовании -->
+      </li>
+    </comps>
+    <statBases> <!-- Базовые характеристики объекта -->
+    	<MarketValue>4240</MarketValue> <!-- Рыночная стоимость предмета в серебре -->
+    	<Mass>9</Mass> <!-- Масса предмета в килограммах -->
+ <AccuracyTouch>0.35</AccuracyTouch> <!-- Точность стрельбы в упор -->
+      <AccuracyShort>0.45</AccuracyShort> <!-- Точность стрельбы на короткой дистанции -->
+      <AccuracyMedium>0.45</AccuracyMedium> <!-- Точность стрельбы на средней дистанции -->
+      <AccuracyLong>0.30</AccuracyLong> <!-- Точность стрельбы на дальней дистанции -->
+      <RangedWeapon_Cooldown>2.33</RangedWeapon_Cooldown> <!-- Время перезарядки оружия между очередями -->
+    </statBases>
+    <verbs> <!-- Список вербов (режимов действия/стрельбы) -->
+      <li> <!-- Элемент списка -->
+        <verbClass>Verb_Shoot</verbClass> <!-- C#-класс выполнения действия/стрельбы -->
+        <hasStandardCommand>true</hasStandardCommand> <!-- Наличие стандартной кнопки команды выстрела -->
+        <defaultProjectile>AW_Bullet_ArchotechMinigun</defaultProjectile> <!-- Снаряд по умолчанию -->
+        <warmupTime>2.33</warmupTime> <!-- Время прицеливания перед выстрелом в секундах -->
+        <range>34</range> <!-- Максимальная дальность стрельбы в клетках -->
+        <soundCast>AW_GunLightShoot</soundCast> <!-- Звук выстрела -->
+        <soundCastTail>GunTail_Medium</soundCastTail> <!-- Эхо-хвост звука выстрела -->
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots> <!-- Интервал между выстрелами в очереди (в тиках) -->
+        <burstShotCount>35</burstShotCount> <!-- Количество выстрелов в одной очереди -->
+        <muzzleFlashScale>9</muzzleFlashScale> <!-- Размер дульной вспышки -->
+      </li>
+    </verbs>
+    <modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+      <li Class="ArchotechWeaponry.Defs.ArchotechDamageExtension"> <!-- Расширение параметров наносимых спец-эффектов/некроза при атаке -->
+        <nonLethalHediffToApplyOnOrganics>VoidToxin</nonLethalHediffToApplyOnOrganics> <!-- Нелетальное состояние, накладываемое на органиков -->
+        <nonLethalSeverityPerHit>0.07</nonLethalSeverityPerHit> <!-- Тяжесть нелетального состояния за одно попадание -->
+        <lethalHediffToApplyOnOrganics>VoidNecrosisTemp</lethalHediffToApplyOnOrganics> <!-- Летальное состояние, накладываемое на органиков -->
+        <lethalSeverityPerHit>0.05</lethalSeverityPerHit> <!-- Тяжесть летального состояния за одно попадание -->
+      </li>
+    </modExtensions>
+    <tools> <!-- Список способов нанесения атак в ближнем бою -->
+      <li> <!-- Элемент списка -->
+        <label>stock</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <label>barrel</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+          <li>Poke</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet"> <!-- Определение предмета/сущности (ThingDef) -->
+    <defName>AW_Bullet_ArchotechMinigun</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>archotech minigun bullet</label> <!-- Отображаемое наименование -->
+    <projectile> <!-- Характеристики и свойства снаряда -->
+      <damageDef>Bullet</damageDef> <!-- Тип наносимого урона -->
+      <damageAmountBase>8</damageAmountBase> <!-- Базовый объем урона -->
+      <stoppingPower>0.5</stoppingPower> <!-- Останавливающее действие снаряда -->
+      <armorPenetrationBase>0.35</armorPenetrationBase> <!-- Базовый коэффициент бронепробития -->
+      <speed>110</speed> <!-- Скорость полета снаряда -->
+    </projectile>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Projectile/Shot_Archotech</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+  </ThingDef>
+
+	<!-- ==== Archotech Shotgun ==== -->
+	<ThingDef ParentName="BaseGunWithQuality"> <!-- Определение предмета/сущности (ThingDef) -->
+		<defName>AW_ArchotechShotgun</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>archotech shotgun</label> <!-- Отображаемое наименование -->
+		<description>A powerful shotgun-like weapon crafted by a mysterious archotech. This weapon is capable of shooting powerful blasts that can obliterate anything within a relatively short distance.</description> <!-- Текстовое описание предмета или эффекта -->
+		<graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Weapons/AW_ArchotechShotgun</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+    <techLevel>Archotech</techLevel> <!-- Технологический уровень предмета -->
+	<smeltable>False</smeltable> <!-- Возможность переплавки предмета на ресурсы -->
+    <soundInteract>Interact_Rifle</soundInteract> <!-- Звук экипировки/взятия в руки -->
+    <weaponTags> <!-- Теги оружия для экипировки и генерации -->
+      <li>RangedArchotech</li> <!-- Элемент списка -->
+    </weaponTags>
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="ArchotechWeaponry.Comps.CompProperties_ArchotechWeapon"> <!-- Компонент уникальной механики и способностей архотек-оружия -->
+        <SelfNecrosisSeverity>0.25</SelfNecrosisSeverity> <!-- Тяжесть некроза, наносимая владельцу оружия при использовании -->
+      </li>
+    </comps>
+    <statBases> <!-- Базовые характеристики объекта -->
+    	<MarketValue>2300</MarketValue> <!-- Рыночная стоимость предмета в серебре -->
+    	<Mass>3.8</Mass> <!-- Масса предмета в килограммах -->
+    	<AccuracyTouch>0.75</AccuracyTouch> <!-- Точность стрельбы в упор -->
+      <AccuracyShort>0.70</AccuracyShort> <!-- Точность стрельбы на короткой дистанции -->
+      <AccuracyMedium>0.60</AccuracyMedium> <!-- Точность стрельбы на средней дистанции -->
+      <AccuracyLong>0.45</AccuracyLong> <!-- Точность стрельбы на дальней дистанции -->
+      <RangedWeapon_Cooldown>0.83	</RangedWeapon_Cooldown> <!-- Время перезарядки оружия между очередями -->
+    </statBases>
+    <modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+      <li Class="ArchotechWeaponry.Defs.ArchotechDamageExtension"> <!-- Расширение параметров наносимых спец-эффектов/некроза при атаке -->
+        <nonLethalHediffToApplyOnOrganics>VoidToxin</nonLethalHediffToApplyOnOrganics> <!-- Нелетальное состояние, накладываемое на органиков -->
+        <nonLethalSeverityPerHit>0.30</nonLethalSeverityPerHit> <!-- Тяжесть нелетального состояния за одно попадание -->
+        <lethalHediffToApplyOnOrganics>VoidNecrosisTemp</lethalHediffToApplyOnOrganics> <!-- Летальное состояние, накладываемое на органиков -->
+        <lethalSeverityPerHit>0.20</lethalSeverityPerHit> <!-- Тяжесть летального состояния за одно попадание -->
+      </li>
+    </modExtensions>
+    <verbs> <!-- Список вербов (режимов действия/стрельбы) -->
+      <li> <!-- Элемент списка -->
+        <verbClass>Verb_Shoot</verbClass> <!-- C#-класс выполнения действия/стрельбы -->
+        <hasStandardCommand>true</hasStandardCommand> <!-- Наличие стандартной кнопки команды выстрела -->
+        <defaultProjectile>AW_Bullet_ArchotechShotgun</defaultProjectile> <!-- Снаряд по умолчанию -->
+        <warmupTime>0.75</warmupTime> <!-- Время прицеливания перед выстрелом в секундах -->
+        <range>20</range> <!-- Максимальная дальность стрельбы в клетках -->
+        <soundCast>AW_ShotgunShoot</soundCast> <!-- Звук выстрела -->
+        <soundCastTail>GunTail_Medium</soundCastTail> <!-- Эхо-хвост звука выстрела -->
+        <ticksBetweenBurstShots>12</ticksBetweenBurstShots> <!-- Интервал между выстрелами в очереди (в тиках) -->
+        <burstShotCount>2</burstShotCount> <!-- Количество выстрелов в одной очереди -->
+        <muzzleFlashScale>9</muzzleFlashScale> <!-- Размер дульной вспышки -->
+      </li>
+    </verbs>
+    <tools> <!-- Список способов нанесения атак в ближнем бою -->
+      <li> <!-- Элемент списка -->
+        <label>stock</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <label>barrel</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+          <li>Poke</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet"> <!-- Определение предмета/сущности (ThingDef) -->
+    <defName>AW_Bullet_ArchotechShotgun</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>archotech bullet</label> <!-- Отображаемое наименование -->
+    <projectile> <!-- Характеристики и свойства снаряда -->
+      <damageDef>Bullet</damageDef> <!-- Тип наносимого урона -->
+      <damageAmountBase>20</damageAmountBase> <!-- Базовый объем урона -->
+      <stoppingPower>3.5</stoppingPower> <!-- Останавливающее действие снаряда -->
+      <armorPenetrationBase>0.50</armorPenetrationBase> <!-- Базовый коэффициент бронепробития -->
+      <speed>75</speed> <!-- Скорость полета снаряда -->
+    </projectile>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Projectile/Shot_Archotech_shotgun</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+  </ThingDef>
+
+	<!-- ==== Archotech LMG ==== -->
+	<ThingDef ParentName="BaseGunWithQuality"> <!-- Определение предмета/сущности (ThingDef) -->
+		<defName>AW_ArchotechLMG</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>archotech LMG</label> <!-- Отображаемое наименование -->
+		<description>A heavy automatic weapon crafted by a mysterious archotech. This magnificent piece of advanced weapon engineering is capable of shooting powerful slugs at long range, which are extremely lethal and can easily pierce through even the best of armors.</description> <!-- Текстовое описание предмета или эффекта -->
+		<graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Weapons/AW_ArchotechLMG</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+    <techLevel>Archotech</techLevel> <!-- Технологический уровень предмета -->
+	<smeltable>False</smeltable> <!-- Возможность переплавки предмета на ресурсы -->
+    <soundInteract>Interact_Rifle</soundInteract> <!-- Звук экипировки/взятия в руки -->
+    <weaponTags> <!-- Теги оружия для экипировки и генерации -->
+      <li>RangedArchotech</li> <!-- Элемент списка -->
+    </weaponTags>
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="ArchotechWeaponry.Comps.CompProperties_ArchotechWeapon"> <!-- Компонент уникальной механики и способностей архотек-оружия -->
+        <SelfNecrosisSeverity>0.25</SelfNecrosisSeverity> <!-- Тяжесть некроза, наносимая владельцу оружия при использовании -->
+      </li>
+    </comps>
+    <statBases> <!-- Базовые характеристики объекта -->
+    	<MarketValue>2650</MarketValue> <!-- Рыночная стоимость предмета в серебре -->
+    	<Mass>2.6</Mass> <!-- Масса предмета в килограммах -->
+ <AccuracyTouch>0.50</AccuracyTouch> <!-- Точность стрельбы в упор -->
+      <AccuracyShort>0.55</AccuracyShort> <!-- Точность стрельбы на короткой дистанции -->
+      <AccuracyMedium>0.40</AccuracyMedium> <!-- Точность стрельбы на средней дистанции -->
+      <AccuracyLong>0.30</AccuracyLong> <!-- Точность стрельбы на дальней дистанции -->
+      <RangedWeapon_Cooldown>1.83</RangedWeapon_Cooldown> <!-- Время перезарядки оружия между очередями -->
+    </statBases>
+    <verbs> <!-- Список вербов (режимов действия/стрельбы) -->
+      <li> <!-- Элемент списка -->
+        <verbClass>Verb_Shoot</verbClass> <!-- C#-класс выполнения действия/стрельбы -->
+        <hasStandardCommand>true</hasStandardCommand> <!-- Наличие стандартной кнопки команды выстрела -->
+        <defaultProjectile>AW_Bullet_ArchotechLMG</defaultProjectile> <!-- Снаряд по умолчанию -->
+        <warmupTime>1.58</warmupTime> <!-- Время прицеливания перед выстрелом в секундах -->
+        <range>30</range> <!-- Максимальная дальность стрельбы в клетках -->
+        <soundCast>AW_GunLightShoot</soundCast> <!-- Звук выстрела -->
+        <soundCastTail>GunTail_Medium</soundCastTail> <!-- Эхо-хвост звука выстрела -->
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots> <!-- Интервал между выстрелами в очереди (в тиках) -->
+        <burstShotCount>16</burstShotCount> <!-- Количество выстрелов в одной очереди -->
+        <muzzleFlashScale>9</muzzleFlashScale> <!-- Размер дульной вспышки -->
+      </li>
+    </verbs>
+    <modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+      <li Class="ArchotechWeaponry.Defs.ArchotechDamageExtension"> <!-- Расширение параметров наносимых спец-эффектов/некроза при атаке -->
+        <nonLethalHediffToApplyOnOrganics>VoidToxin</nonLethalHediffToApplyOnOrganics> <!-- Нелетальное состояние, накладываемое на органиков -->
+        <nonLethalSeverityPerHit>0.10</nonLethalSeverityPerHit> <!-- Тяжесть нелетального состояния за одно попадание -->
+        <lethalHediffToApplyOnOrganics>VoidNecrosisTemp</lethalHediffToApplyOnOrganics> <!-- Летальное состояние, накладываемое на органиков -->
+        <lethalSeverityPerHit>0.07</lethalSeverityPerHit> <!-- Тяжесть летального состояния за одно попадание -->
+      </li>
+    </modExtensions>
+    <tools> <!-- Список способов нанесения атак в ближнем бою -->
+      <li> <!-- Элемент списка -->
+        <label>stock</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <label>barrel</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+          <li>Poke</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet"> <!-- Определение предмета/сущности (ThingDef) -->
+    <defName>AW_Bullet_ArchotechLMG</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>arcotech LMG bullet</label> <!-- Отображаемое наименование -->
+    <projectile> <!-- Характеристики и свойства снаряда -->
+      <damageDef>Bullet</damageDef> <!-- Тип наносимого урона -->
+      <damageAmountBase>8</damageAmountBase> <!-- Базовый объем урона -->
+      <stoppingPower>1.5</stoppingPower> <!-- Останавливающее действие снаряда -->
+      <armorPenetrationBase>0.45</armorPenetrationBase> <!-- Базовый коэффициент бронепробития -->
+      <speed>100</speed> <!-- Скорость полета снаряда -->
+    </projectile>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Projectile/Shot_Archotech</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+  </ThingDef>
+
+	<!-- ==== Archotech Pistol ==== -->
+	<ThingDef ParentName="BaseGunWithQuality"> <!-- Определение предмета/сущности (ThingDef) -->
+		<defName>AW_ArchotechPistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>archotech pistol</label> <!-- Отображаемое наименование -->
+		<description>A small, yet advanced and powerful pistol crafted by a mysterious archotech. These pistols are very rarely seen wielded by mysterious or very powerful personalities, since they can deal heavy damage despite being so small.</description> <!-- Текстовое описание предмета или эффекта -->
+		<graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Weapons/AW_ArchotechPistol</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+    <techLevel>Archotech</techLevel> <!-- Технологический уровень предмета -->
+	<smeltable>False</smeltable> <!-- Возможность переплавки предмета на ресурсы -->
+    <soundInteract>Interact_Rifle</soundInteract> <!-- Звук экипировки/взятия в руки -->
+    <weaponTags> <!-- Теги оружия для экипировки и генерации -->
+      <li>RangedArchotech</li> <!-- Элемент списка -->
+    </weaponTags>
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="ArchotechWeaponry.Comps.CompProperties_ArchotechWeapon"> <!-- Компонент уникальной механики и способностей архотек-оружия -->
+        <SelfNecrosisSeverity>0.25</SelfNecrosisSeverity> <!-- Тяжесть некроза, наносимая владельцу оружия при использовании -->
+      </li>
+    </comps>
+    <statBases> <!-- Базовые характеристики объекта -->
+    	<MarketValue>1300</MarketValue> <!-- Рыночная стоимость предмета в серебре -->
+    	<Mass>0.7</Mass> <!-- Масса предмета в килограммах -->
+    	<AccuracyTouch>0.90</AccuracyTouch> <!-- Точность стрельбы в упор -->
+      <AccuracyShort>0.75</AccuracyShort> <!-- Точность стрельбы на короткой дистанции -->
+      <AccuracyMedium>0.50</AccuracyMedium> <!-- Точность стрельбы на средней дистанции -->
+      <AccuracyLong>0.35</AccuracyLong> <!-- Точность стрельбы на дальней дистанции -->
+      <RangedWeapon_Cooldown>1.17</RangedWeapon_Cooldown> <!-- Время перезарядки оружия между очередями -->
+    </statBases>
+    <verbs> <!-- Список вербов (режимов действия/стрельбы) -->
+      <li> <!-- Элемент списка -->
+        <verbClass>Verb_Shoot</verbClass> <!-- C#-класс выполнения действия/стрельбы -->
+        <hasStandardCommand>true</hasStandardCommand> <!-- Наличие стандартной кнопки команды выстрела -->
+        <defaultProjectile>AW_Bullet_ArchotechPistol</defaultProjectile> <!-- Снаряд по умолчанию -->
+        <warmupTime>0.17</warmupTime> <!-- Время прицеливания перед выстрелом в секундах -->
+        <range>25</range> <!-- Максимальная дальность стрельбы в клетках -->
+        <soundCast>AW_GunShoot</soundCast> <!-- Звук выстрела -->
+        <soundCastTail>GunTail_Medium</soundCastTail> <!-- Эхо-хвост звука выстрела -->
+        <ticksBetweenBurstShots>60</ticksBetweenBurstShots> <!-- Интервал между выстрелами в очереди (в тиках) -->
+        <burstShotCount>2</burstShotCount> <!-- Количество выстрелов в одной очереди -->
+        <muzzleFlashScale>9</muzzleFlashScale> <!-- Размер дульной вспышки -->
+      </li>
+    </verbs>
+    <modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+      <li Class="ArchotechWeaponry.Defs.ArchotechDamageExtension"> <!-- Расширение параметров наносимых спец-эффектов/некроза при атаке -->
+        <nonLethalHediffToApplyOnOrganics>VoidToxin</nonLethalHediffToApplyOnOrganics> <!-- Нелетальное состояние, накладываемое на органиков -->
+        <nonLethalSeverityPerHit>0.09</nonLethalSeverityPerHit> <!-- Тяжесть нелетального состояния за одно попадание -->
+        <lethalHediffToApplyOnOrganics>VoidNecrosisTemp</lethalHediffToApplyOnOrganics> <!-- Летальное состояние, накладываемое на органиков -->
+        <lethalSeverityPerHit>0.05</lethalSeverityPerHit> <!-- Тяжесть летального состояния за одно попадание -->
+      </li>
+    </modExtensions>
+    <tools> <!-- Список способов нанесения атак в ближнем бою -->
+      <li> <!-- Элемент списка -->
+        <label>stock</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <label>barrel</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+          <li>Poke</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet"> <!-- Определение предмета/сущности (ThingDef) -->
+    <defName>AW_Bullet_ArchotechPistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>archotech pistol bullet</label> <!-- Отображаемое наименование -->
+    <projectile> <!-- Характеристики и свойства снаряда -->
+      <damageDef>Bullet</damageDef> <!-- Тип наносимого урона -->
+      <damageAmountBase>8</damageAmountBase> <!-- Базовый объем урона -->
+      <stoppingPower>1</stoppingPower> <!-- Останавливающее действие снаряда -->
+      <armorPenetrationBase>0.45</armorPenetrationBase> <!-- Базовый коэффициент бронепробития -->
+      <speed>90</speed> <!-- Скорость полета снаряда -->
+    </projectile>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Projectile/Shot_Archotech</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+  </ThingDef>
+
+	<!-- ==== Archotech Voidlauncher ==== -->
+	<ThingDef ParentName="BaseGunWithQuality"> <!-- Определение предмета/сущности (ThingDef) -->
+		<defName>AW_ArchotechVoidlauncher</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>archotech voidlauncher</label> <!-- Отображаемое наименование -->
+		<description>A big, heavy and powerful piece of advanced weaponry crafted by a powerful and mysterious archotech. This extremely lethal weapon is capable of launching heavy devastating projectiles at long distances, which can completely destroy anything they collide with, leaving behind nothing but dust.</description> <!-- Текстовое описание предмета или эффекта -->
+		<graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Weapons/AW_ArchotechVoidLauncher</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+    <techLevel>Archotech</techLevel> <!-- Технологический уровень предмета -->
+	<smeltable>False</smeltable> <!-- Возможность переплавки предмета на ресурсы -->
+    <soundInteract>Interact_Rifle</soundInteract> <!-- Звук экипировки/взятия в руки -->
+    <weaponTags> <!-- Теги оружия для экипировки и генерации -->
+      <li>RangedArchotech</li> <!-- Элемент списка -->
+    </weaponTags>
+    <tickerType>Normal</tickerType> <!-- Режим обновления логики объекта (например, Normal) -->
+    <statBases> <!-- Базовые характеристики объекта -->
+    	<MarketValue>10000</MarketValue> <!-- Рыночная стоимость предмета в серебре -->
+    	<Mass>10</Mass> <!-- Масса предмета в килограммах -->
+      <RangedWeapon_Cooldown>2.33</RangedWeapon_Cooldown> <!-- Время перезарядки оружия между очередями -->
+    </statBases>
+    <verbs> <!-- Список вербов (режимов действия/стрельбы) -->
+      <li> <!-- Элемент списка -->
+        <verbClass>Verb_Shoot</verbClass> <!-- C#-класс выполнения действия/стрельбы -->
+        <hasStandardCommand>true</hasStandardCommand> <!-- Наличие стандартной кнопки команды выстрела -->
+        <defaultProjectile>AW_Bullet_ArchotechVoidlauncher</defaultProjectile> <!-- Снаряд по умолчанию -->
+        <warmupTime>5</warmupTime> <!-- Время прицеливания перед выстрелом в секундах -->
+        <range>150</range> <!-- Максимальная дальность стрельбы в клетках -->
+        <soundCast>AW_VoidLauncherShoot</soundCast> <!-- Звук выстрела -->
+        <soundCastTail>GunTail_Medium</soundCastTail> <!-- Эхо-хвост звука выстрела -->
+        <onlyManualCast>true</onlyManualCast> <!-- Ручной режим стрельбы (только по приказанию) -->
+        <muzzleFlashScale>9</muzzleFlashScale> <!-- Размер дульной вспышки -->
+      </li>
+    </verbs>
+    <equippedAngleOffset>45</equippedAngleOffset> <!-- Угол наклона спрайта оружия при ношении -->
+    <tools> <!-- Список способов нанесения атак в ближнем бою -->
+      <li> <!-- Элемент списка -->
+        <label>stock</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <label>barrel</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+          <li>Poke</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+    </tools>
+    <modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+      <li Class="ArchotechWeaponry.Defs.ArchotechDamageExtension"> <!-- Расширение параметров наносимых спец-эффектов/некроза при атаке -->
+        <nonLethalHediffToApplyOnOrganics>VoidToxin</nonLethalHediffToApplyOnOrganics> <!-- Нелетальное состояние, накладываемое на органиков -->
+        <nonLethalSeverityPerHit>1</nonLethalSeverityPerHit> <!-- Тяжесть нелетального состояния за одно попадание -->
+        <lethalHediffToApplyOnOrganics>VoidNecrosisTemp</lethalHediffToApplyOnOrganics> <!-- Летальное состояние, накладываемое на органиков -->
+        <lethalSeverityPerHit>1</lethalSeverityPerHit> <!-- Тяжесть летального состояния за одно попадание -->
+      </li>
+    </modExtensions>
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="ArchotechWeaponry.Comps.CompProperties_LimitedUsage"> <!-- Компонент ограниченного количества зарядов оружия -->
+        <initialCharges>6</initialCharges> <!-- Начальное количество зарядов оружия -->
+      </li>
+      <li Class="ArchotechWeaponry.Comps.CompProperties_ArchotechWeapon"> <!-- Компонент уникальной механики и способностей архотек-оружия -->
+        <SelfNecrosisSeverity>0.25</SelfNecrosisSeverity> <!-- Тяжесть некроза, наносимая владельцу оружия при использовании -->
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet"> <!-- Определение предмета/сущности (ThingDef) -->
+    <defName>AW_Bullet_ArchotechVoidlauncher</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>archotech voidlauncher bullet</label> <!-- Отображаемое наименование -->
+    <projectile> <!-- Характеристики и свойства снаряда -->
+      <damageDef>Bullet</damageDef> <!-- Тип наносимого урона -->
+      <damageAmountBase>15</damageAmountBase> <!-- Базовый объем урона -->
+      <stoppingPower>2</stoppingPower> <!-- Останавливающее действие снаряда -->
+      <armorPenetrationBase>0.20</armorPenetrationBase> <!-- Базовый коэффициент бронепробития -->
+      <speed>70</speed> <!-- Скорость полета снаряда -->
+    </projectile>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Projectile/Shot_Archotech_Voidball</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="ArchotechWeaponry.Comps.CompProperties_HomingProjectile"> <!-- Компонент самонаведения снаряда на цель -->
+        <homingChance>1</homingChance> <!-- Вероятность самонаведения снаряда -->
+      </li>
+  </comps>
+  </ThingDef>
+
+	<!-- ==== Archotech Crossbow ==== -->
+	<ThingDef ParentName="BaseGunWithQuality"> <!-- Определение предмета/сущности (ThingDef) -->
+		<defName>AW_ArchotechCrossbow</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>archotech crossbow</label> <!-- Отображаемое наименование -->
+		<description>An ancient crossbow-like weapon crafted by a mysterious archotech. These weapons fire piercing arrows that can easily destroy armor and cut through flesh and bone as a sharp needle pierces through cloth.</description> <!-- Текстовое описание предмета или эффекта -->
+		<graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Weapons/AW_ArchotechCrossbow</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+    <techLevel>Archotech</techLevel> <!-- Технологический уровень предмета -->
+	<smeltable>False</smeltable> <!-- Возможность переплавки предмета на ресурсы -->
+    <soundInteract>Interact_Rifle</soundInteract> <!-- Звук экипировки/взятия в руки -->
+    <weaponTags> <!-- Теги оружия для экипировки и генерации -->
+      <li>RangedArchotech</li> <!-- Элемент списка -->
+    </weaponTags>
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="ArchotechWeaponry.Comps.CompProperties_ArchotechWeapon"> <!-- Компонент уникальной механики и способностей архотек-оружия -->
+        <SelfNecrosisSeverity>0.25</SelfNecrosisSeverity> <!-- Тяжесть некроза, наносимая владельцу оружия при использовании -->
+      </li>
+    </comps>
+    <statBases> <!-- Базовые характеристики объекта -->
+    	<MarketValue>2300</MarketValue> <!-- Рыночная стоимость предмета в серебре -->
+    	<Mass>2.6</Mass> <!-- Масса предмета в килограммах -->
+    	<AccuracyTouch>0.60</AccuracyTouch> <!-- Точность стрельбы в упор -->
+      <AccuracyShort>0.80</AccuracyShort> <!-- Точность стрельбы на короткой дистанции -->
+      <AccuracyMedium>0.75</AccuracyMedium> <!-- Точность стрельбы на средней дистанции -->
+      <AccuracyLong>0.30</AccuracyLong> <!-- Точность стрельбы на дальней дистанции -->
+      <RangedWeapon_Cooldown>3.17</RangedWeapon_Cooldown> <!-- Время перезарядки оружия между очередями -->
+    </statBases>
+    <verbs> <!-- Список вербов (режимов действия/стрельбы) -->
+      <li> <!-- Элемент списка -->
+        <verbClass>Verb_Shoot</verbClass> <!-- C#-класс выполнения действия/стрельбы -->
+        <hasStandardCommand>true</hasStandardCommand> <!-- Наличие стандартной кнопки команды выстрела -->
+        <defaultProjectile>AW_Bullet_ArchotechCrossbow</defaultProjectile> <!-- Снаряд по умолчанию -->
+        <warmupTime>2.67</warmupTime> <!-- Время прицеливания перед выстрелом в секундах -->
+        <range>26</range> <!-- Максимальная дальность стрельбы в клетках -->
+        <soundCast>AW_BowShoot</soundCast> <!-- Звук выстрела -->
+        <soundCastTail>GunTail_Medium</soundCastTail> <!-- Эхо-хвост звука выстрела -->
+        <muzzleFlashScale>9</muzzleFlashScale> <!-- Размер дульной вспышки -->
+      </li>
+    </verbs>
+    <modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+      <li Class="ArchotechWeaponry.Defs.ArchotechDamageExtension"> <!-- Расширение параметров наносимых спец-эффектов/некроза при атаке -->
+        <nonLethalHediffToApplyOnOrganics>VoidToxin</nonLethalHediffToApplyOnOrganics> <!-- Нелетальное состояние, накладываемое на органиков -->
+        <nonLethalSeverityPerHit>0.20</nonLethalSeverityPerHit> <!-- Тяжесть нелетального состояния за одно попадание -->
+        <lethalHediffToApplyOnOrganics>VoidNecrosisTemp</lethalHediffToApplyOnOrganics> <!-- Летальное состояние, накладываемое на органиков -->
+        <lethalSeverityPerHit>0.15</lethalSeverityPerHit> <!-- Тяжесть летального состояния за одно попадание -->
+      </li>
+    </modExtensions>
+    <tools> <!-- Список способов нанесения атак в ближнем бою -->
+      <li> <!-- Элемент списка -->
+        <label>stock</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <label>barrel</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+          <li>Poke</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet"> <!-- Определение предмета/сущности (ThingDef) -->
+    <defName>AW_Bullet_ArchotechCrossbow</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>archotech crossbow bolt</label> <!-- Отображаемое наименование -->
+    <projectile> <!-- Характеристики и свойства снаряда -->
+      <damageDef>Bullet</damageDef> <!-- Тип наносимого урона -->
+      <damageAmountBase>25</damageAmountBase> <!-- Базовый объем урона -->
+      <stoppingPower>1.5</stoppingPower> <!-- Останавливающее действие снаряда -->
+      <armorPenetrationBase>0.80</armorPenetrationBase> <!-- Базовый коэффициент бронепробития -->
+      <speed>75</speed> <!-- Скорость полета снаряда -->
+    </projectile>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Projectile/Shot_Archotech_voidbolt</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+  </ThingDef>
+
+	<!-- ==== Archotech Bow ==== -->
+	<ThingDef ParentName="BaseGunWithQuality"> <!-- Определение предмета/сущности (ThingDef) -->
+		<defName>AW_ArchotechBow</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>archotech bow</label> <!-- Отображаемое наименование -->
+		<description>A great bow-like weapon crafted by a mysterious archotech. These weapons shoot fast, large bolts that can pierce easily through armor and flesh. In the hands of a trained marksman, this weapon can become exceptionally lethal and dangerous.</description> <!-- Текстовое описание предмета или эффекта -->
+		<graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Weapons/AW_ArchotechBow</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+    <techLevel>Archotech</techLevel> <!-- Технологический уровень предмета -->
+	<smeltable>False</smeltable> <!-- Возможность переплавки предмета на ресурсы -->
+    <soundInteract>Interact_Rifle</soundInteract> <!-- Звук экипировки/взятия в руки -->
+    <weaponTags> <!-- Теги оружия для экипировки и генерации -->
+      <li>RangedArchotech</li> <!-- Элемент списка -->
+    </weaponTags>
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="ArchotechWeaponry.Comps.CompProperties_ArchotechWeapon"> <!-- Компонент уникальной механики и способностей архотек-оружия -->
+        <SelfNecrosisSeverity>0.25</SelfNecrosisSeverity> <!-- Тяжесть некроза, наносимая владельцу оружия при использовании -->
+      </li>
+    </comps>
+    <statBases> <!-- Базовые характеристики объекта -->
+    	<MarketValue>2000</MarketValue> <!-- Рыночная стоимость предмета в серебре -->
+    	<Mass>1.3</Mass> <!-- Масса предмета в килограммах -->
+    	<AccuracyTouch>0.40</AccuracyTouch> <!-- Точность стрельбы в упор -->
+      <AccuracyShort>0.70</AccuracyShort> <!-- Точность стрельбы на короткой дистанции -->
+      <AccuracyMedium>0.60</AccuracyMedium> <!-- Точность стрельбы на средней дистанции -->
+      <AccuracyLong>0.20</AccuracyLong> <!-- Точность стрельбы на дальней дистанции -->
+      <RangedWeapon_Cooldown>2.33</RangedWeapon_Cooldown> <!-- Время перезарядки оружия между очередями -->
+    </statBases>
+    <verbs> <!-- Список вербов (режимов действия/стрельбы) -->
+      <li> <!-- Элемент списка -->
+        <verbClass>Verb_Shoot</verbClass> <!-- C#-класс выполнения действия/стрельбы -->
+        <hasStandardCommand>true</hasStandardCommand> <!-- Наличие стандартной кнопки команды выстрела -->
+        <defaultProjectile>AW_Bullet_ArchotechBow</defaultProjectile> <!-- Снаряд по умолчанию -->
+        <warmupTime>1.17</warmupTime> <!-- Время прицеливания перед выстрелом в секундах -->
+        <range>23</range> <!-- Максимальная дальность стрельбы в клетках -->
+        <soundCast>AW_BowShoot</soundCast> <!-- Звук выстрела -->
+        <soundCastTail>GunTail_Medium</soundCastTail> <!-- Эхо-хвост звука выстрела -->
+        <muzzleFlashScale>9</muzzleFlashScale> <!-- Размер дульной вспышки -->
+      </li>
+    </verbs>
+    <modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+      <li Class="ArchotechWeaponry.Defs.ArchotechDamageExtension"> <!-- Расширение параметров наносимых спец-эффектов/некроза при атаке -->
+        <nonLethalHediffToApplyOnOrganics>VoidToxin</nonLethalHediffToApplyOnOrganics> <!-- Нелетальное состояние, накладываемое на органиков -->
+        <nonLethalSeverityPerHit>0.15</nonLethalSeverityPerHit> <!-- Тяжесть нелетального состояния за одно попадание -->
+        <lethalHediffToApplyOnOrganics>VoidNecrosisTemp</lethalHediffToApplyOnOrganics> <!-- Летальное состояние, накладываемое на органиков -->
+        <lethalSeverityPerHit>0.10</lethalSeverityPerHit> <!-- Тяжесть летального состояния за одно попадание -->
+      </li>
+    </modExtensions>
+    <tools> <!-- Список способов нанесения атак в ближнем бою -->
+      <li> <!-- Элемент списка -->
+        <label>stock</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <label>barrel</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+          <li>Poke</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet"> <!-- Определение предмета/сущности (ThingDef) -->
+    <defName>AW_Bullet_ArchotechBow</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>archotech bow arrow</label> <!-- Отображаемое наименование -->
+    <projectile> <!-- Характеристики и свойства снаряда -->
+      <damageDef>Bullet</damageDef> <!-- Тип наносимого урона -->
+      <damageAmountBase>20</damageAmountBase> <!-- Базовый объем урона -->
+      <stoppingPower>1</stoppingPower> <!-- Останавливающее действие снаряда -->
+      <armorPenetrationBase>0.70</armorPenetrationBase> <!-- Базовый коэффициент бронепробития -->
+      <speed>65</speed> <!-- Скорость полета снаряда -->
+    </projectile>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Projectile/Shot_Archotech_Voidarrow</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+  </ThingDef>
+
+	<!-- ==== Archotech SMG ==== -->
+	<ThingDef ParentName="BaseGunWithQuality"> <!-- Определение предмета/сущности (ThingDef) -->
+		<defName>AW_ArchotechSMG</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>archotech smg</label> <!-- Отображаемое наименование -->
+		<description>A light, compact and powerful machine gun crafted by a mysterious archotech. This gun is a masterpiece of weapon engineering that can fire light, fast bullets which can deal heavy damage.</description> <!-- Текстовое описание предмета или эффекта -->
+		<graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Weapons/AW_ArchotechSMG</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+    <techLevel>Archotech</techLevel> <!-- Технологический уровень предмета -->
+	<smeltable>False</smeltable> <!-- Возможность переплавки предмета на ресурсы -->
+    <soundInteract>Interact_Rifle</soundInteract> <!-- Звук экипировки/взятия в руки -->
+    <weaponTags> <!-- Теги оружия для экипировки и генерации -->
+      <li>RangedArchotech</li> <!-- Элемент списка -->
+    </weaponTags>
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="ArchotechWeaponry.Comps.CompProperties_ArchotechWeapon"> <!-- Компонент уникальной механики и способностей архотек-оружия -->
+        <SelfNecrosisSeverity>0.25</SelfNecrosisSeverity> <!-- Тяжесть некроза, наносимая владельцу оружия при использовании -->
+      </li>
+    </comps>
+    <statBases> <!-- Базовые характеристики объекта -->
+    	<MarketValue>2100</MarketValue> <!-- Рыночная стоимость предмета в серебре -->
+    	<Mass>1</Mass> <!-- Масса предмета в килограммах -->
+    	<AccuracyTouch>0.90</AccuracyTouch> <!-- Точность стрельбы в упор -->
+      <AccuracyShort>0.70</AccuracyShort> <!-- Точность стрельбы на короткой дистанции -->
+      <AccuracyMedium>0.40</AccuracyMedium> <!-- Точность стрельбы на средней дистанции -->
+      <AccuracyLong>0.30</AccuracyLong> <!-- Точность стрельбы на дальней дистанции -->
+      <RangedWeapon_Cooldown>1.33</RangedWeapon_Cooldown> <!-- Время перезарядки оружия между очередями -->
+    </statBases>
+    <verbs> <!-- Список вербов (режимов действия/стрельбы) -->
+      <li> <!-- Элемент списка -->
+        <verbClass>Verb_Shoot</verbClass> <!-- C#-класс выполнения действия/стрельбы -->
+        <hasStandardCommand>true</hasStandardCommand> <!-- Наличие стандартной кнопки команды выстрела -->
+        <defaultProjectile>AW_Bullet_ArchotechSMG</defaultProjectile> <!-- Снаряд по умолчанию -->
+        <warmupTime>0.67</warmupTime> <!-- Время прицеливания перед выстрелом в секундах -->
+        <range>28</range> <!-- Максимальная дальность стрельбы в клетках -->
+        <soundCast>AW_GunLightShoot</soundCast> <!-- Звук выстрела -->
+        <soundCastTail>GunTail_Medium</soundCastTail> <!-- Эхо-хвост звука выстрела -->
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots> <!-- Интервал между выстрелами в очереди (в тиках) -->
+        <burstShotCount>4</burstShotCount> <!-- Количество выстрелов в одной очереди -->
+        <muzzleFlashScale>9</muzzleFlashScale> <!-- Размер дульной вспышки -->
+      </li>
+    </verbs>
+    <modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+      <li Class="ArchotechWeaponry.Defs.ArchotechDamageExtension"> <!-- Расширение параметров наносимых спец-эффектов/некроза при атаке -->
+        <nonLethalHediffToApplyOnOrganics>VoidToxin</nonLethalHediffToApplyOnOrganics> <!-- Нелетальное состояние, накладываемое на органиков -->
+        <nonLethalSeverityPerHit>0.07</nonLethalSeverityPerHit> <!-- Тяжесть нелетального состояния за одно попадание -->
+        <lethalHediffToApplyOnOrganics>VoidNecrosisTemp</lethalHediffToApplyOnOrganics> <!-- Летальное состояние, накладываемое на органиков -->
+        <lethalSeverityPerHit>0.05</lethalSeverityPerHit> <!-- Тяжесть летального состояния за одно попадание -->
+      </li>
+    </modExtensions>
+    <tools> <!-- Список способов нанесения атак в ближнем бою -->
+      <li> <!-- Элемент списка -->
+        <label>stock</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <label>barrel</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+          <li>Poke</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet"> <!-- Определение предмета/сущности (ThingDef) -->
+    <defName>AW_Bullet_ArchotechSMG</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label> bullet</label> <!-- Отображаемое наименование -->
+    <projectile> <!-- Характеристики и свойства снаряда -->
+      <damageDef>Bullet</damageDef> <!-- Тип наносимого урона -->
+      <damageAmountBase>11</damageAmountBase> <!-- Базовый объем урона -->
+      <stoppingPower>0.5</stoppingPower> <!-- Останавливающее действие снаряда -->
+      <armorPenetrationBase>0.45</armorPenetrationBase> <!-- Базовый коэффициент бронепробития -->
+      <speed>80</speed> <!-- Скорость полета снаряда -->
+    </projectile>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Projectile/Shot_Archotech</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+  </ThingDef>
+
+	<!-- ==== Archotech Sniper ==== -->
+	<ThingDef ParentName="BaseGunWithQuality"> <!-- Определение предмета/сущности (ThingDef) -->
+		<defName>AW_ArchotechSniper</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>archotech sniper</label> <!-- Отображаемое наименование -->
+		<description>A big, sophisticated and ultra-advanced weapon carefully designed and crafted by a powerful archotech mind. This weapon has extremely long range and can fire bolts that almost seem to have an intelligence of their own. When wielded by a trained sniper, this weapon can become the most destructive weapon to ever exist on an entire planet.</description> <!-- Текстовое описание предмета или эффекта -->
+		<graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Weapons/AW_ArchotechSniperRifle</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+    <techLevel>Archotech</techLevel> <!-- Технологический уровень предмета -->
+	<smeltable>False</smeltable> <!-- Возможность переплавки предмета на ресурсы -->
+    <soundInteract>Interact_Rifle</soundInteract> <!-- Звук экипировки/взятия в руки -->
+    <weaponTags> <!-- Теги оружия для экипировки и генерации -->
+      <li>RangedArchotech</li> <!-- Элемент списка -->
+    </weaponTags>
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="ArchotechWeaponry.Comps.CompProperties_ArchotechWeapon"> <!-- Компонент уникальной механики и способностей архотек-оружия -->
+        <SelfNecrosisSeverity>0.25</SelfNecrosisSeverity> <!-- Тяжесть некроза, наносимая владельцу оружия при использовании -->
+      </li>
+    </comps>
+    <statBases> <!-- Базовые характеристики объекта -->
+    	<MarketValue>2500</MarketValue> <!-- Рыночная стоимость предмета в серебре -->
+    	<Mass>2.6</Mass> <!-- Масса предмета в килограммах -->
+    	<AccuracyTouch>0.80</AccuracyTouch> <!-- Точность стрельбы в упор -->
+      <AccuracyShort>0.78</AccuracyShort> <!-- Точность стрельбы на короткой дистанции -->
+      <AccuracyMedium>0.90</AccuracyMedium> <!-- Точность стрельбы на средней дистанции -->
+      <AccuracyLong>0.95</AccuracyLong> <!-- Точность стрельбы на дальней дистанции -->
+      <RangedWeapon_Cooldown>1.83</RangedWeapon_Cooldown> <!-- Время перезарядки оружия между очередями -->
+    </statBases>
+    <verbs> <!-- Список вербов (режимов действия/стрельбы) -->
+      <li> <!-- Элемент списка -->
+        <verbClass>Verb_Shoot</verbClass> <!-- C#-класс выполнения действия/стрельбы -->
+        <hasStandardCommand>true</hasStandardCommand> <!-- Наличие стандартной кнопки команды выстрела -->
+        <defaultProjectile>AW_Bullet_ArchotechSniper</defaultProjectile> <!-- Снаряд по умолчанию -->
+        <warmupTime>2.33</warmupTime> <!-- Время прицеливания перед выстрелом в секундах -->
+        <range>47</range> <!-- Максимальная дальность стрельбы в клетках -->
+        <soundCast>AW_SniperShoot</soundCast> <!-- Звук выстрела -->
+        <soundCastTail>GunTail_Medium</soundCastTail> <!-- Эхо-хвост звука выстрела -->
+        <ticksBetweenBurstShots>96</ticksBetweenBurstShots> <!-- Интервал между выстрелами в очереди (в тиках) -->
+        <burstShotCount>2</burstShotCount> <!-- Количество выстрелов в одной очереди -->
+        <muzzleFlashScale>9</muzzleFlashScale> <!-- Размер дульной вспышки -->
+      </li>
+    </verbs>
+    <modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+      <li Class="ArchotechWeaponry.Defs.ArchotechDamageExtension"> <!-- Расширение параметров наносимых спец-эффектов/некроза при атаке -->
+        <nonLethalHediffToApplyOnOrganics>VoidToxin</nonLethalHediffToApplyOnOrganics> <!-- Нелетальное состояние, накладываемое на органиков -->
+        <nonLethalSeverityPerHit>0.20</nonLethalSeverityPerHit> <!-- Тяжесть нелетального состояния за одно попадание -->
+        <lethalHediffToApplyOnOrganics>VoidNecrosisTemp</lethalHediffToApplyOnOrganics> <!-- Летальное состояние, накладываемое на органиков -->
+        <lethalSeverityPerHit>0.20</lethalSeverityPerHit> <!-- Тяжесть летального состояния за одно попадание -->
+      </li>
+    </modExtensions>
+    <tools> <!-- Список способов нанесения атак в ближнем бою -->
+      <li> <!-- Элемент списка -->
+        <label>stock</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <label>barrel</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+          <li>Poke</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet"> <!-- Определение предмета/сущности (ThingDef) -->
+    <defName>AW_Bullet_ArchotechSniper</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>archotech sniper bullet</label> <!-- Отображаемое наименование -->
+    <projectile> <!-- Характеристики и свойства снаряда -->
+      <damageDef>Bullet</damageDef> <!-- Тип наносимого урона -->
+      <damageAmountBase>25</damageAmountBase> <!-- Базовый объем урона -->
+      <stoppingPower>2</stoppingPower> <!-- Останавливающее действие снаряда -->
+      <armorPenetrationBase>0.45</armorPenetrationBase> <!-- Базовый коэффициент бронепробития -->
+      <speed>100</speed> <!-- Скорость полета снаряда -->
+    </projectile>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Projectile/Shot_Archotech</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+  </ThingDef>
+
+	<!-- ==== Archotech Rifle ==== -->
+	<ThingDef ParentName="BaseGunWithQuality"> <!-- Определение предмета/сущности (ThingDef) -->
+		<defName>AW_ArchotechRifle</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>archotech rifle</label> <!-- Отображаемое наименование -->
+		<description>A rifle-like weapon crafted by a mysterious archotech. This weapon fires bolts of concentrated void energy that can destroy almost any target.</description> <!-- Текстовое описание предмета или эффекта -->
+		<graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Weapons/AW_ArchotechRifle</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+    <techLevel>Archotech</techLevel> <!-- Технологический уровень предмета -->
+	<smeltable>False</smeltable> <!-- Возможность переплавки предмета на ресурсы -->
+    <soundInteract>Interact_Rifle</soundInteract> <!-- Звук экипировки/взятия в руки -->
+    <weaponTags> <!-- Теги оружия для экипировки и генерации -->
+      <li>RangedArchotech</li> <!-- Элемент списка -->
+    </weaponTags>
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="ArchotechWeaponry.Comps.CompProperties_ArchotechWeapon"> <!-- Компонент уникальной механики и способностей архотек-оружия -->
+        <SelfNecrosisSeverity>0.25</SelfNecrosisSeverity> <!-- Тяжесть некроза, наносимая владельцу оружия при использовании -->
+      </li>
+    </comps>
+    <statBases> <!-- Базовые характеристики объекта -->
+    	<MarketValue>2000</MarketValue> <!-- Рыночная стоимость предмета в серебре -->
+    	<Mass>2.6</Mass> <!-- Масса предмета в килограммах -->
+    	<AccuracyTouch>0.40</AccuracyTouch> <!-- Точность стрельбы в упор -->
+      <AccuracyShort>0.60</AccuracyShort> <!-- Точность стрельбы на короткой дистанции -->
+      <AccuracyMedium>0.85</AccuracyMedium> <!-- Точность стрельбы на средней дистанции -->
+      <AccuracyLong>0.85</AccuracyLong> <!-- Точность стрельбы на дальней дистанции -->
+      <RangedWeapon_Cooldown>1.33</RangedWeapon_Cooldown> <!-- Время перезарядки оружия между очередями -->
+    </statBases>
+    <verbs> <!-- Список вербов (режимов действия/стрельбы) -->
+      <li> <!-- Элемент списка -->
+        <verbClass>Verb_Shoot</verbClass> <!-- C#-класс выполнения действия/стрельбы -->
+        <hasStandardCommand>true</hasStandardCommand> <!-- Наличие стандартной кнопки команды выстрела -->
+        <defaultProjectile>AW_Bullet_ArchotechRifle</defaultProjectile> <!-- Снаряд по умолчанию -->
+        <warmupTime>1.67</warmupTime> <!-- Время прицеливания перед выстрелом в секундах -->
+        <range>35</range> <!-- Максимальная дальность стрельбы в клетках -->
+        <soundCast>AW_SniperShoot</soundCast> <!-- Звук выстрела -->
+        <soundCastTail>GunTail_Medium</soundCastTail> <!-- Эхо-хвост звука выстрела -->
+        <muzzleFlashScale>9</muzzleFlashScale> <!-- Размер дульной вспышки -->
+      </li>
+    </verbs>
+    <modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+      <li Class="ArchotechWeaponry.Defs.ArchotechDamageExtension"> <!-- Расширение параметров наносимых спец-эффектов/некроза при атаке -->
+        <nonLethalHediffToApplyOnOrganics>VoidToxin</nonLethalHediffToApplyOnOrganics> <!-- Нелетальное состояние, накладываемое на органиков -->
+        <nonLethalSeverityPerHit>0.15</nonLethalSeverityPerHit> <!-- Тяжесть нелетального состояния за одно попадание -->
+        <lethalHediffToApplyOnOrganics>VoidNecrosisTemp</lethalHediffToApplyOnOrganics> <!-- Летальное состояние, накладываемое на органиков -->
+        <lethalSeverityPerHit>0.15</lethalSeverityPerHit> <!-- Тяжесть летального состояния за одно попадание -->
+      </li>
+    </modExtensions>
+    <tools> <!-- Список способов нанесения атак в ближнем бою -->
+      <li> <!-- Элемент списка -->
+        <label>stock</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <label>barrel</label> <!-- Отображаемое наименование -->
+        <capacities>
+          <li>Blunt</li> <!-- Элемент списка -->
+          <li>Poke</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Базовый урон атаки -->
+        <cooldownTime>2</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet"> <!-- Определение предмета/сущности (ThingDef) -->
+    <defName>AW_Bullet_ArchotechRifle</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>archotech rifle bullet</label> <!-- Отображаемое наименование -->
+    <projectile> <!-- Характеристики и свойства снаряда -->
+      <damageDef>Bullet</damageDef> <!-- Тип наносимого урона -->
+      <damageAmountBase>25</damageAmountBase> <!-- Базовый объем урона -->
+      <stoppingPower>1</stoppingPower> <!-- Останавливающее действие снаряда -->
+      <armorPenetrationBase>0.35</armorPenetrationBase> <!-- Базовый коэффициент бронепробития -->
+      <speed>80</speed> <!-- Скорость полета снаряда -->
+    </projectile>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Projectile/Shot_Archotech</texPath> <!-- Путь к текстуре объекта -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+    </graphicData>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs> <!-- Корневой контейнер описаний (Defs) -->
+    <ThingDef ParentName="BaseFilth"> <!-- Определение предмета/сущности (ThingDef) -->
+        <defName>AW_Filth_VoidAshes</defName> <!-- Уникальный идентификатор определения (Def) -->
+        <label>void ashes</label> <!-- Отображаемое наименование -->
+        <statBases> <!-- Базовые характеристики объекта -->
+            <Beauty>-12</Beauty> <!-- Влияние объекта на красоту окружения -->
+            <Cleanliness>-15</Cleanliness> <!-- Влияние объекта на чистоту помещения -->
+        </statBases>
+        <graphicData> <!-- Параметры графического отображения -->
+            <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+            <texPath>Things/Filth/VoidAshes_A</texPath> <!-- Путь к текстуре объекта -->
+            <drawSize>1</drawSize> <!-- Размер отрисовки объекта на карте -->
+            <onGroundRandomRotateAngle>0</onGroundRandomRotateAngle> <!-- Угол случайного поворота предмета на земле -->
+        </graphicData>
+        <filth> <!-- Специфические свойства грязи -->
+            <cleaningWorkToReduceThickness>70</cleaningWorkToReduceThickness> <!-- Объем работы, необходимый для уборки грязи -->
+            <canFilthAttach>true</canFilthAttach> <!-- Возможность прилипания грязи к ногам пешек -->
+        </filth>
+    </ThingDef>
+</Defs>

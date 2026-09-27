@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs> <!-- Корневой контейнер описаний (Defs) -->
+    <MentalBreakDef> <!-- Определение типа нервного срыва -->
+        <defName>ArchotechWrath</defName> <!-- Уникальный идентификатор определения (Def) -->
+        <mentalState>ArchotechWrath</mentalState> <!-- Вызываемое состояние нервного срыва -->
+        <baseCommonality>0</baseCommonality> <!-- Базовая частота/вероятность возникновения -->
+        <intensity>Extreme</intensity> <!-- Уровень интенсивности нервного срыва -->
+      </MentalBreakDef>
+      <MentalStateDef ParentName="BaseMentalState"> <!-- Определение ментального состояния -->
+        <defName>ArchotechWrath</defName> <!-- Уникальный идентификатор определения (Def) -->
+        <stateClass>ArchotechWeaponry.MentalState.MentalState_BattleTrance</stateClass> <!-- C#-класс обработки ментального состояния -->
+        <label>archotech wrath</label> <!-- Отображаемое наименование -->
+        <category>Aggro</category> <!-- Категория ментального состояния (например, Aggro) -->
+        <blockInteractionInitiationExcept> <!-- Исключения при блокировке инициации социальных взаимодействий -->
+          <li>Insult</li> <!-- Элемент списка -->
+        </blockInteractionInitiationExcept>
+        <blockInteractionRecipientExcept> <!-- Исключения при блокировке приема социальных взаимодействий -->
+          <li>Insult</li> <!-- Элемент списка -->
+        </blockInteractionRecipientExcept>
+        <blockRandomInteraction>true</blockRandomInteraction> <!-- Блокировка случайных социальных взаимодействий -->
+        <moodRecoveryThought>Catharsis</moodRecoveryThought> <!-- Мысль при выходе из ментального состояния -->
+        <blockNormalThoughts>true</blockNormalThoughts> <!-- Блокировка обычных мыслей во время состояния -->
+        <nameColor>(0.9,0.2,0.5)</nameColor> <!-- Цвет имени пешки в интерфейсе -->
+        <beginLetter>{0} has gone into a nanite fueled wrath.\n\n[PAWN_pronoun] has become immune to damage and will attack anyone [PAWN_pronoun] sees with increased speed.</beginLetter> <!-- Текст письма-оповещения о начале состояния -->
+        <beginLetterDef>ThreatSmall</beginLetterDef> <!-- Тип письма-оповещения -->
+        <minTicksBeforeRecovery>40000</minTicksBeforeRecovery> <!-- Минимальная длительность состояния в тиках -->
+        <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery> <!-- Максимальная длительность состояния в тиках -->
+        <recoveryMtbDays>0.166</recoveryMtbDays> <!-- Среднее время восстановления в днях -->
+        <recoveryMessage>{0}'s archotech wrath has come to an end.</recoveryMessage> <!-- Сообщение в логе при прекращении состояния -->
+        <baseInspectLine>Mental state: Archotech Wrath</baseInspectLine> <!-- Строка статуса при осмотре пешки -->
+        <stateEffecter>Berserk</stateEffecter> <!-- Визуальный эффект состояния (эффектор) -->
+        <tale>MentalStateBerserk</tale> <!-- Идентификатор сохраняемого исторического события -->
+        <recoverFromSleep>true</recoverFromSleep> <!-- Восстановление после сна -->
+      </MentalStateDef>
+</Defs>

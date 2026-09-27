@@ -133,6 +133,8 @@
 
 | **Melee Weapons RU Translation** | `Darklinechf.RussianTranslation.RU` | `1.6` (`3787052721`) | 📄 **[ru_melee_weapons_for_all_tech_levels.md](ru_melee_weapons_for_all_tech_levels.md)** |
 | **Turrets For All Tech Levels** | `bambaryla.AllBambaTurrets` | `1.6` (`3800286808`) | 📄 **[turrets_for_all_tech_levels.md](turrets_for_all_tech_levels.md)** |
+| **Archotech Weaponry (Continued)** | `zal.archotechweaponry` | `1.6` (`3312021019`) | 📄 **[archotech_weaponry](archotech_weaponry/archotech_weaponry.md)** |
+| **Archotech Weaponry - Русификатор** | `Dmitry6.zal.archotechweaponry.rus` | `1.6` (`3595122671`) | 📄 **[ru_archotech_weaponry.md](ru_archotech_weaponry.md)** |
 
 
 

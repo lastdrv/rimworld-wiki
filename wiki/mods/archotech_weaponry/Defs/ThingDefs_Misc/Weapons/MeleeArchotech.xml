@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs> <!-- Корневой контейнер описаний (Defs) -->
+	<ThingDef ParentName="BaseWeapon"> <!-- Определение предмета/сущности (ThingDef) -->
+ 		<thingClass>ThingWithComps</thingClass> <!-- C#-класс объекта -->
+ 		<defName>AW_ArchotechSword</defName> <!-- Уникальный идентификатор определения (Def) -->
+ 		<label>archotech sword</label> <!-- Отображаемое наименование -->
+ 		<description>A sword-like melee weapon crafted by a mysterious archotech. This sword's blade is composed of an unknown material that seems to be able to intelligently modify its molecular properties to cut and pierce through any material that the user slashes it onto.</description> <!-- Текстовое описание предмета или эффекта -->
+ 		<graphicData> <!-- Параметры графического отображения -->
+ 			<texPath>Things/Weapons/AW_ArchotechSword</texPath> <!-- Путь к текстуре объекта -->
+ 			<graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+ 			<drawSize>1</drawSize> <!-- Размер отрисовки объекта на карте -->
+ 		</graphicData>
+    <meleeHitSound>AW_SwordLight</meleeHitSound> <!-- Звук попадания оружия в ближнем бою -->
+ 		<techLevel>Archotech</techLevel> <!-- Технологический уровень предмета -->
+		<smeltable>False</smeltable> <!-- Возможность переплавки предмета на ресурсы -->
+ 		<thingCategories> <!-- Категории предмета в инвентаре/складе -->
+      		<li>WeaponsMelee</li> <!-- Элемент списка -->
+    	</thingCategories>
+		<weaponClasses> <!-- Категории/классы оружия -->
+			<li>Melee</li> <!-- Элемент списка -->
+		</weaponClasses>
+		<weaponTags> <!-- Теги оружия для экипировки и генерации -->
+			<li>MeleeArchotech</li> <!-- Элемент списка -->
+		</weaponTags>
+		<comps> <!-- Список C#-компонентов объекта -->
+		<li Class="ArchotechWeaponry.Comps.CompProperties_ArchotechWeapon"> <!-- Компонент уникальной механики и способностей архотек-оружия -->
+			<SelfNecrosisSeverity>0.25</SelfNecrosisSeverity> <!-- Тяжесть некроза, наносимая владельцу оружия при использовании -->
+		</li>
+		</comps>
+		<modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+			<li Class="ArchotechWeaponry.Defs.ArchotechDamageExtension"> <!-- Расширение параметров наносимых спец-эффектов/некроза при атаке -->
+			<nonLethalHediffToApplyOnOrganics>VoidToxin</nonLethalHediffToApplyOnOrganics> <!-- Нелетальное состояние, накладываемое на органиков -->
+			<nonLethalSeverityPerHit>0.15</nonLethalSeverityPerHit> <!-- Тяжесть нелетального состояния за одно попадание -->
+			<lethalHediffToApplyOnOrganics>VoidNecrosisTemp</lethalHediffToApplyOnOrganics> <!-- Летальное состояние, накладываемое на органиков -->
+			<lethalSeverityPerHit>0.10</lethalSeverityPerHit> <!-- Тяжесть летального состояния за одно попадание -->
+			</li>
+		</modExtensions>
+    	<relicChance>1</relicChance> <!-- Вероятность выбора предмета в качестве реликвии -->
+ 		<statBases> <!-- Базовые характеристики объекта -->
+ 			<MarketValue>2400</MarketValue> <!-- Рыночная стоимость предмета в серебре -->
+ 			<Mass>2</Mass> <!-- Масса предмета в килограммах -->
+ 			<MeleeWeapon_AverageArmorPenetration>0.95</MeleeWeapon_AverageArmorPenetration> <!-- Среднее бронепробитие оружия в ближнем бою -->
+ 		</statBases>
+ 		<tools> <!-- Список способов нанесения атак в ближнем бою -->
+ 			<li> <!-- Элемент списка -->
+ 				<label>handle</label> <!-- Отображаемое наименование -->
+ 				<capacities>
+ 					<li>Blunt</li> <!-- Элемент списка -->
+ 				</capacities>
+ 				<power>12</power> <!-- Базовый урон атаки -->
+ 				<cooldownTime>1.6</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+ 			</li>
+ 			<li> <!-- Элемент списка -->
+ 				<label>point</label> <!-- Отображаемое наименование -->
+ 				<capacities>
+ 					<li>Stab</li> <!-- Элемент списка -->
+ 				</capacities>
+ 				<power>25</power> <!-- Базовый урон атаки -->
+ 				<cooldownTime>1.7</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+ 			</li>
+ 			<li> <!-- Элемент списка -->
+ 				<label>blade</label> <!-- Отображаемое наименование -->
+ 				<capacities>
+ 					<li>Cut</li> <!-- Элемент списка -->
+ 				</capacities>
+ 				<power>25</power> <!-- Базовый урон атаки -->
+ 				<cooldownTime>1.7</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+ 			</li>
+ 		</tools>
+		<equippedAngleOffset>-65</equippedAngleOffset> <!-- Угол наклона спрайта оружия при ношении -->
+		<inspectorTabs> <!-- Список вкладок инспектора объекта -->
+      		<li>ITab_Art</li> <!-- Элемент списка -->
+    	</inspectorTabs>
+ 	</ThingDef>
+
+	<ThingDef ParentName="BaseWeapon"> <!-- Определение предмета/сущности (ThingDef) -->
+ 		<thingClass>ThingWithComps</thingClass> <!-- C#-класс объекта -->
+ 		<defName>AW_ArchotechHeavySword</defName> <!-- Уникальный идентификатор определения (Def) -->
+ 		<label>archotech heavy sword</label> <!-- Отображаемое наименование -->
+ 		<description>A large, heavy sword-like melee weapon carefully crafted by a mysterious archotech. The blade of this weapon seems to change its molecular properties to be able to obliterate any kind of material it slashes through. It is extremely lethal, and some urbanworld legends say that this weapon, when in the hands of a mighty fighter, is completely unstoppable by any means known.</description> <!-- Текстовое описание предмета или эффекта -->
+ 		<graphicData> <!-- Параметры графического отображения -->
+ 			<texPath>Things/Weapons/AW_ArchotechHeavysword</texPath> <!-- Путь к текстуре объекта -->
+ 			<graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки графики -->
+ 			<drawSize>1</drawSize> <!-- Размер отрисовки объекта на карте -->
+ 		</graphicData>
+    <meleeHitSound>AW_SwordHeavy</meleeHitSound> <!-- Звук попадания оружия в ближнем бою -->
+ 		<techLevel>Archotech</techLevel> <!-- Технологический уровень предмета -->
+		<smeltable>False</smeltable> <!-- Возможность переплавки предмета на ресурсы -->
+ 		<thingCategories> <!-- Категории предмета в инвентаре/складе -->
+      		<li>WeaponsMelee</li> <!-- Элемент списка -->
+    	</thingCategories>
+		<modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+			<li Class="ArchotechWeaponry.Defs.ArchotechDamageExtension"> <!-- Расширение параметров наносимых спец-эффектов/некроза при атаке -->
+				<nonLethalHediffToApplyOnOrganics>VoidToxin</nonLethalHediffToApplyOnOrganics> <!-- Нелетальное состояние, накладываемое на органиков -->
+				<nonLethalSeverityPerHit>0.25</nonLethalSeverityPerHit> <!-- Тяжесть нелетального состояния за одно попадание -->
+				<lethalHediffToApplyOnOrganics>VoidNecrosisTemp</lethalHediffToApplyOnOrganics> <!-- Летальное состояние, накладываемое на органиков -->
+				<lethalSeverityPerHit>0.25</lethalSeverityPerHit> <!-- Тяжесть летального состояния за одно попадание -->
+			</li>
+		</modExtensions>
+		<weaponClasses> <!-- Категории/классы оружия -->
+			<li>Melee</li> <!-- Элемент списка -->
+		</weaponClasses>
+		<weaponTags> <!-- Теги оружия для экипировки и генерации -->
+			<li>MeleeArchotech</li> <!-- Элемент списка -->
+		</weaponTags>
+		<relicChance>1</relicChance> <!-- Вероятность выбора предмета в качестве реликвии -->
+		<statBases> <!-- Базовые характеристики объекта -->
+			<MarketValue>4800</MarketValue> <!-- Рыночная стоимость предмета в серебре -->
+			<Mass>4</Mass> <!-- Масса предмета в килограммах -->
+			<MeleeWeapon_AverageArmorPenetration>0.95</MeleeWeapon_AverageArmorPenetration> <!-- Среднее бронепробитие оружия в ближнем бою -->
+		</statBases>
+		<tools> <!-- Список способов нанесения атак в ближнем бою -->
+			<li> <!-- Элемент списка -->
+				<label>handle</label> <!-- Отображаемое наименование -->
+				<capacities>
+					<li>Blunt</li> <!-- Элемент списка -->
+				</capacities>
+				<power>12</power> <!-- Базовый урон атаки -->
+				<cooldownTime>1.6</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+			</li>
+			<li> <!-- Элемент списка -->
+				<label>point</label> <!-- Отображаемое наименование -->
+				<capacities>
+					<li>Stab</li> <!-- Элемент списка -->
+				</capacities>
+				<power>35</power> <!-- Базовый урон атаки -->
+				<cooldownTime>3.0</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+			</li>
+			<li> <!-- Элемент списка -->
+				<label>blade</label> <!-- Отображаемое наименование -->
+				<capacities>
+					<li>Cut</li> <!-- Элемент списка -->
+				</capacities>
+				<power>35</power> <!-- Базовый урон атаки -->
+				<cooldownTime>3.0</cooldownTime> <!-- Время задержки/перезарядки между атаками в секундах -->
+			</li>
+		</tools>
+			<equippedAngleOffset>-15</equippedAngleOffset> <!-- Угол наклона спрайта оружия при ношении -->
+		<comps> <!-- Список C#-компонентов объекта -->
+			<!-- <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon">
+				<eastOffset>(0.31,0,0)</eastOffset>
+				<westOffset>(-0.31,0,0)</westOffset>
+				<southOffset>(0.31,0,0)</southOffset>
+				<northOffset>(-0,31,0,0)</northOffset>
+			</li> -->
+			<li Class="ArchotechWeaponry.Comps.CompProperties_ArchotechWeapon"> <!-- Компонент уникальной механики и способностей архотек-оружия -->
+				<SelfNecrosisSeverity>0.25</SelfNecrosisSeverity> <!-- Тяжесть некроза, наносимая владельцу оружия при использовании -->
+			</li>
+		</comps>
+		<inspectorTabs> <!-- Список вкладок инспектора объекта -->
+			<li>ITab_Art</li> <!-- Элемент списка -->
+		</inspectorTabs>
+ 	</ThingDef>
+</Defs>

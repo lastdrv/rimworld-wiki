@@ -1,0 +1,129 @@
+<Defs> <!-- Корневой контейнер описаний (Defs) -->
+    <SoundDef> <!-- Определение звукового эффекта -->
+        <defName>AW_BowShoot</defName> <!-- Уникальный идентификатор определения (Def) -->
+        <context>MapOnly</context> <!-- Контекст воспроизведения звука -->
+        <maxSimultaneous>1</maxSimultaneous> <!-- Максимальное число одновременных звуков -->
+        <subSounds> <!-- Список подзвуков/аудиодорожек -->
+            <li> <!-- Элемент списка -->
+                <grains> <!-- Список гранул/источников аудиоклипов -->
+                    <li Class="AudioGrain_Clip"> <!-- Аудиоклип из файла звуковых ресурсов -->
+                        <clipPath>Weapons/Arc_Bow</clipPath> <!-- Путь к аудиофайлу в ресурсах -->
+                    </li>
+                </grains>
+                <volumeRange>48~48</volumeRange> <!-- Диапазон громкости воспроизведения -->
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef> <!-- Определение звукового эффекта -->
+        <defName>AW_GunShoot</defName> <!-- Уникальный идентификатор определения (Def) -->
+        <context>MapOnly</context> <!-- Контекст воспроизведения звука -->
+        <maxSimultaneous>1</maxSimultaneous> <!-- Максимальное число одновременных звуков -->
+        <subSounds> <!-- Список подзвуков/аудиодорожек -->
+            <li> <!-- Элемент списка -->
+                <grains> <!-- Список гранул/источников аудиоклипов -->
+                    <li Class="AudioGrain_Clip"> <!-- Аудиоклип из файла звуковых ресурсов -->
+                        <clipPath>Weapons/Arc_Gun</clipPath> <!-- Путь к аудиофайлу в ресурсах -->
+                    </li>
+                </grains>
+                <volumeRange>48~48</volumeRange> <!-- Диапазон громкости воспроизведения -->
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef> <!-- Определение звукового эффекта -->
+        <defName>AW_GunLightShoot</defName> <!-- Уникальный идентификатор определения (Def) -->
+        <context>MapOnly</context> <!-- Контекст воспроизведения звука -->
+        <maxSimultaneous>1</maxSimultaneous> <!-- Максимальное число одновременных звуков -->
+        <subSounds> <!-- Список подзвуков/аудиодорожек -->
+            <li> <!-- Элемент списка -->
+                <grains> <!-- Список гранул/источников аудиоклипов -->
+                    <li Class="AudioGrain_Clip"> <!-- Аудиоклип из файла звуковых ресурсов -->
+                        <clipPath>Weapons/Arc_GunLight</clipPath> <!-- Путь к аудиофайлу в ресурсах -->
+                    </li>
+                </grains>
+                <volumeRange>48~48</volumeRange> <!-- Диапазон громкости воспроизведения -->
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef> <!-- Определение звукового эффекта -->
+        <defName>AW_ShotgunShoot</defName> <!-- Уникальный идентификатор определения (Def) -->
+        <context>MapOnly</context> <!-- Контекст воспроизведения звука -->
+        <maxSimultaneous>1</maxSimultaneous> <!-- Максимальное число одновременных звуков -->
+        <subSounds> <!-- Список подзвуков/аудиодорожек -->
+            <li> <!-- Элемент списка -->
+                <grains> <!-- Список гранул/источников аудиоклипов -->
+                    <li Class="AudioGrain_Clip"> <!-- Аудиоклип из файла звуковых ресурсов -->
+                        <clipPath>Weapons/Arc_Shotgun</clipPath> <!-- Путь к аудиофайлу в ресурсах -->
+                    </li>
+                </grains>
+                <volumeRange>48~48</volumeRange> <!-- Диапазон громкости воспроизведения -->
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef> <!-- Определение звукового эффекта -->
+        <defName>AW_SniperShoot</defName> <!-- Уникальный идентификатор определения (Def) -->
+        <context>MapOnly</context> <!-- Контекст воспроизведения звука -->
+        <maxSimultaneous>1</maxSimultaneous> <!-- Максимальное число одновременных звуков -->
+        <subSounds> <!-- Список подзвуков/аудиодорожек -->
+            <li> <!-- Элемент списка -->
+                <grains> <!-- Список гранул/источников аудиоклипов -->
+                    <li Class="AudioGrain_Clip"> <!-- Аудиоклип из файла звуковых ресурсов -->
+                        <clipPath>Weapons/Arc_Sniper</clipPath> <!-- Путь к аудиофайлу в ресурсах -->
+                    </li>
+                </grains>
+                <volumeRange>48~48</volumeRange> <!-- Диапазон громкости воспроизведения -->
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef> <!-- Определение звукового эффекта -->
+        <defName>AW_SwordHeavy</defName> <!-- Уникальный идентификатор определения (Def) -->
+        <context>MapOnly</context> <!-- Контекст воспроизведения звука -->
+        <maxSimultaneous>1</maxSimultaneous> <!-- Максимальное число одновременных звуков -->
+        <subSounds> <!-- Список подзвуков/аудиодорожек -->
+            <li> <!-- Элемент списка -->
+                <grains> <!-- Список гранул/источников аудиоклипов -->
+                    <li Class="AudioGrain_Clip"> <!-- Аудиоклип из файла звуковых ресурсов -->
+                        <clipPath>Weapons/Arc_Sword_Heavy</clipPath> <!-- Путь к аудиофайлу в ресурсах -->
+                    </li>
+                </grains>
+                <volumeRange>48~48</volumeRange> <!-- Диапазон громкости воспроизведения -->
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef> <!-- Определение звукового эффекта -->
+        <defName>AW_SwordLight</defName> <!-- Уникальный идентификатор определения (Def) -->
+        <context>MapOnly</context> <!-- Контекст воспроизведения звука -->
+        <maxSimultaneous>1</maxSimultaneous> <!-- Максимальное число одновременных звуков -->
+        <subSounds> <!-- Список подзвуков/аудиодорожек -->
+            <li> <!-- Элемент списка -->
+                <grains> <!-- Список гранул/источников аудиоклипов -->
+                    <li Class="AudioGrain_Clip"> <!-- Аудиоклип из файла звуковых ресурсов -->
+                        <clipPath>Weapons/Arc_Sword_Light</clipPath> <!-- Путь к аудиофайлу в ресурсах -->
+                    </li>
+                </grains>
+                <volumeRange>48~48</volumeRange> <!-- Диапазон громкости воспроизведения -->
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef> <!-- Определение звукового эффекта -->
+        <defName>AW_VoidLauncherShoot</defName> <!-- Уникальный идентификатор определения (Def) -->
+        <context>MapOnly</context> <!-- Контекст воспроизведения звука -->
+        <maxSimultaneous>1</maxSimultaneous> <!-- Максимальное число одновременных звуков -->
+        <subSounds> <!-- Список подзвуков/аудиодорожек -->
+            <li> <!-- Элемент списка -->
+                <grains> <!-- Список гранул/источников аудиоклипов -->
+                    <li Class="AudioGrain_Clip"> <!-- Аудиоклип из файла звуковых ресурсов -->
+                        <clipPath>Weapons/VoidLauncher</clipPath> <!-- Путь к аудиофайлу в ресурсах -->
+                    </li>
+                </grains>
+                <volumeRange>48~48</volumeRange> <!-- Диапазон громкости воспроизведения -->
+            </li>
+        </subSounds>
+    </SoundDef>
+</Defs>

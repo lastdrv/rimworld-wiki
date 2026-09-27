@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описаний (Defs) -->
+
+  <HediffDef ParentName="DiseaseBase"> <!-- Определение состояния/заболевания пешки (Hediff) -->
+    <defName>VoidToxin</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>void toxin</label> <!-- Отображаемое наименование -->
+    <description>A powerful neurotoxin made out of small mechanites. Slowly neutralizing the body.</description> <!-- Текстовое описание предмета или эффекта -->
+    <hediffClass>HediffWithComps</hediffClass> <!-- C#-класс обработки Hediff -->
+    <makesSickThought>true</makesSickThought> <!-- Флаг вызова мыслей о болезни у пешки -->
+    <minSeverity>0</minSeverity> <!-- Минимальная тяжесть состояния -->
+    <initialSeverity>0.01</initialSeverity> <!-- Начальная тяжесть состояния при наложении -->
+    <stages> <!-- Список стадий развития заболевания/состояния -->
+      <li> <!-- Элемент списка -->
+        <label>stage 1</label> <!-- Отображаемое наименование -->
+        <capMods> <!-- Модификаторы способностей/возможностей пешки -->
+          <li> <!-- Элемент списка -->
+            <capacity>Manipulation</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.1</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+        </capMods>
+      </li>
+      <li> <!-- Элемент списка -->
+        <minSeverity>0.25</minSeverity> <!-- Минимальная тяжесть состояния -->
+        <label>stage 2</label> <!-- Отображаемое наименование -->
+        <capMods> <!-- Модификаторы способностей/возможностей пешки -->
+          <li> <!-- Элемент списка -->
+            <capacity>Manipulation</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.1</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Moving</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.1</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+        </capMods>
+      </li>
+      <li> <!-- Элемент списка -->
+        <minSeverity>0.40</minSeverity> <!-- Минимальная тяжесть состояния -->
+        <label>stage 3</label> <!-- Отображаемое наименование -->
+        <capMods> <!-- Модификаторы способностей/возможностей пешки -->
+          <li> <!-- Элемент списка -->
+            <capacity>Manipulation</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.3</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Moving</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.3</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+        </capMods>
+      </li>
+      <li> <!-- Элемент списка -->
+        <minSeverity>1</minSeverity> <!-- Минимальная тяжесть состояния -->
+        <label>stage 4</label> <!-- Отображаемое наименование -->
+        <capMods> <!-- Модификаторы способностей/возможностей пешки -->
+            <li> <!-- Элемент списка -->
+            <capacity>Manipulation</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-1</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Moving</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-1</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="HediffCompProperties_Disappears"> <!-- Компонент автоматического исчезновения состояния со временем -->
+        <disappearsAfterTicks>60000</disappearsAfterTicks> <!-- 1 day -->
+      </li>
+    </comps>
+  </HediffDef>
+
+ <HediffDef ParentName="DiseaseBase"> <!-- Определение состояния/заболевания пешки (Hediff) -->
+    <defName>VoidNecrosisPerm</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>void necrosis</label> <!-- Отображаемое наименование -->
+    <description>Mechanite infection, slowly devouring the inner-cells.\nConstant stream of this mechanite swarm inside a host will lead to quick degenetration of the body, leaving only but ashes.</description> <!-- Текстовое описание предмета или эффекта -->
+    <hediffClass>HediffWithComps</hediffClass> <!-- C#-класс обработки Hediff -->
+    <makesSickThought>true</makesSickThought> <!-- Флаг вызова мыслей о болезни у пешки -->
+    <minSeverity>0</minSeverity> <!-- Минимальная тяжесть состояния -->
+    <initialSeverity>0.01</initialSeverity> <!-- Начальная тяжесть состояния при наложении -->
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="ArchotechWeaponry.Comps.HediffCompProperties_FilthOnDeath"> <!-- Компонент спавна грязи при смерти пешки -->
+        <filthToSpawn>AW_Filth_VoidAshes</filthToSpawn> <!-- Идентификатор создаваемой грязи при гибели пешки -->
+      </li>
+    </comps>
+    <stages> <!-- Список стадий развития заболевания/состояния -->
+      <li> <!-- Элемент списка -->
+        <label>stage 1</label> <!-- Отображаемое наименование -->
+        <painOffset>0.05</painOffset> <!-- Дополнительный уровень боли пешки -->
+        <capMods> <!-- Модификаторы способностей/возможностей пешки -->
+          <li> <!-- Элемент списка -->
+            <capacity>Manipulation</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.1</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Moving</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.1</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Breathing</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.1</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+        </capMods>
+      </li>
+      <li> <!-- Элемент списка -->
+        <minSeverity>0.25</minSeverity> <!-- Минимальная тяжесть состояния -->
+        <label>stage 2</label> <!-- Отображаемое наименование -->
+        <painOffset>0.10</painOffset> <!-- Дополнительный уровень боли пешки -->
+        <capMods> <!-- Модификаторы способностей/возможностей пешки -->
+          <li> <!-- Элемент списка -->
+            <capacity>Manipulation</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.2</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Moving</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.2</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Breathing</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.15</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+        </capMods>
+      </li>
+      <li> <!-- Элемент списка -->
+        <minSeverity>0.40</minSeverity> <!-- Минимальная тяжесть состояния -->
+        <label>stage 3</label> <!-- Отображаемое наименование -->
+        <painOffset>0.2</painOffset> <!-- Дополнительный уровень боли пешки -->
+        <capMods> <!-- Модификаторы способностей/возможностей пешки -->
+          <li> <!-- Элемент списка -->
+            <capacity>Manipulation</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.3</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Moving</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.3</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Breathing</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.2</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+        </capMods>
+      </li>
+      <li> <!-- Элемент списка -->
+        <minSeverity>1</minSeverity> <!-- Минимальная тяжесть состояния -->
+        <label>stage 4</label> <!-- Отображаемое наименование -->
+        <capMods> <!-- Модификаторы способностей/возможностей пешки -->
+            <li> <!-- Элемент списка -->
+            <capacity>Consciousness</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-1</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+<HediffDef ParentName="DiseaseBase"> <!-- Определение состояния/заболевания пешки (Hediff) -->
+    <defName>VoidNecrosisTemp</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>void necrosis</label> <!-- Отображаемое наименование -->
+    <description>Mechanite infection, slowly devouring the inner-cells.\nConstant stream of this mechanite swarm inside a host will lead to quick degenetration of the body, leaving only but ashes.</description> <!-- Текстовое описание предмета или эффекта -->
+    <hediffClass>HediffWithComps</hediffClass> <!-- C#-класс обработки Hediff -->
+    <makesSickThought>true</makesSickThought> <!-- Флаг вызова мыслей о болезни у пешки -->
+    <minSeverity>0</minSeverity> <!-- Минимальная тяжесть состояния -->
+    <initialSeverity>0.01</initialSeverity> <!-- Начальная тяжесть состояния при наложении -->
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="HediffCompProperties_Immunizable"> <!-- Компонент вырабатываемого иммунитета к состоянию -->
+        <severityPerDayNotImmune>-0.05</severityPerDayNotImmune> <!-- Изменение тяжести состояния в день при отсутствии иммунитета -->
+      </li>
+      <li Class="ArchotechWeaponry.Comps.HediffCompProperties_FilthOnDeath"> <!-- Компонент спавна грязи при смерти пешки -->
+        <filthToSpawn>AW_Filth_VoidAshes</filthToSpawn> <!-- Идентификатор создаваемой грязи при гибели пешки -->
+      </li>
+    </comps>
+    <stages> <!-- Список стадий развития заболевания/состояния -->
+      <li> <!-- Элемент списка -->
+        <label>stage 1</label> <!-- Отображаемое наименование -->
+        <painOffset>0.05</painOffset> <!-- Дополнительный уровень боли пешки -->
+        <capMods> <!-- Модификаторы способностей/возможностей пешки -->
+          <li> <!-- Элемент списка -->
+            <capacity>Manipulation</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.1</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Moving</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.1</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Breathing</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.1</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+        </capMods>
+      </li>
+      <li> <!-- Элемент списка -->
+        <minSeverity>0.25</minSeverity> <!-- Минимальная тяжесть состояния -->
+        <label>stage 2</label> <!-- Отображаемое наименование -->
+        <painOffset>0.10</painOffset> <!-- Дополнительный уровень боли пешки -->
+        <capMods> <!-- Модификаторы способностей/возможностей пешки -->
+          <li> <!-- Элемент списка -->
+            <capacity>Manipulation</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.2</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Moving</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.2</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Breathing</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.15</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+        </capMods>
+      </li>
+      <li> <!-- Элемент списка -->
+        <minSeverity>0.40</minSeverity> <!-- Минимальная тяжесть состояния -->
+        <label>stage 3</label> <!-- Отображаемое наименование -->
+        <painOffset>0.2</painOffset> <!-- Дополнительный уровень боли пешки -->
+        <capMods> <!-- Модификаторы способностей/возможностей пешки -->
+          <li> <!-- Элемент списка -->
+            <capacity>Manipulation</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.3</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Moving</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.3</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+          <li> <!-- Элемент списка -->
+            <capacity>Breathing</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-0.2</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+        </capMods>
+      </li>
+      <li> <!-- Элемент списка -->
+        <minSeverity>1</minSeverity> <!-- Минимальная тяжесть состояния -->
+        <label>stage 4</label> <!-- Отображаемое наименование -->
+        <capMods> <!-- Модификаторы способностей/возможностей пешки -->
+            <li> <!-- Элемент списка -->
+            <capacity>Consciousness</capacity> <!-- Целевая способность пешки (Движение, Работа и т.д.) -->
+            <offset>-1</offset> <!-- Смещение/изменение значения характеристики -->
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описаний (Defs) -->
+  
+  <WeaponTraitDef MayRequire="ludeon.rimworld.royalty"> <!-- Определение черты персонифицированного оружия -->
+    <defName>ArchotechPlaguebearer</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>archotech plaguebearer</label> <!-- Отображаемое наименование -->
+    <description>This weapon corrupts even the strongest of bodies.</description> <!-- Текстовое описание предмета или эффекта -->
+    <commonality>1</commonality> <!-- Относительная частота появления черты -->
+    <modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+      <li Class="ArchotechWeaponry.Defs.ArchotechTraitExtension"> <!-- Расширение совмещения черты с категориями архотек-оружия -->
+        <allowedTags> <!-- Список тегов оружия, совместимых с чертой -->
+          <li>MeleeArchotech</li> <!-- Элемент списка -->
+          <li>RangedArchotech</li> <!-- Элемент списка -->
+        </allowedTags>
+      </li>
+      <li Class="ArchotechWeaponry.Defs.Traits.PlaguebearerExtension"> <!-- Расширение параметров черты Чумоносец (доп. урон от чумы) -->
+        <extraSeverityOnHit>0.25</extraSeverityOnHit> <!-- Дополнительное увеличение тяжести состояния при попадании -->
+      </li>
+    </modExtensions>
+  </WeaponTraitDef>
+
+  <WeaponTraitDef MayRequire="ludeon.rimworld.royalty"> <!-- Определение черты персонифицированного оружия -->
+    <defName>ArchotechPrecognition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>archotech precognition</label> <!-- Отображаемое наименование -->
+    <description>This weapon has eyes everywhere, it sees and predicts where the next attack will land.</description> <!-- Текстовое описание предмета или эффекта -->
+    <commonality>1</commonality> <!-- Относительная частота появления черты -->
+    <equippedStatOffsets> <!-- Модификаторы характеристик при экипировке -->
+      <MeleeDodgeChance>8</MeleeDodgeChance> <!-- Шанс уклонения в ближнем бою -->
+      <MeleeHitChance>3</MeleeHitChance> <!-- Шанс попадания в ближнем бою -->
+    </equippedStatOffsets>
+    <modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+      <li Class="ArchotechWeaponry.Defs.ArchotechTraitExtension"> <!-- Расширение совмещения черты с категориями архотек-оружия -->
+        <allowedTags> <!-- Список тегов оружия, совместимых с чертой -->
+          <li>MeleeArchotech</li> <!-- Элемент списка -->
+        </allowedTags>
+      </li>
+      <li Class="ArchotechWeaponry.Defs.Traits.PrecognitionExtension"> <!-- Расширение параметров черты Предвидение (шанс парирования) -->
+        <negationChance>0.05</negationChance> <!-- Шанс отмены/парирования урона -->
+      </li>
+    </modExtensions>
+  </WeaponTraitDef>
+
+  <WeaponTraitDef MayRequire="ludeon.rimworld.royalty"> <!-- Определение черты персонифицированного оружия -->
+    <defName>ArchotechSensitivity</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>archotech sensitivity</label> <!-- Отображаемое наименование -->
+    <description>This weapon enhances one's psychical powers to the point of godhood.</description> <!-- Текстовое описание предмета или эффекта -->
+    <commonality>1</commonality> <!-- Относительная частота появления черты -->
+    <equippedStatOffsets> <!-- Модификаторы характеристик при экипировке -->
+      <PsychicSensitivity>0.80</PsychicSensitivity> <!-- Модификатор пси-чувствительности -->
+      <PsychicEntropyMax>8</PsychicEntropyMax> <!-- Увеличение максимального лимита пси-перегрузки -->
+    </equippedStatOffsets>
+    <modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+      <li Class="ArchotechWeaponry.Defs.ArchotechTraitExtension"> <!-- Расширение совмещения черты с категориями архотек-оружия -->
+       <allowedTags> <!-- Список тегов оружия, совместимых с чертой -->
+         <li>MeleeArchotech</li> <!-- Элемент списка -->
+         <li>RangedArchotech</li> <!-- Элемент списка -->
+        </allowedTags>
+     </li>
+    </modExtensions>
+  </WeaponTraitDef>
+  <ThoughtDef> <!-- Определение мысли/состояния настроения -->
+    <defName>PsycastWithdrawal</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <thoughtClass>Thought_Situational</thoughtClass> <!-- C#-класс обработки мысли -->
+    <workerClass>ThoughtWorker_WeaponTraitBonded</workerClass> <!-- C#-класс проверки условий возникновения мысли -->
+    <stages> <!-- Список стадий развития заболевания/состояния -->
+      <li> <!-- Элемент списка -->
+        <label>{WEAPON}'s need to psycast</label> <!-- Отображаемое наименование -->
+        <description>The limitations of the mind is unnerving.</description> <!-- Текстовое описание предмета или эффекта -->
+        <baseMoodEffect>-10</baseMoodEffect> <!-- Базовое изменение настроения пешки -->
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <WeaponTraitDef MayRequire="ludeon.rimworld.royalty"> <!-- Определение черты персонифицированного оружия -->
+    <defName>ArchotechWrath</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>archotech wrath</label> <!-- Отображаемое наименование -->
+    <description>This weapon bears the rage of a thousands ages, just a push could make the wielder burst into an uncontrollable rage.</description> <!-- Текстовое описание предмета или эффекта -->
+    <commonality>1</commonality> <!-- Относительная частота появления черты -->
+    <modExtensions> <!-- Список C#-расширений определения (DefModExtension) -->
+     <li Class="ArchotechWeaponry.Defs.ArchotechTraitExtension"> <!-- Расширение совмещения черты с категориями архотек-оружия -->
+       <allowedTags> <!-- Список тегов оружия, совместимых с чертой -->
+         <li>MeleeArchotech</li> <!-- Элемент списка -->
+         <li>RangedArchotech</li> <!-- Элемент списка -->
+       </allowedTags>
+     </li>
+     <li Class="ArchotechWeaponry.Defs.Traits.WrathExtension"> <!-- Расширение параметров черты Гнев (шанс вхождения в ярость) -->
+       <enrageChance>0.05</enrageChance> <!-- Шанс вхождения пешки в ярость при атаке -->
+     </li>
+    </modExtensions>
+  </WeaponTraitDef>
+
+</Defs>

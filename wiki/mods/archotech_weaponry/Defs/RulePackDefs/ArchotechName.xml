@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описаний (Defs) -->
+
+  <RulePackDef> <!-- Определение набора правил генерации имен/текстов -->
+    <defName>NamerWeaponArchotech</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <rulePack> <!-- Пакет правил генерации -->
+      <rulesStrings> <!-- Список шаблонов и строковых правил генерации -->
+        <li>r_weapon_name(p=3)->[noun][verber]</li> <!-- Элемент списка -->
+        <li>r_weapon_name(p=2)->[beginSyl][middleSyl][endSyl]</li> <!-- Элемент списка -->
+        <li>r_weapon_name(p=1)->[beginSyl][middleSyl][middleSyl][endSyl]</li> <!-- Элемент списка -->
+        <li>r_weapon_name(p=1)->[beginSyl][endSyl]</li> <!-- Элемент списка -->
+
+        <li>noun->xyla</li> <!-- Элемент списка -->
+        <li>noun->dall</li> <!-- Элемент списка -->
+        <li>noun->zyl</li> <!-- Элемент списка -->
+        <li>noun->oara</li> <!-- Элемент списка -->
+        <li>noun->stror</li> <!-- Элемент списка -->
+        <li>noun->lapis</li> <!-- Элемент списка -->
+        <li>verber->voxa</li> <!-- Элемент списка -->
+        <li>verber->'Aafuga</li> <!-- Элемент списка -->
+        <li>verber->'Nikar</li> <!-- Элемент списка -->
+        <li>verber->'lharna</li> <!-- Элемент списка -->
+        <li>verber->laro</li> <!-- Элемент списка -->
+
+        <li>beginSyl->vô</li> <!-- Элемент списка -->
+        <li>beginSyl->xô</li> <!-- Элемент списка -->
+        <li>beginSyl->rä</li> <!-- Элемент списка -->
+        <li>beginSyl->lï</li> <!-- Элемент списка -->
+        <li>beginSyl->jar</li> <!-- Элемент списка -->
+        <li>middleSyl->soa</li> <!-- Элемент списка -->
+        <li>middleSyl->xia</li> <!-- Элемент списка -->
+        <li>middleSyl->tono</li> <!-- Элемент списка -->
+        <li>middleSyl->lim</li> <!-- Элемент списка -->
+        <li>endSyl->îs</li> <!-- Элемент списка -->
+        <li>endSyl->nok</li> <!-- Элемент списка -->
+        <li>endSyl->'lah</li> <!-- Элемент списка -->
+        <li>endSyl->'ök</li> <!-- Элемент списка -->
+        <li>endSyl->aaj</li> <!-- Элемент списка -->
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+</Defs>
