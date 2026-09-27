@@ -139,6 +139,16 @@
    - Ценные технические сводки (контракты методов, структуры данных), требующие значительных ресурсов анализа, фиксируются в Вики.
    - Для модов — в разделе «Примечания и технические данные» статьи этого мода.
    - Для игры — в отдельной спец-статье Вики по анализу декомпилированного кода RimWorld.
+4. **Инспекция C#-сборок (.dll) через PowerShell Reflection и ilspycmd**:
+   - При инспекции `.dll` мода через PowerShell Reflection необходимо **предварительно загрузить `Assembly-CSharp.dll`** базовой игры для корректного разрешения типов RimWorld:
+     ```powershell
+     [System.Reflection.Assembly]::LoadFrom("C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll")
+     [System.Reflection.Assembly]::LoadFrom("<путь_к_dll_мода>")
+     ```
+   - Для декомпиляции C#-кода модов в исходные файлы `.cs` использовать консольную утилиту:
+     ```powershell
+     ilspycmd -p -o <output_dir> <mod_dll_path>
+     ```
 
 
 
@@ -163,6 +173,7 @@
 | **Turrets For All Tech Levels** | `bambaryla.AllBambaTurrets` | `1.6` (`3800286808`) | 📄 **[turrets_for_all_tech_levels.md](turrets_for_all_tech_levels.md)** |
 | **Archotech Weaponry (Continued)** | `zal.archotechweaponry` | `1.6` (`3312021019`) | 📄 **[archotech_weaponry](archotech_weaponry/archotech_weaponry.md)** |
 | **Archotech Weaponry - Русификатор** | `Dmitry6.zal.archotechweaponry.rus` | `1.6` (`3595122671`) | 📄 **[ru_archotech_weaponry.md](ru_archotech_weaponry.md)** |
+| **Simple Utilities: Ceiling** | `Owlchemist.CeilingUtilities` | `1.6` (`3231909012`) | 📄 **[simple_utilities_ceiling.md](simple_utilities_ceiling.md)** |
 
 
 
