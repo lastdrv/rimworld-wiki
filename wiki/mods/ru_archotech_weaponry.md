@@ -35,16 +35,12 @@
 ## 6. Поддержка и статус русификации
 * **Наличие в Steam Workshop**: Да (`294100/3595122671`).
 * **Тип мода**: Является готовым сторонним модулем локализации для мода `3312021019`.
-* **Структура перевода**: 
-  * `1.6/Languages/Russian/DefInjected/HediffDef/Hediffs_AT_Misc_HediffDef.xml`
-  * `1.6/Languages/Russian/DefInjected/MentalStateDef/MentalStates_Mood_MentalStateDef.xml`
-  * `1.6/Languages/Russian/DefInjected/RulePackDef/ArchotechName_RulePackDef.xml`
-  * `1.6/Languages/Russian/DefInjected/ThingDef/FilthDef_ThingDef.xml`
-  * `1.6/Languages/Russian/DefInjected/ThingDef/MeleeArchotech_ThingDef.xml`
-  * `1.6/Languages/Russian/DefInjected/ThingDef/RangedArchotech_ThingDef.xml`
-  * `1.6/Languages/Russian/DefInjected/ThoughtDef/WeaponTraitDefs_ThoughtDef.xml`
-  * `1.6/Languages/Russian/DefInjected/WeaponTraitDef/WeaponTraitDefs_WeaponTraitDef.xml`
-  * `1.6/Compat/MAG/Languages/Russian/DefInjected/RecipeDef/RecipeDefs_RecipeDef.xml`
+* **Объем и структура перевода**: 
+  * Содержит файлы XML в папке `1.6/Languages/Russian/DefInjected/`:
+    * `RangedArchotech_ThingDef.xml` и `MeleeArchotech_ThingDef.xml` — 10 видов огнестрельного и 2 вида холодного оружия.
+    * `WeaponTraitDefs_WeaponTraitDef.xml` — черты персонального оружия Royalty DLC.
+    * `Hediffs_AT_Misc_HediffDef.xml` и `MentalStates_Mood_MentalStateDef.xml` — нейротоксин, некроз и боевой транс.
+    * `FilthDef_ThingDef.xml` — пепел Пустоты.
 * **Статус**: Перевод распространяется как отдельный мод. По умолчанию при анализе файлы в `russian/` не создавались. При необходимости материалы перевода могут быть перенесены в `russian/3312021019/` для установки поверх базового мода.
 
 ---

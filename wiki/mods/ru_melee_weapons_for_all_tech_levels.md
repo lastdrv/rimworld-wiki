@@ -33,10 +33,11 @@
 ## 6. Поддержка и статус русификации
 * **Наличие в Steam Workshop**: Да (`294100/3787052721`).
 * **Тип мода**: Является готовым сторонним модулем локализации для мода `3726524693`.
-* **Структура перевода**: 
-  * `Languages/Russian/DefInjected/RecipeDef/Bamba_Melee_Recipes.xml`
-  * `Languages/Russian/DefInjected/ResearchProjectDef/Bamba_Melee_Research.xml`
-  * `Languages/Russian/DefInjected/ThingDef/Bamba_Melee_Weapons.xml`
+* **Объем и структура перевода**: 
+  * Содержит переводы в папке `Languages/Russian/DefInjected/`:
+    * `ThingDef/Bamba_Melee_Weapons.xml` — переведены 6 тиров холодного оружия и щитов.
+    * `RecipeDef/Bamba_Melee_Recipes.xml` — рецепты ковки на верстаках.
+    * `ResearchProjectDef/Bamba_Melee_Research.xml` — исследуемые технологии.
 * **Статус**: Перевод распространяется как отдельный мод. По умолчанию при анализе файлы в `russian/` не создавались. В случае запроса пользователя материалы могут быть перенесены в `russian/3726524693/` для установки поверх основного мода.
 
 ---
