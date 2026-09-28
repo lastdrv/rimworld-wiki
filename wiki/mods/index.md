@@ -168,13 +168,18 @@
 | **Русский язык для Rimsenal Core** | `RU.rimsenal.core` | `1.6` (`2590686872`) | 📄 **[ru_rimsenal_core.md](ru_rimsenal_core.md)** |
 | **Русский язык для Rimsenal Security** | `RU.rimsenal.security` | `1.6` (`2590743724`) | 📄 **[ru_rimsenal_security.md](ru_rimsenal_security.md)** |
 | **Melee Weapons For All Tech Levels** | `bamba.allbambamelee.tiered` | `1.6` (`3726524693`) | 📄 **[melee_weapons_for_all_tech_levels](melee_weapons_for_all_tech_levels/melee_weapons_for_all_tech_levels.md)** |
-
 | **Melee Weapons RU Translation** | `Darklinechf.RussianTranslation.RU` | `1.6` (`3787052721`) | 📄 **[ru_melee_weapons_for_all_tech_levels.md](ru_melee_weapons_for_all_tech_levels.md)** |
 | **Turrets For All Tech Levels** | `bambaryla.AllBambaTurrets` | `1.6` (`3800286808`) | 📄 **[turrets_for_all_tech_levels.md](turrets_for_all_tech_levels.md)** |
 | **Archotech Weaponry (Continued)** | `zal.archotechweaponry` | `1.6` (`3312021019`) | 📄 **[archotech_weaponry](archotech_weaponry/archotech_weaponry.md)** |
 | **Archotech Weaponry - Русификатор** | `Dmitry6.zal.archotechweaponry.rus` | `1.6` (`3595122671`) | 📄 **[ru_archotech_weaponry.md](ru_archotech_weaponry.md)** |
 | **Simple Utilities: Ceiling** | `Owlchemist.CeilingUtilities` | `1.6` (`3231909012`) | 📄 **[simple_utilities_ceiling.md](simple_utilities_ceiling.md)** |
 | **Realistic Rooms Rewritten** | `Lucifer.RealisticRooms` | `1.6` (`2558042766`) | 📄 **[realistic_rooms_rewritten.md](realistic_rooms_rewritten.md)** |
+| **(RD)Megatech** | `Dracora.Megatech` | `1.6` (`3534335320`) | 📄 **[rd_megatech.md](rd_megatech.md)** |
+| **Megatech_Rus** | `Megatech-rus` | `1.6` (`3633253559`) | 📄 **[ru_rd_megatech.md](ru_rd_megatech.md)** |
+| **More Archotech Implants** | `LegendaryMinuteman.MAI` | `1.6` (`2646064233`) | 📄 **[more_archotech_implants.md](more_archotech_implants.md)** |
+| **EPOE-Forked** | `vat.epoeforked` | `1.6` (`1949064302`) | 📄 **[epoe_forked.md](epoe_forked.md)** |
+| **EPOE-Forked: Royalty DLC expansion** | `vat.epoeforkedroyalty` | `1.6` (`2008970276`) | 📄 **[epoe_forked_royalty.md](epoe_forked_royalty.md)** |
+| **EPOE-Forked Russian Language** | `RU.pashka.vat.epoeforked` | `1.6` (`2735140780`) | 📄 **[ru_epoe_forked.md](ru_epoe_forked.md)** |
 
 
 
