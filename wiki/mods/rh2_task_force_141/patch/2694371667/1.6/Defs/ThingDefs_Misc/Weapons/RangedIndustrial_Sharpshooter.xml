@@ -78,76 +78,72 @@ The rifle is based on the Stoner AR-10 system adapted to .308 caliber cartridges
     </tradeTags>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanMakeableGun">
-    <defName>RNGun_RSASSA_DMR</defName>
-    <label>RSASSA</label>
+  <ThingDef ParentName="BaseHumanMakeableGun"> <!-- Определение огнестрельного оружия (создаваемого человеком) -->
+    <defName>RNGun_RSASSA_DMR</defName> <!-- Уникальный идентификатор оружия (Def) -->
+    <label>RSASSA</label> <!-- Отображаемое игровое название оружия -->
     <description>The Remington Semi Automatic Sniper System A (RSASSA) is a semi-automatic precision rifle manufactured by Remington Arms.
 
-The rifle is based on the Stoner AR-10 system adapted to .308 caliber cartridges, with adjustable direct gas impingement operation and rotary bolt locking. The receiver is designed with a folding charging handle located on the left side, which facilitates more comfortable operation from prone position. The barrel is made from stainless steel for maximum accuracy and fitted with a flash hider (when a suppressor is not used). Additional features include a fully adjustable Magpul stock and a flat-top style upper receiver with integral Picatinny rail. The rifle is fed using SR-25 pattern .308/7.62 magazines with 19- or 20-round capacities.</description>
-    <graphicData>
-      <texPath>Things/Weapons/RSASSA</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+The rifle is based on the Stoner AR-10 system adapted to .308 caliber cartridges, with adjustable direct gas impingement operation and rotary bolt locking. The receiver is designed with a folding charging handle located on the left side, which facilitates more comfortable operation from prone position. The barrel is made from stainless steel for maximum accuracy and fitted with a flash hider (when a suppressor is not used). Additional features include a fully adjustable Magpul stock and a flat-top style upper receiver with integral Picatinny rail. The rifle is fed using SR-25 pattern .308/7.62 magazines with 19- or 20-round capacities.</description> <!-- Внутриигровое описание оружия -->
+    <graphicData> <!-- Параметры графики и текстуры оружия -->
+      <texPath>Things/Weapons/RSASSA</texPath> <!-- Путь к файлу текстуры оружия (Textures/Things/Weapons/RSASSA.png) -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- Класс отрисовки спрайта оружия -->
     </graphicData>
-    <soundInteract>Interact_Rifle</soundInteract>
-	<equippedAngleOffset>40</equippedAngleOffset>
-    <statBases>
-      <WorkToMake>42000</WorkToMake>
-      <Mass>3.5</Mass>
-      <AccuracyTouch>0.56</AccuracyTouch>
-      <AccuracyShort>0.68</AccuracyShort>
-      <AccuracyMedium>0.93</AccuracyMedium>
-      <AccuracyLong>0.90</AccuracyLong>
-      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
+    <soundInteract>Interact_Rifle</soundInteract> <!-- Звук взаимодействия и передергивания затвора -->
+	<equippedAngleOffset>40</equippedAngleOffset> <!-- Угловое смещение отображения оружия в руках пешки -->
+    <statBases> <!-- Базовые числовые характеристики оружия -->
+      <WorkToMake>420000</WorkToMake> <!-- Трудозатраты на изготовление на станке (в тиках работы) -->
+      <Mass>3.5</Mass> <!-- Масса оружия в килограммах -->
+      <AccuracyTouch>0.99</AccuracyTouch> <!-- Меткость стрельбы в упор (до 3 клеток, 56%) -->
+      <AccuracyShort>0.99</AccuracyShort> <!-- Меткость стрельбы на короткой дистанции (до 12 клеток, 68%) -->
+      <AccuracyMedium>0.99</AccuracyMedium> <!-- Меткость стрельбы на средней дистанции (до 25 клеток, 93%) -->
+      <AccuracyLong>0.99</AccuracyLong> <!-- Меткость стрельбы на дальней дистанции (от 40 клеток, 90%) -->
+      <RangedWeapon_Cooldown>0.1</RangedWeapon_Cooldown> <!-- Время перезарядки/восстановления между залпами (сек.) -->
     </statBases>
-    <costList>
-      <Steel>60</Steel>
-      <ComponentIndustrial>3</ComponentIndustrial>
+    <costList> <!-- Список и количество материалов для создания -->
+      <Steel>60</Steel> <!-- Требуемое количество стали -->
+      <ComponentIndustrial>3000</ComponentIndustrial> <!-- Требуемое количество компонентов -->
     </costList>
-    <recipeMaker>
-      <skillRequirements>
-        <Crafting>5</Crafting>
+    <recipeMaker> <!-- Настройки рецепта изготовления оружия -->
+      <skillRequirements> <!-- Минимальные требования к навыкам мастера -->
+        <Crafting>21</Crafting> <!-- Минимальный уровень навыка Ремесло -->
       </skillRequirements>
     </recipeMaker>
-    <verbs>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>RNBullet_762x51mm_DMRA</defaultProjectile>
-		<burstShotCount>2</burstShotCount>
-        <ticksBetweenBurstShots>55</ticksBetweenBurstShots>
-        <warmupTime>1.2</warmupTime>
-        <range>45.9</range>
-        <soundCast>RNShot_GenericDMR</soundCast>
-        <soundCastTail>GunTail_Heavy</soundCastTail>
-        <muzzleFlashScale>9</muzzleFlashScale>
+    <verbs> <!-- Список боевых режимов стрельбы -->
+      <li> <!-- Конфигурация основного режима стрельбы -->
+        <verbClass>Verb_Shoot</verbClass> <!-- C#-класс механики выстрела -->
+        <hasStandardCommand>true</hasStandardCommand> <!-- Флаг наличия стандартной кнопки стрельбы в интерфейсе -->
+        <defaultProjectile>RNBullet_762x51mm_DMRA</defaultProjectile> <!-- Ссылка на снаряд/пулю по умолчанию -->
+		<burstShotCount>2</burstShotCount> <!-- Количество выстрелов в одной очереди -->
+        <ticksBetweenBurstShots>55</ticksBetweenBurstShots> <!-- Интервал между выстрелами внутри очереди (в тиках) -->
+        <warmupTime>0.2</warmupTime> <!-- Время прицеливания перед началом стрельбы (сек.) -->
+        <range>120.9</range> <!-- Максимальная дальность стрельбы (клеток) -->
+        <soundCast>RNShot_GenericDMR</soundCast> <!-- Звуковой эффект выстрела -->
+        <soundCastTail>GunTail_Heavy</soundCastTail> <!-- Звук затухания/эха выстрела на расстоянии -->
+        <muzzleFlashScale>9</muzzleFlashScale> <!-- Масштаб дульной вспышки при выстреле -->
       </li>
     </verbs>
-    <tools>
-      <li>
-        <label>stock</label>
-        <capacities>
-          <li>Blunt</li>
+    <tools> <!-- Рукопашные атаки оружием в ближнем бою -->
+      <li> <!-- Удар прикладом -->
+        <label>stock</label> <!-- Название части оружия -->
+        <capacities> <!-- Типы наносимого урона -->
+          <li>Blunt</li> <!-- Дробящий урон -->
         </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
+        <power>9</power> <!-- Сила рукопашного удара -->
+        <cooldownTime>2</cooldownTime> <!-- Время замаха/перезарядки удара (сек.) -->
       </li>
-      <li>
-        <label>barrel</label>
-        <capacities>
-          <li>Blunt</li>
-          <li>Poke</li>
+      <li> <!-- Тычок стволом -->
+        <label>barrel</label> <!-- Название части оружия -->
+        <capacities> <!-- Типы наносимого урона -->
+          <li>Blunt</li> <!-- Дробящий урон -->
+          <li>Poke</li> <!-- Колющий/тычковый урон -->
         </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
+        <power>9</power> <!-- Сила рукопашного удара -->
+        <cooldownTime>2</cooldownTime> <!-- Время замаха/перезарядки удара (сек.) -->
       </li>
     </tools>
-    <weaponTags Inherit="False">
-      <!--<li>SniperRifle</li>-->
-	  <li>RN_Coalition_DMR</li>
-	  <li>RN_RSASSA</li>
-    </weaponTags>
-	<tradeTags>
-      <li>RN_RSASSA</li>
+    <weaponTags Inherit="False" /> <!-- Запрет автоматической выдачи оружия любым фракциям, рейдерам и NPC в мире -->
+	<tradeTags> <!-- Теги для торговцев и караванов -->
+      <li>RN_RSASSA</li> <!-- Торговый тег оружия RSASSA -->
     </tradeTags>
   </ThingDef>
 
