@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+	
+	<!-- ====================================== Trousers =========================================== -->
+
+  <ThingDef ParentName="ApparelMakeableBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNApparel_Pants_CryeG3MultiCam</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>G3 field pants (MultiCam)</label> <!-- Отображаемое наименование -->
+    <description>A tougher and heavier set of tactical pants designed for rough conditions.\n\nThis series of pants are of the 5.11 Stryke variant in multicam.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <recipeMaker> <!-- Генератор рецепта для изготовления предмета -->
+      <researchPrerequisite>ComplexClothing</researchPrerequisite> <!-- Необходимый исследовательский проект -->
+    </recipeMaker>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/OnSkin/G3CombatTrousersMultiCam</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+    </graphicData>
+    <costStuffCount>80</costStuffCount> <!-- Количество универсального материала (Stuff) -->
+    <stuffCategories> <!-- Категории материалов для создания (Металлы, Ткани и т.д.) -->
+      <li>Fabric</li> <!-- Элемент списка -->
+      <li>Leathery</li> <!-- Элемент списка -->
+    </stuffCategories>
+    <thingCategories> <!-- Категории складирования предметов -->
+      <li>Apparel</li> <!-- Элемент списка -->
+    </thingCategories>
+    <statBases> <!-- Базовые числовые характеристики -->
+      <MaxHitPoints>210</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <WorkToMake>2500</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <Mass>0.75</Mass> <!-- Масса предмета в килограммах -->
+	  <Flammability>0.4</Flammability> <!-- Горючесть предмета -->
+      <StuffEffectMultiplierArmor>0.5</StuffEffectMultiplierArmor> <!-- Множитель характеристик брони от материала -->
+      <StuffEffectMultiplierInsulation_Cold>0.30</StuffEffectMultiplierInsulation_Cold> <!-- Множитель термоизоляции от холода от материала -->
+      <StuffEffectMultiplierInsulation_Heat>0.10</StuffEffectMultiplierInsulation_Heat> <!-- Множитель термоизоляции от тепла от материала -->
+      <EquipDelay>2</EquipDelay> <!-- Задержка при экипировке предмета (сек.) -->
+    </statBases>
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+      <bodyPartGroups> <!-- Защищаемые/покрываемые группы частей тела -->
+        <li>Legs</li> <!-- Элемент списка -->
+      </bodyPartGroups>
+      <layers> <!-- Слои ношения экипировки -->
+        <li>OnSkin</li> <!-- Элемент списка -->
+      </layers>
+      <tags> <!-- Теги классификации предмета -->
+        <!--<li>IndustrialMilitaryBasic</li>-->
+		<li>PassiveCamo_Multi_Medium</li> <!-- Элемент списка -->
+		<li>RH2_Pants_141</li> <!-- Элемент списка -->
+		<li>RH2_Pants_G3MultiCam</li> <!-- Элемент списка -->
+      </tags>
+      <defaultOutfitTags> <!-- Теги назначения одежды в стандартных наборах поселения -->
+        <li>Worker</li> <!-- Элемент списка -->
+        <li>Soldier</li> <!-- Элемент списка -->
+      </defaultOutfitTags>
+    <useWornGraphicMask>true</useWornGraphicMask> <!-- Флаг использования маски окрашивания для надетого снаряжения -->
+	<canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth> <!-- Возможность генерации для защиты от холода -->
+	</apparel>
+	<tradeTags> <!-- Торговые теги предмета -->
+	  <li>RH2_Pants_141</li> <!-- Элемент списка -->
+	</tradeTags>
+  </ThingDef>  
+  
+    <!-- BDU -->
+  
+    <ThingDef ParentName="ApparelMakeableBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNApparel_Pants_BDUDCU</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>BDU pants (DCU)</label> <!-- Отображаемое наименование -->
+    <description>A tougher and heavier set of tactical pants designed for rough conditions.\n\nThis variant is a Battle Dress Uniform (BDU) pants in DCU camo.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <recipeMaker> <!-- Генератор рецепта для изготовления предмета -->
+      <researchPrerequisite>ComplexClothing</researchPrerequisite> <!-- Необходимый исследовательский проект -->
+    </recipeMaker>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/OnSkin/BDUPants_DCU</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+    </graphicData>
+    <costStuffCount>82</costStuffCount> <!-- Количество универсального материала (Stuff) -->
+    <stuffCategories> <!-- Категории материалов для создания (Металлы, Ткани и т.д.) -->
+      <li>Fabric</li> <!-- Элемент списка -->
+      <li>Leathery</li> <!-- Элемент списка -->
+    </stuffCategories>
+    <thingCategories> <!-- Категории складирования предметов -->
+      <li>Apparel</li> <!-- Элемент списка -->
+    </thingCategories>
+    <statBases> <!-- Базовые числовые характеристики -->
+      <MaxHitPoints>210</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <WorkToMake>2700</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <Mass>0.8</Mass> <!-- Масса предмета в килограммах -->
+	  <Flammability>0.4</Flammability> <!-- Горючесть предмета -->
+      <StuffEffectMultiplierArmor>0.51</StuffEffectMultiplierArmor> <!-- Множитель характеристик брони от материала -->
+      <StuffEffectMultiplierInsulation_Cold>0.31</StuffEffectMultiplierInsulation_Cold> <!-- Множитель термоизоляции от холода от материала -->
+      <StuffEffectMultiplierInsulation_Heat>0.10</StuffEffectMultiplierInsulation_Heat> <!-- Множитель термоизоляции от тепла от материала -->
+      <EquipDelay>2</EquipDelay> <!-- Задержка при экипировке предмета (сек.) -->
+    </statBases>
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+      <bodyPartGroups> <!-- Защищаемые/покрываемые группы частей тела -->
+        <li>Legs</li> <!-- Элемент списка -->
+      </bodyPartGroups>
+      <layers> <!-- Слои ношения экипировки -->
+        <li>OnSkin</li> <!-- Элемент списка -->
+      </layers>
+      <tags> <!-- Теги классификации предмета -->
+        <!--<li>IndustrialMilitaryBasic</li>-->
+        <li>RH2_Pants_141</li> <!-- Элемент списка -->
+        <li>RH2_Pants_BDUDCU</li> <!-- Элемент списка -->
+		<li>PassiveCamo_Desert_Medium</li> <!-- Элемент списка -->
+      </tags>
+      <defaultOutfitTags> <!-- Теги назначения одежды в стандартных наборах поселения -->
+        <li>Worker</li> <!-- Элемент списка -->
+        <li>Soldier</li> <!-- Элемент списка -->
+      </defaultOutfitTags>
+    <useWornGraphicMask>true</useWornGraphicMask> <!-- Флаг использования маски окрашивания для надетого снаряжения -->
+	<canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth> <!-- Возможность генерации для защиты от холода -->
+	</apparel>
+	<tradeTags> <!-- Торговые теги предмета -->
+	  <li>RH2_Pants_141</li> <!-- Элемент списка -->
+	</tradeTags>
+  </ThingDef>   
+  
+</Defs>

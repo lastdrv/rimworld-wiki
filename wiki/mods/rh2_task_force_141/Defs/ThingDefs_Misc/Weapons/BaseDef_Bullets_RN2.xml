@@ -1,0 +1,739 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+	<!-- ================================= Miscellaneous ==================================== -->
+
+	<!--<ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>RN_20Inch_Arrow</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>recurve bow arrow</label> <!-- Отображаемое наименование -->
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Projectile/Arrow_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+    </graphicData>
+    <projectile> <!-- Свойства снаряда/пули -->
+      <flyOverhead>false</flyOverhead> <!-- Полет снаряда над препятствиями и стенами -->
+      <damageDef>ArrowHighVelocity</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+      <damageAmountBase>14</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+      <stoppingPower>1</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+      <speed>56</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+    </projectile>
+  </ThingDef>-->
+
+	<!--<ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>RN_BallisticKnife_Blade</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>ballistic knife blade</label> <!-- Отображаемое наименование -->
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Projectile/Proj_BallKnife</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+    </graphicData>
+    <projectile> <!-- Свойства снаряда/пули -->
+      <flyOverhead>false</flyOverhead> <!-- Полет снаряда над препятствиями и стенами -->
+      <damageDef>ArrowHighVelocity</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+      <damageAmountBase>12</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+      <stoppingPower>1</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+      <speed>56</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+    </projectile>
+  </ThingDef>-->
+
+
+	<!-- ================================= Bullets ==================================== --><!--  To whom it may concern: New ammunition includes .223 Remington and 7x64mm. Everything else mostly the same. -->
+
+	<!-- ================================= Semi-Auto Pistol boolit ==================================== -->
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_40SW_Pistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.40 SW bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>11</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<armorPenetrationBase>0.18</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<speed>60</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_45ACP_Pistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.45 ACP bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>10</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>0.75</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>55</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_45ACPAP_Pistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.45 ACP bullet (AP)</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>8</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<armorPenetrationBase>0.3</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<speed>55</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_9MM_Pistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>9x19mm Parabellum bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>9</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<armorPenetrationBase>0.15</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<speed>65</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_9MMMakarov_Pistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>9x18mm Makarov bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>8</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<armorPenetrationBase>0.14</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<speed>60</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_9MMAP_Pistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>9x19mm Parabellum bullet (AP)</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>7</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<armorPenetrationBase>0.3</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<speed>65</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_46x30_Pistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>4.6x30mm bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>7</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>0.4</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<armorPenetrationBase>0.16</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<speed>70</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_57_Pistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>5.7x28mm bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>8</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>0.45</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<armorPenetrationBase>0.18</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<speed>70</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_50_Pistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.50 AE bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>15</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1.5</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>60</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_762Tokarev_Pistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>7.62x25mm Tokarev bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>10</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<armorPenetrationBase>0.2</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<speed>65</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<!-- ================================= Revolver boolit ==================================== -->
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_762_Revolver</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>7.62x38mmR bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<flyOverhead>false</flyOverhead> <!-- Полет снаряда над препятствиями и стенами -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>8</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<speed>55</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_454_Revolver</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.454 Casull bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>14</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1.25</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>55</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_44Magnum_Pistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.44 Magnum bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>12</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>55</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_45Colt_Pistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.45 Colt bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>10</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>0.75</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>55</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_38Special_Pistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.38 Special bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>8</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<speed>50</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_357_Revolver</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.357 Magnum bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>11</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>60</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<!-- ================================= SMG used calibers ==================================== -->
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_545x39_Rifle</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>5.45x39mm bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>10</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<speed>65</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_AACBlackout_PDW</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.300 AAC Blackout bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>12</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>65</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_380_SMG</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.380 bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>8</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<speed>50</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_32ACP_Pistol</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.32 ACP bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>6</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>0.3</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>55</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<!-- ================================= Shotguns ==================================== -->
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_12Gauge_Shotgun</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>12 Gauge shotgun blast</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Shotgun</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>18</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>3.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<armorPenetrationBase>0.14</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<speed>55</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_23x75mmR_Shotgun</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>23x75mmR blast</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Shotgun</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>26</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>3.5</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<armorPenetrationBase>0.22</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<speed>55</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<!-- ================================= LMG Round ==================================== -->
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_762x54_LMG</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>7.62x54mmR bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>14</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>65</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_762x51mm_LMG</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>7.62x51mm NATO bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>14</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>65</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<!-- ================================= Rifle Round ==================================== -->
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_762x39_Rifle</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>7.62x39R bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<flyOverhead>false</flyOverhead> <!-- Полет снаряда над препятствиями и стенами -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>12</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>0.75</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>60</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_223Remington_Rifle</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.223 Remington bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>11</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<speed>68</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_556x45_Rifle</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>5.56x45mm bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>11</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<speed>70</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<!-- ================================= Marksman Round ==================================== -->
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_303British_Rifle</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.303 British bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>13</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>70</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_762x54_Rifle</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>7.62x54mmR bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>14</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>70</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_792x57Mauser_Rifle</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>8mm Mauser bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>15</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>70</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_7x64mmBrenneke_Rifle</defName><!-- Same stats as Mauser, more for combat log use -->
+		<label>7x64mm bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>15</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>70</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<!-- ================================= DMR ==================================== -->
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_9x39mmSP6_DMR</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>9x39mm SP-6 bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>11</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<armorPenetrationBase>0.14</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<speed>55</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_58x42mm_DMR</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>5.8x42mm bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>11</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<speed>70</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_762x39_DMR</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>7.62x39R bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Small</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>15</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>0.75</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>65</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_762x51mm_DMR</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>7.62 NATO bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>19</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>70</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_762x54_DMR</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>7.62x54mmR bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>19</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>70</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_792x57Mauser_DMR</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>8mm Mauser bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>20</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>70</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_308Winchester_DMR</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.308 Winchester bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>20</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<stoppingPower>1.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>70</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<!-- ================================= Sniper ==================================== -->
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_762x51mm_Sniper</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>7.62 NATO bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>24</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<armorPenetrationBase>0.4</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<stoppingPower>1.5</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>75</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_308Winchester_Sniper</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.308 Winchester bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>25</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<armorPenetrationBase>0.45</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<stoppingPower>1.5</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>75</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_338Lapua_Sniper</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.338 Lapua Magnum bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>30</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<armorPenetrationBase>0.6</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<stoppingPower>2.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>100</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_762x54_Sniper</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>7.62x54mmR bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>24</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<armorPenetrationBase>0.4</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<stoppingPower>1.5</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>75</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_408Cheyenne_Sniper</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.408 Cheyenne Tactical bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>35</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<armorPenetrationBase>0.7</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<stoppingPower>2.5</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>100</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_50BMG_Sniper</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>.50 BMG bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>40</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<armorPenetrationBase>0.8</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<stoppingPower>3.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>95</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+		<defName>RNBullet_127x108_Sniper</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>12.7x108mm bullet</label> <!-- Отображаемое наименование -->
+		<graphicData> <!-- Параметры графического отображения -->
+			<texPath>Things/Projectile/Bullet_Big</texPath> <!-- Путь к текстуре в ресурсах мода -->
+			<graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+		</graphicData>
+		<projectile> <!-- Свойства снаряда/пули -->
+			<damageDef>Bullet</damageDef> <!-- Тип наносимого урона (Bullet, Cut, Blunt и т.д.) -->
+			<damageAmountBase>39</damageAmountBase> <!-- Базовый урон снаряда/атаки -->
+			<armorPenetrationBase>0.75</armorPenetrationBase> <!-- Базовое бронепробитие снаряда (доля) -->
+			<stoppingPower>3.0</stoppingPower> <!-- Останавливающее действие снаряда (размер цели) -->
+			<speed>90</speed> <!-- Скорость полета снаряда (клеток/сек.) -->
+		</projectile>
+	</ThingDef>
+
+</Defs>

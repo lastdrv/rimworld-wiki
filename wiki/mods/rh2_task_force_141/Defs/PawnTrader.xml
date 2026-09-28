@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <TraderKindDef> <!-- Определение ассортимента и характеристик торговца (TraderKindDef) -->
+    <defName>RH_PrisonerTrader</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <stockGenerators> <!-- Генераторы товарных запасов торговца -->
+	  <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>Silver</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>1000000~2500000</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      <li Class="Enlist.StockGenerator_Pawns"> <!-- Элемент списка -->
+	    <price>Expensive</price> <!-- Ценовая категория или модификатор стоимости -->
+        <countRange>12~32</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+    </stockGenerators>
+  </TraderKindDef>
+  
+</Defs>

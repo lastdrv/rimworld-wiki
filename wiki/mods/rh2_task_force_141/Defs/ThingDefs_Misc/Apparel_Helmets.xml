@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+  
+  <!-- ================================== MICH 2000 ====================================-->
+  
+    <ThingDef ParentName="ArmorHelmetMakeableBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNApparel_MICH2000_141Rook</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>MICH TC-2000 helmet (141 B)</label> <!-- Отображаемое наименование -->
+    <description>The Modular Integrated Communications Helmet (MICH) is a U.S. combat helmet and one of several used by the nation's military. It was developed to be the next generation of protective combat helmets for use by the U.S. Army.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <techLevel>Industrial</techLevel> <!-- Технологический уровень -->
+	
+    <recipeMaker> <!-- Генератор рецепта для изготовления предмета -->
+      <researchPrerequisite>Smithing</researchPrerequisite> <!-- Необходимый исследовательский проект -->
+	  <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef> <!-- Определение незаконченной заготовки при прерывании работы -->
+      <skillRequirements> <!-- Минимальные требования к навыкам для создания -->
+        <Crafting>5</Crafting> <!-- Навык: Ремесло -->
+      </skillRequirements>
+    </recipeMaker>
+	
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/Display/MICH_141_Rook</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+	  <shaderType>CutoutComplex</shaderType> <!-- Шейдер отрисовки текстуры -->
+	  <drawSize>0.7</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+    <statBases> <!-- Базовые числовые характеристики -->
+      <WorkToMake>8000</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <MaxHitPoints>140</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <Mass>2.1</Mass> <!-- Масса предмета в килограммах -->
+      <StuffEffectMultiplierArmor>0.80</StuffEffectMultiplierArmor> <!-- Множитель характеристик брони от материала -->
+      <StuffEffectMultiplierInsulation_Cold>0.20</StuffEffectMultiplierInsulation_Cold> <!-- Множитель термоизоляции от холода от материала -->
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat> <!-- Множитель термоизоляции от тепла от материала -->
+      <EquipDelay>3.0</EquipDelay> <!-- Задержка при экипировке предмета (сек.) -->
+    </statBases>
+	
+		<equippedStatOffsets> <!-- Модификаторы характеристик при надевании/экипировке -->
+			<MentalBreakThreshold>-0.01</MentalBreakThreshold> <!-- Порог нервного срыва -->
+			<MoveSpeed>-0.02</MoveSpeed> <!-- Скорость передвижения пешки (клеток/сек.) -->
+		</equippedStatOffsets>
+		
+		<generateCommonality>0.1</generateCommonality>	 <!-- Частота генерации товара -->
+	
+		<stuffCategories> <!-- Категории материалов для создания (Металлы, Ткани и т.д.) -->
+			<li>Metallic</li> <!-- Элемент списка -->
+		</stuffCategories>
+		<costStuffCount>40</costStuffCount> <!-- Количество универсального материала (Stuff) -->
+    <costList> <!-- Фиксированный список затрачиваемых материалов -->
+      <ComponentIndustrial>4</ComponentIndustrial> <!-- Ресурс: Компонент -->
+			<Plasteel>10</Plasteel> <!-- Ресурс: Пласталь -->
+    </costList>
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+	<countsAsClothingForNudity>false</countsAsClothingForNudity> <!-- Считается ли предмет одеждой для предотвращения наготы -->
+	<careIfWornByCorpse>true</careIfWornByCorpse> <!-- Учет штрафа к настроению за снятие с трупа ('одежда мертвеца') -->
+	<!--<hatRenderedFrontOfFace>true</hatRenderedFrontOfFace>-->
+      <bodyPartGroups> <!-- Защищаемые/покрываемые группы частей тела -->
+        <li>UpperHead</li> <!-- Элемент списка -->
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/Helmet/MICH_141_Rook</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+      <layers> <!-- Слои ношения экипировки -->
+        <li>Overhead</li> <!-- Элемент списка -->
+      </layers>
+      <tags> <!-- Теги классификации предмета -->
+        <!--<li>IndustrialMilitaryBasic</li>-->
+		<li>PassiveCamo_Desert_Medium</li> <!-- Элемент списка -->
+		<li>RH2_Helmet_141</li> <!-- Элемент списка -->
+		<li>RH2_Helmet_141Rook</li> <!-- Элемент списка -->
+		<li>RH2_Headgear_141_Set</li> <!-- Элемент списка -->
+      </tags>
+      <defaultOutfitTags> <!-- Теги назначения одежды в стандартных наборах поселения -->
+        <li>Soldier</li> <!-- Элемент списка -->
+      </defaultOutfitTags>
+	  <useWornGraphicMask>true</useWornGraphicMask> <!-- Флаг использования маски окрашивания для надетого снаряжения -->
+    </apparel>	  
+	<tradeTags> <!-- Торговые теги предмета -->
+	  <li>RH2_Helmet_141</li> <!-- Элемент списка -->
+	  </tradeTags>	
+  </ThingDef>  
+  
+  
+    <!-- ================================== MICH 2000 ====================================-->
+  
+    <ThingDef ParentName="ArmorHelmetMakeableBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNApparel_MICH2000_141Roach</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>MICH TC-2000 helmet (141 A)</label> <!-- Отображаемое наименование -->
+    <description>The Modular Integrated Communications Helmet (MICH) is a U.S. combat helmet and one of several used by the nation's military. It was developed to be the next generation of protective combat helmets for use by the U.S. Army.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <techLevel>Industrial</techLevel> <!-- Технологический уровень -->
+	
+    <recipeMaker> <!-- Генератор рецепта для изготовления предмета -->
+      <researchPrerequisite>Smithing</researchPrerequisite> <!-- Необходимый исследовательский проект -->
+	  <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef> <!-- Определение незаконченной заготовки при прерывании работы -->
+      <skillRequirements> <!-- Минимальные требования к навыкам для создания -->
+        <Crafting>5</Crafting> <!-- Навык: Ремесло -->
+      </skillRequirements>
+    </recipeMaker>
+	
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/Display/MICH_141</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+	  <shaderType>CutoutComplex</shaderType> <!-- Шейдер отрисовки текстуры -->
+	  <drawSize>0.7</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+    <statBases> <!-- Базовые числовые характеристики -->
+      <WorkToMake>8000</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <MaxHitPoints>140</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <Mass>2.1</Mass> <!-- Масса предмета в килограммах -->
+      <StuffEffectMultiplierArmor>0.80</StuffEffectMultiplierArmor> <!-- Множитель характеристик брони от материала -->
+      <StuffEffectMultiplierInsulation_Cold>0.20</StuffEffectMultiplierInsulation_Cold> <!-- Множитель термоизоляции от холода от материала -->
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat> <!-- Множитель термоизоляции от тепла от материала -->
+      <EquipDelay>3.0</EquipDelay> <!-- Задержка при экипировке предмета (сек.) -->
+    </statBases>
+	
+		<equippedStatOffsets> <!-- Модификаторы характеристик при надевании/экипировке -->
+			<MentalBreakThreshold>-0.01</MentalBreakThreshold> <!-- Порог нервного срыва -->
+			<MoveSpeed>-0.02</MoveSpeed> <!-- Скорость передвижения пешки (клеток/сек.) -->
+		</equippedStatOffsets>
+		
+		<generateCommonality>0.1</generateCommonality>	 <!-- Частота генерации товара -->
+	
+		<stuffCategories> <!-- Категории материалов для создания (Металлы, Ткани и т.д.) -->
+			<li>Metallic</li> <!-- Элемент списка -->
+		</stuffCategories>
+		<costStuffCount>40</costStuffCount> <!-- Количество универсального материала (Stuff) -->
+    <costList> <!-- Фиксированный список затрачиваемых материалов -->
+      <ComponentIndustrial>4</ComponentIndustrial> <!-- Ресурс: Компонент -->
+			<Plasteel>10</Plasteel> <!-- Ресурс: Пласталь -->
+    </costList>
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+	<countsAsClothingForNudity>false</countsAsClothingForNudity> <!-- Считается ли предмет одеждой для предотвращения наготы -->
+	<careIfWornByCorpse>true</careIfWornByCorpse> <!-- Учет штрафа к настроению за снятие с трупа ('одежда мертвеца') -->
+	<!--<hatRenderedFrontOfFace>true</hatRenderedFrontOfFace>-->
+      <bodyPartGroups> <!-- Защищаемые/покрываемые группы частей тела -->
+        <li>UpperHead</li> <!-- Элемент списка -->
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/Helmet/MICH_141</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+      <layers> <!-- Слои ношения экипировки -->
+        <li>Overhead</li> <!-- Элемент списка -->
+      </layers>
+      <tags> <!-- Теги классификации предмета -->
+        <!--<li>IndustrialMilitaryBasic</li>-->
+		<li>PassiveCamo_Desert_Medium</li> <!-- Элемент списка -->
+		<li>RH2_Helmet_141</li> <!-- Элемент списка -->
+		<li>RH2_Helmet_141Roach</li> <!-- Элемент списка -->
+		<li>RH2_Headgear_141_Set</li> <!-- Элемент списка -->
+      </tags>
+      <defaultOutfitTags> <!-- Теги назначения одежды в стандартных наборах поселения -->
+        <li>Soldier</li> <!-- Элемент списка -->
+      </defaultOutfitTags>
+	  <useWornGraphicMask>true</useWornGraphicMask> <!-- Флаг использования маски окрашивания для надетого снаряжения -->
+    </apparel>
+	<tradeTags> <!-- Торговые теги предмета -->
+	  <li>RH2_Helmet_141</li> <!-- Элемент списка -->
+	  </tradeTags>	
+  </ThingDef>  
+  
+</Defs>

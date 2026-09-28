@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+  <!-- Red Horse 2 Rations -->
+
+  <ThingDef Name="RH2_RationMealBase" Abstract="True"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <thingClass>ThingWithComps</thingClass> <!-- C#-класс сущности в движке игры -->
+    <category>Item</category> <!-- Категория сущности (Item, Pawn, Building и т.д.) -->
+    <useHitPoints>true</useHitPoints> <!-- Флаг использования очков прочности (HP) -->
+    <selectable>true</selectable> <!-- Флаг возможности выбора объекта кликом -->
+    <statBases> <!-- Базовые числовые характеристики -->
+      <MaxHitPoints>50</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <Flammability>1.0</Flammability> <!-- Горючесть предмета -->
+			<Beauty>0</Beauty> <!-- Показатель красоты окружения -->
+			<Mass>0.44</Mass> <!-- Масса предмета в килограммах -->
+			<DeteriorationRate>10</DeteriorationRate> <!-- Скорость разрушения под открытым небом (ед./день) -->
+		</statBases>
+    <altitudeLayer>Item</altitudeLayer> <!-- Слой отрисовки по высоте -->
+    <stackLimit>25</stackLimit> <!-- Максимальный лимит суммирования мысли -->
+    <tickerType>Rare</tickerType> <!-- Частота обновления логики тиков (Normal, Rare, Never) -->
+    <socialPropernessMatters>true</socialPropernessMatters> <!-- Учет социального этикета/приличий при употреблении -->
+    <thingCategories> <!-- Категории складирования предметов -->
+      <li>FoodMeals</li> <!-- Элемент списка -->
+    </thingCategories>
+    <alwaysHaulable>true</alwaysHaulable> <!-- Флаг постоянной доступности для переноски -->
+    <comps> <!-- Список C#-компонентов объекта -->
+      <li Class="CompProperties_Forbiddable" /> <!-- Элемент списка -->
+      <li Class="CompProperties_Ingredients" /> <!-- Элемент списка -->
+	  <li Class="CompProperties_FoodPoisonable" /> <!-- Элемент списка -->
+    </comps>
+    <pathCost>15</pathCost> <!-- Затраты на прохождение клетки (штраф к перемещению) -->
+    <resourceReadoutPriority>Last</resourceReadoutPriority> <!-- Приоритет отображения на панели ресурсов -->
+    <drawGUIOverlay>true</drawGUIOverlay> <!-- Отображение интерфейсного оверлея поверх объекта -->
+    <uiIconForStackCount>1</uiIconForStackCount> <!-- Иконка для количества предметов в стаке -->
+    <ingestible> <!-- Свойства употребляемого предмета (еда, медикаменты, наркотики) -->
+      <foodType>Meal</foodType> <!-- Тип пищи (Meal, Processed, Liquor и т.д.) -->
+      <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce> <!-- Максимальное количество порций за раз -->
+      <optimalityOffsetHumanlikes>16</optimalityOffsetHumanlikes> <!-- Смещение приоритета выбора пищи людьми -->
+    </ingestible>
+  </ThingDef>
+  
+  <!--============-->
+  
+    <ThingDef ParentName="RH2_RationMealBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RH2_Ration_USArmyMRE</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>MRE</label> <!-- Отображаемое наименование -->
+    <description>Meal Ready to Eat. A high-quality packaged meal, manufactured for use in survival situations. While it never rots, it can still deteriorate if left outside. Great for traveling.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Food/MRE</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_StackCount</graphicClass> <!-- C#-класс отрисовки графики -->
+    </graphicData>
+    <statBases> <!-- Базовые числовые характеристики -->
+      <DeteriorationRate>0.25</DeteriorationRate> <!-- Скорость разрушения под открытым небом (ед./день) -->
+      <MarketValue>30</MarketValue> <!-- Рыночная стоимость в серебре -->
+      <Mass>0.5</Mass> <!-- Масса предмета в килограммах -->
+      <WorkToMake>550</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <Nutrition>1.0</Nutrition> <!-- Питательность предмета (единиц еды) -->
+    </statBases>
+    <ingestible> <!-- Свойства употребляемого предмета (еда, медикаменты, наркотики) -->
+      <preferability>MealSimple</preferability> <!-- Предпочтительность в рационе пешек -->
+      <optimalityOffsetHumanlikes>-5</optimalityOffsetHumanlikes> <!-- Смещение приоритета выбора пищи людьми -->
+      <optimalityOffsetFeedingAnimals>-10</optimalityOffsetFeedingAnimals> <!-- Смещение приоритета для кормления животных -->
+			<ingestEffect>EatVegetarian</ingestEffect> <!-- Визуальный эффект процесса употребления -->
+	  <tasteThought>RH2_AteRation_USArmyMRE</tasteThought> <!-- Мысль от вкусовых ощущений при поедании -->
+      <ingestSound>Meal_Eat</ingestSound> <!-- Звуковой эффект употребления -->
+    </ingestible>
+  </ThingDef>
+  
+  
+</Defs>

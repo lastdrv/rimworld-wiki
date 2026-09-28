@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+	<HediffDef> <!-- Определение состояния/эффекта здоровья (HediffDef) -->
+		<defName>HiringPawns_DefaultHireHediff</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>hired pawn</label> <!-- Отображаемое наименование -->
+		<description>hired pawn wrapper</description> <!-- Текстовое описание предмета, сущности или механики -->
+		<hediffClass>HiringPawns.Hediff_HiredPawn</hediffClass> <!-- C#-класс состояния здоровья (Hediff) -->
+		<stages> <!-- Стадии развития мысли или состояния здоровья -->
+			<li> <!-- Элемент списка -->
+				<becomeVisible>false</becomeVisible> <!-- Флаг слышимости звука только при видимости источника -->
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HiringPawns.HiringPawnsDef> <!-- Определение параметров найма оперативников (RH2) -->
+		<defName>RH2_HireMercenaries_141</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<label>Request reinforcements</label> <!-- Отображаемое наименование -->
+		<faction>RH2_141</faction> <!-- Определение фракции -->
+		<minGoodwill>75</minGoodwill> <!-- Минимальный уровень отношений фракций -->
+		<minGoodwillDisableReason>Need {0} goodwill or more</minGoodwillDisableReason> <!-- Ключ сообщения о блокировке найма из-за низких отношений (RH2) -->
+		<notEnoughMoneyReason>Not enough money</notEnoughMoneyReason> <!-- Ключ сообщения о недостатке средств для найма (RH2) -->
+		<hiredPawnHediff>HiringPawns_DefaultHireHediff</hiredPawnHediff> <!-- Состояние/статус наемного бойца, накладываемый на пешку (RH2) -->
+		<hiringOptions> <!-- Список опций найма контрактных оперативников (RH2) -->
+			<li> <!-- Элемент списка -->
+				<label>Free of charge</label> <!-- Отображаемое наименование -->
+				<price>0</price> <!-- Ценовая категория или модификатор стоимости -->
+				<pawnPoints>500</pawnPoints> <!-- Очки стоимости пешки -->
+				<hirePeriod>3</hirePeriod> <!-- Срок найма бойца (в днях) (RH2) -->
+				<arrivalTitle>Reinforcements arrived</arrivalTitle> <!-- Заголовок оповещения при прибытии -->
+				<arrivalText>By requesting reinforcements, the following operators have arrived at your disposal for {0} days:\n{1}</arrivalText> <!-- Текст оповещения при прибытии группы/каравана -->
+				<pawnGroup> <!-- Группа пешек -->
+					<kindDef>Combat</kindDef> <!-- Вид генерируемой пешки (PawnKindDef) -->
+					<options> <!-- Список вариантов генерации -->
+					<RH2_141_FNG>8</RH2_141_FNG> <!-- Вид пешки: Новобранец/рядовой ОТГ-141 -->
+					<RH2_141_Assault>5</RH2_141_Assault> <!-- Вид пешки: Штурмовик ОТГ-141 -->
+					<RH2_141_Gunner>4</RH2_141_Gunner> <!-- Вид пешки: Пулеметчик ОТГ-141 -->
+					<RH2_141_Sharpshooter>2</RH2_141_Sharpshooter> <!-- Вид пешки: Снайпер ОТГ-141 -->
+					</options>
+				</pawnGroup>
+			</li>
+		</hiringOptions>
+	    <hiringCooldownDays>3</hiringCooldownDays> <!-- Период отката найма бойцов в днях (RH2) -->
+		<onCooldownReason>Requesting reinforcements will be available in {0}.</onCooldownReason> <!-- Ключ сообщения о нахождении найма на перезарядке (RH2) -->
+	</HiringPawns.HiringPawnsDef>
+</Defs>

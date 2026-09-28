@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+        <!-- ======================================= Flyye FCPC =======================================-->
+  
+  <ThingDef ParentName="ArmorMachineableBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNApparel_CryeCAGE_Tan</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>Crye CAGE body armour</label> <!-- Отображаемое наименование -->
+    <description>Body armor, also known as body armour, personal armor/armour, or a suit/coat of armour, is protective clothing designed to absorb or deflect physical attacks. Historically used to protect military personnel, today it is used by various types of armed factions (industrial type in particular), security guards or mercenaries, and occasionally ordinary townsfolk.\n\nThis plate carrier variant is the Crye CAGE.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <techLevel>Industrial</techLevel> <!-- Технологический уровень -->
+    <recipeMaker> <!-- Генератор рецепта для изготовления предмета -->
+      <researchPrerequisite>FlakArmor</researchPrerequisite> <!-- Необходимый исследовательский проект -->
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef> <!-- Определение незаконченной заготовки при прерывании работы -->
+      <skillRequirements> <!-- Минимальные требования к навыкам для создания -->
+        <Crafting>7</Crafting> <!-- Навык: Ремесло -->
+      </skillRequirements>
+    </recipeMaker>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/Display/Crye_CAGE</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+	  <shaderType>CutoutComplex</shaderType> <!-- Шейдер отрисовки текстуры -->
+      <drawSize>1.0</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+    <statBases> <!-- Базовые числовые характеристики -->
+      <WorkToMake>9000</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <MaxHitPoints>250</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <Mass>3.0</Mass> <!-- Масса предмета в килограммах -->
+      <Flammability>0.6</Flammability> <!-- Горючесть предмета -->
+      <ArmorRating_Sharp>1.01</ArmorRating_Sharp> <!-- Показатель брони от колющего/острого урона -->
+      <ArmorRating_Blunt>0.37</ArmorRating_Blunt> <!-- Показатель брони от дробящего урона -->
+      <ArmorRating_Heat>0.27</ArmorRating_Heat> <!-- Показатель термозащиты / брони от огня -->
+      <Insulation_Cold>1</Insulation_Cold> <!-- Теплоизоляция от холода (°C) -->
+      <EquipDelay>4.5</EquipDelay> <!-- Задержка при экипировке предмета (сек.) -->
+    </statBases>
+    <equippedStatOffsets> <!-- Модификаторы характеристик при надевании/экипировке -->
+      <MoveSpeed>-0.06</MoveSpeed> <!-- Скорость передвижения пешки (клеток/сек.) -->
+    </equippedStatOffsets>
+    <thingCategories> <!-- Категории складирования предметов -->
+      <li>RNApparel_BodyArmor</li> <!-- Элемент списка -->
+    </thingCategories>
+    <costList> <!-- Фиксированный список затрачиваемых материалов -->
+      <Cloth>25</Cloth> <!-- Ресурс: Ткань -->
+      <Steel>55</Steel> <!-- Ресурс: Сталь -->
+      <ComponentIndustrial>2</ComponentIndustrial> <!-- Ресурс: Компонент -->
+    </costList>
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+	<careIfWornByCorpse>true</careIfWornByCorpse> <!-- Учет штрафа к настроению за снятие с трупа ('одежда мертвеца') -->
+      <bodyPartGroups> <!-- Защищаемые/покрываемые группы частей тела -->
+        <li>Torso</li> <!-- Элемент списка -->
+        <li>Neck</li> <!-- Элемент списка -->
+        <li>Shoulders</li> <!-- Элемент списка -->
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/Armour/CAGE/Crye_CAGE</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+      <layers> <!-- Слои ношения экипировки -->
+        <li>Middle</li> <!-- Элемент списка -->
+      </layers>
+      <tags> <!-- Теги классификации предмета -->
+        <!--<li>IndustrialMilitaryAdvanced</li>-->
+		<li>PassiveCamo_Desert_Medium</li> <!-- Элемент списка -->
+		<li>RH2_Armor_CryeCAGETan</li> <!-- Элемент списка -->
+      </tags>
+      <defaultOutfitTags> <!-- Теги назначения одежды в стандартных наборах поселения -->
+        <li>Soldier</li> <!-- Элемент списка -->
+      </defaultOutfitTags>
+	  <useWornGraphicMask>true</useWornGraphicMask> <!-- Флаг использования маски окрашивания для надетого снаряжения -->
+    </apparel>
+	<tradeTags> <!-- Торговые теги предмета -->
+      <li>RH2_Armor_CryeCAGETan</li> <!-- Элемент списка -->
+    </tradeTags>
+  </ThingDef>      
+
+</Defs>

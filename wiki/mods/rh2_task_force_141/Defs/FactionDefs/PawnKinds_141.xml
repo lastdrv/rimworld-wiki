@@ -1,0 +1,1001 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <PawnKindDef Name="RH2_141_Base" Abstract="True"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <race>Human</race> <!-- Определение расы пешки (Human и т.д.) -->
+    <defaultFactionType>RH2_141</defaultFactionType> <!-- Тип фракции по умолчанию -->
+    <backstoryFilters> <!-- Фильтры генерации предысторий пешки -->
+      <li> <!-- Элемент списка -->
+        <categories> <!-- Категории допустимых ресурсов -->
+          <li>RH2_Coalition</li> <!-- Элемент списка -->
+        </categories>
+      </li>
+    </backstoryFilters>
+    <chemicalAddictionChance>0</chemicalAddictionChance> <!-- Шанс химической зависимости при генерации -->
+    <invNutrition>3</invNutrition> <!-- Запас питательности пищи в инвентаре при генерации -->
+    <invFoodDef>RH2_Ration_USArmyMRE</invFoodDef> <!-- Тип пайка/еды в инвентаре -->
+    <itemQuality>Normal</itemQuality> <!-- Качество генерируемых предметов/экипировки -->
+	
+    <backstoryCryptosleepCommonality>0.10</backstoryCryptosleepCommonality> <!-- Шанс наличия криосна в биографии -->
+    <maxGenerationAge>40</maxGenerationAge> <!-- Максимальный возраст при генерации пешки -->
+	<minGenerationAge>18</minGenerationAge> <!-- Минимальный возраст при генерации пешки -->
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance> <!-- Шанс экипировки боевых стимуляторов/наркотиков -->
+    <combatEnhancingDrugsCount> <!-- Количество боевых стимуляторов в инвентаре -->
+      <min>0</min> <!-- Минимальное значение -->
+      <max>0</max> <!-- Максимальное значение -->
+    </combatEnhancingDrugsCount>
+	<!--<inventoryOptions>
+	<skipChance>0.05</skipChance> <!-- Шанс пропуска элемента -->
+	   <thingDef>RH2_RootBeer_Muffaberg</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange> <!-- Диапазон генерируемого количества предметов -->
+        <min>1</min> <!-- Минимальное значение -->
+        <max>3</max> <!-- Максимальное значение -->
+      </countRange>
+    </inventoryOptions>-->
+	<disallowedTraits> <!-- Запрещенные черты характера для пешек фракции -->
+      <li>Brawler</li> <!-- Элемент списка -->
+      <li>Wimp</li> <!-- Элемент списка -->
+	  <li>Pyromaniac</li> <!-- Элемент списка -->
+	  <li>BodyPurist</li> <!-- Элемент списка -->
+    </disallowedTraits>
+	<initialWillRange>0.7~1</initialWillRange> <!-- Диапазон начальной воли заключенного -->
+    <initialResistanceRange>7~12</initialResistanceRange> <!-- Диапазон начального сопротивления вербовке -->
+	
+	<specificApparelRequirements> <!-- Специфические требования к элементам одежды -->
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Eyes</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>EyeCover</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>Steel</stuff> <!-- Используемый материал предмета -->
+      </li>  
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Neck</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_Balaclava_141</tag> <!-- Тег классификации -->
+            <chance>0.1</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>	  
+    </specificApparelRequirements>	
+	
+	<requiredWorkTags> <!-- Must be capable of labor, as this pawn kind is used in laborer quests. -->
+      <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>
+	
+	<humanPregnancyChance>0</humanPregnancyChance> <!-- Шанс генерации беременной пешки -->
+  </PawnKindDef>
+  
+  
+  <!-- Special boi, Ghosts -->
+    <PawnKindDef Name="RH2_141_SpecialBase" Abstract="True"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <race>Human</race> <!-- Определение расы пешки (Human и т.д.) -->
+    <defaultFactionType>RH2_141</defaultFactionType> <!-- Тип фракции по умолчанию -->
+    <backstoryFilters> <!-- Фильтры генерации предысторий пешки -->
+      <li> <!-- Элемент списка -->
+        <categories> <!-- Категории допустимых ресурсов -->
+          <li>RH2_Coalition</li> <!-- Элемент списка -->
+        </categories>
+      </li>
+    </backstoryFilters>
+    <chemicalAddictionChance>0</chemicalAddictionChance> <!-- Шанс химической зависимости при генерации -->
+    <invNutrition>3</invNutrition> <!-- Запас питательности пищи в инвентаре при генерации -->
+    <invFoodDef>RH2_Ration_USArmyMRE</invFoodDef> <!-- Тип пайка/еды в инвентаре -->
+    <itemQuality>Normal</itemQuality> <!-- Качество генерируемых предметов/экипировки -->
+	
+    <backstoryCryptosleepCommonality>0.10</backstoryCryptosleepCommonality> <!-- Шанс наличия криосна в биографии -->
+    <maxGenerationAge>40</maxGenerationAge> <!-- Максимальный возраст при генерации пешки -->
+	<minGenerationAge>18</minGenerationAge> <!-- Минимальный возраст при генерации пешки -->
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance> <!-- Шанс экипировки боевых стимуляторов/наркотиков -->
+    <combatEnhancingDrugsCount> <!-- Количество боевых стимуляторов в инвентаре -->
+      <min>0</min> <!-- Минимальное значение -->
+      <max>0</max> <!-- Максимальное значение -->
+    </combatEnhancingDrugsCount>
+	<!--<inventoryOptions>
+	<skipChance>0.05</skipChance> <!-- Шанс пропуска элемента -->
+	   <thingDef>RH2_RootBeer_Muffaberg</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange> <!-- Диапазон генерируемого количества предметов -->
+        <min>1</min> <!-- Минимальное значение -->
+        <max>3</max> <!-- Максимальное значение -->
+      </countRange>
+    </inventoryOptions>-->
+	<disallowedTraits> <!-- Запрещенные черты характера для пешек фракции -->
+      <li>Brawler</li> <!-- Элемент списка -->
+      <li>Wimp</li> <!-- Элемент списка -->
+	  <li>Pyromaniac</li> <!-- Элемент списка -->
+	  <li>BodyPurist</li> <!-- Элемент списка -->
+    </disallowedTraits>
+	<initialWillRange>0.7~1</initialWillRange> <!-- Диапазон начальной воли заключенного -->
+    <initialResistanceRange>7~12</initialResistanceRange> <!-- Диапазон начального сопротивления вербовке -->
+
+	<requiredWorkTags> <!-- Must be capable of labor, as this pawn kind is used in laborer quests. -->
+      <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>
+
+	<specificApparelRequirements> <!-- Специфические требования к элементам одежды -->
+      <li> <!-- Элемент списка -->
+        <bodyPartGroup>Eyes</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>EyeCover</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>Steel</stuff> <!-- Используемый материал предмета -->
+      </li>  
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>UpperHead</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>Overhead</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>Steel</stuff> <!-- Используемый материал предмета -->
+      </li>      
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>Belt</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>Leather_Bluefur</stuff> <!-- Используемый материал предмета -->
+      </li>	 
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>OnSkin</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>Leather_Bluefur</stuff> <!-- Используемый материал предмета -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <bodyPartGroup>Legs</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>OnSkin</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>Leather_Bluefur</stuff> <!-- Используемый материал предмета -->
+      </li>
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_Armor_CryeCAGETan</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>       
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_XBelt_141</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li> 
+    </specificApparelRequirements>
+  </PawnKindDef>  
+  
+  
+    <!-- Special boi, Soap -->
+    <PawnKindDef Name="RH2_141_SoapBase" Abstract="True"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <race>Human</race> <!-- Определение расы пешки (Human и т.д.) -->
+    <defaultFactionType>RH2_141</defaultFactionType> <!-- Тип фракции по умолчанию -->
+    <backstoryFilters> <!-- Фильтры генерации предысторий пешки -->
+      <li> <!-- Элемент списка -->
+        <categories> <!-- Категории допустимых ресурсов -->
+          <li>RH2_Coalition</li> <!-- Элемент списка -->
+        </categories>
+      </li>
+    </backstoryFilters>
+    <chemicalAddictionChance>0</chemicalAddictionChance> <!-- Шанс химической зависимости при генерации -->
+    <invNutrition>3</invNutrition> <!-- Запас питательности пищи в инвентаре при генерации -->
+    <invFoodDef>RH2_Ration_USArmyMRE</invFoodDef> <!-- Тип пайка/еды в инвентаре -->
+    <itemQuality>Normal</itemQuality> <!-- Качество генерируемых предметов/экипировки -->
+	
+    <backstoryCryptosleepCommonality>0.10</backstoryCryptosleepCommonality> <!-- Шанс наличия криосна в биографии -->
+    <maxGenerationAge>40</maxGenerationAge> <!-- Максимальный возраст при генерации пешки -->
+	<minGenerationAge>18</minGenerationAge> <!-- Минимальный возраст при генерации пешки -->
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance> <!-- Шанс экипировки боевых стимуляторов/наркотиков -->
+    <combatEnhancingDrugsCount> <!-- Количество боевых стимуляторов в инвентаре -->
+      <min>0</min> <!-- Минимальное значение -->
+      <max>0</max> <!-- Максимальное значение -->
+    </combatEnhancingDrugsCount>
+	<!--<inventoryOptions>
+	<skipChance>0.05</skipChance> <!-- Шанс пропуска элемента -->
+	   <thingDef>RH2_RootBeer_Muffaberg</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange> <!-- Диапазон генерируемого количества предметов -->
+        <min>1</min> <!-- Минимальное значение -->
+        <max>3</max> <!-- Максимальное значение -->
+      </countRange>
+    </inventoryOptions>-->
+	<disallowedTraits> <!-- Запрещенные черты характера для пешек фракции -->
+      <li>Brawler</li> <!-- Элемент списка -->
+      <li>Wimp</li> <!-- Элемент списка -->
+	  <li>Pyromaniac</li> <!-- Элемент списка -->
+	  <li>BodyPurist</li> <!-- Элемент списка -->
+    </disallowedTraits>
+	<initialWillRange>0.7~1</initialWillRange> <!-- Диапазон начальной воли заключенного -->
+    <initialResistanceRange>7~12</initialResistanceRange> <!-- Диапазон начального сопротивления вербовке -->
+	
+	<requiredWorkTags> <!-- Must be capable of labor, as this pawn kind is used in laborer quests. -->
+      <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>
+	
+	
+	<specificApparelRequirements> <!-- Специфические требования к элементам одежды -->
+      <li> <!-- Элемент списка -->
+        <bodyPartGroup>Eyes</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>EyeCover</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>Steel</stuff> <!-- Используемый материал предмета -->
+      </li>  
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>UpperHead</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>Overhead</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>Steel</stuff> <!-- Используемый материал предмета -->
+      </li>      
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>Belt</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>WoolMegasloth</stuff> <!-- Используемый материал предмета -->
+      </li>	 
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>OnSkin</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>Cloth</stuff> <!-- Используемый материал предмета -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <bodyPartGroup>Legs</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>OnSkin</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>WoolMegasloth</stuff> <!-- Используемый материал предмета -->
+      </li>
+    </specificApparelRequirements>
+  </PawnKindDef>  
+  
+  <!-- The Boss -->
+    <PawnKindDef Name="RH2_141_BossBase" Abstract="True"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <race>Human</race> <!-- Определение расы пешки (Human и т.д.) -->
+    <defaultFactionType>RH2_141</defaultFactionType> <!-- Тип фракции по умолчанию -->
+    <backstoryFilters> <!-- Фильтры генерации предысторий пешки -->
+      <li> <!-- Элемент списка -->
+        <categories> <!-- Категории допустимых ресурсов -->
+          <li>RH2_Coalition</li> <!-- Элемент списка -->
+        </categories>
+      </li>
+    </backstoryFilters>
+    <chemicalAddictionChance>0</chemicalAddictionChance> <!-- Шанс химической зависимости при генерации -->
+    <invNutrition>3</invNutrition> <!-- Запас питательности пищи в инвентаре при генерации -->
+    <invFoodDef>RH2_Ration_USArmyMRE</invFoodDef> <!-- Тип пайка/еды в инвентаре -->
+    <itemQuality>Good</itemQuality> <!-- Качество генерируемых предметов/экипировки -->
+	
+    <backstoryCryptosleepCommonality>0.10</backstoryCryptosleepCommonality> <!-- Шанс наличия криосна в биографии -->
+    <maxGenerationAge>40</maxGenerationAge> <!-- Максимальный возраст при генерации пешки -->
+	<minGenerationAge>18</minGenerationAge> <!-- Минимальный возраст при генерации пешки -->
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance> <!-- Шанс экипировки боевых стимуляторов/наркотиков -->
+    <combatEnhancingDrugsCount> <!-- Количество боевых стимуляторов в инвентаре -->
+      <min>0</min> <!-- Минимальное значение -->
+      <max>0</max> <!-- Максимальное значение -->
+    </combatEnhancingDrugsCount>
+	<!--<inventoryOptions>
+	<skipChance>0.05</skipChance> <!-- Шанс пропуска элемента -->
+	   <thingDef>RH2_RootBeer_Muffaberg</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange> <!-- Диапазон генерируемого количества предметов -->
+        <min>1</min> <!-- Минимальное значение -->
+        <max>3</max> <!-- Максимальное значение -->
+      </countRange>
+    </inventoryOptions>-->
+	<disallowedTraits> <!-- Запрещенные черты характера для пешек фракции -->
+      <li>Brawler</li> <!-- Элемент списка -->
+      <li>Wimp</li> <!-- Элемент списка -->
+	  <li>Pyromaniac</li> <!-- Элемент списка -->
+	  <li>BodyPurist</li> <!-- Элемент списка -->
+    </disallowedTraits>
+	<initialWillRange>0.7~1</initialWillRange> <!-- Диапазон начальной воли заключенного -->
+    <initialResistanceRange>7~12</initialResistanceRange> <!-- Диапазон начального сопротивления вербовке -->
+	<requiredWorkTags> <!-- Must be capable of labor, as this pawn kind is used in laborer quests. -->
+      <li>ManualDumb</li> <!-- Элемент списка -->
+      <li>ManualSkilled</li> <!-- Элемент списка -->
+      <li>Cleaning</li> <!-- Элемент списка -->
+      <li>Hauling</li> <!-- Элемент списка -->
+      <li>Mining</li> <!-- Элемент списка -->
+      <li>Firefighting</li> <!-- Элемент списка -->
+    </requiredWorkTags>
+
+	<specificApparelRequirements> <!-- Специфические требования к элементам одежды -->
+      <li> <!-- Элемент списка -->
+        <bodyPartGroup>Eyes</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>EyeCover</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>Steel</stuff> <!-- Используемый материал предмета -->
+      </li>     
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>Belt</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>WoolMegasloth</stuff> <!-- Используемый материал предмета -->
+      </li>	 
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>OnSkin</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>WoolMegasloth</stuff> <!-- Используемый материал предмета -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <bodyPartGroup>Legs</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>OnSkin</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>WoolMegasloth</stuff> <!-- Используемый материал предмета -->
+      </li>
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_Armor_CryeCAGETan</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>       
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_XBelt_141</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li> 
+    </specificApparelRequirements>
+  </PawnKindDef>
+  
+
+
+
+  <!-- Mid merc tier - gunner, slasher, sniper, heavy -->
+
+  <PawnKindDef ParentName="RH2_141_Base" Name="RH2_Operator_NonEliteTierBase" Abstract="True"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <techHediffsChance>0.40</techHediffsChance> <!-- Шанс генерации технологических имплантов/протезов -->
+    <techHediffsMoney> <!-- Бюджет на генерацию имплантов -->
+      <min>700</min> <!-- Минимальное значение -->
+      <max>5000</max> <!-- Максимальное значение -->
+    </techHediffsMoney>
+    <techHediffsTags> <!-- Теги допустимых имплантов -->
+      <li>Advanced</li> <!-- Элемент списка -->
+    </techHediffsTags>
+	<apparelTags> <!-- Теги одежды для экипировки пешек различных категорий -->
+      <li>RNApparel_TacticalJacket_141Fleece</li> <!-- Элемент списка -->
+	  <!--<li>RNApparel_Pants_CryeG3MultiCam</li>-->
+    </apparelTags>
+	
+	<specificApparelRequirements> <!-- Специфические требования к элементам одежды -->
+      <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_Armor_CryeCAGETan</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>       
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_XBelt_141</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>      
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Eyes</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_Goggles_141</tag> <!-- Тег классификации -->
+            <chance>0.4</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>       
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>UpperHead</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_Helmet_141</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>	  
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Legs</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_Pants_141</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>
+      <li> <!-- Элемент списка -->
+        <bodyPartGroup>Shoulders</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_Backpack_141</tag> <!-- Тег классификации -->
+            <chance>0.3</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>
+    </specificApparelRequirements>
+	
+  </PawnKindDef>
+  
+    <!--  Gunfighter -->
+ 
+
+    <PawnKindDef ParentName="RH2_Operator_NonEliteTierBase"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <defName>RH2_141_FNG</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>security forces</label> <!-- Отображаемое наименование -->
+    <combatPower>80</combatPower> <!-- Боевая мощь пешки при расчете очков рейдов -->
+    <gearHealthRange>1</gearHealthRange> <!-- Диапазон прочности экипировки при генерации -->
+   <apparelRequired> <!-- Список обязательных предметов одежды -->
+      <li>RNApparel_TacticalJacket_141Fleece</li> <!-- Элемент списка -->
+	  <!--<li>RNApparel_Pants_CryeG3MultiCam</li>-->
+	  <!--<li>RNApparel_Backpack_AUGURSling</li>-->
+    </apparelRequired>
+    <apparelMoney> <!-- Бюджет стоимости одежды при генерации пешки -->
+      <min>2000</min> <!-- Минимальное значение -->
+      <max>3500</max> <!-- Максимальное значение -->
+    </apparelMoney>
+    <apparelAllowHeadgearChance>2</apparelAllowHeadgearChance> <!-- Шанс генерации головного убора -->
+    <weaponMoney> <!-- Диапазон бюджета стоимости оружия при генерации пешки -->
+      <min>480</min> <!-- Минимальное значение -->
+      <max>650</max> <!-- Максимальное значение -->
+    </weaponMoney>
+    <weaponTags> <!-- Теги оружия для генерации пешкам и фракциям -->
+	  <li>RN_Coalition_CQB</li> <!-- Элемент списка -->
+	  <li>RN_Coalition_AR</li> <!-- Элемент списка -->
+	  <li>RN_M4A1_TaskForce</li> <!-- Элемент списка -->
+    </weaponTags>
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance> <!-- Шанс экипировки боевых стимуляторов/наркотиков -->
+    <combatEnhancingDrugsCount> <!-- Количество боевых стимуляторов в инвентаре -->
+      <min>0</min> <!-- Минимальное значение -->
+      <max>0</max> <!-- Максимальное значение -->
+    </combatEnhancingDrugsCount>
+    <inventoryOptions> <!-- Параметры стартового инвентаря пешки -->
+      <skipChance>0</skipChance> <!-- Шанс пропуска элемента -->
+      <subOptionsChooseOne> <!-- Список альтернативных вариантов (выбор одного) -->
+        <li> <!-- Элемент списка -->
+          <thingDef>Silver</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>5</min> <!-- Минимальное значение -->
+            <max>25</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>        	
+		<li> <!-- Элемент списка -->
+          <thingDef>MedicineIndustrial</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>1</min> <!-- Минимальное значение -->
+            <max>2</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>	
+      </subOptionsChooseOne>
+    </inventoryOptions>
+	<isFighter>true</isFighter> <!-- Считается ли пешка боевой единицей -->
+	<apparelIgnoreSeasons>true</apparelIgnoreSeasons> <!-- Флаг игнорирования температуры сезона при генерации одежды -->
+  </PawnKindDef>   
+
+  <!-- Hunter -->
+  
+  <PawnKindDef ParentName="RH2_Operator_NonEliteTierBase"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <defName>RH2_141_Gunner</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>security forces</label> <!-- Отображаемое наименование -->
+    <combatPower>80</combatPower> <!-- Боевая мощь пешки при расчете очков рейдов -->
+    <gearHealthRange>1</gearHealthRange> <!-- Диапазон прочности экипировки при генерации -->
+   <apparelRequired> <!-- Список обязательных предметов одежды -->
+      <li>RNApparel_TacticalJacket_141Fleece</li> <!-- Элемент списка -->
+	  <!--<li>RNApparel_Pants_CryeG3MultiCam</li>-->
+	  <!--<li>RNApparel_Backpack_AUGURSling</li>-->
+    </apparelRequired>
+    <apparelMoney> <!-- Бюджет стоимости одежды при генерации пешки -->
+      <min>2000</min> <!-- Минимальное значение -->
+      <max>3500</max> <!-- Максимальное значение -->
+    </apparelMoney>
+    <apparelAllowHeadgearChance>2</apparelAllowHeadgearChance> <!-- Шанс генерации головного убора -->
+    <weaponMoney> <!-- Диапазон бюджета стоимости оружия при генерации пешки -->
+      <min>480</min> <!-- Минимальное значение -->
+      <max>650</max> <!-- Максимальное значение -->
+    </weaponMoney>
+    <weaponTags> <!-- Теги оружия для генерации пешкам и фракциям -->
+	  <li>RN_Coalition_MG</li> <!-- Элемент списка -->
+	  <li>RNGun_FNMinimi762</li> <!-- Элемент списка -->
+    </weaponTags>
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance> <!-- Шанс экипировки боевых стимуляторов/наркотиков -->
+    <combatEnhancingDrugsCount> <!-- Количество боевых стимуляторов в инвентаре -->
+      <min>0</min> <!-- Минимальное значение -->
+      <max>0</max> <!-- Максимальное значение -->
+    </combatEnhancingDrugsCount>
+    <inventoryOptions> <!-- Параметры стартового инвентаря пешки -->
+      <skipChance>0</skipChance> <!-- Шанс пропуска элемента -->
+      <subOptionsChooseOne> <!-- Список альтернативных вариантов (выбор одного) -->
+        <li> <!-- Элемент списка -->
+          <thingDef>Silver</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>5</min> <!-- Минимальное значение -->
+            <max>25</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>        
+		<li> <!-- Элемент списка -->
+          <thingDef>MedicineIndustrial</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>1</min> <!-- Минимальное значение -->
+            <max>4</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>		
+      </subOptionsChooseOne>
+    </inventoryOptions>
+	<isFighter>true</isFighter> <!-- Считается ли пешка боевой единицей -->
+	<apparelIgnoreSeasons>true</apparelIgnoreSeasons> <!-- Флаг игнорирования температуры сезона при генерации одежды -->
+  </PawnKindDef>  
+  
+  <!-- Assault -->
+  
+  <PawnKindDef ParentName="RH2_Operator_NonEliteTierBase"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <defName>RH2_141_Assault</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>security forces</label> <!-- Отображаемое наименование -->
+    <combatPower>80</combatPower> <!-- Боевая мощь пешки при расчете очков рейдов -->
+    <gearHealthRange>1</gearHealthRange> <!-- Диапазон прочности экипировки при генерации -->
+   <apparelRequired> <!-- Список обязательных предметов одежды -->
+      <li>RNApparel_TacticalJacket_141Fleece</li> <!-- Элемент списка -->
+	  <!--<li>RNApparel_Pants_CryeG3MultiCam</li>-->
+	  <!--<li>RNApparel_Backpack_AUGURSling</li>-->
+    </apparelRequired>
+    <apparelMoney> <!-- Бюджет стоимости одежды при генерации пешки -->
+      <min>2000</min> <!-- Минимальное значение -->
+      <max>3500</max> <!-- Максимальное значение -->
+    </apparelMoney>
+    <apparelAllowHeadgearChance>2</apparelAllowHeadgearChance> <!-- Шанс генерации головного убора -->
+    <weaponMoney> <!-- Диапазон бюджета стоимости оружия при генерации пешки -->
+      <min>480</min> <!-- Минимальное значение -->
+      <max>650</max> <!-- Максимальное значение -->
+    </weaponMoney>
+    <weaponTags> <!-- Теги оружия для генерации пешкам и фракциям -->
+	  <li>RN_M4A1_TaskForce</li> <!-- Элемент списка -->
+	  <li>RN_Coalition_AR</li> <!-- Элемент списка -->
+    </weaponTags>
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance> <!-- Шанс экипировки боевых стимуляторов/наркотиков -->
+    <combatEnhancingDrugsCount> <!-- Количество боевых стимуляторов в инвентаре -->
+      <min>0</min> <!-- Минимальное значение -->
+      <max>0</max> <!-- Максимальное значение -->
+    </combatEnhancingDrugsCount>
+    <inventoryOptions> <!-- Параметры стартового инвентаря пешки -->
+      <skipChance>0</skipChance> <!-- Шанс пропуска элемента -->
+      <subOptionsChooseOne> <!-- Список альтернативных вариантов (выбор одного) -->
+        <li> <!-- Элемент списка -->
+          <thingDef>Silver</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>5</min> <!-- Минимальное значение -->
+            <max>25</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>        
+		<li> <!-- Элемент списка -->
+          <thingDef>MedicineIndustrial</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>1</min> <!-- Минимальное значение -->
+            <max>4</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>		
+      </subOptionsChooseOne>
+    </inventoryOptions>
+	<isFighter>true</isFighter> <!-- Считается ли пешка боевой единицей -->
+	<apparelIgnoreSeasons>true</apparelIgnoreSeasons> <!-- Флаг игнорирования температуры сезона при генерации одежды -->
+  </PawnKindDef>
+  
+  <!-- Sharpshooter -->
+  
+  <PawnKindDef ParentName="RH2_Operator_NonEliteTierBase"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <defName>RH2_141_Sharpshooter</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>special forces</label> <!-- Отображаемое наименование -->
+    <combatPower>80</combatPower> <!-- Боевая мощь пешки при расчете очков рейдов -->
+    <gearHealthRange>1</gearHealthRange> <!-- Диапазон прочности экипировки при генерации -->
+   <apparelRequired> <!-- Список обязательных предметов одежды -->
+      <li>RNApparel_TacticalJacket_141Fleece</li> <!-- Элемент списка -->
+	  <!--<li>RNApparel_Pants_CryeG3MultiCam</li>-->
+	  <!--<li>RNApparel_Backpack_AUGURSling</li>-->
+    </apparelRequired>
+    <apparelMoney> <!-- Бюджет стоимости одежды при генерации пешки -->
+      <min>2000</min> <!-- Минимальное значение -->
+      <max>3500</max> <!-- Максимальное значение -->
+    </apparelMoney>
+    <apparelAllowHeadgearChance>2</apparelAllowHeadgearChance> <!-- Шанс генерации головного убора -->
+    <weaponMoney> <!-- Диапазон бюджета стоимости оружия при генерации пешки -->
+      <min>550</min> <!-- Минимальное значение -->
+      <max>650</max> <!-- Максимальное значение -->
+    </weaponMoney>
+    <weaponTags> <!-- Теги оружия для генерации пешкам и фракциям -->
+	  <li>RN_Coalition_DMR</li> <!-- Элемент списка -->
+	  <li>RN_Coalition_Sniper</li> <!-- Элемент списка -->
+	  <li>RN_THOR_M408</li> <!-- Элемент списка -->
+	  <li>RN_RSASS</li> <!-- Элемент списка -->
+    </weaponTags>
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance> <!-- Шанс экипировки боевых стимуляторов/наркотиков -->
+    <combatEnhancingDrugsCount> <!-- Количество боевых стимуляторов в инвентаре -->
+      <min>0</min> <!-- Минимальное значение -->
+      <max>0</max> <!-- Максимальное значение -->
+    </combatEnhancingDrugsCount>
+    <inventoryOptions> <!-- Параметры стартового инвентаря пешки -->
+      <skipChance>0</skipChance> <!-- Шанс пропуска элемента -->
+      <subOptionsChooseOne> <!-- Список альтернативных вариантов (выбор одного) -->
+        <li> <!-- Элемент списка -->
+          <thingDef>Silver</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>5</min> <!-- Минимальное значение -->
+            <max>25</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>        
+		<li> <!-- Элемент списка -->
+          <thingDef>MedicineIndustrial</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>1</min> <!-- Минимальное значение -->
+            <max>4</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>			
+      </subOptionsChooseOne>
+    </inventoryOptions>
+	<isFighter>true</isFighter> <!-- Считается ли пешка боевой единицей -->
+	<apparelIgnoreSeasons>true</apparelIgnoreSeasons> <!-- Флаг игнорирования температуры сезона при генерации одежды -->
+  </PawnKindDef>
+
+  <!-- Elite tier - merc elite, pirate boss -->
+  
+  <PawnKindDef Abstract="True" Name="RH2_141_EliteTierBase" ParentName="RH2_141_SpecialBase"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <combatPower>180</combatPower> <!-- Боевая мощь пешки при расчете очков рейдов -->
+    <maxGenerationAge>43</maxGenerationAge> <!-- Максимальный возраст при генерации пешки -->
+    <backstoryCryptosleepCommonality>0.25</backstoryCryptosleepCommonality> <!-- Шанс наличия криосна в биографии -->
+	<itemQuality>Good</itemQuality> <!-- Качество генерируемых предметов/экипировки -->
+    <gearHealthRange>1</gearHealthRange> <!-- Диапазон прочности экипировки при генерации -->
+    <apparelTags> <!-- Теги одежды для экипировки пешек различных категорий -->
+      <li>BeltDefensePop</li> <!-- Элемент списка -->
+    </apparelTags>
+    <apparelMoney> <!-- Бюджет стоимости одежды при генерации пешки -->
+      <min>2500</min> <!-- Минимальное значение -->
+      <max>3500</max> <!-- Максимальное значение -->
+    </apparelMoney>
+    <apparelAllowHeadgearChance>2</apparelAllowHeadgearChance> <!-- Шанс генерации головного убора -->
+    <weaponMoney> <!-- Диапазон бюджета стоимости оружия при генерации пешки -->
+      <min>650</min> <!-- Минимальное значение -->
+      <max>1400</max> <!-- Максимальное значение -->
+    </weaponMoney>
+    <techHediffsMoney> <!-- Бюджет на генерацию имплантов -->
+      <min>500</min> <!-- Минимальное значение -->
+      <max>5000</max> <!-- Максимальное значение -->
+    </techHediffsMoney>
+    <techHediffsTags> <!-- Теги допустимых имплантов -->
+      <li>Advanced</li> <!-- Элемент списка -->
+    </techHediffsTags>
+	<techHediffsDisallowTags> <!-- Запрещенные теги имплантов -->
+      <li>PainCauser</li> <!-- Элемент списка -->
+    </techHediffsDisallowTags>
+    <techHediffsChance>0.7</techHediffsChance> <!-- Шанс генерации технологических имплантов/протезов -->
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance> <!-- Шанс экипировки боевых стимуляторов/наркотиков -->
+    <combatEnhancingDrugsCount> <!-- Количество боевых стимуляторов в инвентаре -->
+      <min>0</min> <!-- Минимальное значение -->
+      <max>0</max> <!-- Максимальное значение -->
+    </combatEnhancingDrugsCount>
+	<apparelIgnoreSeasons>true</apparelIgnoreSeasons> <!-- Флаг игнорирования температуры сезона при генерации одежды -->
+	
+		
+  </PawnKindDef>  
+  
+  <!-- Just the boss -->
+  
+  <PawnKindDef Abstract="True" Name="RH2_141_BossTierBase" ParentName="RH2_141_BossBase"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <combatPower>200</combatPower> <!-- Боевая мощь пешки при расчете очков рейдов -->
+    <maxGenerationAge>43</maxGenerationAge> <!-- Максимальный возраст при генерации пешки -->
+    <backstoryCryptosleepCommonality>0.25</backstoryCryptosleepCommonality> <!-- Шанс наличия криосна в биографии -->
+	<itemQuality>Good</itemQuality> <!-- Качество генерируемых предметов/экипировки -->
+    <gearHealthRange>1</gearHealthRange> <!-- Диапазон прочности экипировки при генерации -->
+    <apparelTags> <!-- Теги одежды для экипировки пешек различных категорий -->
+      <li>BeltDefensePop</li> <!-- Элемент списка -->
+    </apparelTags>
+    <apparelMoney> <!-- Бюджет стоимости одежды при генерации пешки -->
+      <min>2500</min> <!-- Минимальное значение -->
+      <max>3500</max> <!-- Максимальное значение -->
+    </apparelMoney>
+    <apparelAllowHeadgearChance>2</apparelAllowHeadgearChance> <!-- Шанс генерации головного убора -->
+    <weaponMoney> <!-- Диапазон бюджета стоимости оружия при генерации пешки -->
+      <min>650</min> <!-- Минимальное значение -->
+      <max>1400</max> <!-- Максимальное значение -->
+    </weaponMoney>
+    <techHediffsMoney> <!-- Бюджет на генерацию имплантов -->
+      <min>500</min> <!-- Минимальное значение -->
+      <max>5000</max> <!-- Максимальное значение -->
+    </techHediffsMoney>
+    <techHediffsTags> <!-- Теги допустимых имплантов -->
+      <li>Advanced</li> <!-- Элемент списка -->
+    </techHediffsTags>
+	<techHediffsDisallowTags> <!-- Запрещенные теги имплантов -->
+      <li>PainCauser</li> <!-- Элемент списка -->
+    </techHediffsDisallowTags>
+    <techHediffsChance>0.7</techHediffsChance> <!-- Шанс генерации технологических имплантов/протезов -->
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance> <!-- Шанс экипировки боевых стимуляторов/наркотиков -->
+    <combatEnhancingDrugsCount> <!-- Количество боевых стимуляторов в инвентаре -->
+      <min>0</min> <!-- Минимальное значение -->
+      <max>0</max> <!-- Максимальное значение -->
+    </combatEnhancingDrugsCount>
+	<apparelIgnoreSeasons>true</apparelIgnoreSeasons> <!-- Флаг игнорирования температуры сезона при генерации одежды -->
+	
+	
+  </PawnKindDef>
+
+<!-- Boss -->
+
+  <PawnKindDef ParentName="RH2_141_BossTierBase"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <defName>RH2_141_Boss</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>special forces</label> <!-- Отображаемое наименование -->
+    <labelPlural>special forces</labelPlural> <!-- Наименование во множественном числе -->
+    <factionLeader>true</factionLeader> <!-- Флаг возможности назначения лидером фракции -->
+    <canBeSapper>true</canBeSapper> <!-- Способность пешек быть саперами -->
+   <apparelRequired> <!-- Список обязательных предметов одежды -->
+      <li>RNApparel_TacticalJacket_141Fleece</li> <!-- Элемент списка -->
+	  <li>RNApparel_Pants_CryeG3MultiCam</li> <!-- Элемент списка -->
+    </apparelRequired>
+	<weaponTags> <!-- Теги оружия для генерации пешкам и фракциям -->
+	  <li>RN_M4A1_TaskForce</li> <!-- Элемент списка -->
+	  <li>RN_HK433</li> <!-- Элемент списка -->
+	  <li>RN_THOR_M408</li> <!-- Элемент списка -->
+	  <li>RN_RSASS</li> <!-- Элемент списка -->
+    </weaponTags>
+    <inventoryOptions> <!-- Параметры стартового инвентаря пешки -->
+      <skipChance>0.10</skipChance> <!-- Шанс пропуска элемента -->
+      <subOptionsChooseOne> <!-- Список альтернативных вариантов (выбор одного) -->
+        <li> <!-- Элемент списка -->
+          <thingDef>Silver</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>8</min> <!-- Минимальное значение -->
+            <max>55</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>        
+		<li> <!-- Элемент списка -->
+          <thingDef>MedicineIndustrial</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>1</min> <!-- Минимальное значение -->
+            <max>3</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>		
+		<li> <!-- Элемент списка -->
+          <thingDef>MedicineUltratech</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>1</min> <!-- Минимальное значение -->
+            <max>1</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>	
+      </subOptionsChooseOne>
+    </inventoryOptions>
+	
+	<specificApparelRequirements> <!-- Специфические требования к элементам одежды -->
+      <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_Armor_CryeCAGETan</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>          
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Eyes</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_EyePros_141</tag> <!-- Тег классификации -->
+            <chance>0.4</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>       
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>UpperHead</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_BoonieHat_141</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>	  
+    </specificApparelRequirements>
+	
+  </PawnKindDef>
+  
+    <!-- Elite tier - merc elite, pirate boss -->
+  
+  <PawnKindDef Abstract="True" Name="RH2_141_SoapTierBase" ParentName="RH2_141_SoapBase"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <combatPower>190</combatPower> <!-- Боевая мощь пешки при расчете очков рейдов -->
+    <maxGenerationAge>40</maxGenerationAge> <!-- Максимальный возраст при генерации пешки -->
+    <backstoryCryptosleepCommonality>0.25</backstoryCryptosleepCommonality> <!-- Шанс наличия криосна в биографии -->
+	<itemQuality>Good</itemQuality> <!-- Качество генерируемых предметов/экипировки -->
+    <gearHealthRange>1</gearHealthRange> <!-- Диапазон прочности экипировки при генерации -->
+    <apparelTags> <!-- Теги одежды для экипировки пешек различных категорий -->
+      <li>BeltDefensePop</li> <!-- Элемент списка -->
+    </apparelTags>
+    <apparelMoney> <!-- Бюджет стоимости одежды при генерации пешки -->
+      <min>2500</min> <!-- Минимальное значение -->
+      <max>3500</max> <!-- Максимальное значение -->
+    </apparelMoney>
+    <apparelAllowHeadgearChance>2</apparelAllowHeadgearChance> <!-- Шанс генерации головного убора -->
+    <weaponMoney> <!-- Диапазон бюджета стоимости оружия при генерации пешки -->
+      <min>650</min> <!-- Минимальное значение -->
+      <max>1400</max> <!-- Максимальное значение -->
+    </weaponMoney>
+    <techHediffsMoney> <!-- Бюджет на генерацию имплантов -->
+      <min>500</min> <!-- Минимальное значение -->
+      <max>5000</max> <!-- Максимальное значение -->
+    </techHediffsMoney>
+    <techHediffsTags> <!-- Теги допустимых имплантов -->
+      <li>Advanced</li> <!-- Элемент списка -->
+    </techHediffsTags>
+	<techHediffsDisallowTags> <!-- Запрещенные теги имплантов -->
+      <li>PainCauser</li> <!-- Элемент списка -->
+    </techHediffsDisallowTags>
+    <techHediffsChance>0.8</techHediffsChance> <!-- Шанс генерации технологических имплантов/протезов -->
+    <combatEnhancingDrugsChance>0</combatEnhancingDrugsChance> <!-- Шанс экипировки боевых стимуляторов/наркотиков -->
+    <combatEnhancingDrugsCount> <!-- Количество боевых стимуляторов в инвентаре -->
+      <min>0</min> <!-- Минимальное значение -->
+      <max>0</max> <!-- Максимальное значение -->
+    </combatEnhancingDrugsCount>
+	<apparelIgnoreSeasons>true</apparelIgnoreSeasons> <!-- Флаг игнорирования температуры сезона при генерации одежды -->
+   </PawnKindDef>
+  
+  <!-- Second in Command -->
+  
+    <PawnKindDef ParentName="RH2_141_SoapTierBase"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <defName>RH2_141_EliteGunner</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>special forces</label> <!-- Отображаемое наименование -->
+    <labelPlural>special forces</labelPlural> <!-- Наименование во множественном числе -->
+   <apparelRequired> <!-- Список обязательных предметов одежды -->
+      <li>RNApparel_EarDefs_PeltorComtacII</li> <!-- Элемент списка -->
+      <li>RNApparel_TacticalJacket_141Fleece</li> <!-- Элемент списка -->
+	  <li>RNApparel_Pants_CryeG3MultiCam</li> <!-- Элемент списка -->
+    </apparelRequired>
+	<weaponTags> <!-- Теги оружия для генерации пешкам и фракциям -->
+	  <li>RN_M4A1_TaskForce</li> <!-- Элемент списка -->
+	  <li>RN_HK433</li> <!-- Элемент списка -->
+	  <li>RN_Coalition_MG</li> <!-- Элемент списка -->
+	  <li>RNGun_FNMinimi762</li> <!-- Элемент списка -->
+    </weaponTags>
+    <inventoryOptions> <!-- Параметры стартового инвентаря пешки -->
+      <skipChance>0.10</skipChance> <!-- Шанс пропуска элемента -->
+      <subOptionsChooseOne> <!-- Список альтернативных вариантов (выбор одного) -->
+        <li> <!-- Элемент списка -->
+          <thingDef>Silver</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>8</min> <!-- Минимальное значение -->
+            <max>55</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>        
+		<li> <!-- Элемент списка -->
+          <thingDef>MedicineIndustrial</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>1</min> <!-- Минимальное значение -->
+            <max>3</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+	
+	<specificApparelRequirements> <!-- Специфические требования к элементам одежды -->
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <apparelLayer>Belt</apparelLayer> <!-- Слой ношения одежды/снаряжения -->
+        <stuff>Leather_Bluefur</stuff> <!-- Используемый материал предмета -->
+      </li>	 
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_Armor_CryeCAGETan</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>       
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_XBelt_141</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li> 
+    </specificApparelRequirements>
+  </PawnKindDef>  
+  
+  <!-- Specialist -->
+
+  <PawnKindDef ParentName="RH2_141_EliteTierBase"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <defName>RH2_141_Elite</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>special forces</label> <!-- Отображаемое наименование -->
+    <labelPlural>special forces</labelPlural> <!-- Наименование во множественном числе -->
+   <apparelRequired> <!-- Список обязательных предметов одежды -->
+      <li>RNApparel_EarDefs_PeltorComtacII</li> <!-- Элемент списка -->
+      <li>RNApparel_Balaclava_Ghost</li> <!-- Элемент списка -->
+      <li>RNApparel_TacticalJacket_141Fleece</li> <!-- Элемент списка -->
+	  <li>RNApparel_Pants_CryeG3MultiCam</li> <!-- Элемент списка -->
+    </apparelRequired>
+	<weaponTags> <!-- Теги оружия для генерации пешкам и фракциям -->
+	  <li>RN_M4A1_TaskForce</li> <!-- Элемент списка -->
+	  <li>RN_HK433</li> <!-- Элемент списка -->
+    </weaponTags>
+    <inventoryOptions> <!-- Параметры стартового инвентаря пешки -->
+      <skipChance>0.10</skipChance> <!-- Шанс пропуска элемента -->
+      <subOptionsChooseOne> <!-- Список альтернативных вариантов (выбор одного) -->
+        <li> <!-- Элемент списка -->
+          <thingDef>Silver</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>8</min> <!-- Минимальное значение -->
+            <max>55</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>        
+		<li> <!-- Элемент списка -->
+          <thingDef>MedicineIndustrial</thingDef> <!-- Определение предмета (ThingDef) -->
+          <countRange> <!-- Диапазон генерируемого количества предметов -->
+            <min>1</min> <!-- Минимальное значение -->
+            <max>3</max> <!-- Максимальное значение -->
+          </countRange>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+	
+  </PawnKindDef>  
+
+  
+    <PawnKindDef ParentName="RH2_141_EliteTierBase"> <!-- Определение разновидности/типа пешки (PawnKindDef) -->
+    <defName>RH2_141_Trader</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>trader</label> <!-- Отображаемое наименование -->
+    <trader>true</trader> <!-- Параметры торговца -->
+    <combatPower>40</combatPower> <!-- Боевая мощь пешки при расчете очков рейдов -->
+    <isFighter>false</isFighter> <!-- Считается ли пешка боевой единицей -->
+    <gearHealthRange>1</gearHealthRange> <!-- Диапазон прочности экипировки при генерации -->
+    <itemQuality>Good</itemQuality> <!-- Качество генерируемых предметов/экипировки -->
+    <weaponTags> <!-- Теги оружия для генерации пешкам и фракциям -->
+	  <li>RN_M4A1_TaskForce</li> <!-- Элемент списка -->
+    </weaponTags>
+    <weaponMoney> <!-- Диапазон бюджета стоимости оружия при генерации пешки -->
+      <min>480</min> <!-- Минимальное значение -->
+      <max>1200</max> <!-- Максимальное значение -->
+    </weaponMoney>
+    <apparelMoney> <!-- Бюджет стоимости одежды при генерации пешки -->
+      <min>400</min> <!-- Минимальное значение -->
+      <max>600</max> <!-- Максимальное значение -->
+    </apparelMoney>
+    <apparelTags> <!-- Теги одежды для экипировки пешек различных категорий -->
+      <li>RH2_FactionGear_Rangers</li> <!-- Элемент списка -->
+      <li>BeltDefensePop</li> <!-- Элемент списка -->
+    </apparelTags>
+   <apparelRequired> <!-- Список обязательных предметов одежды -->
+      <li>RNApparel_TacticalJacket_141Fleece</li> <!-- Элемент списка -->
+	  <li>RNApparel_Pants_CryeG3MultiCam</li> <!-- Элемент списка -->
+	  <!--<li>RNApparel_Backpack_AUGURSling</li>-->
+    </apparelRequired>
+    <techHediffsChance>0.40</techHediffsChance> <!-- Шанс генерации технологических имплантов/протезов -->
+    <techHediffsMoney> <!-- Бюджет на генерацию имплантов -->
+      <min>545</min> <!-- Минимальное значение -->
+      <max>1500</max> <!-- Максимальное значение -->
+    </techHediffsMoney>
+    <techHediffsTags> <!-- Теги допустимых имплантов -->
+      <li>Advanced</li> <!-- Элемент списка -->
+    </techHediffsTags>
+	<apparelIgnoreSeasons>true</apparelIgnoreSeasons> <!-- Флаг игнорирования температуры сезона при генерации одежды -->
+	
+		<specificApparelRequirements> <!-- Специфические требования к элементам одежды -->
+      <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_Armor_CryeCAGETan</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>       
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Torso</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_XBelt_141</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>      
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>Eyes</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_EyePros_141</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>       
+	  <li> <!-- Элемент списка -->
+        <bodyPartGroup>UpperHead</bodyPartGroup> <!-- Группа частей тела -->
+        <alternateTagChoices> <!-- Альтернативные варианты тегов -->
+          <li> <!-- Элемент списка -->
+            <tag>RH2_BoonieHat_141</tag> <!-- Тег классификации -->
+            <chance>1.0</chance> <!-- Вероятность срабатывания/выбора -->
+          </li>
+        </alternateTagChoices>
+      </li>	  
+    </specificApparelRequirements>
+  </PawnKindDef>
+
+</Defs>

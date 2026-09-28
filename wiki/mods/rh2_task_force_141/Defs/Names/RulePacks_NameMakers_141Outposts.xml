@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <RulePackDef> <!-- Определение набора правил генерации имен/текста (RulePackDef) -->
+    <defName>RH_Namer141Outposts</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <rulePack> <!-- Набор грамматических правил генерации -->
+      <rulesStrings> <!-- Список текстовых шаблонов правил генерации строк -->
+        <li>name->[RH_141Maps]</li> <!-- Элемент списка -->
+        <li>name->[141Missions]</li> <!-- Элемент списка -->
+      </rulesStrings>
+      <rulesRaw> <!-- Необработанные правила генерации текста -->
+        <li Class="Rule_File"> <!-- Элемент списка -->
+          <keyword>RH_141Maps</keyword> <!-- Ключевое слово подстановки в правилах генерации текста -->
+          <path>NameBanks/Names_141Maps</path> <!-- Путь к ресурсу или текстуре -->
+        </li>
+		<li Class="Rule_File"> <!-- Элемент списка -->
+          <keyword>RH_141Missions</keyword> <!-- Ключевое слово подстановки в правилах генерации текста -->
+          <path>NameBanks/Names_141Missions</path> <!-- Путь к ресурсу или текстуре -->
+        </li>
+      </rulesRaw>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>
+
+
+
+
+
+
+

@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_Recon_Coalition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>expeditionary force</title> <!-- Полный титул/название предыстории -->
+    <titleShort>recon</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>[PAWN_nameDef] joined a highly specialized reconnaissance unit in the military in order to live what [PAWN_pronoun] found to be an exciting life of danger.\n\n[PAWN_pronoun] was good at [PAWN_possessive] job and was part of several successful operations that gave valuable intel back to HQ.</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Adulthood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+	
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+      <Melee>5</Melee> <!-- Навык: Ближний бой -->
+      <Shooting>9</Shooting> <!-- Навык: Стрельба -->
+      <Medicine>2</Medicine> <!-- Навык: Медицина -->
+    </skillGains>
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+	
+	<!--<requiredWorkTags>
+      <li>ManualDumb</li> <!-- Элемент списка -->
+	  <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <Nerves>2</Nerves> <!-- Черта характера: Железные нервы -->
+    </forcedTraits>
+	
+	<bodyTypeMale>Hulk</bodyTypeMale> <!-- Мужской тип телосложения -->
+    <bodyTypeFemale>Female</bodyTypeFemale> <!-- Женский тип телосложения -->
+	<shuffleable>True</shuffleable> <!-- Возможность перемешивания/случайного выбора -->
+	
+  </BackstoryDef>
+
+<!-- CIA -->
+
+  <BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_CIA_Coalition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>black operator</title> <!-- Полный титул/название предыстории -->
+    <titleShort>spook</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>[PAWN_nameDef] ended up being recruited by a three letter agency back in [PAWN_possessive] homeworld after facing prison time for breaching operational laws.\n\n[PAWN_possessive] career ended up turning for the better and became highly redacted due to the sensitive nature of [PAWN_possessive] work.</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Adulthood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+	
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+      <Melee>4</Melee> <!-- Навык: Ближний бой -->
+      <Shooting>9</Shooting> <!-- Навык: Стрельба -->
+      <Medicine>3</Medicine> <!-- Навык: Медицина -->
+	  <Social>1</Social> <!-- Навык: Общение -->
+    </skillGains>
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+	
+	<!--<requiredWorkTags>
+      <li>ManualDumb</li> <!-- Элемент списка -->
+	  <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+	
+	<bodyTypeMale>Thin</bodyTypeMale> <!-- Мужской тип телосложения -->
+    <bodyTypeFemale>Female</bodyTypeFemale> <!-- Женский тип телосложения -->
+	<shuffleable>True</shuffleable> <!-- Возможность перемешивания/случайного выбора -->
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <Nerves>2</Nerves> <!-- Черта характера: Железные нервы -->
+    </forcedTraits>  
+	
+	</BackstoryDef>
+
+<!-- SF -->	
+	
+	<BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_SAS_Coalition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>special forces</title> <!-- Полный титул/название предыстории -->
+    <titleShort>blade</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>[PAWN_nameDef] joined a renowned special forces group in [PAWN_possessive] homeworld.\n\n[PAWN_possessive] files are highly redacted due to the secret nature of [PAWN_possessive] work. [PAWN_nameDef] prefers not to talk about it.</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Adulthood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+	
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+      <Melee>2</Melee> <!-- Навык: Ближний бой -->
+      <Shooting>10</Shooting> <!-- Навык: Стрельба -->
+      <Medicine>3</Medicine> <!-- Навык: Медицина -->
+      <Social>2</Social> <!-- Навык: Общение -->
+    </skillGains>
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+	
+	<!--<requiredWorkTags>
+      <li>ManualDumb</li> <!-- Элемент списка -->
+	  <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+	
+	<bodyTypeMale>Male</bodyTypeMale> <!-- Мужской тип телосложения -->
+    <bodyTypeFemale>Female</bodyTypeFemale> <!-- Женский тип телосложения -->
+	<shuffleable>True</shuffleable> <!-- Возможность перемешивания/случайного выбора -->
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <Nerves>2</Nerves> <!-- Черта характера: Железные нервы -->
+    </forcedTraits>
+	
+	</BackstoryDef>
+	
+	<!-- CMT -->	
+	
+	<BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_CMT_Coalition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>combat medic</title> <!-- Полный титул/название предыстории -->
+    <titleShort>medic</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>[PAWN_nameDef] joined the military to fulfill [PAWN_possessive] dream of saving lives as a combat medic.\n\n[PAWN_nameDef] has carried many wounded squad members out of combat and has mastered the skill performing TRIAGE on casualties during the golden hour of survival.</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Adulthood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+	
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+      <Shooting>10</Shooting> <!-- Навык: Стрельба -->
+      <Medicine>7</Medicine> <!-- Навык: Медицина -->
+      <Social>6</Social> <!-- Навык: Общение -->
+	  <Intellectual>4</Intellectual> <!-- Навык: Умственный труд -->
+    </skillGains>
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+	
+	<!--<requiredWorkTags>
+      <li>ManualDumb</li> <!-- Элемент списка -->
+	  <li>Caring</li> <!-- Элемент списка -->
+	  <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+	
+	<bodyTypeMale>Male</bodyTypeMale> <!-- Мужской тип телосложения -->
+    <bodyTypeFemale>Female</bodyTypeFemale> <!-- Женский тип телосложения -->
+	<shuffleable>True</shuffleable> <!-- Возможность перемешивания/случайного выбора -->
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <Nerves>2</Nerves> <!-- Черта характера: Железные нервы -->
+    </forcedTraits>
+	
+	</BackstoryDef>
+	
+	<!-- SF -->	
+	
+	<BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_SF2_Coalition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>special forces</title> <!-- Полный титул/название предыстории -->
+    <titleShort>advisor</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>[PAWN_nameDef] endured a difficult and hellish selection in order to secure [PAWN_possessive] place among the best of the best.\n\n[PAWN_nameDef] has been a part of several deployments and has spent time training security forces of other nations as an advisor.</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Adulthood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+	
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+      <Melee>4</Melee> <!-- Навык: Ближний бой -->
+      <Shooting>10</Shooting> <!-- Навык: Стрельба -->
+      <Medicine>3</Medicine> <!-- Навык: Медицина -->
+      <Social>2</Social> <!-- Навык: Общение -->
+    </skillGains>
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+	
+	<!--<requiredWorkTags>
+      <li>ManualDumb</li> <!-- Элемент списка -->
+	  <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+	
+	<bodyTypeMale>Male</bodyTypeMale> <!-- Мужской тип телосложения -->
+    <bodyTypeFemale>Female</bodyTypeFemale> <!-- Женский тип телосложения -->
+	<shuffleable>True</shuffleable> <!-- Возможность перемешивания/случайного выбора -->
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <Nerves>2</Nerves> <!-- Черта характера: Железные нервы -->
+    </forcedTraits>
+	
+	</BackstoryDef>
+	<!-- Para -->	
+	
+	<BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_Coalition_SFSG</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>SFSG</title> <!-- Полный титул/название предыстории -->
+    <titleShort>SFSG</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>[PAWN_nameDef] joined Special Forces Support Group in [PAWN_possessive] home country during [PAWN_possessive] later years in the military.\n\n[PAWN_nameDef] has been trained in mostly combat medic and ECM roles in order to provide support for the special forces who would go in as the first wave before [PAWN_possessive] team.</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Adulthood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+	
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+      <Shooting>9</Shooting> <!-- Навык: Стрельба -->
+      <Medicine>5</Medicine> <!-- Навык: Медицина -->
+    </skillGains>
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+	
+	<!--<requiredWorkTags>
+      <li>ManualDumb</li> <!-- Элемент списка -->
+      <li>Caring</li> <!-- Элемент списка -->
+	  <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+	
+	<bodyTypeMale>Male</bodyTypeMale> <!-- Мужской тип телосложения -->
+    <bodyTypeFemale>Female</bodyTypeFemale> <!-- Женский тип телосложения -->
+	<shuffleable>True</shuffleable> <!-- Возможность перемешивания/случайного выбора -->
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <SpeedOffset>1</SpeedOffset> <!-- Смещение скорости передвижения -->
+    </forcedTraits>
+	
+  </BackstoryDef>
+
+</Defs>

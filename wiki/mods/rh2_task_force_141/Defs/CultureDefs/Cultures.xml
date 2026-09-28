@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <CultureDef> <!-- Определение культуры фракции/идеологии (CultureDef) -->
+    <defName>RH2SpecialForces_Kriminul</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>warrior</label> <!-- Отображаемое наименование -->
+    <description>A broad category describing the styles and practices of this specific warrior community.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">RH2NamerIdeo_141</ideoNameMaker> <!-- Генератор названий идеологий -->
+    <deityNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerDeityKriminul</deityNameMaker> <!-- Генератор имен божеств -->
+    <deityTypeMaker MayRequire="Ludeon.RimWorld.Ideology">DeityTypeMakerKriminul</deityTypeMaker> <!-- Генератор типов божеств -->
+    <leaderTitleMaker MayRequire="Ludeon.RimWorld.Ideology">LeaderTitleMaker_RH2141</leaderTitleMaker> <!-- Генератор титулов лидеров -->
+    <festivalNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerFestivalKriminul</festivalNameMaker> <!-- Генератор названий фестивалей и праздников -->
+    <allowedPlaceTags> <!-- Разрешенные теги размещения построек -->
+      <li>OriginSpacer</li> <!-- Элемент списка -->
+    </allowedPlaceTags>
+    <iconPath>Things/World/Warrior_Icon</iconPath> <!-- Путь к иконке в интерфейсе -->
+    <thingStyleCategories> <!-- Категории стилей оформления предметов -->
+      <li MayRequire="Ludeon.RimWorld.Ideology"> <!-- Элемент списка -->
+        <category>Spikecore</category> <!-- Категория сущности (Item, Pawn, Building и т.д.) -->
+        <priority>2</priority> <!-- Приоритет обработки/выполнения -->
+      </li>
+    </thingStyleCategories>
+    <styleItemTags> <!-- Теги стилей причесок и бород -->
+      <li> <!-- Элемент списка -->
+        <tag>Rural</tag> <!-- Тег классификации -->
+        <baseWeight>1</baseWeight> <!-- Базовый вес вероятности выбора -->
+        <weightFactor>1</weightFactor> <!-- Множитель вероятности -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <tag>NoBeard</tag> <!-- Тег классификации -->
+        <baseWeight>10</baseWeight> <!-- Базовый вес вероятности выбора -->
+        <weightFactor>1</weightFactor> <!-- Множитель вероятности -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <tag>BeardRural</tag> <!-- Тег классификации -->
+        <baseWeight>0.25</baseWeight> <!-- Базовый вес вероятности выбора -->
+        <weightFactor>1</weightFactor> <!-- Множитель вероятности -->
+      </li>      
+	  <li> <!-- Элемент списка -->
+        <tag>HairPunk</tag> <!-- Тег классификации -->
+        <baseWeight>0.25</baseWeight> <!-- Базовый вес вероятности выбора -->
+        <weightFactor>1</weightFactor> <!-- Множитель вероятности -->
+      </li>      
+      <li> <!-- Элемент списка -->
+        <tag>NoTattoo</tag> <!-- Тег классификации -->
+        <baseWeight>1</baseWeight> <!-- Базовый вес вероятности выбора -->
+        <weightFactor>1</weightFactor> <!-- Множитель вероятности -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <tag>TattooBodyPunk</tag> <!-- Тег классификации -->
+        <baseWeight>0.4</baseWeight> <!-- Базовый вес вероятности выбора -->
+        <weightFactor>1</weightFactor> <!-- Множитель вероятности -->
+      </li>
+
+    </styleItemTags>
+  </CultureDef>
+  
+    <!-- Leader -->
+  
+  <RulePackDef MayRequire="Ludeon.RimWorld.Ideology"> <!-- Определение набора правил генерации имен/текста (RulePackDef) -->
+    <defName>LeaderTitleMaker_RH2141</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <rulePack> <!-- Набор грамматических правил генерации -->
+      <rulesStrings> <!-- Список текстовых шаблонов правил генерации строк -->
+        <li>r_leaderTitle->commanding officer</li> <!-- Элемент списка -->
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+      <!-- Shared content -->
+
+  <RulePackDef MayRequire="Ludeon.RimWorld.Ideology"> <!-- Определение набора правил генерации имен/текста (RulePackDef) -->
+    <defName>RH2NamerIdeo_141</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <include> <!-- Включение подправил или подкатегорий -->
+      <li>GlobalUtility</li> <!-- Элемент списка -->
+    </include>
+    <rulePack> <!-- Набор грамматических правил генерации -->
+      <rulesStrings> <!-- Список текстовых шаблонов правил генерации строк -->
+        <!-- The system will feed one (and only one) of these cases into this namer:
+                - key deity
+                - symbol pack
+             These cases are separate, they won't mix.
+
+             The system will also feed a set of place_* keys correesponding to the ideo's foundation PlaceDef
+         -->
+
+        <!-- The Buzzwords -->
+        <li>r_ideoName->[141Adjective] patriotism</li> <!-- Элемент списка -->
+        <li>r_ideoName->[141Adjective] democracy</li> <!-- Элемент списка -->
+        <li>r_ideoName->[141Adjective] republic</li> <!-- Элемент списка -->
+		
+		<!-- Membername -->
+		 <li>r_memberName->patriot</li> <!-- Элемент списка -->
+		
+		<li>r_ideoAdjective(priority=1)->military</li> <!-- Элемент списка -->
+		
+		<!-- GK Creeds whatever the hell, Ideology DLC is annoying to deal with. -->
+        <li>creed->[genericCreed]</li> <!-- Элемент списка -->
+
+        <li>genericCreed->creed</li> <!-- Элемент списка -->
+        <li>genericCreed->doctrine</li> <!-- Элемент списка -->
+        <li>genericCreed->way</li> <!-- Элемент списка -->
+        <li>genericCreed->path</li> <!-- Элемент списка -->
+		
+		<!-- The Whateverwords -->
+
+        <li>141Adjective->allied</li> <!-- Элемент списка -->
+        <li>141Adjective->western</li> <!-- Элемент списка -->
+        <li>141Adjective->neo</li> <!-- Элемент списка -->
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+</Defs>

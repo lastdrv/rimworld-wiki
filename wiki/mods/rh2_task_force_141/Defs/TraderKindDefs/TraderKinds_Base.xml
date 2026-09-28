@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <TraderKindDef> <!-- Определение ассортимента и характеристик торговца (TraderKindDef) -->
+    <defName>RHBase_141_Standard</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <stockGenerators> <!-- Генераторы товарных запасов торговца -->
+      <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>Silver</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>1000~3250</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+
+	 
+	<!-- Faction gear for sale, if anything is ommitted, it may be because the type of item being sold isn't fitting for the faction. This is common for drugs and military factions not being compatible -->
+	 
+	    <!-- Survival supplies -->
+		 
+	   <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>RH2_Ration_USArmyMRE</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>75~325</countRange> <!-- Диапазон генерируемого количества предметов -->
+       </li>			 
+	  
+	  
+	  <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>MedicineIndustrial</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>25~125</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>	 
+		 
+		 	 <!-- Clothes -->
+	  
+	  <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>RH2_Backpack</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>3~5</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>2~8</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>	 
+
+	  <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>RH2_Armor_CryeCAGETan</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>1~1</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>6~12</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+	 
+	 <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>RH2_XBelt_141</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>4~4</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>4~10</countRange> <!-- Диапазон генерируемого количества предметов -->
+     </li>	 
+	 
+	 <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>RH2_EarDefs_141</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>1~1</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>4~6</countRange> <!-- Диапазон генерируемого количества предметов -->
+     </li>	 
+	 
+	 <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>RH2_EyePros_141</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>2~3</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>4~12</countRange> <!-- Диапазон генерируемого количества предметов -->
+     </li>	 	 
+	 
+	 <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>RH2_Helmet_141</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>2~3</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>2~8</countRange> <!-- Диапазон генерируемого количества предметов -->
+     </li>	 
+	 	 
+     <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>RH2_BoonieHat_141</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>1~1</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>2~6</countRange> <!-- Диапазон генерируемого количества предметов -->
+     </li>	 
+	 
+	 <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>RH2_Balaclava_141_Set</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>2~3</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>4~8</countRange> <!-- Диапазон генерируемого количества предметов -->
+     </li>
+
+	  <!-- ARMAS -->
+	  
+	  <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>RNGun_M4A1TaskForce_Rifle</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>2~12</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>	  	 	  
+	  
+	  <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>RNGun_FNMinimi762MG</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>1~6</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>	  	 	  
+	  
+	  <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>RNGun_RSASS_DMR</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>1~4</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>	  	 	  
+	  
+	  <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>RNGun_THORM408AMR</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>-1~2</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>	  	 
+	  
+	 
+	 <!-- END OF FACTION THINGDEFS -->
+	 
+
+	 <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>ComponentIndustrial</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>5~75</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+	  
+      <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>ComponentSpacer</thingDef> <!-- Определение предмета (ThingDef) -->
+		<!--<price>Cheap</price>-->
+        <countRange>-2~3</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+	  
+      <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>Steel</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>150~1200</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>WoodLog</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>100~500</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      
+	  <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>Plasteel</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>25~150</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+     
+	 <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>Uranium</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>5~25</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+	  
+      <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>Cloth</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>250~1500</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>Gold</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>-100~250</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+			<li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+				<thingDef>Neutroamine</thingDef> <!-- Определение предмета (ThingDef) -->
+				<countRange>250~300</countRange> <!-- Диапазон генерируемого количества предметов -->
+			</li>
+			<li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+				<thingDef>Chemfuel</thingDef> <!-- Определение предмета (ThingDef) -->
+				<countRange>500~1500</countRange> <!-- Диапазон генерируемого количества предметов -->
+			</li>
+			<li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+				<thingDef>Chocolate</thingDef> <!-- Определение предмета (ThingDef) -->
+				<countRange>-20~100</countRange> <!-- Диапазон генерируемого количества предметов -->
+			</li>
+			<li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+				<thingDef>Beer</thingDef> <!-- Определение предмета (ThingDef) -->
+				<countRange>-20~100</countRange> <!-- Диапазон генерируемого количества предметов -->
+			</li>
+
+      <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>MortarShell</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>2~4</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+				<countRange>15~55</countRange> <!-- Диапазон генерируемого количества предметов -->
+			</li>
+			<li Class="StockGenerator_Category"> <!-- Элемент списка -->
+        <categoryDef>Textiles</categoryDef> <!-- Определение категории -->
+        <thingDefCountRange>1~3</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <totalPriceRange>500~1200</totalPriceRange> <!-- Диапазон общей стоимости товаров данной группы -->
+      </li>
+      <li Class="StockGenerator_Category"> <!-- Элемент списка -->
+        <categoryDef>ResourcesRaw</categoryDef> <!-- Определение категории -->
+        <thingDefCountRange>1~4</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <totalPriceRange>100~500</totalPriceRange> <!-- Диапазон общей стоимости товаров данной группы -->
+      </li>
+      <li Class="StockGenerator_Category"> <!-- Элемент списка -->
+        <categoryDef>FoodRaw</categoryDef> <!-- Определение категории -->
+				<excludedCategories><li>EggsFertilized</li></excludedCategories> <!-- Исключенные категории предметов -->
+				<thingDefCountRange>2~4</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <totalPriceRange>100~300</totalPriceRange> <!-- Диапазон общей стоимости товаров данной группы -->
+      </li>
+      <li Class="StockGenerator_Category"> <!-- Элемент списка -->
+        <categoryDef>FoodMeals</categoryDef> <!-- Определение категории -->
+        <thingDefCountRange>-1~2</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>5~15</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      <li Class="StockGenerator_Category"> <!-- Элемент списка -->
+        <categoryDef>BuildingsFurniture</categoryDef> <!-- Определение категории -->
+        <thingDefCountRange>-1~2</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>1~2</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      <li Class="StockGenerator_Animals"> <!-- Элемент списка -->
+        <tradeTagsSell> <!-- Теги продаваемых товаров -->
+          <li>AnimalFarm</li> <!-- Элемент списка -->
+          <li>AnimalPet</li> <!-- Элемент списка -->
+        </tradeTagsSell>
+        <tradeTagsBuy> <!-- Теги закупаемых товаров -->
+          <li>AnimalUncommon</li> <!-- Элемент списка -->
+          <li>AnimalExotic</li> <!-- Элемент списка -->
+        </tradeTagsBuy>
+        <kindCountRange>2~4</kindCountRange> <!-- Диапазон количества пешек данного вида -->
+        <countRange>3~8</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      <li Class="StockGenerator_Category"> <!-- Элемент списка -->
+	    <categoryDef>Apparel</categoryDef> <!-- Определение категории -->
+        <countRange>8~12</countRange> <!-- Диапазон генерируемого количества предметов -->
+		<totalPriceRange>100~500</totalPriceRange> <!-- Диапазон общей стоимости товаров данной группы -->
+      </li>
+      <!--<li Class="StockGenerator_Category">
+        <categoryDef>Drugs</categoryDef> <!-- Определение категории -->
+        <thingDefCountRange>4~5</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <totalPriceRange>5000~8500</totalPriceRange> <!-- Диапазон общей стоимости товаров данной группы -->
+      </li>-->
+      <li Class="StockGenerator_Category"> <!-- Элемент списка -->
+        <categoryDef>WeaponsRanged</categoryDef> <!-- Определение категории -->
+        <thingDefCountRange>-3~2</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>1~3</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      <li Class="StockGenerator_Category"> <!-- Элемент списка -->
+        <categoryDef>WeaponsMelee</categoryDef> <!-- Определение категории -->
+        <thingDefCountRange>-1~3</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>0~3</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      <li Class="StockGenerator_Category"> <!-- Элемент списка -->
+        <categoryDef>ApparelArmor</categoryDef> <!-- Определение категории -->
+        <thingDefCountRange>1~3</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>2~4</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>TechHediff</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>0~5</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>1~2</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>ExoticMisc</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>1~4</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>1~2</countRange> <!-- Диапазон генерируемого количества предметов -->
+        <excludedThingDefs> <!-- Исключенные конкретные предметы -->
+          <li>Luciferium</li> <!-- already handled by drugs -->
+          <li>ComponentSpacer</li> <!-- already handled by single def -->
+        </excludedThingDefs>
+        <customCountRanges> <!-- Пользовательские диапазоны количества предметов -->
+          <MedicineUltratech>0~5</MedicineUltratech> <!-- Предмет: Передовые медикаменты -->
+          <Hyperweave>15~75</Hyperweave> <!-- Ресурс: Гиперткань -->
+        </customCountRanges>
+      </li>
+      <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>Artifact</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>-1~2</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>-1~2</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      <li Class="StockGenerator_Category"> <!-- Элемент списка -->
+        <categoryDef>Apparel</categoryDef> <!-- Определение категории -->
+        <thingDefCountRange>-2~4</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>-2~4</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>      
+	  <li Class="StockGenerator_Category"> <!-- Элемент списка -->
+        <categoryDef>ApparelArmor</categoryDef> <!-- Определение категории -->
+        <thingDefCountRange>-2~2</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>-1~2</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+
+      <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>Television</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>-1~2</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>0~2</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>Telescope</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>0~1</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      <!--<li Class="StockGenerator_Slaves">
+        <respectPopulationIntent>false</respectPopulationIntent> <!-- Учет желаемой численности населения колонии -->
+        <countRange>2~4</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+			<li Class="StockGenerator_MultiDef"> <!-- Элемент списка -->
+				<thingDefs> <!-- Конкретные предметы в фильтре -->
+					<li>Kibble</li> <!-- Элемент списка -->
+					<li>Pemmican</li> <!-- Элемент списка -->
+				</thingDefs>
+			</li>-->
+
+	<li Class="StockGenerator_Animals"> <!-- Элемент списка -->
+        <tradeTagsSell> <!-- Теги продаваемых товаров -->
+          <li>AnimalFarm</li> <!-- Элемент списка -->
+          <li>AnimalPet</li> <!-- Элемент списка -->
+        </tradeTagsSell>
+        <tradeTagsBuy> <!-- Теги закупаемых товаров -->
+          <li>AnimalUncommon</li> <!-- Элемент списка -->
+          <li>AnimalExotic</li> <!-- Элемент списка -->
+          <li>AnimalFarm</li> <!-- Элемент списка -->
+          <li>AnimalPet</li> <!-- Элемент списка -->
+        </tradeTagsBuy>
+        <kindCountRange>2~4</kindCountRange> <!-- Диапазон количества пешек данного вида -->
+        <countRange>3~8</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+
+
+      <!-- Buying -->
+      <li Class="StockGenerator_BuyExpensiveSimple" /> <!-- Элемент списка -->
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li> <!-- Элемент списка -->
+      <li Class="StockGenerator_BuyTradeTag"><tag>ImplantEmpireCommon</tag></li> <!-- Элемент списка -->
+      <li Class="StockGenerator_BuyTradeTag"><tag>ImplantEmpireRoyal</tag></li> <!-- Элемент списка -->
+      <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>	 <!-- Элемент списка -->
+    </stockGenerators>
+  </TraderKindDef>
+
+</Defs>

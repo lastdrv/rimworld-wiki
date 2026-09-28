@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+  
+  <!--========================================= 8X10 =============================================--> 
+  
+    <ThingDef ParentName="HatMakeableBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNApparel_EyePros_SIBallistic</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>ballistic goggles (SI Ballistic)</label> <!-- Отображаемое наименование -->
+    <description>Eye protection is protective gear for the eyes, and sometimes face, designed to reduce the risk of injury. Examples of risks requiring eye protection can include: impact from particles or debris, light or radiation, wind blast, heat, sea spray or impact from some type of ball or puck used in sports.\n\nThis brand of eyewear comes from the Si ballistic goggle series.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <techLevel>Industrial</techLevel> <!-- Технологический уровень -->
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/Headgear/Goggles_SIBallistic_south</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+      <shaderType>CutoutComplex</shaderType> <!-- Шейдер отрисовки текстуры -->
+	  <drawSize>1.20</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+    <stuffCategories> <!-- Категории материалов для создания (Металлы, Ткани и т.д.) -->
+      <li>Metallic</li> <!-- Элемент списка -->
+    </stuffCategories>
+    <costStuffCount>25</costStuffCount> <!-- Количество универсального материала (Stuff) -->
+    <statBases> <!-- Базовые числовые характеристики -->
+      <WorkToMake>4000</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <MaxHitPoints>100</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <Mass>0.08</Mass> <!-- Масса предмета в килограммах -->
+      <StuffEffectMultiplierArmor>0.15</StuffEffectMultiplierArmor> <!-- Множитель характеристик брони от материала -->
+      <StuffEffectMultiplierInsulation_Cold>0.05</StuffEffectMultiplierInsulation_Cold> <!-- Множитель термоизоляции от холода от материала -->
+      <StuffEffectMultiplierInsulation_Heat>0.05</StuffEffectMultiplierInsulation_Heat> <!-- Множитель термоизоляции от тепла от материала -->
+      <EquipDelay>1.2</EquipDelay> <!-- Задержка при экипировке предмета (сек.) -->
+    </statBases>
+    <equippedStatOffsets> <!-- Модификаторы характеристик при надевании/экипировке -->
+	  <ShootingAccuracyPawn>0.05</ShootingAccuracyPawn> <!-- Меткость стрельбы пешки -->
+	  <SocialImpact>0.05</SocialImpact> <!-- Сила социального воздействия пешки -->
+	  <TradePriceImprovement>0.05</TradePriceImprovement> <!-- Бонус к торговым ценам -->
+	  <NegotiationAbility>0.05</NegotiationAbility> <!-- Способность к ведению переговоров -->
+    </equippedStatOffsets>
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+	<countsAsClothingForNudity>false</countsAsClothingForNudity> <!-- Считается ли предмет одеждой для предотвращения наготы -->
+      <bodyPartGroups> <!-- Защищаемые/покрываемые группы частей тела -->
+        <li>Eyes</li> <!-- Элемент списка -->
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/Headgear/Goggles_SIBallistic</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+      <renderSkipFlags> <!-- Флаги пропуска рендеринга частей тела/причесок -->
+        <li>None</li> <!-- Элемент списка -->
+      </renderSkipFlags>
+      <drawData> <!-- Специфические данные позиционирования при отрисовке -->
+        <dataNorth> <!-- Данные отрисовки для направления 'Север' -->
+          <layer>-3</layer> <!-- Слой ношения -->
+        </dataNorth>
+	  </drawData>
+      <layers> <!-- Слои ношения экипировки -->
+        <li>EyeCover</li> <!-- Элемент списка -->
+      </layers>
+      <defaultOutfitTags> <!-- Теги назначения одежды в стандартных наборах поселения -->
+        <li>Soldier</li> <!-- Элемент списка -->
+      </defaultOutfitTags>
+      <tags> <!-- Теги классификации предмета -->
+		<li>RH2_Goggles_141</li> <!-- Элемент списка -->
+		<li>RH2_EyePros_141_Set</li> <!-- Элемент списка -->
+		<li>PassiveCamo_Desert_Low</li> <!-- Элемент списка -->
+      </tags>
+	  <!--<useWornGraphicMask>true</useWornGraphicMask>-->
+	  <blocksVision>false</blocksVision> <!-- Флаг перекрытия обзора/зрения -->
+	  <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth> <!-- Возможность генерации для защиты от холода -->
+    </apparel>	
+	<tradeTags> <!-- Торговые теги предмета -->
+      <li>RH2_EyePros_141_Set</li> <!-- Элемент списка -->
+    </tradeTags>
+	<colorGenerator Class="ColorGenerator_Options"> <!-- Генератор случайного цвета объекта -->
+      <options> <!-- Список вариантов генерации -->
+        <li> <!-- Элемент списка -->
+          <weight>9</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(131, 124, 96)</only> <!-- Ограничение только указанными элементами -->
+        </li>        
+		<li> <!-- Элемент списка -->
+          <weight>8</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(66, 58, 45)</only> <!-- Ограничение только указанными элементами -->
+        </li>		
+		<li> <!-- Элемент списка -->
+          <weight>7</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(59, 59, 59)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>  
+  
+    <!--========================================= PILLA =============================================--> 
+  
+    <ThingDef ParentName="HatMakeableBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNApparel_EyePros_PILLAPantherX</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>eye protection (PILLA Panther X)</label> <!-- Отображаемое наименование -->
+    <description>Eye protection is protective gear for the eyes, and sometimes face, designed to reduce the risk of injury. Examples of risks requiring eye protection can include: impact from particles or debris, light or radiation, wind blast, heat, sea spray or impact from some type of ball or puck used in sports.\n\nThis brand of eyewear comes from the PILLA Panther X series.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <techLevel>Industrial</techLevel> <!-- Технологический уровень -->
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/Headgear/PILLA_PantherX_south</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+	  <drawSize>1.20</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+    <stuffCategories> <!-- Категории материалов для создания (Металлы, Ткани и т.д.) -->
+      <li>Metallic</li> <!-- Элемент списка -->
+    </stuffCategories>
+    <costStuffCount>20</costStuffCount> <!-- Количество универсального материала (Stuff) -->
+    <statBases> <!-- Базовые числовые характеристики -->
+      <WorkToMake>4000</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <MaxHitPoints>100</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <Mass>0.06</Mass> <!-- Масса предмета в килограммах -->
+      <StuffEffectMultiplierArmor>0.10</StuffEffectMultiplierArmor> <!-- Множитель характеристик брони от материала -->
+      <StuffEffectMultiplierInsulation_Cold>0.05</StuffEffectMultiplierInsulation_Cold> <!-- Множитель термоизоляции от холода от материала -->
+      <StuffEffectMultiplierInsulation_Heat>0.05</StuffEffectMultiplierInsulation_Heat> <!-- Множитель термоизоляции от тепла от материала -->
+      <EquipDelay>1.2</EquipDelay> <!-- Задержка при экипировке предмета (сек.) -->
+    </statBases>
+    <equippedStatOffsets> <!-- Модификаторы характеристик при надевании/экипировке -->
+	  <ShootingAccuracyPawn>0.05</ShootingAccuracyPawn> <!-- Меткость стрельбы пешки -->
+    </equippedStatOffsets>
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+	<countsAsClothingForNudity>false</countsAsClothingForNudity> <!-- Считается ли предмет одеждой для предотвращения наготы -->
+      <bodyPartGroups> <!-- Защищаемые/покрываемые группы частей тела -->
+        <li>Eyes</li> <!-- Элемент списка -->
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/Headgear/PILLA_PantherX</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+      <renderSkipFlags> <!-- Флаги пропуска рендеринга частей тела/причесок -->
+        <li>None</li> <!-- Элемент списка -->
+      </renderSkipFlags>
+      <drawData> <!-- Специфические данные позиционирования при отрисовке -->
+        <dataNorth> <!-- Данные отрисовки для направления 'Север' -->
+          <layer>-3</layer> <!-- Слой ношения -->
+        </dataNorth>
+	  </drawData>
+      <layers> <!-- Слои ношения экипировки -->
+        <li>EyeCover</li> <!-- Элемент списка -->
+      </layers>
+      <defaultOutfitTags> <!-- Теги назначения одежды в стандартных наборах поселения -->
+        <li>Soldier</li> <!-- Элемент списка -->
+      </defaultOutfitTags>
+      <tags> <!-- Теги классификации предмета -->
+        <li>RH2_EyePros_141</li> <!-- Элемент списка -->
+		<li>RH2_EyePros_141_Set</li> <!-- Элемент списка -->
+		<li>PassiveCamo_Urban_Low</li> <!-- Элемент списка -->
+      </tags>
+	  <useWornGraphicMask>true</useWornGraphicMask> <!-- Флаг использования маски окрашивания для надетого снаряжения -->
+	  <blocksVision>false</blocksVision> <!-- Флаг перекрытия обзора/зрения -->
+	  <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth> <!-- Возможность генерации для защиты от холода -->
+	  </apparel>	
+	<tradeTags> <!-- Торговые теги предмета -->
+      <li>RH2_EyePros_141_Set</li> <!-- Элемент списка -->
+    </tradeTags>
+	  <colorGenerator Class="ColorGenerator_Options"> <!-- Генератор случайного цвета объекта -->
+      <options> <!-- Список вариантов генерации -->
+        <li> <!-- Элемент списка -->
+          <weight>7</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(253, 169, 96)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+        <li> <!-- Элемент списка -->
+          <weight>10</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(252, 230, 34)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+        <li> <!-- Элемент списка -->
+          <weight>8</weight> <!-- Относительный вес вероятности выбора -->
+          <min>(0.3,0.3,0.3,1)</min> <!-- Минимальное значение -->
+          <max>(176, 5, 30)</max> <!-- Максимальное значение -->
+        </li>        
+		<li> <!-- Элемент списка -->
+          <weight>9</weight> <!-- Относительный вес вероятности выбора -->
+          <min>(255, 255, 255)</min> <!-- Минимальное значение -->
+          <max>(74, 74, 74)</max> <!-- Максимальное значение -->
+        </li>
+        <li> <!-- Элемент списка -->
+          <weight>6</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(253, 169, 96)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+</Defs>

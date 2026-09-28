@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+	<!-- Beanie -->
+	
+    <!-- MILTEC Jungle Hat -->
+  <ThingDef ParentName="HatMakeableBase" Name="MILTECBoonie"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNApparel_BoonieHat_Price</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>booney hat</label> <!-- Отображаемое наименование -->
+    <description>A boonie hat or booney hat, is a form of wide-brim hat commonly used by military forces in hot tropical climates. Its design is similar to a bucket hat but with a stiffer brim. The Australian version has a thinner brim giving it the name a "Giggle hat."\n\nThis variant of boonie hat is of the Bushmaster series.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <recipeMaker> <!-- Генератор рецепта для изготовления предмета -->
+      <researchPrerequisite>ComplexClothing</researchPrerequisite> <!-- Необходимый исследовательский проект -->
+    </recipeMaker>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/Headgear/PriceHat_north</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+	  <shaderType>CutoutComplex</shaderType> <!-- Шейдер отрисовки текстуры -->
+	  <drawSize>1.30</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+    <costStuffCount>35</costStuffCount> <!-- Количество универсального материала (Stuff) -->
+    <stuffCategories> <!-- Категории материалов для создания (Металлы, Ткани и т.д.) -->
+      <li>Fabric</li> <!-- Элемент списка -->
+      <li>Leathery</li> <!-- Элемент списка -->
+    </stuffCategories>
+    <statBases> <!-- Базовые числовые характеристики -->
+      <MaxHitPoints>85</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <WorkToMake>1800</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <Mass>0.12</Mass> <!-- Масса предмета в килограммах -->
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor> <!-- Множитель характеристик брони от материала -->
+      <StuffEffectMultiplierInsulation_Cold>0.20</StuffEffectMultiplierInsulation_Cold> <!-- Множитель термоизоляции от холода от материала -->
+      <StuffEffectMultiplierInsulation_Heat>0.45</StuffEffectMultiplierInsulation_Heat> <!-- Множитель термоизоляции от тепла от материала -->
+      <EquipDelay>0.8</EquipDelay> <!-- Задержка при экипировке предмета (сек.) -->
+    </statBases>
+    <equippedStatOffsets> <!-- Модификаторы характеристик при надевании/экипировке -->
+      <SocialImpact>0.10</SocialImpact> <!-- Сила социального воздействия пешки -->
+    </equippedStatOffsets>
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+	<countsAsClothingForNudity>false</countsAsClothingForNudity> <!-- Считается ли предмет одеждой для предотвращения наготы -->
+      <bodyPartGroups> <!-- Защищаемые/покрываемые группы частей тела -->
+        <li>UpperHead</li> <!-- Элемент списка -->
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/Headgear/PriceHat</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+      <layers> <!-- Слои ношения экипировки -->
+        <li>Overhead</li> <!-- Элемент списка -->
+      </layers>
+      <tags> <!-- Теги классификации предмета -->
+	    <li>RH2_BoonieHat_141</li> <!-- Элемент списка -->
+		<li>RH2_Headgear_141_Set</li> <!-- Элемент списка -->
+      </tags>
+      <defaultOutfitTags> <!-- Теги назначения одежды в стандартных наборах поселения -->
+        <li>Worker</li> <!-- Элемент списка -->
+      </defaultOutfitTags>
+	  <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth> <!-- Возможность генерации для защиты от холода -->
+    </apparel>
+	
+	<tradeTags> <!-- Торговые теги предмета -->
+	  <li>RH2_BoonieHat_141</li> <!-- Элемент списка -->
+	</tradeTags>	
+	
+    <colorGenerator Class="ColorGenerator_Options"> <!-- Генератор случайного цвета объекта -->
+      <options> <!-- Список вариантов генерации -->
+        <li> <!-- Элемент списка -->
+          <weight>9</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(195, 191, 146)</only> <!-- Ограничение только указанными элементами -->
+        </li>        
+		<li> <!-- Элемент списка -->
+          <weight>8</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(92, 95, 76)</only> <!-- Ограничение только указанными элементами -->
+        </li>		
+		<li> <!-- Элемент списка -->
+          <weight>7</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(171, 139, 100)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+        <li> <!-- Элемент списка -->
+          <weight>5</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(48, 45, 40)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+        <li> <!-- Элемент списка -->
+          <weight>5</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(106, 97, 90)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+    	<!-- ===================== Sustainer ========================= -->
+ 
+   <SoundDef> <!-- Определение звукового эффекта (SoundDef) -->
+    <defName>RH2_Enlisted_141</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <maxVoices>1</maxVoices>   <!-- Максимальное количество одновременных голосов звука -->
+    <maxSimultaneous>1</maxSimultaneous>   <!-- Максимум одновременных источников звука -->
+    <subSounds> <!-- Список подзвуков/аудиодорожек -->
+      <li> <!-- Элемент списка -->
+        <onCamera>True</onCamera>       <!-- Привязка звука к положению камеры -->
+        <grains> <!-- Зерна/файлы воспроизведения звука -->
+          <li Class="AudioGrain_Clip"> <!-- Элемент списка -->
+            <clipPath>UI_Enlistment/141Join</clipPath> <!-- Путь к аудиофайлу (.wav / .ogg) -->
+          </li>
+        </grains>      
+        <volumeRange>30~30</volumeRange> <!-- Диапазон громкости звука (дБ) -->
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

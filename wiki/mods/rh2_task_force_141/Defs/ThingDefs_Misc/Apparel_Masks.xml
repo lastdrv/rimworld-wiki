@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <!--============ Balaclavas ========-->
+
+  <!-- Balaclava Highlander -->
+  
+  <ThingDef ParentName="HatMakeableBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNApparel_Balaclava_Helikon</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>balaclava (Helikon)</label> <!-- Отображаемое наименование -->
+    <description>A balaclava, also known as a balaclava helmet or Bally (UK slang) or ski mask (US slang), is a form of cloth headgear designed to expose only part of the face, usually the eyes and mouth. Depending on style and how it is worn, only the eyes, mouth and nose, or just the front of the face are unprotected.\n\nThis version is the Helikon line of balaclavas.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <techLevel>Industrial</techLevel> <!-- Технологический уровень -->
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/Display/Balaclava_Helikon</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+	  <drawSize>0.70</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+    <stuffCategories> <!-- Категории материалов для создания (Металлы, Ткани и т.д.) -->
+      <li>Fabric</li> <!-- Элемент списка -->
+	  <li>Leathery</li> <!-- Элемент списка -->
+    </stuffCategories>
+    <costStuffCount>15</costStuffCount> <!-- Количество универсального материала (Stuff) -->
+    <statBases> <!-- Базовые числовые характеристики -->
+      <WorkToMake>4000</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <MaxHitPoints>110</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <Mass>0.05</Mass> <!-- Масса предмета в килограммах -->
+      <StuffEffectMultiplierArmor>0.10</StuffEffectMultiplierArmor> <!-- Множитель характеристик брони от материала -->
+      <StuffEffectMultiplierInsulation_Cold>0.30</StuffEffectMultiplierInsulation_Cold> <!-- Множитель термоизоляции от холода от материала -->
+      <StuffEffectMultiplierInsulation_Heat>0.04</StuffEffectMultiplierInsulation_Heat> <!-- Множитель термоизоляции от тепла от материала -->
+      <EquipDelay>1.2</EquipDelay> <!-- Задержка при экипировке предмета (сек.) -->
+    </statBases>
+    <equippedStatOffsets> <!-- Модификаторы характеристик при надевании/экипировке -->
+      <PainShockThreshold>0.05</PainShockThreshold> <!-- Болевой порог шока -->
+    </equippedStatOffsets>
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+	<countsAsClothingForNudity>false</countsAsClothingForNudity> <!-- Считается ли предмет одеждой для предотвращения наготы -->
+	
+      <bodyPartGroups> <!-- Защищаемые/покрываемые группы частей тела -->
+        <!--<li>Mouth</li>
+        <li>Teeth</li>--> <!-- Элемент списка -->
+        <li>Neck</li> <!-- Элемент списка -->
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/Headgear/Balaclava_Helikon</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+      <!--<hatRenderedFrontOfFace>true</hatRenderedFrontOfFace>-->
+      <layers> <!-- Слои ношения экипировки -->
+        <li>Overhead</li> <!-- Элемент списка -->
+      </layers>
+      <defaultOutfitTags> <!-- Теги назначения одежды в стандартных наборах поселения -->
+        <li>Soldier</li> <!-- Элемент списка -->
+      </defaultOutfitTags>
+      <tags> <!-- Теги классификации предмета -->
+        <!--<li>IndustrialMilitaryBasic</li>-->
+		<li>RH_Balaclava</li> <!-- Элемент списка -->
+		<li>RH2_Balaclava_141</li> <!-- Элемент списка -->
+		<li>RH2_Balaclava_141_Set</li> <!-- Элемент списка -->
+		<li>PassiveCamo_Colour_Set</li> <!-- Элемент списка -->
+      </tags>		  
+	<!--<useWornGraphicMask>true</useWornGraphicMask>-->
+	<canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth> <!-- Возможность генерации для защиты от холода -->
+	  <renderSkipFlags> <!-- Флаги пропуска рендеринга частей тела/причесок -->
+        <li>Hair</li> <!-- Элемент списка -->
+        <li>Beard</li> <!-- Элемент списка -->
+      </renderSkipFlags>
+	  	
+		<drawData> <!-- Специфические данные позиционирования при отрисовке -->
+	    <dataNorth> <!-- Данные отрисовки для направления 'Север' -->
+          <layer>60</layer> <!-- Слой ношения -->
+        </dataNorth>	    
+		<dataSouth> <!-- Данные отрисовки для направления 'Юг' -->
+          <layer>60</layer> <!-- Слой ношения -->
+        </dataSouth>		
+		<dataEast> <!-- Данные отрисовки для направления 'Восток' -->
+          <layer>60</layer> <!-- Слой ношения -->
+        </dataEast>		
+		<dataWest> <!-- Данные отрисовки для направления 'Запад' -->
+          <layer>60</layer> <!-- Слой ношения -->
+        </dataWest>
+		</drawData>
+		
+    </apparel>
+	  <tradeTags> <!-- Торговые теги предмета -->
+	  <li>RH2_Balaclava_141_Set</li> <!-- Элемент списка -->
+	  </tradeTags>	
+	  
+	    <colorGenerator Class="ColorGenerator_Options"> <!-- Генератор случайного цвета объекта -->
+      <options> <!-- Список вариантов генерации -->
+        <li> <!-- Элемент списка -->
+          <weight>9</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(195, 191, 146)</only> <!-- Ограничение только указанными элементами -->
+        </li>        
+		<li> <!-- Элемент списка -->
+          <weight>8</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(92, 95, 76)</only> <!-- Ограничение только указанными элементами -->
+        </li>		
+		<li> <!-- Элемент списка -->
+          <weight>7</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(171, 139, 100)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+        <li> <!-- Элемент списка -->
+          <weight>5</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(48, 45, 40)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+        <li> <!-- Элемент списка -->
+          <weight>5</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(106, 97, 90)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+      </options>
+    </colorGenerator>
+	<generateCommonality>0.10</generateCommonality> <!-- Частота генерации товара -->
+	<generateAllowChance>0.10</generateAllowChance>   <!-- Шанс разрешения генерации предмета у торговца -->
+  </ThingDef>
+  
+  
+    <!-- Balaclava Ghost -->
+  
+  <ThingDef ParentName="HatMakeableBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNApparel_Balaclava_Ghost</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>balaclava (Ghost)</label> <!-- Отображаемое наименование -->
+    <description>A balaclava, also known as a balaclava helmet or Bally (UK slang) or ski mask (US slang), is a form of cloth headgear designed to expose only part of the face, usually the eyes and mouth. Depending on style and how it is worn, only the eyes, mouth and nose, or just the front of the face are unprotected.\n\nThis version is a custom made Task Force 141 Ghost balaclava.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <techLevel>Industrial</techLevel> <!-- Технологический уровень -->
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/Display/Balaclava_Ghost</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+	  <shaderType>CutoutComplex</shaderType> <!-- Шейдер отрисовки текстуры -->
+	  <drawSize>0.70</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+    <stuffCategories> <!-- Категории материалов для создания (Металлы, Ткани и т.д.) -->
+      <li>Fabric</li> <!-- Элемент списка -->
+	  <li>Leathery</li> <!-- Элемент списка -->
+    </stuffCategories>
+    <costStuffCount>15</costStuffCount> <!-- Количество универсального материала (Stuff) -->
+    <statBases> <!-- Базовые числовые характеристики -->
+      <WorkToMake>4000</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <MaxHitPoints>110</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <Mass>0.05</Mass> <!-- Масса предмета в килограммах -->
+      <StuffEffectMultiplierArmor>0.10</StuffEffectMultiplierArmor> <!-- Множитель характеристик брони от материала -->
+      <StuffEffectMultiplierInsulation_Cold>0.30</StuffEffectMultiplierInsulation_Cold> <!-- Множитель термоизоляции от холода от материала -->
+      <StuffEffectMultiplierInsulation_Heat>0.04</StuffEffectMultiplierInsulation_Heat> <!-- Множитель термоизоляции от тепла от материала -->
+      <EquipDelay>1.2</EquipDelay> <!-- Задержка при экипировке предмета (сек.) -->
+    </statBases>
+    <equippedStatOffsets> <!-- Модификаторы характеристик при надевании/экипировке -->
+      <PainShockThreshold>0.05</PainShockThreshold> <!-- Болевой порог шока -->
+    </equippedStatOffsets>
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+	<countsAsClothingForNudity>false</countsAsClothingForNudity> <!-- Считается ли предмет одеждой для предотвращения наготы -->
+      <bodyPartGroups> <!-- Защищаемые/покрываемые группы частей тела -->
+        <!--<li>Mouth</li>
+        <li>Teeth</li>--> <!-- Элемент списка -->
+        <li>Neck</li> <!-- Элемент списка -->
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/Headgear/Balaclava_Ghost</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+      <!--<hatRenderedFrontOfFace>true</hatRenderedFrontOfFace>-->
+      <layers> <!-- Слои ношения экипировки -->
+        <li>Overhead</li> <!-- Элемент списка -->
+      </layers>
+      <defaultOutfitTags> <!-- Теги назначения одежды в стандартных наборах поселения -->
+        <li>Soldier</li> <!-- Элемент списка -->
+      </defaultOutfitTags>
+      <tags> <!-- Теги классификации предмета -->
+        <!--<li>IndustrialMilitaryAdvanced</li>-->
+		<li>RH_Balaclava</li> <!-- Элемент списка -->
+		<li>RH2_BalaclavaGhost_141</li> <!-- Элемент списка -->
+		<li>RH2_Balaclava_141_Set</li> <!-- Элемент списка -->
+		<li>PassiveCamo_Black_Set</li> <!-- Элемент списка -->
+      </tags>
+	<useWornGraphicMask>true</useWornGraphicMask> <!-- Флаг использования маски окрашивания для надетого снаряжения -->
+	<canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth> <!-- Возможность генерации для защиты от холода -->
+	<renderSkipFlags> <!-- Флаги пропуска рендеринга частей тела/причесок -->
+        <li>Hair</li> <!-- Элемент списка -->
+        <li>Beard</li> <!-- Элемент списка -->
+      </renderSkipFlags>
+	  
+	  	<drawData> <!-- Специфические данные позиционирования при отрисовке -->
+	    <dataNorth> <!-- Данные отрисовки для направления 'Север' -->
+          <layer>60</layer> <!-- Слой ношения -->
+        </dataNorth>	    
+		<dataSouth> <!-- Данные отрисовки для направления 'Юг' -->
+          <layer>60</layer> <!-- Слой ношения -->
+        </dataSouth>		
+		<dataEast> <!-- Данные отрисовки для направления 'Восток' -->
+          <layer>60</layer> <!-- Слой ношения -->
+        </dataEast>		
+		<dataWest> <!-- Данные отрисовки для направления 'Запад' -->
+          <layer>60</layer> <!-- Слой ношения -->
+        </dataWest>
+		</drawData>
+    </apparel>
+	
+	<tradeTags> <!-- Торговые теги предмета -->
+	  <li>RH2_Balaclava_141_Set</li> <!-- Элемент списка -->
+	</tradeTags>	
+	  
+	<generateCommonality>0.10</generateCommonality> <!-- Частота генерации товара -->
+	<generateAllowChance>0.10</generateAllowChance>   <!-- Шанс разрешения генерации предмета у торговца -->
+  </ThingDef> 
+  
+  
+</Defs>

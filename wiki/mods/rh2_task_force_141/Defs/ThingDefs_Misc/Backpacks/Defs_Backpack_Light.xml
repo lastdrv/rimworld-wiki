@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+<!-- Scavenger Style Backpacks intended for NPCs -->    
+  
+  <!-- Dickies -->
+
+  <ThingDef ParentName="RH2_Backpack_Light"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNApparel_Backpack_CamelbakMULE</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>MULE hydration pack</label> <!-- Отображаемое наименование -->
+	<description>The Camelbak MULE, a Hydration pack perfect for trekking in the heat. This backpack allows the wearer to carry up to 18 KG for caravan trips and other outdoor activities.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/Backpack/Mule_Tan_north</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> 	   <!-- C#-класс отрисовки графики -->
+	  <shaderType>CutoutComplex</shaderType> <!-- Шейдер отрисовки текстуры -->
+	  <drawSize>1.1</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+      <wornGraphicPath>Things/Apparel/Backpack/Mule_Tan</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+      <wornGraphicData> <!-- Параметры графики надетой экипировки по направлениям -->
+        <east> <!-- Параметры смещения отрисовки для направления 'Восток' -->
+          <offset>(-0.30,-0.05)</offset> <!-- // (x,y) //--> 
+          <thin><offset>(0.05,0)</offset></thin> <!-- Худощавое телосложение (Thin) -->
+          <hulk><offset>(-0.1,0)</offset></hulk> <!-- Мускулистое/крупное телосложение (Hulk) -->
+          <fat><offset>(-0.15,0)</offset></fat> <!-- Полное телосложение (Fat) -->
+		  <female><offset>(0.02,0)</offset></female> <!-- Женский пол / телосложение -->
+        </east>
+        <west> <!-- Параметры смещения отрисовки для направления 'Запад' -->
+          <offset>(0.30,-0.10)</offset> <!-- // (x,y) //--> 
+          <thin><offset>(-0.05,0)</offset></thin> <!-- Худощавое телосложение (Thin) -->
+          <hulk><offset>(0.1,0)</offset></hulk> <!-- Мускулистое/крупное телосложение (Hulk) -->
+          <fat><offset>(0.15,0)</offset></fat> <!-- Полное телосложение (Fat) -->
+		  <female><offset>(-0.02,0)</offset></female>		   <!-- Женский пол / телосложение -->
+        </west>
+        <north> <!-- Параметры смещения отрисовки для направления 'Север' -->
+          <offset>(0,-0.1)</offset> <!-- // (x,y) //--> 
+          <thin><offset>(0,0)</offset></thin> <!-- Худощавое телосложение (Thin) -->
+          <hulk><offset>(0,-0.05)</offset></hulk> <!-- Мускулистое/крупное телосложение (Hulk) -->
+          <fat><offset>(0,-0.05)</offset></fat> <!-- Полное телосложение (Fat) -->
+        </north>		
+        <male>  <scale>(0.70,0.70)</scale></male> <!-- // (0.75,0.75) //-->
+        <female><scale>(0.70,0.70)</scale></female> <!-- // (0.75,0.75) //-->
+        <thin>  <scale>(0.60,0.60)</scale></thin> <!-- // (0.7,0.7) //-->
+        <hulk>  <scale>(0.80,0.80)</scale></hulk> <!-- // (0.9,0.9) //-->
+        <fat>   <scale>(0.80,0.80)</scale></fat> <!-- // (0.9,0.9) //-->
+      </wornGraphicData>
+      <tags> <!-- Теги классификации предмета -->
+		<li>RH2_CamelbakMule_141</li> <!-- Элемент списка -->
+		<li>RH2_Backpack_141</li> <!-- Элемент списка -->
+		<li>RH2_Backpack</li>	 <!-- Элемент списка -->
+      </tags>
+	  <useWornGraphicMask>true</useWornGraphicMask> <!-- Флаг использования маски окрашивания для надетого снаряжения -->
+    </apparel>
+    <statBases> <!-- Базовые числовые характеристики -->
+	  <MaxHitPoints>100</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <WorkToMake>3000</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <Mass>0.50</Mass> <!-- Масса предмета в килограммах -->
+      <Flammability>0.4</Flammability> <!-- Горючесть предмета -->
+	  <Insulation_Cold>6</Insulation_Cold>	   <!-- Теплоизоляция от холода (°C) -->
+      <EquipDelay>0.50</EquipDelay> <!-- Задержка при экипировке предмета (сек.) -->
+    </statBases>	
+	
+	<equippedStatOffsets> <!-- Модификаторы характеристик при надевании/экипировке -->
+	<CarryingCapacity>18</CarryingCapacity> <!-- Грузоподъемность пешки (кг) -->
+	</equippedStatOffsets> <!-- Adds backpack capacity with the Backpack.dll-->
+	
+	    <colorGenerator Class="ColorGenerator_Options"> <!-- Генератор случайного цвета объекта -->
+      <options> <!-- Список вариантов генерации -->
+        <li> <!-- Элемент списка -->
+          <weight>10</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(62, 82, 98)</only> <!-- Ограничение только указанными элементами -->
+        </li>           
+		<li> <!-- Элемент списка -->
+          <weight>9</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(73, 67, 54)</only> <!-- Ограничение только указанными элементами -->
+        </li>        
+		<li> <!-- Элемент списка -->
+          <weight>8</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(51, 47, 44)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+        <li> <!-- Элемент списка -->
+          <weight>5</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(73, 67, 54)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+        <li> <!-- Элемент списка -->
+          <weight>4</weight> <!-- Относительный вес вероятности выбора -->
+          <min>(248, 72, 97)</min> <!-- Минимальное значение -->
+          <max>(123, 29, 27)</max> <!-- Максимальное значение -->
+        </li>          
+		<li> <!-- Элемент списка -->
+          <weight>5</weight> <!-- Относительный вес вероятности выбора -->
+          <min>(141, 120, 73)</min> <!-- Минимальное значение -->
+          <max>(195, 175, 150)</max> <!-- Максимальное значение -->
+        </li>    		
+		<li> <!-- Элемент списка -->
+          <weight>6</weight> <!-- Относительный вес вероятности выбора -->
+          <min>(101, 118, 66)</min> <!-- Минимальное значение -->
+          <max>(88, 101, 55)</max> <!-- Максимальное значение -->
+        </li>        
+		<li> <!-- Элемент списка -->
+          <weight>8</weight> <!-- Относительный вес вероятности выбора -->
+          <min>(255, 255, 255)</min> <!-- Минимальное значение -->
+          <max>(154, 154, 154)</max> <!-- Максимальное значение -->
+        </li>
+        <li> <!-- Элемент списка -->
+          <weight>5</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(50, 53, 58)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+      </options>
+    </colorGenerator>
+	
+	<!-- Ingredients -->
+	<costStuffCount>42</costStuffCount> <!-- Количество универсального материала (Stuff) -->
+    <stuffCategories> <!-- Категории материалов для создания (Металлы, Ткани и т.д.) -->
+      <li>Fabric</li> <!-- Элемент списка -->
+      <li>Leathery</li> <!-- Элемент списка -->
+    </stuffCategories>
+    <thingCategories> <!-- Категории складирования предметов -->
+      <li>Apparel</li> <!-- Элемент списка -->
+    </thingCategories>
+	<colorPerStuff> <!-- Цветовые оттенки в зависимости от материала -->
+      <li> <!-- Элемент списка -->
+        <stuff>Cloth</stuff> <!-- Используемый материал предмета -->
+        <color>(74, 74, 74)</color> <!-- Цветовой оттенок RGB -->
+      </li>
+    </colorPerStuff>
+  </ThingDef>
+
+</Defs>

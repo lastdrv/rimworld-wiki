@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <RulePackDef> <!-- Определение набора правил генерации имен/текста (RulePackDef) -->
+    <defName>RH_Namer141PlayerFaction</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <rulePack> <!-- Набор грамматических правил генерации -->
+      <rulesStrings> <!-- Список текстовых шаблонов правил генерации строк -->
+        <li>r_name->Task Force [TaskForce141]</li> <!-- Элемент списка -->
+		
+		<li>TaskForce141->141</li> <!-- Элемент списка -->
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>
+
+
+
+
+
+
+

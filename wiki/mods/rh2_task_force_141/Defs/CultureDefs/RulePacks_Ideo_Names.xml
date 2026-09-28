@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <RulePackDef MayRequire="Ludeon.RimWorld.Ideology"> <!-- Определение набора правил генерации имен/текста (RulePackDef) -->
+    <defName>NamerIdeoRH2141TF</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <include> <!-- Включение подправил или подкатегорий -->
+      <li>NamerIdeoGlobal</li> <!-- Элемент списка -->
+      <li>CultureSpacer</li> <!-- Элемент списка -->
+    </include>
+	<rulePack> <!-- Набор грамматических правил генерации -->
+      <rulesStrings> <!-- Список текстовых шаблонов правил генерации строк -->
+        <li>globalAdjective(p=15)->Warzone</li> <!-- Элемент списка -->
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

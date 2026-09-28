@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <!-- RN Apparel -->
+  
+    <ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+    <defName>RNApparel_Main</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>Rimmu-Nation apparel</label> <!-- Отображаемое наименование -->
+    <parent>Apparel</parent> <!-- Родительская категория / базовый шаблон -->
+  </ThingCategoryDef>
+  
+  <ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+    <defName>RNApparel_Casual</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>casual</label> <!-- Отображаемое наименование -->
+    <parent>RNApparel_Main</parent> <!-- Родительская категория / базовый шаблон -->
+  </ThingCategoryDef>
+  
+  <ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+    <defName>RNApparel_Belts</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>accessories</label> <!-- Отображаемое наименование -->
+    <parent>RNApparel_Main</parent> <!-- Родительская категория / базовый шаблон -->
+  </ThingCategoryDef>
+  
+    <ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+    <defName>RNApparel_Combat</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>combat uniform</label> <!-- Отображаемое наименование -->
+    <parent>RNApparel_Main</parent> <!-- Родительская категория / базовый шаблон -->
+  </ThingCategoryDef>
+  
+  
+  <ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+    <defName>RNApparel_BodyArmor</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>body armor</label> <!-- Отображаемое наименование -->
+    <parent>RNApparel_Main</parent> <!-- Родительская категория / базовый шаблон -->
+  </ThingCategoryDef>
+  
+  
+      <ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+    <defName>RNApparel_Formal</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>formal</label> <!-- Отображаемое наименование -->
+    <parent>RNApparel_Main</parent> <!-- Родительская категория / базовый шаблон -->
+  </ThingCategoryDef>
+
+    <!-- Shell -->
+  
+   <ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+    <defName>RNApparel_ShellCasual</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>casual jackets</label> <!-- Отображаемое наименование -->
+    <parent>RNApparel_Main</parent> <!-- Родительская категория / базовый шаблон -->
+  </ThingCategoryDef>
+  
+   <ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+    <defName>RNApparel_ShellCombat</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>combat jackets</label> <!-- Отображаемое наименование -->
+    <parent>RNApparel_Main</parent> <!-- Родительская категория / базовый шаблон -->
+  </ThingCategoryDef>
+  
+     <ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+    <defName>RNApparel_ShellFormal</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>formal jackets</label> <!-- Отображаемое наименование -->
+    <parent>RNApparel_Main</parent> <!-- Родительская категория / базовый шаблон -->
+  </ThingCategoryDef>
+  
+  <!-- Headgear Main -->
+  
+        <ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+      <defName>RNHeadgear_Main</defName> <!-- Уникальный идентификатор определения (Def) -->
+      <label>Rimmu-Nation headgear</label> <!-- Отображаемое наименование -->
+      <parent>Headgear</parent> <!-- Родительская категория / базовый шаблон -->
+    </ThingCategoryDef>
+  
+  	<ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+      <defName>RNHeadgear_Hats</defName> <!-- Уникальный идентификатор определения (Def) -->
+      <label>hats</label> <!-- Отображаемое наименование -->
+      <parent>RNHeadgear_Main</parent> <!-- Родительская категория / базовый шаблон -->
+    </ThingCategoryDef>
+  
+      <ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+      <defName>RNHeadgear_Helmets</defName> <!-- Уникальный идентификатор определения (Def) -->
+      <label>helmets</label> <!-- Отображаемое наименование -->
+      <parent>RNHeadgear_Main</parent> <!-- Родительская категория / базовый шаблон -->
+    </ThingCategoryDef>
+	
+		      <ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+      <defName>RNHeadgear_Masks</defName> <!-- Уникальный идентификатор определения (Def) -->
+      <label>masks</label> <!-- Отображаемое наименование -->
+      <parent>RNHeadgear_Main</parent> <!-- Родительская категория / базовый шаблон -->
+    </ThingCategoryDef>
+	
+		  <!-- RN Apparel -->
+  
+      <ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+    <defName>RNApparel_PoweredArmor</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>powered armor</label> <!-- Отображаемое наименование -->
+    <parent>RNApparel_Main</parent> <!-- Родительская категория / базовый шаблон -->
+  </ThingCategoryDef>
+  
+  <!---->
+  
+      <ThingCategoryDef> <!-- Определение категории складирования предметов (ThingCategoryDef) -->
+      <defName>RNHeadgear_PoweredArmorHelmets</defName> <!-- Уникальный идентификатор определения (Def) -->
+      <label>powered armor helmets</label> <!-- Отображаемое наименование -->
+      <parent>RNHeadgear_Main</parent> <!-- Родительская категория / базовый шаблон -->
+    </ThingCategoryDef>
+
+</Defs>

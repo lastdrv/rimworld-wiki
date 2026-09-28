@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+
+	<Enlist.FactionEnlistOptionsDef> <!-- Определение условий контракта и службы во фракции (RH2 Enlistment) -->
+		<defName>RH2_141</defName> <!-- Уникальный идентификатор определения (Def) -->
+		<minGoodwillRequrementToEnlist>50</minGoodwillRequrementToEnlist> <!-- Минимальный уровень отношений для подписания контракта службы (RH2) -->
+		<enlistGoodwillGain>25</enlistGoodwillGain> <!-- Прирост отношений при подписании контракта службы (RH2) -->
+		<enlistLetterTitleKey>RH.141EnlistLetterTitle</enlistLetterTitleKey> <!-- Ключ локализации заголовка письма о вступлении на службу (RH2) -->
+		<enlistLetterLabelKey>RH.141EnlistLetterLabel</enlistLetterLabelKey> <!-- Ключ локализации текста письма о вступлении на службу (RH2) -->
+		<enlistButtonLabelKey>RH.141EnlistButtonLabel</enlistButtonLabelKey> <!-- Ключ локализации названия кнопки службы (RH2) -->
+		<enlistButtonDescKey>RH.141EnlistButtonDesc</enlistButtonDescKey> <!-- Ключ локализации описания кнопки службы (RH2) -->
+		<enlistedToHostileFactionKey>RH.141EnlistedToHostileFaction</enlistedToHostileFactionKey> <!-- Ключ сообщения при враждебном статусе фракции (RH2) -->
+		<enlistRequrementsNotSatisfiedKey>RH.141EnlistRequrementsNotSatisfied</enlistRequrementsNotSatisfiedKey> <!-- Ключ сообщения о несоответствии требованиям службы (RH2) -->
+		<enlistButtonIconTexPath>Things/UI/Enlisted/Enlist_Modern</enlistButtonIconTexPath> <!-- Путь к иконке кнопки службы в интерфейсе (RH2) -->
+		<enlistedSoundDef>RH2_Enlisted_141</enlistedSoundDef> <!-- Звуковой эффект при подписании контракта службы (RH2) -->
+		<enlistedWithKey>RH.141EnlistedWithKey</enlistedWithKey> <!-- Ключ сообщения об успешном поступлении на службу (RH2) -->
+
+		<missionsAreEnabled>true</missionsAreEnabled> <!-- Флаг доступности боевых заданий и миссий от фракции (RH2) -->
+		<missionsLabelKey>RH.141MissionsLabel</missionsLabelKey> <!-- Ключ локализации названия вкладки миссий (RH2) -->
+		<missionsDescKey>RH.141MissionsDesc</missionsDescKey> <!-- Ключ локализации описания системы миссий (RH2) -->
+		<missionsButtonIconTexPath>Things/UI/Enlisted/Mission_Modern</missionsButtonIconTexPath> <!-- Путь к иконке кнопки миссий (RH2) -->
+		<missionsBackgroundMenuTexPath>Things/UI/Enlisted/Missions_UI_Modern</missionsBackgroundMenuTexPath> <!-- Путь к фоновому изображению меню миссий (RH2) -->
+		<missionsMenuAmbientSoundDef>RH_141_MissionMenuAmbientSound</missionsMenuAmbientSoundDef> <!-- Фоновый звук в меню миссий (RH2) -->
+		<missionsMenuDescriptionKey>RH.141MenuMissionsDesc</missionsMenuDescriptionKey> <!-- Ключ локализации описания в меню выбора миссий (RH2) -->
+		<missionsMenuSelectQuestKey>RH.141MenuMissionsSelectQuest</missionsMenuSelectQuestKey> <!-- Ключ подсказки выбора квеста/миссии (RH2) -->
+		<missionsMenuStartQuestKey>RH.141MenuMissionsStartQuest</missionsMenuStartQuestKey> <!-- Ключ кнопки запуска квеста/миссии (RH2) -->
+		<missionsQuestCost>50</missionsQuestCost> <!-- Стоимость запуска задания в очках/серебре (RH2) -->
+		<missionsMenuStartQuestNoEnoughMoneyKey>RH.141NoEnoughMoney</missionsMenuStartQuestNoEnoughMoneyKey> <!-- Ключ сообщения о нехватке средств для старта миссии (RH2) -->
+
+		<salaryIsEnabled>true</salaryIsEnabled> <!-- Флаг начисления регулярного денежного довольствия/зарплаты (RH2) -->
+		<salaryLabelKey>RH.141SalaryLabel</salaryLabelKey> <!-- Ключ локализации названия вкладки зарплаты (RH2) -->
+		<salaryDescKey>RH.141SalaryDesc</salaryDescKey> <!-- Ключ локализации описания системы выплат (RH2) -->
+		<salaryButtonIconTexPath>Things/UI/Enlisted/Salary_Modern</salaryButtonIconTexPath> <!-- Путь к иконке кнопки зарплаты (RH2) -->
+		<salaryRange>525~750</salaryRange> <!-- Диапазон суммы регулярной зарплаты (в серебре) (RH2) -->
+		<salaryPeriodDays>30</salaryPeriodDays> <!-- Периодичность выплаты зарплаты в днях (RH2) -->
+		
+	    <provisionOptions> <!-- Список опций получения вещевого и продовольственного довольствия (RH2) -->
+		<li> <!-- Элемент списка -->
+		<provisionsLabelKey>RH.141ProvisionsLabel</provisionsLabelKey> <!-- Ключ названия категории снабжения (RH2) -->
+		<provisionsDescKey>RH.141ProvisionsDesc</provisionsDescKey> <!-- Ключ описания категории снабжения (RH2) -->
+		<provisionsButtonIconTexPath>Things/UI/Enlisted/Provisions_Modern</provisionsButtonIconTexPath> <!-- Путь к иконке снабжения (RH2) -->
+				<provisions> <!-- Список выдаваемых предметов снабжения (RH2) -->
+				<!-- Stuff -->		
+					<li> <!-- Элемент списка -->
+						<thing>RH2_Ration_USArmyMRE</thing> <!-- Целевой предмет -->
+						<amountRange>20</amountRange> <!-- Диапазон количества -->
+					</li>					
+					<li> <!-- Элемент списка -->
+						<thing>MedicineIndustrial</thing> <!-- Целевой предмет -->
+						<amountRange>5</amountRange> <!-- Диапазон количества -->
+					</li>					
+				</provisions>
+				<provisionsRestockInDays>7</provisionsRestockInDays> <!-- Время пополнения запасов снабжения в днях (RH2) -->
+			</li>
+			<li> <!-- Элемент списка -->
+				<provisionsLabelKey>RH.141ProvisionsLabelMilitaryIssue</provisionsLabelKey> <!-- Ключ названия категории снабжения (RH2) -->
+				<provisionsDescKey>RH.141ProvisionsDescMilitaryIssue</provisionsDescKey> <!-- Ключ описания категории снабжения (RH2) -->
+				<provisionsButtonIconTexPath>Things/UI/Enlisted/Military_Issue</provisionsButtonIconTexPath> <!-- Путь к иконке снабжения (RH2) -->
+				<provisions> <!-- Список выдаваемых предметов снабжения (RH2) -->
+				<!-- Headgear -->										
+					<li> <!-- Элемент списка -->
+						<thing>RNApparel_MICH2000_141Roach</thing> <!-- Целевой предмет -->
+						<stuff>Steel</stuff> <!-- Используемый материал предмета -->
+						<amountRange>2</amountRange> <!-- Диапазон количества -->
+					</li>							
+					<li> <!-- Элемент списка -->
+						<thing>RNApparel_MICH2000_141Rook</thing> <!-- Целевой предмет -->
+						<stuff>Steel</stuff> <!-- Используемый материал предмета -->
+						<amountRange>1</amountRange> <!-- Диапазон количества -->
+					</li>
+
+                <!-- OnSkin -->					
+					<li> <!-- Элемент списка -->
+						<thing>RNApparel_TacticalJacket_141Fleece</thing> <!-- Целевой предмет -->
+						<stuff>WoolMuffalo</stuff> <!-- Используемый материал предмета -->
+						<amountRange>2</amountRange> <!-- Диапазон количества -->
+					</li>						
+					<li> <!-- Элемент списка -->
+						<thing>RNApparel_TacticalJacket_141Fleece</thing> <!-- Целевой предмет -->
+						<stuff>Leather_Bluefur</stuff> <!-- Используемый материал предмета -->
+						<amountRange>1</amountRange> <!-- Диапазон количества -->
+					</li>																	
+					<li> <!-- Элемент списка -->
+						<thing>RNApparel_Pants_BDUDCU</thing> <!-- Целевой предмет -->
+						<stuff>WoolMegasloth</stuff> <!-- Используемый материал предмета -->
+						<amountRange>3</amountRange> <!-- Диапазон количества -->
+					</li>				
+
+				<!-- Accessory -->	
+									
+					<li> <!-- Элемент списка -->
+						<thing>RNApparel_CryeCAGE_Tan</thing> <!-- Целевой предмет -->
+						<amountRange>3</amountRange> <!-- Диапазон количества -->
+					</li>					
+					<li> <!-- Элемент списка -->
+						<thing>RHApparel_FlyyeXBelt_141AR</thing> <!-- Целевой предмет -->
+						<stuff>Synthread</stuff> <!-- Используемый материал предмета -->
+						<amountRange>2</amountRange> <!-- Диапазон количества -->
+					</li>						
+					<li> <!-- Элемент списка -->
+						<thing>RHApparel_FlyyeXBelt_141SMG</thing> <!-- Целевой предмет -->
+						<stuff>Synthread</stuff> <!-- Используемый материал предмета -->
+						<amountRange>1</amountRange> <!-- Диапазон количества -->
+					</li>								
+					
+				<!-- Weapons -->		
+					<li> <!-- Элемент списка -->
+						<thing>RNGun_M4A1TaskForce_Rifle</thing> <!-- Целевой предмет -->
+						<amountRange>2</amountRange> <!-- Диапазон количества -->
+					</li>						
+					<li> <!-- Элемент списка -->
+						<thing>RNGun_HK433_Rifle</thing> <!-- Целевой предмет -->
+						<amountRange>1</amountRange> <!-- Диапазон количества -->
+					</li>												
+				</provisions>
+				<provisionsRestockInDays>30</provisionsRestockInDays> <!-- Время пополнения запасов снабжения в днях (RH2) -->
+			</li>
+		</provisionOptions>
+
+		<storageIsEnabled>true</storageIsEnabled> <!-- Флаг доступности аренды/использования склада фракции (RH2) -->
+		<storageLabelKey>RH.141StorageLabel</storageLabelKey> <!-- Ключ названия фракционного склада (RH2) -->
+		<storageDescKey>RH.141StorageDesc</storageDescKey> <!-- Ключ описания фракционного склада (RH2) -->
+		<storageButtonIconTexPath>Things/UI/Enlisted/Storage_Modern</storageButtonIconTexPath> <!-- Путь к иконке фракционного склада (RH2) -->
+
+		<recreationGainPerTick>0.0001</recreationGainPerTick> <!-- Скорость восстановления развлечений за тик -->
+		<workOptions> <!-- Список доступных вариантов контрактной работы пешек (RH2) -->
+			<!--<li>
+				<workLabelKey>RH.141PartTimeJobLabel</workLabelKey> <!-- Ключ названия вкладки контрактной работы (RH2) -->
+				<workDescKey>RH.141PartTimeJobDesc</workDescKey> <!-- Ключ описания контрактной работы (RH2) -->
+				<workButtonIconTexPath>Things/UI/Enlisted/Part_Time_Job</workButtonIconTexPath> <!-- Путь к иконке контрактной работы (RH2) -->
+				<additionalRestFall>0.25</additionalRestFall> <!-- Дополнительный расход отдыха/сна -->
+				<silverGainPerHour>15</silverGainPerHour> <!-- Размер оплаты серебром за час выполнения работы (RH2) -->
+			</li>-->
+			<li> <!-- Элемент списка -->
+				<workLabelKey>RH.141HospitalLabel</workLabelKey> <!-- Ключ названия вкладки контрактной работы (RH2) -->
+				<workDescKey>RH.141HospitalDesc</workDescKey> <!-- Ключ описания контрактной работы (RH2) -->
+				<workButtonIconTexPath>Things/UI/Enlisted/Hospital</workButtonIconTexPath> <!-- Путь к иконке контрактной работы (RH2) -->
+				<additionalRestFall>0.25</additionalRestFall> <!-- Дополнительный расход отдыха/сна -->
+				<tendCaravanMembersEveryTicks>600</tendCaravanMembersEveryTicks> <!-- Интервал лечения членов каравана в пути (тики) -->
+				<medicinesToTend> <!-- Список медикаментов для оказания помощи -->
+					<li>MedicineIndustrial</li> <!-- Элемент списка -->
+				</medicinesToTend>
+				<immunityGainSpeedMultiplier>2</immunityGainSpeedMultiplier> <!-- Множитель скорости выработки иммунитета -->
+			</li>
+			<li> <!-- Элемент списка -->
+				<workLabelKey>RH.141MedicalTrainingLabel</workLabelKey> <!-- Ключ названия вкладки контрактной работы (RH2) -->
+				<workDescKey>RH.141MedicalTrainingDesc</workDescKey> <!-- Ключ описания контрактной работы (RH2) -->
+				<workButtonIconTexPath>Things/UI/Enlisted/Training_Care</workButtonIconTexPath> <!-- Путь к иконке контрактной работы (RH2) -->
+				<experienceGainsPerHour> <!-- Количество получаемого опыта в час (RH2) -->
+					<Medicine>500</Medicine> <!-- Навык: Медицина -->
+					<Social>400</Social> <!-- Навык: Общение -->
+					<Intellectual>250</Intellectual> <!-- Навык: Умственный труд -->
+				</experienceGainsPerHour>
+				<additionalRestFall>0.25</additionalRestFall> <!-- Дополнительный расход отдыха/сна -->
+			</li>
+			<li> <!-- Элемент списка -->
+				<workLabelKey>RH.141ShootingTrainingLabel</workLabelKey> <!-- Ключ названия вкладки контрактной работы (RH2) -->
+				<workDescKey>RH.141ShootingTrainingDesc</workDescKey> <!-- Ключ описания контрактной работы (RH2) -->
+				<workButtonIconTexPath>Things/UI/Enlisted/Training_Combat</workButtonIconTexPath> <!-- Путь к иконке контрактной работы (RH2) -->
+				<experienceGainsPerHour> <!-- Количество получаемого опыта в час (RH2) -->
+					<Shooting>500</Shooting> <!-- Навык: Стрельба -->
+					<Melee>425</Melee> <!-- Навык: Ближний бой -->
+				</experienceGainsPerHour>
+				<additionalRestFall>0.3</additionalRestFall> <!-- Дополнительный расход отдыха/сна -->
+			</li>
+			<li> <!-- Элемент списка -->
+				<workLabelKey>RH.141SurvivalTrainingLabel</workLabelKey> <!-- Ключ названия вкладки контрактной работы (RH2) -->
+				<workDescKey>RH.141SurvivalTrainingDesc</workDescKey> <!-- Ключ описания контрактной работы (RH2) -->
+				<workButtonIconTexPath>Things/UI/Enlisted/Training_Bushcraft</workButtonIconTexPath> <!-- Путь к иконке контрактной работы (RH2) -->
+				<experienceGainsPerHour> <!-- Количество получаемого опыта в час (RH2) -->
+					<Crafting>500</Crafting> <!-- Навык: Ремесло -->
+					<Plants>450</Plants> <!-- Навык: Растениеводство -->
+					<Cooking>350</Cooking> <!-- Навык: Кулинария -->
+					<Animals>450</Animals> <!-- Навык: Животноводство -->
+					<Construction>350</Construction> <!-- Навык: Строительство -->
+				</experienceGainsPerHour>
+				<additionalRestFall>0.5</additionalRestFall> <!-- Дополнительный расход отдыха/сна -->
+			</li>
+		</workOptions>
+
+		<turnInIsEnabled>true</turnInIsEnabled> <!-- Флаг доступности сдачи трофеев и контрабанды за вознаграждение (RH2) -->
+		<turnInLabelKey>RH.141TurnInLabel</turnInLabelKey> <!-- Ключ названия пункта сдачи трофеев (RH2) -->
+		<turnInDescKey>RH.141TurnInDesc</turnInDescKey> <!-- Ключ описания пункта сдачи трофеев (RH2) -->
+		<turnInButtonIconTexPath>Things/UI/Enlisted/TurnIn</turnInButtonIconTexPath> <!-- Путь к иконке пункта сдачи трофеев (RH2) -->
+		<turnInTraderKind>RH_PrisonerTrader</turnInTraderKind> <!-- Тип торговца, используемый при сдаче трофеев (RH2) -->
+		<turnInThought>RH_TurnedInAnOutlaw</turnInThought> <!-- Мысль, накладываемая при сдаче трофеев (RH2) -->
+		<turnInRefreshSilverInDays>7</turnInRefreshSilverInDays> <!-- Период обновления запаса серебра у скупщика трофеев (RH2) -->
+		<turnInTraderNameKey>RH_TurnInTraderName</turnInTraderNameKey> <!-- Ключ имени скупщика трофеев (RH2) -->
+
+		<dropPodServiceIsEnabled>true</dropPodServiceIsEnabled> <!-- Флаг доступности услуги транспортных капсул быстрого перемещения (RH2) -->
+		<dropPodServiceLabelKey>RH.141DropPodServiceLabel</dropPodServiceLabelKey> <!-- Ключ названия услуги транспортных капсул (RH2) -->
+		<dropPodServiceDescKey>RH.141DropPodServiceDesc</dropPodServiceDescKey> <!-- Ключ описания услуги транспортных капсул (RH2) -->
+		<dropPodServiceButtonIconTexPath>Things/UI/Enlisted/Travel to destination</dropPodServiceButtonIconTexPath> <!-- Путь к иконке кнопки вызова десантных капсул (RH2) -->
+		<dropPodServiceCost>1000</dropPodServiceCost> <!-- Стоимость вызова транспортных капсул (RH2) -->
+		<dropPodServiceCostRequirementKey>RH.141DropPodServiceRequirementDesc</dropPodServiceCostRequirementKey> <!-- Ключ требований к оплате вызова капсул (RH2) -->
+
+		<resignGoodwillGain>-25</resignGoodwillGain> <!-- Изменение отношений с фракцией при добровольном увольнении (RH2) -->
+		<resignMenuTextKey>RH.141ResignMenuText</resignMenuTextKey> <!-- Ключ текста в меню подтверждения увольнения (RH2) -->
+		<resignLetterTitleKey>RH.141ResignLetterTitle</resignLetterTitleKey> <!-- Ключ заголовка письма об увольнении (RH2) -->
+		<resignLetterLabelKey>RH.141ResignLetterLabel</resignLetterLabelKey> <!-- Ключ текста письма об увольнении (RH2) -->
+		<resignButtonLabelKey>RH.141ResignButtonLabel</resignButtonLabelKey> <!-- Ключ названия кнопки увольнения/расторжения контракта (RH2) -->
+		<resignButtonDescKey>RH.141ResignButtonDesc</resignButtonDescKey> <!-- Ключ описания увольнения со службы (RH2) -->
+		<resignButtonIconTexPath>Things/UI/Enlisted/Resign</resignButtonIconTexPath> <!-- Путь к иконке увольнения (RH2) -->
+
+		<kickOutLetterTitleKey>RH.141KickOutLetterTitle</kickOutLetterTitleKey> <!-- Ключ заголовка письма об исключении со службы за нарушения (RH2) -->
+		<kickOutLetterLabelKey>RH.141KickOutLabelTitle</kickOutLetterLabelKey> <!-- Ключ текста письма об исключении со службы (RH2) -->
+
+		<reinforcementsAreEnabled>true</reinforcementsAreEnabled> <!-- Флаг доступности вызова группы подкрепления (RH2) -->
+		<reinforcementsButtonLabelKey>RH.RangerReinforcementsButtonLabel</reinforcementsButtonLabelKey> <!-- Ключ названия кнопки вызова подкрепления (RH2) -->
+		<reinforcementsButtonDescKey>RH.RangerReinforcementsButtonDesc</reinforcementsButtonDescKey> <!-- Ключ описания вызова подкрепления (RH2) -->
+		<reinforcementsButtonIconTexPath>Things/UI/Enlisted/Reinforcement_Call</reinforcementsButtonIconTexPath> <!-- Путь к иконке кнопки подкрепления (RH2) -->
+		<reinforcementCallGoodwillCost>-5</reinforcementCallGoodwillCost> <!-- Стоимость вызова подкрепления в очках отношений фракции (RH2) -->
+		<reinforcementCallCooldownTicks>50000</reinforcementCallCooldownTicks> <!-- Время отката между вызовами подкрепления в тиках (RH2) -->
+		<reinforcementOptions> <!-- Список доступных вариантов групп подкрепления (RH2) -->
+			<li> <!-- Элемент списка -->
+				<relationsRange>75~100</relationsRange> <!-- Диапазон начальных отношений с фракциями -->
+				<pointsRange>800~1800</pointsRange> <!-- Диапазон очков для генерации группы -->
+			</li>
+			<li> <!-- Элемент списка -->
+				<relationsRange>50~74</relationsRange> <!-- Диапазон начальных отношений с фракциями -->
+				<pointsRange>600~850</pointsRange> <!-- Диапазон очков для генерации группы -->
+			</li>
+			<li> <!-- Элемент списка -->
+				<relationsRange>26~49</relationsRange> <!-- Диапазон начальных отношений с фракциями -->
+				<pointsRange>400~600</pointsRange> <!-- Диапазон очков для генерации группы -->
+			</li>
+			<li> <!-- Элемент списка -->
+				<relationsRange>-100~25</relationsRange> <!-- Диапазон начальных отношений с фракциями -->
+				<pointsRange>300~450</pointsRange> <!-- Диапазон очков для генерации группы -->
+			</li>
+		</reinforcementOptions>
+
+	</Enlist.FactionEnlistOptionsDef>
+
+
+</Defs>

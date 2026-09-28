@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+  <RecipeDef ParentName="CookMealBase"> <!-- Определение производственного рецепта (RecipeDef) -->
+    <defName>RH2_CookRation_USArmyMRE</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>cook MRE</label> <!-- Отображаемое наименование -->
+    <description>Prepare a MRE meal from a combination of meat and plant ingredients. Much of the ingredients are wasted in the preservation process.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <jobString>Cooking MRE.</jobString> <!-- Строка описания выполняемой работы в интерфейсе -->
+    <workSpeedStat>CookSpeed</workSpeedStat> <!-- Характеристика пешки, влияющая на скорость работы -->
+    <effectWorking>Cook</effectWorking> <!-- Визуальный эффект во время выполнения работы -->
+    <soundWorking>Recipe_CookMeal</soundWorking> <!-- Звуковой эффект выполнения работы -->
+    <allowMixingIngredients>true</allowMixingIngredients> <!-- Разрешение смешивания различных ингредиентов -->
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass> <!-- C#-класс расчета ценности ингредиентов -->
+    <ingredients> <!-- Список требуемых ингредиентов для рецепта -->
+      <li> <!-- Элемент списка -->
+        <filter> <!-- Фильтр допустимых ресурсов/материалов -->
+          <categories> <!-- Категории допустимых ресурсов -->
+            <li>MeatRaw</li> <!-- Элемент списка -->
+            <li>AnimalProductRaw</li> <!-- Элемент списка -->
+          </categories>
+        </filter>
+        <count>0.40</count> <!-- Количество ресурса -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <filter> <!-- Фильтр допустимых ресурсов/материалов -->
+          <categories> <!-- Категории допустимых ресурсов -->
+            <li>PlantFoodRaw</li> <!-- Элемент списка -->
+          </categories>
+        </filter>
+        <count>0.40</count> <!-- Количество ресурса -->
+      </li>
+    </ingredients>
+    <products> <!-- Список получаемой продукции после выполнения рецепта -->
+      <RH2_Ration_USArmyMRE>1</RH2_Ration_USArmyMRE> <!-- Предмет: Сухой паек армии США (MRE) -->
+    </products>
+    <skillRequirements> <!-- Минимальные требования к навыкам для создания -->
+      <Cooking>9</Cooking> <!-- Навык: Кулинария -->
+    </skillRequirements>
+    <researchPrerequisite>PackagedSurvivalMeal</researchPrerequisite> <!-- Необходимый исследовательский проект -->
+  </RecipeDef>
+
+  <RecipeDef ParentName="CookMealBase"> <!-- Определение производственного рецепта (RecipeDef) -->
+    <defName>RH2_CookRation_USArmyMRE_Bulk</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>cook MREs x4</label> <!-- Отображаемое наименование -->
+    <description>Prepare 4 MREs from a combination of meat and plant ingredients. Much of the ingredients are wasted in the preservation process.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <jobString>Cooking 4 MREs.</jobString> <!-- Строка описания выполняемой работы в интерфейсе -->
+    <workAmount>1540</workAmount> <!-- Объем требуемой работы для создания -->
+    <workSpeedStat>CookSpeed</workSpeedStat> <!-- Характеристика пешки, влияющая на скорость работы -->
+    <effectWorking>Cook</effectWorking> <!-- Визуальный эффект во время выполнения работы -->
+    <soundWorking>Recipe_CookMeal</soundWorking> <!-- Звуковой эффект выполнения работы -->
+    <allowMixingIngredients>true</allowMixingIngredients> <!-- Разрешение смешивания различных ингредиентов -->
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass> <!-- C#-класс расчета ценности ингредиентов -->
+    <ingredients> <!-- Список требуемых ингредиентов для рецепта -->
+      <li> <!-- Элемент списка -->
+        <filter> <!-- Фильтр допустимых ресурсов/материалов -->
+          <categories> <!-- Категории допустимых ресурсов -->
+            <li>MeatRaw</li> <!-- Элемент списка -->
+            <li>AnimalProductRaw</li> <!-- Элемент списка -->
+          </categories>
+        </filter>
+        <count>1.60</count> <!-- Количество ресурса -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <filter> <!-- Фильтр допустимых ресурсов/материалов -->
+          <categories> <!-- Категории допустимых ресурсов -->
+            <li>PlantFoodRaw</li> <!-- Элемент списка -->
+          </categories>
+        </filter>
+        <count>1.60</count> <!-- Количество ресурса -->
+      </li>
+    </ingredients>
+    <products> <!-- Список получаемой продукции после выполнения рецепта -->
+      <RH2_Ration_USArmyMRE>4</RH2_Ration_USArmyMRE> <!-- Предмет: Сухой паек армии США (MRE) -->
+    </products>
+    <skillRequirements> <!-- Минимальные требования к навыкам для создания -->
+      <Cooking>9</Cooking> <!-- Навык: Кулинария -->
+    </skillRequirements>
+    <researchPrerequisite>PackagedSurvivalMeal</researchPrerequisite> <!-- Необходимый исследовательский проект -->
+  </RecipeDef>
+</Defs>

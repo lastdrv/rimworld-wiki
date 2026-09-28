@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <!-- M56 Webbing -->
+  
+  <ThingDef Name="RHApparel_141HarnessBase" ParentName="ApparelMakeableBase" Abstract="True"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <recipeMaker> <!-- Генератор рецепта для изготовления предмета -->
+      <researchPrerequisite>ComplexClothing</researchPrerequisite> <!-- Необходимый исследовательский проект -->
+    </recipeMaker>
+    <costStuffCount>50</costStuffCount> <!-- Количество универсального материала (Stuff) -->
+    <stuffCategories> <!-- Категории материалов для создания (Металлы, Ткани и т.д.) -->
+      <li>Fabric</li> <!-- Элемент списка -->
+      <li>Leathery</li> <!-- Элемент списка -->
+    </stuffCategories>
+    <thingCategories> <!-- Категории складирования предметов -->
+      <li>Apparel</li> <!-- Элемент списка -->
+    </thingCategories>
+    <statBases> <!-- Базовые числовые характеристики -->
+      <MaxHitPoints>150</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <WorkToMake>10000</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <Mass>2</Mass>  <!-- Масса предмета в килограммах -->
+	  <Flammability>0.25</Flammability> <!-- Горючесть предмета -->
+      <StuffEffectMultiplierArmor>0.20</StuffEffectMultiplierArmor> <!-- Множитель характеристик брони от материала -->
+      <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold> <!-- Множитель термоизоляции от холода от материала -->
+      <StuffEffectMultiplierInsulation_Heat>0.05</StuffEffectMultiplierInsulation_Heat> <!-- Множитель термоизоляции от тепла от материала -->
+      <EquipDelay>3</EquipDelay> <!-- Задержка при экипировке предмета (сек.) -->
+    </statBases>
+	
+	<equippedStatOffsets> <!-- Модификаторы характеристик при надевании/экипировке -->
+      <AimingDelayFactor>-0.05</AimingDelayFactor> <!-- Фактор задержки прицеливания -->
+	  <CarryingCapacity>20</CarryingCapacity> <!-- Грузоподъемность пешки (кг) -->
+	  <MedicalTendSpeed>0.05</MedicalTendSpeed> <!-- Скорость перевязки/лечения ран -->
+      <MoveSpeed>-0.02</MoveSpeed> <!-- Скорость передвижения пешки (клеток/сек.) -->
+    </equippedStatOffsets>
+    
+	<apparel> <!-- Параметры предмета одежды/снаряжения -->
+	<careIfWornByCorpse>false</careIfWornByCorpse> <!-- Учет штрафа к настроению за снятие с трупа ('одежда мертвеца') -->
+	<useWornGraphicMask>true</useWornGraphicMask> <!-- Флаг использования маски окрашивания для надетого снаряжения -->
+      <bodyPartGroups> <!-- Защищаемые/покрываемые группы частей тела -->
+        <li>Torso</li> <!-- Элемент списка -->
+      </bodyPartGroups>
+	  <wornGraphicData> <!-- Параметры графики надетой экипировки по направлениям -->
+      </wornGraphicData>
+      <layers> <!-- Слои ношения экипировки -->
+        <li>Belt</li> <!-- Элемент списка -->
+      </layers>
+      <defaultOutfitTags> <!-- Теги назначения одежды в стандартных наборах поселения -->
+        <li>Worker</li> <!-- Элемент списка -->
+      </defaultOutfitTags>
+	  <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth> <!-- Возможность генерации для защиты от холода -->
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options"> <!-- Генератор случайного цвета объекта -->
+      <options> <!-- Список вариантов генерации -->
+        <li> <!-- Элемент списка -->
+          <weight>10</weight> <!-- Относительный вес вероятности выбора -->
+          <min>(97, 113, 51)</min> <!-- Минимальное значение -->
+          <max>(85, 100, 45)</max> <!-- Максимальное значение -->
+        </li>
+      </options>
+    </colorGenerator>
+	
+	<tradeTags> <!-- Торговые теги предмета -->
+      <li>RH2_XBelt_141</li> <!-- Элемент списка -->
+    </tradeTags>
+  </ThingDef>  
+
+  <!-- SMG -->
+  
+  <ThingDef ParentName="RHApparel_141HarnessBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RHApparel_FlyyeXBelt_141SMG</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <description>Webbing is a strong fabric woven as a flat strip or tube of varying width and fibres, often used in place of rope. It is a versatile component used in climbing, slacklining, furniture manufacturing, automobile safety, auto racing, towing, parachuting, military apparel, load securing, and many other fields.\n\nThis variant is a Flyye brand X-belt designed for customization to the user's preference.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <label>X Belt (CQB)</label>   <!-- Отображаемое наименование -->
+
+	<graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/Display/Flyye_SMG</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+      <drawSize>0.90</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+	
+	<apparel> <!-- Параметры предмета одежды/снаряжения -->
+	<wornGraphicPath>Things/Apparel/Webbing/SMG/Flyye_SMG</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+	  <tags> <!-- Теги классификации предмета -->
+        <!--<li>IndustrialAdvanced</li>-->
+        <li>RH_Webbing</li> <!-- Элемент списка -->
+        <li>RH2_XBelt_141</li> <!-- Элемент списка -->
+        <li>RH2_XBelt_141SMG</li> <!-- Элемент списка -->
+      </tags>
+	  </apparel>
+  </ThingDef>
+  
+  <!-- Sniper -->
+  
+  <ThingDef ParentName="RHApparel_141HarnessBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RHApparel_FlyyeXBelt_141Sniper</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <description>Webbing is a strong fabric woven as a flat strip or tube of varying width and fibres, often used in place of rope. It is a versatile component used in climbing, slacklining, furniture manufacturing, automobile safety, auto racing, towing, parachuting, military apparel, load securing, and many other fields.\n\nThis variant is a Flyye brand X-belt designed for customization to the user's preference.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <label>X Belt (Sniper)</label>   <!-- Отображаемое наименование -->
+    
+	<graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/Display/Flyye_SN</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+      <drawSize>1.0</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+	
+	<apparel> <!-- Параметры предмета одежды/снаряжения -->
+	<wornGraphicPath>Things/Apparel/Webbing/Sniper/Flyye_SN</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+	  <tags> <!-- Теги классификации предмета -->
+        <!--<li>IndustrialAdvanced</li>-->
+        <li>RH_Webbing</li> <!-- Элемент списка -->
+        <li>RH2_XBelt_141</li> <!-- Элемент списка -->
+        <li>RH2_XBelt_141Sniper</li> <!-- Элемент списка -->
+      </tags>
+	  </apparel>
+  </ThingDef>  
+  
+  <!-- MG -->
+  
+  <ThingDef ParentName="RHApparel_141HarnessBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RHApparel_FlyyeXBelt_141MG</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <description>Webbing is a strong fabric woven as a flat strip or tube of varying width and fibres, often used in place of rope. It is a versatile component used in climbing, slacklining, furniture manufacturing, automobile safety, auto racing, towing, parachuting, military apparel, load securing, and many other fields.\n\nThis variant is a Flyye brand X-belt designed for customization to the user's preference.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <label>X Belt (Gunner)</label>  <!-- Отображаемое наименование -->
+    
+	<graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/Display/Flyye_MG</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+      <drawSize>0.90</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+	
+	<apparel> <!-- Параметры предмета одежды/снаряжения -->
+	<wornGraphicPath>Things/Apparel/Webbing/MachineGunner/Flyye_MG</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+	  <tags> <!-- Теги классификации предмета -->
+        <!--<li>IndustrialAdvanced</li>-->
+        <li>RH_Webbing</li> <!-- Элемент списка -->
+        <li>RH2_XBelt_141</li> <!-- Элемент списка -->
+        <li>RH2_XBelt_141MachineGunner</li> <!-- Элемент списка -->
+      </tags>
+	  </apparel>
+  </ThingDef>  
+  
+  <!-- AR -->
+  
+  <ThingDef ParentName="RHApparel_141HarnessBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RHApparel_FlyyeXBelt_141AR</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <description>Webbing is a strong fabric woven as a flat strip or tube of varying width and fibres, often used in place of rope. It is a versatile component used in climbing, slacklining, furniture manufacturing, automobile safety, auto racing, towing, parachuting, military apparel, load securing, and many other fields.\n\nThis variant is a Flyye brand X-belt designed for customization to the user's preference.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <label>X Belt (Rifle)</label>  <!-- Отображаемое наименование -->
+	
+	<graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/Display/Flyye_AR</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+      <drawSize>0.90</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+	
+	<apparel> <!-- Параметры предмета одежды/снаряжения -->
+	<wornGraphicPath>Things/Apparel/Webbing/AR/Flyye_AR</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+	 <tags> <!-- Теги классификации предмета -->
+        <!--<li>IndustrialAdvanced</li>-->
+        <li>RH_Webbing</li> <!-- Элемент списка -->
+        <li>RH2_XBelt_141</li> <!-- Элемент списка -->
+        <li>RH2_XBelt_141AR</li> <!-- Элемент списка -->
+      </tags>
+	</apparel>
+  </ThingDef>
+
+
+</Defs>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+  
+  <!-- Tactical Jacket -->
+
+  <ThingDef ParentName="ApparelMakeableBase"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNApparel_TacticalJacket_141Fleece</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <description>A tough tactical jacket to stop scrapes and bruises, designed for use in the field. It is able to keep one warm in chilly weather, also has armpit zips to cool off in the heat unlike other traditional jackets.\n\nThis brand of tactical jacket is the Task Force 141 Fleece.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <label>141 fleece jacket</label> <!-- Отображаемое наименование -->
+    <recipeMaker> <!-- Генератор рецепта для изготовления предмета -->
+      <researchPrerequisite>ComplexClothing</researchPrerequisite> <!-- Необходимый исследовательский проект -->
+    </recipeMaker>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/OnSkin/141Fleece_Male_south</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+	  <drawSize>1.90</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+    <costStuffCount>65</costStuffCount> <!-- Количество универсального материала (Stuff) -->
+    <stuffCategories> <!-- Категории материалов для создания (Металлы, Ткани и т.д.) -->
+      <li>Fabric</li> <!-- Элемент списка -->
+      <li>Leathery</li> <!-- Элемент списка -->
+    </stuffCategories>
+    <thingCategories> <!-- Категории складирования предметов -->
+      <li>Apparel</li> <!-- Элемент списка -->
+    </thingCategories>
+    <statBases> <!-- Базовые числовые характеристики -->
+      <MaxHitPoints>250</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <WorkToMake>8500</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <Mass>1.75</Mass> <!-- Масса предмета в килограммах -->
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor> <!-- Множитель характеристик брони от материала -->
+      <StuffEffectMultiplierInsulation_Cold>1.10</StuffEffectMultiplierInsulation_Cold> <!-- Множитель термоизоляции от холода от материала -->
+      <StuffEffectMultiplierInsulation_Heat>0.35</StuffEffectMultiplierInsulation_Heat> <!-- Множитель термоизоляции от тепла от материала -->
+      <EquipDelay>1.5</EquipDelay> <!-- Задержка при экипировке предмета (сек.) -->
+    </statBases>
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+      <bodyPartGroups> <!-- Защищаемые/покрываемые группы частей тела -->
+        <li>Torso</li> <!-- Элемент списка -->
+        <li>Neck</li> <!-- Элемент списка -->
+        <li>Shoulders</li> <!-- Элемент списка -->
+        <li>Arms</li> <!-- Элемент списка -->
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/OnSkin/141Fleece</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+      <layers> <!-- Слои ношения экипировки -->
+        <li>OnSkin</li> <!-- Элемент списка -->
+      </layers>
+      <tags> <!-- Теги классификации предмета -->
+        <!--<li>IndustrialMilitaryAdvanced</li>-->
+		<li>PassiveCamo_Colour_Set</li> <!-- Элемент списка -->
+		<li>RH2_OnSkin_141Fleece</li> <!-- Элемент списка -->
+      </tags>
+      <defaultOutfitTags> <!-- Теги назначения одежды в стандартных наборах поселения -->
+        <li>Worker</li> <!-- Элемент списка -->
+        <li>Soldier</li> <!-- Элемент списка -->
+      </defaultOutfitTags>
+	  <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth> <!-- Возможность генерации для защиты от холода -->
+    </apparel>
+	
+	<tradeTags> <!-- Торговые теги предмета -->
+	  <li>RH2_OnSkin_141Fleece</li> <!-- Элемент списка -->
+	</tradeTags>
+	
+	    <colorGenerator Class="ColorGenerator_Options"> <!-- Генератор случайного цвета объекта -->
+      <options> <!-- Список вариантов генерации -->
+        <li> <!-- Элемент списка -->
+          <weight>10</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(102, 104, 103)</only> <!-- Ограничение только указанными элементами -->
+        </li>           
+		<li> <!-- Элемент списка -->
+          <weight>9</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(121, 112, 103)</only> <!-- Ограничение только указанными элементами -->
+        </li>        
+		<li> <!-- Элемент списка -->
+          <weight>8</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(84, 84, 84)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+        <li> <!-- Элемент списка -->
+          <weight>5</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(51, 51, 51)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+        <li> <!-- Элемент списка -->
+          <weight>5</weight> <!-- Относительный вес вероятности выбора -->
+          <only>(101, 97, 85)</only> <!-- Ограничение только указанными элементами -->
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>  
+  
+</Defs>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+  
+  <!-- Motherlode -->
+
+  <ThingDef ParentName="RH2_Backpack_Medium"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNApparel_Backpack_MaxpeditionFalconIII</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>Falcon III backpack</label> <!-- Отображаемое наименование -->
+    <description>The Maxpedition Falcon III backpack complete with it's Y Strap. This backpack allows the wearer to carry up to 35 KG for caravan trips and other outdoor activities.</description> <!-- Текстовое описание предмета, сущности или механики -->
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Apparel/Backpack/FalconIII_north</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> 	   <!-- C#-класс отрисовки графики -->
+	  <shaderType>CutoutComplex</shaderType> <!-- Шейдер отрисовки текстуры -->
+	  <drawSize>1.5</drawSize> <!-- Масштаб отрисовки спрайта (X, Y) -->
+    </graphicData>
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+      <wornGraphicPath>Things/Apparel/Backpack/FalconIII</wornGraphicPath> <!-- Путь к текстуре надетого элемента экипировки -->
+      <wornGraphicData> <!-- Параметры графики надетой экипировки по направлениям -->
+        <east> <!-- Параметры смещения отрисовки для направления 'Восток' -->
+          <offset>(-0.30,-0.05)</offset> <!-- // (x,y) //--> 
+          <thin><offset>(0.05,0)</offset></thin> <!-- Худощавое телосложение (Thin) -->
+          <hulk><offset>(-0.1,0)</offset></hulk> <!-- Мускулистое/крупное телосложение (Hulk) -->
+          <fat><offset>(-0.15,0)</offset></fat> <!-- Полное телосложение (Fat) -->
+		  <female><offset>(0.02,0)</offset></female> <!-- Женский пол / телосложение -->
+        </east>
+        <west> <!-- Параметры смещения отрисовки для направления 'Запад' -->
+          <offset>(0.30,-0.10)</offset> <!-- // (x,y) //--> 
+          <thin><offset>(-0.05,0)</offset></thin> <!-- Худощавое телосложение (Thin) -->
+          <hulk><offset>(0.1,0)</offset></hulk> <!-- Мускулистое/крупное телосложение (Hulk) -->
+          <fat><offset>(0.15,0)</offset></fat> <!-- Полное телосложение (Fat) -->
+		  <female><offset>(-0.02,0)</offset></female>		   <!-- Женский пол / телосложение -->
+        </west>
+        <north> <!-- Параметры смещения отрисовки для направления 'Север' -->
+          <offset>(0,-0.1)</offset> <!-- // (x,y) //--> 
+          <thin><offset>(0,0)</offset></thin> <!-- Худощавое телосложение (Thin) -->
+          <hulk><offset>(0,-0.05)</offset></hulk> <!-- Мускулистое/крупное телосложение (Hulk) -->
+          <fat><offset>(0,-0.05)</offset></fat> <!-- Полное телосложение (Fat) -->
+        </north>		
+        <male>  <scale>(0.80,0.80)</scale></male> <!-- // (0.75,0.75) //-->
+        <female><scale>(0.80,0.80)</scale></female> <!-- // (0.75,0.75) //-->
+        <thin>  <scale>(0.60,0.60)</scale></thin> <!-- // (0.7,0.7) //-->
+        <hulk>  <scale>(0.90,0.90)</scale></hulk> <!-- // (0.9,0.9) //-->
+        <fat>   <scale>(0.90,0.90)</scale></fat> <!-- // (0.9,0.9) //-->
+      </wornGraphicData>
+      <tags> <!-- Теги классификации предмета -->
+		<li>RH2_MaxpeditionFalconIII_141</li> <!-- Элемент списка -->
+		<li>RH2_Backpack_141</li> <!-- Элемент списка -->
+		<li>RH2_Backpack</li>	 <!-- Элемент списка -->
+      </tags>
+	  <useWornGraphicMask>true</useWornGraphicMask> <!-- Флаг использования маски окрашивания для надетого снаряжения -->
+    </apparel>
+    <statBases> <!-- Базовые числовые характеристики -->
+	  <MaxHitPoints>215</MaxHitPoints> <!-- Максимальный запас прочности (HP) -->
+      <WorkToMake>7000</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <Mass>0.65</Mass> <!-- Масса предмета в килограммах -->
+      <Flammability>0.4</Flammability> <!-- Горючесть предмета -->
+	  <Insulation_Cold>6</Insulation_Cold>	   <!-- Теплоизоляция от холода (°C) -->
+      <EquipDelay>0.50</EquipDelay> <!-- Задержка при экипировке предмета (сек.) -->
+    </statBases>	
+	
+	<equippedStatOffsets> <!-- Модификаторы характеристик при надевании/экипировке -->
+	<CarryingCapacity>35</CarryingCapacity> <!-- Грузоподъемность пешки (кг) -->
+	</equippedStatOffsets> <!-- Adds backpack capacity with the Backpack.dll-->
+	
+	
+		<!-- Ingredients -->
+	<costStuffCount>95</costStuffCount> <!-- Количество универсального материала (Stuff) -->
+    <stuffCategories> <!-- Категории материалов для создания (Металлы, Ткани и т.д.) -->
+      <li>Fabric</li> <!-- Элемент списка -->
+      <li>Leathery</li> <!-- Элемент списка -->
+    </stuffCategories>
+    <thingCategories> <!-- Категории складирования предметов -->
+      <li>Apparel</li> <!-- Элемент списка -->
+    </thingCategories>
+  </ThingDef>
+ 
+
+</Defs>

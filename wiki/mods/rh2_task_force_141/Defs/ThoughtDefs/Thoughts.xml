@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <ThoughtDef> <!-- Определение мысли/настроения пешки (ThoughtDef) -->
+    <defName>RH_TurnedInAnOutlaw</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <durationDays>3</durationDays> <!-- Длительность действия мысли в днях -->
+    <stackLimit>1</stackLimit> <!-- Максимальный лимит суммирования мысли -->
+    <stages> <!-- Стадии развития мысли или состояния здоровья -->
+      <li> <!-- Элемент списка -->
+        <label>turned in an outlaw</label> <!-- Отображаемое наименование -->
+        <description>We apprehended a suspect and they're now pending trial</description> <!-- Текстовое описание предмета, сущности или механики -->
+        <baseMoodEffect>2</baseMoodEffect> <!-- Базовое изменение настроения пешки -->
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

@@ -180,6 +180,8 @@
 | **EPOE-Forked** | `vat.epoeforked` | `1.6` (`1949064302`) | 📄 **[epoe_forked.md](epoe_forked.md)** |
 | **EPOE-Forked: Royalty DLC expansion** | `vat.epoeforkedroyalty` | `1.6` (`2008970276`) | 📄 **[epoe_forked_royalty.md](epoe_forked_royalty.md)** |
 | **EPOE-Forked Russian Language** | `RU.pashka.vat.epoeforked` | `1.6` (`2735140780`) | 📄 **[ru_epoe_forked.md](ru_epoe_forked.md)** |
+| **[RH2] Faction: Task Force 141** | `RH2.Faction.Task.Force.141` | `1.6` (`2694371667`) | 📄 **[rh2_task_force_141](rh2_task_force_141/rh2_task_force_141.md)** |
+| **[RH2] Task Force 141 на русском языке** | `RH2.Faction.Task.Force.141.RU` | `1.6` (`3437123205`) | 📄 **[ru_rh2_task_force_141.md](ru_rh2_task_force_141.md)** |
 
 
 

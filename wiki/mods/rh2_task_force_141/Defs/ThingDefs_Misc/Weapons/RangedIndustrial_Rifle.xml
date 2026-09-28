@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+<!-- ================================= AR Style ==================================== -->
+     <!-- ===================================================================== -->	 
+	  
+   <!-- ================================= M4A1 Task Force ==================================== -->
+
+   <ThingDef ParentName="BaseHumanMakeableGun"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNGun_M4A1TaskForce_Rifle</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>M4A1 (Task Force)</label> <!-- Отображаемое наименование -->
+    <description> <!-- Текстовое описание предмета, сущности или механики -->The M4 carbine is a shorter and lighter variant of the M16A2 assault rifle. The M4 is a 5.56×45mm NATO, air-cooled, direct impingement gas-operated, magazine-fed carbine. It has a 14.5 in (370 mm) barrel and a telescoping stock.
+
+The M4 carbine is extensively used by the United States Armed Forces and is largely replacing the M16 rifle in United States Army and United States Marine Corps combat units as the primary infantry weapon and service rifle.\n\nThis M4 is the Daniel Defense M4 V11 variant.</description>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Weapons/M4A1_TaskForce</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+    </graphicData>
+	
+	<equippedAngleOffset>40</equippedAngleOffset>	 <!-- Угловое смещение оружия в руках пешки -->
+	
+    <soundInteract>Interact_Rifle</soundInteract> <!-- Звук взаимодействия/перезарядки -->
+    <recipeMaker> <!-- Генератор рецепта для изготовления предмета -->
+      <researchPrerequisite>PrecisionRifling</researchPrerequisite> <!-- Необходимый исследовательский проект -->
+      <skillRequirements> <!-- Минимальные требования к навыкам для создания -->
+        <Crafting>6</Crafting> <!-- Навык: Ремесло -->
+      </skillRequirements>
+    </recipeMaker>
+    <statBases> <!-- Базовые числовые характеристики -->
+      <WorkToMake>40000</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <Mass>3.5</Mass> <!-- Масса предмета в килограммах -->
+      <AccuracyTouch>0.67</AccuracyTouch> <!-- Меткость стрельбы в упор (до 3 клеток) -->
+      <AccuracyShort>0.77</AccuracyShort> <!-- Меткость стрельбы на короткой дистанции (до 12 клеток) -->
+      <AccuracyMedium>0.62</AccuracyMedium> <!-- Меткость стрельбы на средней дистанции (до 25 клеток) -->
+      <AccuracyLong>0.51</AccuracyLong> <!-- Меткость стрельбы на дальней дистанции (до 40 клеток) -->
+      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown> <!-- Время перезарядки/восстановления оружия -->
+    </statBases>
+    <costList> <!-- Фиксированный список затрачиваемых материалов -->
+      <Steel>60</Steel> <!-- Ресурс: Сталь -->
+      <ComponentIndustrial>7</ComponentIndustrial> <!-- Ресурс: Компонент -->
+    </costList>
+    <verbs> <!-- Список боевых действий/режимов атаки -->
+      <li> <!-- Элемент списка -->
+        <verbClass>Verb_Shoot</verbClass> <!-- C#-класс боевого действия (Verb_Shoot и др.) -->
+        <hasStandardCommand>true</hasStandardCommand> <!-- Флаг наличия стандартной кнопки атаки -->
+        <defaultProjectile>RNBullet_556x45_Rifle</defaultProjectile> <!-- Снаряд по умолчанию для оружия -->
+        <warmupTime>0.90</warmupTime> <!-- Время подготовки к выстрелу/атаке (сек.) -->
+        <range>35.9</range> <!-- Максимальная дальность стрельбы (клеток) -->
+        <burstShotCount>3</burstShotCount> <!-- Количество выстрелов в очереди -->
+        <ticksBetweenBurstShots>7</ticksBetweenBurstShots> <!-- Интервал между выстрелами в очереди (тики) -->
+        <soundCast>RNShot_MWARRifle</soundCast> <!-- Звук основного выстрела -->
+        <soundCastTail>GunTail_Medium</soundCastTail> <!-- Звук затухания/эха выстрела -->
+        <muzzleFlashScale>9</muzzleFlashScale> <!-- Масштаб вспышки от выстрела -->
+      </li>
+    </verbs>
+		<weaponTags> <!-- Теги оружия для генерации пешкам и фракциям -->
+			<!--<li>IndustrialGunAdvanced</li>-->
+			<li>RN_Coalition_CQB</li> <!-- Элемент списка -->
+			<li>RN_Coalition_AR</li> <!-- Элемент списка -->
+			<li>RN_M4A1_TaskForce</li> <!-- Элемент списка -->
+		</weaponTags>
+	<tradeTags> <!-- Торговые теги предмета -->
+      <li>RN_M4A1_TaskForce</li> <!-- Элемент списка -->
+    </tradeTags>
+    <tools> <!-- Список рукопашных атак/инструментов оружия -->
+      <li> <!-- Элемент списка -->
+        <label>stock</label> <!-- Отображаемое наименование -->
+        <capacities> <!-- Виды урона при атаке -->
+          <li>Blunt</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Сила рукопашного удара -->
+        <cooldownTime>2</cooldownTime> <!-- Время перезарядки рукопашного удара (сек.) -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <label>barrel</label> <!-- Отображаемое наименование -->
+        <capacities> <!-- Виды урона при атаке -->
+          <li>Blunt</li> <!-- Элемент списка -->
+          <li>Poke</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Сила рукопашного удара -->
+        <cooldownTime>2</cooldownTime> <!-- Время перезарядки рукопашного удара (сек.) -->
+      </li>
+    </tools>
+  </ThingDef>
+  
+     <!-- ================================= HK433 ==================================== -->
+
+   <ThingDef ParentName="BaseHumanMakeableGun"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+    <defName>RNGun_HK433_Rifle</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>HK433 </label> <!-- Отображаемое наименование -->
+    <description> <!-- Текстовое описание предмета, сущности или механики -->The Heckler &amp; Koch HK433 is a modular assault rifle chambered for 5.56×45mm which combines features of the G36 and the HK416 families of assault rifles.
+
+The HK433 was designed by Heckler &amp; Koch to be familiar to operators with experience using the Heckler &amp; Koch G36 and HK416 platforms. All controls are ambidextrous, and major components are modular, allowing for rifles to be configured in the field as needed.</description>
+    <graphicData> <!-- Параметры графического отображения -->
+      <texPath>Things/Weapons/HK_433</texPath> <!-- Путь к текстуре в ресурсах мода -->
+      <graphicClass>Graphic_Single</graphicClass> <!-- C#-класс отрисовки графики -->
+    </graphicData>
+	
+	<equippedAngleOffset>40</equippedAngleOffset>	 <!-- Угловое смещение оружия в руках пешки -->
+	
+    <soundInteract>Interact_Rifle</soundInteract> <!-- Звук взаимодействия/перезарядки -->
+    <recipeMaker> <!-- Генератор рецепта для изготовления предмета -->
+      <researchPrerequisite>PrecisionRifling</researchPrerequisite> <!-- Необходимый исследовательский проект -->
+      <skillRequirements> <!-- Минимальные требования к навыкам для создания -->
+        <Crafting>6</Crafting> <!-- Навык: Ремесло -->
+      </skillRequirements>
+    </recipeMaker>
+    <statBases> <!-- Базовые числовые характеристики -->
+      <WorkToMake>40000</WorkToMake> <!-- Трудозатраты на изготовление (в тиках работы) -->
+      <Mass>3.5</Mass> <!-- Масса предмета в килограммах -->
+      <AccuracyTouch>0.65</AccuracyTouch> <!-- Меткость стрельбы в упор (до 3 клеток) -->
+      <AccuracyShort>0.76</AccuracyShort> <!-- Меткость стрельбы на короткой дистанции (до 12 клеток) -->
+      <AccuracyMedium>0.65</AccuracyMedium> <!-- Меткость стрельбы на средней дистанции (до 25 клеток) -->
+      <AccuracyLong>0.54</AccuracyLong> <!-- Меткость стрельбы на дальней дистанции (до 40 клеток) -->
+      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown> <!-- Время перезарядки/восстановления оружия -->
+    </statBases>
+    <costList> <!-- Фиксированный список затрачиваемых материалов -->
+      <Steel>60</Steel> <!-- Ресурс: Сталь -->
+      <ComponentIndustrial>7</ComponentIndustrial> <!-- Ресурс: Компонент -->
+    </costList>
+    <verbs> <!-- Список боевых действий/режимов атаки -->
+      <li> <!-- Элемент списка -->
+        <verbClass>Verb_Shoot</verbClass> <!-- C#-класс боевого действия (Verb_Shoot и др.) -->
+        <hasStandardCommand>true</hasStandardCommand> <!-- Флаг наличия стандартной кнопки атаки -->
+        <defaultProjectile>RNBullet_556x45_Rifle</defaultProjectile> <!-- Снаряд по умолчанию для оружия -->
+        <warmupTime>0.90</warmupTime> <!-- Время подготовки к выстрелу/атаке (сек.) -->
+        <range>35.9</range> <!-- Максимальная дальность стрельбы (клеток) -->
+        <burstShotCount>3</burstShotCount> <!-- Количество выстрелов в очереди -->
+        <ticksBetweenBurstShots>7</ticksBetweenBurstShots> <!-- Интервал между выстрелами в очереди (тики) -->
+        <soundCast>RNShot_GenericAR</soundCast> <!-- Звук основного выстрела -->
+        <soundCastTail>GunTail_Medium</soundCastTail> <!-- Звук затухания/эха выстрела -->
+        <muzzleFlashScale>9</muzzleFlashScale> <!-- Масштаб вспышки от выстрела -->
+      </li>
+    </verbs>
+		<weaponTags> <!-- Теги оружия для генерации пешкам и фракциям -->
+			<!--<li>IndustrialGunAdvanced</li>-->
+			<li>RN_Coalition_AR</li> <!-- Элемент списка -->
+			<li>RN_HK433</li> <!-- Элемент списка -->
+		</weaponTags>
+	<tradeTags> <!-- Торговые теги предмета -->
+      <li>RN_HK433</li> <!-- Элемент списка -->
+    </tradeTags>
+    <tools> <!-- Список рукопашных атак/инструментов оружия -->
+      <li> <!-- Элемент списка -->
+        <label>stock</label> <!-- Отображаемое наименование -->
+        <capacities> <!-- Виды урона при атаке -->
+          <li>Blunt</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Сила рукопашного удара -->
+        <cooldownTime>2</cooldownTime> <!-- Время перезарядки рукопашного удара (сек.) -->
+      </li>
+      <li> <!-- Элемент списка -->
+        <label>barrel</label> <!-- Отображаемое наименование -->
+        <capacities> <!-- Виды урона при атаке -->
+          <li>Blunt</li> <!-- Элемент списка -->
+          <li>Poke</li> <!-- Элемент списка -->
+        </capacities>
+        <power>9</power> <!-- Сила рукопашного удара -->
+        <cooldownTime>2</cooldownTime> <!-- Время перезарядки рукопашного удара (сек.) -->
+      </li>
+    </tools>
+  </ThingDef>
+  
+</Defs>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <!--============================== Bloody FED look at him ============================-->
+
+  <BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_MilitaryPoliceKid_Coalition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>military police</title> <!-- Полный титул/название предыстории -->
+    <titleShort>MP</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>[PAWN_nameDef] found [PAWN_possessive] calling as a junior military police recruit.\n\n[PAWN_possessive] earliest memories were helping investigate petty crimes in [PAWN_possessive] barracks.\n\nDue to [PAWN_possessive] passion, [PAWN_pronoun] rose through the ranks at an early age.</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Childhood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+      <Shooting>5</Shooting> <!-- Навык: Стрельба -->
+      <Melee>2</Melee> <!-- Навык: Ближний бой -->
+      <Social>5</Social> <!-- Навык: Общение -->
+      <Intellectual>3</Intellectual> <!-- Навык: Умственный труд -->
+    </skillGains>
+	
+	<!--<requiredWorkTags>
+      <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+	
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <GreatMemory>0</GreatMemory> <!-- Черта характера: Отличная память -->
+    </forcedTraits>
+  </BackstoryDef>
+
+  <!--============================== LOGGY ============================-->
+
+  <BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_LogisticsKid_Coalition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>logistics specialist</title> <!-- Полный титул/название предыстории -->
+    <titleShort>log spec</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>[PAWN_nameDef] joined the military in [PAWN_possessive] homeworld at an early age and was placed as part of a team in charge of logistics and supplies that helped support the troops in the front lines.\n\n[PAWN_pronoun] had to deal with long hours and had to adapt [PAWN_possessive] memorization skills in order to avoid dangerous routes in times of conflict.</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Childhood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+	  <Shooting>4</Shooting> <!-- Навык: Стрельба -->
+      <Cooking>5</Cooking> <!-- Навык: Кулинария -->
+      <Social>3</Social> <!-- Навык: Общение -->
+      <Intellectual>1</Intellectual> <!-- Навык: Умственный труд -->
+    </skillGains>
+	
+	<!--<requiredWorkTags>
+      <li>ManualDumb</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <GreatMemory>0</GreatMemory> <!-- Черта характера: Отличная память -->
+    </forcedTraits>
+  </BackstoryDef>  
+  
+  <!--============================== Signaller ============================-->
+
+  <BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_SignallerKid_Coalition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>ECM operator</title> <!-- Полный титул/название предыстории -->
+    <titleShort>blip</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>[PAWN_nameDef] joined the military and was handed an ECM pack to carry around during patrols in [PAWN_possessive] early age.\n\n[PAWN_pronoun] saw some of [PAWN_possessive] friends die during [PAWN_possessive] time in deployment due to avoidable mistakes. [PAWN_nameDef] was taught the importance of communication with the motto "No comms, no bombs".</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Childhood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+	  <Shooting>5</Shooting> <!-- Навык: Стрельба -->
+      <Medicine>2</Medicine> <!-- Навык: Медицина -->
+      <Social>6</Social> <!-- Навык: Общение -->
+      <Intellectual>2</Intellectual> <!-- Навык: Умственный труд -->
+    </skillGains>
+	
+	<!--<requiredWorkTags>
+      <li>ManualDumb</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <GreatMemory>0</GreatMemory> <!-- Черта характера: Отличная память -->
+    </forcedTraits>
+  </BackstoryDef>
+  
+  <!--============================== ENG =======================-->
+
+  <BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_CombatEngineerKid_Coalition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>combat engineer</title> <!-- Полный титул/название предыстории -->
+    <titleShort>sapper</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>One of the most demanding jobs in [PAWN_possessive] homeworld, [PAWN_nameDef] joined the engineers at an early age and trained in aiding troops increase their freedom of mobility, counter mobility and obstacle breaching.\n\n[PAWN_nameDef] earned the title of sapper in [PAWN_possessive] early years in the military, and was known for [PAWN_possessive] hard working ethic.</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Childhood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+	
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+      <Shooting>5</Shooting> <!-- Навык: Стрельба -->
+      <Crafting>6</Crafting> <!-- Навык: Ремесло -->
+      <Construction>8</Construction> <!-- Навык: Строительство -->
+      <Mining>7</Mining> <!-- Навык: Горное дело -->
+      <Intellectual>-2</Intellectual> <!-- Навык: Умственный труд -->
+    </skillGains>
+	
+	<!--<requiredWorkTags>
+      <li>ManualDumb</li> <!-- Элемент списка -->
+	  <li>ManualSkilled</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <Industriousness>1</Industriousness> <!-- Черта характера: Трудолюбие -->
+    </forcedTraits>
+
+
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+  </BackstoryDef>
+
+  <!--============================== Conscript =======================-->
+
+  <BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_ConscriptKid_Coalition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>conscripted child</title> <!-- Полный титул/название предыстории -->
+    <titleShort>conscript</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>[PAWN_nameDef] was born during a time of unrest, [PAWN_pronoun] was conscripted through [PAWN_possessive] nation's national service laws and had to join the military for mandatory service.\n\nAs [PAWN_nameDef] grew up, [PAWN_pronoun] had to deal with constant bullying from [PAWN_possessive] peers. [PAWN_nameDef] kept an optimistic approach to [PAWN_possessive] career and ensured never to treat [PAWN_possessive] brothers the same way [PAWN_pronoun] was treated in [PAWN_possessive] early years as a recruit.</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Childhood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+	
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+      <Shooting>6</Shooting> <!-- Навык: Стрельба -->
+      <Melee>4</Melee> <!-- Навык: Ближний бой -->
+      <Medicine>3</Medicine> <!-- Навык: Медицина -->
+      <Social>-1</Social> <!-- Навык: Общение -->
+    </skillGains>
+	
+	<!--<requiredWorkTags>
+      <li>ManualDumb</li> <!-- Элемент списка -->
+	  <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <Kind>0</Kind> <!-- Черта характера: Добряк -->
+      <NaturalMood>1</NaturalMood> <!-- Черта характера: Настроение (Оптимист/Пессимист) -->
+    </forcedTraits>
+	
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+  </BackstoryDef>  
+  
+  <!--============================== Conscript 2 =======================-->
+
+  <BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_NationalService_Coalition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>national service</title> <!-- Полный титул/название предыстории -->
+    <titleShort>recruit</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>[PAWN_nameDef] was recruited during a time of war. [PAWN_pronoun] was forced into military service through his nation's conscription law and was deployed to the front lines immediately with little to no training.\n\n[PAWN_nameDef] suffered brutal beatings, was bullied constantly by peers and was forced to commit crimes in order to be hazed by senior members in [PAWN_possessive] platoon. On top of [PAWN_possessive] traumatic experience, [PAWN_nameDef] suffers traumatic stress from fighting enemy combatants in the front lines.</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Childhood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+	
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+      <Shooting>5</Shooting> <!-- Навык: Стрельба -->
+      <Melee>3</Melee> <!-- Навык: Ближний бой -->
+      <Medicine>4</Medicine> <!-- Навык: Медицина -->
+      <Social>-1</Social> <!-- Навык: Общение -->
+    </skillGains>
+	
+	<!--<requiredWorkTags>
+      <li>ManualDumb</li> <!-- Элемент списка -->
+	  <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <Neurotic>1</Neurotic> <!-- Черта характера: Невротик -->
+    </forcedTraits>
+
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+  </BackstoryDef>  
+  
+  <!--============================== Conscript 3 =======================-->
+
+  <BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_ConscriptKid3_Coalition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>resistance recruit</title> <!-- Полный титул/название предыстории -->
+    <titleShort>recruit</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>[PAWN_nameDef] was conscripted during a mechanoid invasion of [PAWN_possessive] homeworld as part of a government contingency plan.\n\n[PAWN_nameDef] was immediately deployed with a mixture of infantry forces after a short basic training in order to help fend off the machines. Unfortunately, this was the life that [PAWN_nameDef] had to live at such an early age and it affected [PAWN_possessive] mind in such a way that fighting was a normal, or even enjoyable thing for [PAWN_possessive] day to day life.</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Childhood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+	
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+      <Shooting>7</Shooting> <!-- Навык: Стрельба -->
+      <Construction>4</Construction> <!-- Навык: Строительство -->
+      <Cooking>3</Cooking> <!-- Навык: Кулинария -->
+      <Medicine>3</Medicine> <!-- Навык: Медицина -->
+      <Crafting>6</Crafting> <!-- Навык: Ремесло -->
+      <Intellectual>-2</Intellectual> <!-- Навык: Умственный труд -->
+    </skillGains>
+	
+	<!--<requiredWorkTags>
+      <li>ManualDumb</li> <!-- Элемент списка -->
+	  <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <Bloodlust>0</Bloodlust> <!-- Черта характера: Кровожадность -->
+    </forcedTraits>
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+  </BackstoryDef>
+
+  <!--============================== marine =======================-->
+
+  <BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_MarineKid_Coalition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>marine recruit</title> <!-- Полный титул/название предыстории -->
+    <titleShort>marine recruit</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>[PAWN_nameDef] joined the marines as a youth in back in [PAWN_possessive] homeworld. At an early age [PAWN_pronoun] learned basic military skills and drills.\n\n[PAWN_nameDef] endured highly mental and physical demanding training in order to earn the title of marine.</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Childhood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+	
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+      <Shooting>7</Shooting> <!-- Навык: Стрельба -->
+      <Melee>3</Melee> <!-- Навык: Ближний бой -->
+	  <Social>4</Social> <!-- Навык: Общение -->
+      <Intellectual>-2</Intellectual> <!-- Навык: Умственный труд -->
+    </skillGains>
+	
+	<!--<requiredWorkTags>
+      <li>ManualDumb</li> <!-- Элемент списка -->
+	  <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <Tough>0</Tough> <!-- Черта характера: Крепкий орешек -->
+    </forcedTraits>
+
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+  </BackstoryDef>  
+  
+  <!--============================== Soldier (changed to military to be more vague) =======================-->
+
+  <BackstoryDef> <!-- Определение предыстории/биографии пешки (BackstoryDef) -->
+    <defName>RH2_MilitaryKid_Coalition</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <title>military recruit</title> <!-- Полный титул/название предыстории -->
+    <titleShort>recruit</titleShort> <!-- Сокращенный титул предыстории -->
+    <baseDesc>[PAWN_nameDef] joined the military as a recruit back in [PAWN_possessive] homeworld.\n\nAt an early age [PAWN_pronoun] learned basic military skills and had to adapt to the fast paced environment of the military.\n\n[PAWN_nameDef] learned what it meant to be an effective member of a team at an early age.</baseDesc> <!-- Базовое описание предыстории -->
+    <slot>Childhood</slot> <!-- Слот биографии (Childhood/Adulthood) -->
+	
+    <skillGains> <!-- Получаемый опыт навыков за выполнение контрактной работы (RH2) -->
+      <Shooting>6</Shooting> <!-- Навык: Стрельба -->
+      <Medicine>4</Medicine> <!-- Навык: Медицина -->
+      <Social>2</Social> <!-- Навык: Общение -->
+    </skillGains>
+	
+	<!--<requiredWorkTags>
+      <li>ManualDumb</li> <!-- Элемент списка -->
+	  <li>Violent</li> <!-- Элемент списка -->
+    </requiredWorkTags>-->
+	
+	<forcedTraits> <!-- Принудительно назначаемые черты характера -->
+      <FastLearner>0</FastLearner> <!-- Черта характера: Быстрообучаемый -->
+    </forcedTraits>
+
+	
+    <spawnCategories> <!-- Категории спавна/появления в мире -->
+      <li>RH2_Coalition</li> <!-- Элемент списка -->
+    </spawnCategories>
+  </BackstoryDef>
+
+
+
+</Defs>

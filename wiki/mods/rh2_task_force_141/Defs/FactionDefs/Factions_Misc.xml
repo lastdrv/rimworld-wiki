@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+	<FactionDef Name="RH_HumanFactionBase" Abstract="True"> <!-- Определение фракции (FactionDef) -->
+    <raidLootValueFromPointsCurve> <!-- Кривая ценности добычи от очков рейда -->
+      <points> <!-- Очки стоимости в генераторе групп -->
+        <li>(35,     15)</li> <!-- Элемент списка -->
+        <li>(100,   120)</li> <!-- Элемент списка -->
+        <li>(1000,  500)</li> <!-- Элемент списка -->
+        <li>(2000,  800)</li> <!-- Элемент списка -->
+        <li>(4000, 1000)</li> <!-- Элемент списка -->
+      </points>
+    </raidLootValueFromPointsCurve>
+	</FactionDef>
+
+  <FactionDef ParentName="RH_HumanFactionBase" Name="RH2_FactionBase_141" Abstract="True"> <!-- Определение фракции (FactionDef) -->
+	<pawnSingular>operator</pawnSingular> <!-- Наименование отдельного члена фракции в единственном числе -->
+	<pawnsPlural>operators</pawnsPlural> <!-- Наименование членов фракции во множественном числе -->
+    <categoryTag>Outlander</categoryTag> <!-- Тег категории товаров -->
+    <listOrderPriority>30</listOrderPriority> <!-- Приоритет порядка отображения в списках -->
+    <settlementGenerationWeight>1</settlementGenerationWeight> <!-- Вес генерации поселений на карте мира -->
+    <requiredCountAtGameStart>1</requiredCountAtGameStart> <!-- Обязательное количество фракций при старте игры -->
+    <canMakeRandomly>true</canMakeRandomly> <!-- Возможность случайного создания в рецептах -->
+    <canSiege>true</canSiege> <!-- Способность фракции вести осаду -->
+    <canStageAttacks>true</canStageAttacks> <!-- Способность фракции организовывать масштабные рейды -->
+    <leaderTitle>commanding officer</leaderTitle> <!-- Титул лидера фракции -->
+	
+    <factionIconPath>Things/World/141_Logo</factionIconPath> <!-- Путь к текстуре герба/логотипа фракции -->
+	<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath> <!-- Путь к текстуре иконки поселения на глобальной карте -->
+	
+    <techLevel>Industrial</techLevel> <!-- Технологический уровень -->
+    <factionNameMaker>RH_Namer141PlayerFaction</factionNameMaker> <!-- Генератор названий фракций -->
+    <settlementNameMaker>RH_Namer141Outposts</settlementNameMaker> <!-- Генератор названий поселений фракции -->
+    <allowedCultures><li>RH2SpecialForces_Kriminul</li></allowedCultures> <!-- Список разрешенных культур для фракции -->
+    <structureMemeWeights> <!-- Веса предпочтения структурных мемов -->
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Ideological> <!-- Структурный мем: Идеологическая структура -->
+    </structureMemeWeights>
+	<requiredMemes> <!-- Обязательные мемы идеологии -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Individualist</li> <!-- Элемент списка -->
+    </requiredMemes>	
+	<disallowedMemes> <!-- Запрещенные мемы идеологии -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Structure_Animist</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li> <!-- Элемент списка -->
+	  <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">FleshPurity</li> <!-- Элемент списка -->
+    </disallowedMemes>
+	
+	<disallowedPrecepts> <!-- Запрещенные заповеди идеологии -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">DrugUse_Prohibited</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">DrugUse_MedicalOnly</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Abhorrent</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Horrible</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_Prohibited</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_Horrible</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_SpouseOnly_Strict</li> <!-- Элемент списка -->
+	  <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_SpouseOnly_Moderate</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_SpouseOnly_Mild</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Research_None</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Research_ExtremelySlow</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Research_VerySlow</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Research_Slow</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_Abhorrent</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_HorribleNoSell</li> <!-- Элемент списка -->
+	  <li MayRequire="Ludeon.RimWorld.Ideology">DrugUse_Prohibited</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">DrugUse_MedicalOnly</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_NoRules</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_NoRules</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_CoveringAnythingButGroinDisapproved</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_CoveringAnythingButGroinDisapproved</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_Mandatory</li> <!-- Элемент списка -->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_Mandatory</li> <!-- Элемент списка -->
+    </disallowedPrecepts>
+	
+	
+    <backstoryFilters> <!-- Фильтры генерации предысторий пешки -->
+      <li> <!-- Элемент списка -->
+        <categories> <!-- Категории допустимых ресурсов -->
+          <li>RH2_Coalition</li> <!-- Элемент списка -->
+        </categories>
+        <commonality>1</commonality> <!-- Относительная вероятность/частота выбора -->
+      </li>
+    </backstoryFilters>
+
+		<apparelStuffFilter> <!-- Фильтр допустимых материалов одежды -->
+			<thingDefs> <!-- Конкретные предметы в фильтре -->
+				<li>Cloth</li> <!-- Элемент списка -->
+				<li>WoolMuffalo</li> <!-- Элемент списка -->
+				<li>Leather_Bluefur</li> <!-- Элемент списка -->
+				<li>WoolBison</li> <!-- Элемент списка -->
+				<li>WoolMegasloth</li> <!-- Элемент списка -->
+				<li>Steel</li> <!-- Элемент списка -->
+			</thingDefs>
+		</apparelStuffFilter>
+
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange> <!-- Допустимый температурный диапазон прибытия -->
+    <raidLootMaker>RH2141_RaidLootMaker</raidLootMaker> <!-- Генератор добычи после рейда -->
+	
+	
+		<caravanTraderKinds> <!-- Виды караванных торговцев фракции -->
+			<li>RHCaravan_141_Surplus</li> <!-- Элемент списка -->
+		</caravanTraderKinds>
+		<visitorTraderKinds> <!-- Виды торговцев-посетителей -->
+			<li>RHVisitor_141_Standard</li> <!-- Элемент списка -->
+		</visitorTraderKinds>
+		<baseTraderKinds> <!-- Виды постоянных торговцев в поселениях фракции -->
+			<li>RHBase_141_Standard</li> <!-- Элемент списка -->
+		</baseTraderKinds>
+	
+	
+    <maxPawnCostPerTotalPointsCurve> <!-- Кривая максимальной стоимости отдельной пешки от очков рейда -->
+      <points> <!-- Очки стоимости в генераторе групп -->
+        <li>(0,35)</li> <!-- Элемент списка -->
+        <li>(70, 50)</li> <!-- Элемент списка -->
+        <li>(700, 100)</li> <!-- Элемент списка -->
+        <li>(1300, 150)</li> <!-- Элемент списка -->
+        <li>(100000, 10000)</li> <!-- Элемент списка -->
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+		<pawnGroupMakers> <!-- Генераторы групп пешек (рейды, караваны, защитники) -->
+
+			<li> <!-- Элемент списка -->
+				<!-- Normal fights, ranged with melee mix-ins -->
+				<kindDef>Combat</kindDef> <!-- Вид генерируемой пешки (PawnKindDef) -->
+				<commonality>100</commonality> <!-- Относительная вероятность/частота выбора -->
+				<options> <!-- Список вариантов генерации -->
+					<RH2_141_FNG>10</RH2_141_FNG> <!-- Вид пешки: Новобранец/рядовой ОТГ-141 -->
+					<RH2_141_Sharpshooter>1</RH2_141_Sharpshooter> <!-- Вид пешки: Снайпер ОТГ-141 -->
+					<RH2_141_Assault>7</RH2_141_Assault> <!-- Вид пешки: Штурмовик ОТГ-141 -->
+					<RH2_141_Elite>5</RH2_141_Elite> <!-- Вид пешки: Элитный оперативник ОТГ-141 -->
+					<RH2_141_EliteGunner>5</RH2_141_EliteGunner> <!-- Вид пешки: Элитный пулеметчик ОТГ-141 -->
+					<RH2_141_Boss>5</RH2_141_Boss> <!-- Вид пешки: Командир ОТГ-141 (Шепард / Прайс) -->
+				</options>
+			</li>
+			<li> <!-- Элемент списка -->
+				<!-- Normal fights, senior ranks only. -->
+				<kindDef>Combat</kindDef> <!-- Вид генерируемой пешки (PawnKindDef) -->
+				<commonality>20</commonality> <!-- Относительная вероятность/частота выбора -->
+				<options> <!-- Список вариантов генерации -->
+					<RH2_141_Assault>10</RH2_141_Assault> <!-- Вид пешки: Штурмовик ОТГ-141 -->
+					<RH2_141_Elite>3</RH2_141_Elite> <!-- Вид пешки: Элитный оперативник ОТГ-141 -->
+					<RH2_141_EliteGunner>5</RH2_141_EliteGunner> <!-- Вид пешки: Элитный пулеметчик ОТГ-141 -->
+					<RH2_141_Boss>5</RH2_141_Boss> <!-- Вид пешки: Командир ОТГ-141 (Шепард / Прайс) -->
+				</options>
+			</li>
+			<li> <!-- Элемент списка -->
+				<!-- Normal fights, explosives with ranged mix-ins -->
+				<kindDef>Combat</kindDef> <!-- Вид генерируемой пешки (PawnKindDef) -->
+				<commonality>15</commonality> <!-- Относительная вероятность/частота выбора -->
+				<disallowedStrategies> <!-- Запрещенные тактики/стратегии рейда -->
+					<li>Siege</li> <!-- Элемент списка -->
+				</disallowedStrategies>
+				<options> <!-- Список вариантов генерации -->
+					<RH2_141_Assault>10</RH2_141_Assault> <!-- Вид пешки: Штурмовик ОТГ-141 -->
+					<RH2_141_Elite>2</RH2_141_Elite> <!-- Вид пешки: Элитный оперативник ОТГ-141 -->
+					<RH2_141_EliteGunner>2</RH2_141_EliteGunner> <!-- Вид пешки: Элитный пулеметчик ОТГ-141 -->
+					<RH2_141_Boss>1</RH2_141_Boss> <!-- Вид пешки: Командир ОТГ-141 (Шепард / Прайс) -->
+				</options>
+			</li>
+
+			<li> <!-- Элемент списка -->
+				<kindDef>Peaceful</kindDef> <!-- Вид генерируемой пешки (PawnKindDef) -->
+				<options> <!-- Список вариантов генерации -->
+					<RH2_141_FNG>10</RH2_141_FNG> <!-- Вид пешки: Новобранец/рядовой ОТГ-141 -->
+					<RH2_141_Assault>10</RH2_141_Assault> <!-- Вид пешки: Штурмовик ОТГ-141 -->
+					<RH2_141_Gunner>3</RH2_141_Gunner> <!-- Вид пешки: Пулеметчик ОТГ-141 -->
+					<RH2_141_EliteGunner>2</RH2_141_EliteGunner> <!-- Вид пешки: Элитный пулеметчик ОТГ-141 -->
+					<RH2_141_Elite>3</RH2_141_Elite> <!-- Вид пешки: Элитный оперативник ОТГ-141 -->
+				</options>
+			</li>
+
+			<li> <!-- Элемент списка -->
+				<kindDef>Trader</kindDef> <!-- Вид генерируемой пешки (PawnKindDef) -->
+				<traders> <!-- Список торговцев в группе -->
+					<RH2_141_Trader>1</RH2_141_Trader> <!-- Вид пешки: Торговец/интендант ОТГ-141 -->
+				</traders>
+				<carriers> <!-- Список вьючных животных каравана -->
+					<Muffalo>6</Muffalo> <!-- Животное: Муффало -->
+					<Dromedary>5</Dromedary> <!-- Животное: Дромадер (верблюд) -->
+					<Alpaca>2</Alpaca> <!-- Животное: Альпака -->
+					<Elephant>1</Elephant> <!-- Животное: Слон -->
+				</carriers>
+				<guards> <!-- Список охранников каравана/поселения -->
+					<RH2_141_FNG>5</RH2_141_FNG> <!-- Вид пешки: Новобранец/рядовой ОТГ-141 -->
+					<RH2_141_Assault>10</RH2_141_Assault> <!-- Вид пешки: Штурмовик ОТГ-141 -->
+					<RH2_141_Gunner>3</RH2_141_Gunner> <!-- Вид пешки: Пулеметчик ОТГ-141 -->
+					<RH2_141_EliteGunner>2</RH2_141_EliteGunner> <!-- Вид пешки: Элитный пулеметчик ОТГ-141 -->
+					<RH2_141_Elite>1</RH2_141_Elite> <!-- Вид пешки: Элитный оперативник ОТГ-141 -->
+				</guards>
+			</li>
+
+			<li> <!-- Элемент списка -->
+				<kindDef>Settlement</kindDef> <!-- Вид генерируемой пешки (PawnKindDef) -->
+				<options> <!-- Список вариантов генерации -->
+					<RH2_141_FNG>10</RH2_141_FNG> <!-- Вид пешки: Новобранец/рядовой ОТГ-141 -->
+					<RH2_141_Assault>10</RH2_141_Assault> <!-- Вид пешки: Штурмовик ОТГ-141 -->
+					<RH2_141_Sharpshooter>8</RH2_141_Sharpshooter> <!-- Вид пешки: Снайпер ОТГ-141 -->
+					<RH2_141_Elite>5</RH2_141_Elite> <!-- Вид пешки: Элитный оперативник ОТГ-141 -->
+					<RH2_141_EliteGunner>3</RH2_141_EliteGunner> <!-- Вид пешки: Элитный пулеметчик ОТГ-141 -->
+					<RH2_141_Gunner>3</RH2_141_Gunner> <!-- Вид пешки: Пулеметчик ОТГ-141 -->
+					<RH2_141_Boss>5</RH2_141_Boss> <!-- Вид пешки: Командир ОТГ-141 (Шепард / Прайс) -->
+				</options>
+			</li>
+
+      <!--<li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Miners</kindDef> <!-- Вид генерируемой пешки (PawnKindDef) -->
+        <commonality>1</commonality> <!-- Относительная вероятность/частота выбора -->
+        <options> <!-- Список вариантов генерации -->
+          <Miner>1</Miner> <!-- Категория предыстории: Шахтер -->
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology"> <!-- Элемент списка -->
+        <kindDef>Hunters</kindDef> <!-- Вид генерируемой пешки (PawnKindDef) -->
+        <commonality>1</commonality> <!-- Относительная вероятность/частота выбора -->
+        <options> <!-- Список вариантов генерации -->
+          <Hunter>1</Hunter> <!-- Категория предыстории: Охотник -->
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology"> <!-- Элемент списка -->
+        <kindDef>Loggers</kindDef> <!-- Вид генерируемой пешки (PawnKindDef) -->
+        <commonality>1</commonality> <!-- Относительная вероятность/частота выбора -->
+        <options> <!-- Список вариантов генерации -->
+          <Logger>1</Logger> <!-- Категория предыстории: Лесоруб -->
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology"> <!-- Элемент списка -->
+        <kindDef>Farmers</kindDef> <!-- Вид генерируемой пешки (PawnKindDef) -->
+        <commonality>1</commonality> <!-- Относительная вероятность/частота выбора -->
+        <options> <!-- Список вариантов генерации -->
+          <Farmer>1</Farmer> <!-- Категория предыстории: Фермер -->
+        </options>
+      </li>-->
+    </pawnGroupMakers>
+ 
+  </FactionDef>
+  
+  <ThingSetMakerDef> <!-- Определение генератора наборов предметов/наград (ThingSetMakerDef) -->
+    <defName>RH2141_RaidLootMaker</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <root Class="ThingSetMaker_MarketValue"> <!-- Корневой узел набора правил -->
+      <fixedParams> <!-- Фиксированные параметры рецепта -->
+        <filter> <!-- Фильтр допустимых ресурсов/материалов -->
+          <thingDefs> <!-- Конкретные предметы в фильтре -->
+            <li>Silver</li> <!-- Элемент списка -->
+            <li>MedicineIndustrial</li> <!-- Элемент списка -->
+            <li>ComponentIndustrial</li> <!-- Элемент списка -->
+            <li>RH2_Ration_USArmyMRE</li> <!-- Элемент списка -->
+          </thingDefs>
+        </filter>
+      </fixedParams>
+    </root>
+  </ThingSetMakerDef>
+  
+  <FactionDef ParentName="RH2_FactionBase_141"> <!-- Определение фракции (FactionDef) -->
+    <defName>RH2_141</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>special operations unit</label> <!-- Отображаемое наименование -->
+    <description> <!-- Текстовое описание предмета, сущности или механики -->Task Force 141, commonly known as "The One-Four-One," is a highly skilled multinational special operations unit comprising military personnel from various nations with Special Forces backgrounds. Originally formed during the The Great Resistance War, the unit was authorized to recruit any qualified candidates they deemed necessary.
+
+During the war, Task Force 141 was deployed to locate and destroy mechanoid communication systems responsible for calling in reinforcements from outside the planet. Despite valiant efforts, their progress was minimal and ultimately failed to prevent the invasion's devastating consequences.
+
+Following this, an aerospace engineering company named "Orbital Vehicle and In-flight Dynamics" (OVID) discovered a hyperspace drive and used it to transport refugees to a distant, seemingly safe outer rim planet. However, upon arrival, Task Force 141 was tasked with destabilizing hostile factions by eliminating their leaders. With no end in sight, the unit has resorted to recruiting and training local fighters to help in their seemingly endless war.</description>
+    <colorSpectrum> <!-- Цветовой спектр генерации -->
+			<li>(87, 114, 205)</li> <!-- Элемент списка -->
+			<li>(123,163,216)</li> <!-- Элемент списка -->
+    </colorSpectrum>
+	
+		<modExtensions> <!-- Список C#-расширений Def (ModExtensions) -->
+			<li Class="Enlist.FactionEnlistOptions"> <!-- Элемент списка -->
+				<enlistOptionsDefs> <!-- Список доступных вариантов контрактов службы (RH2) -->
+					<li>RH2_141</li> <!-- Элемент списка -->
+				</enlistOptionsDefs>
+				<ignoreAutoAssignedDefs>true</ignoreAutoAssignedDefs> <!-- Игнорирование автоматически назначенных определений -->
+			</li>
+		</modExtensions>
+    <classicIdeo>true</classicIdeo> <!-- Флаг использования классической системы верований -->
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation> <!-- Максимальное число фракций при настройке мира -->
+    <configurationListOrderPriority>10</configurationListOrderPriority> <!-- Приоритет в списке конфигурации -->
+  </FactionDef>
+
+</Defs>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <TraderKindDef> <!-- Определение ассортимента и характеристик торговца (TraderKindDef) -->
+    <defName>RHVisitor_141_Standard</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>trader</label> <!-- Отображаемое наименование -->
+    <stockGenerators> <!-- Генераторы товарных запасов торговца -->
+      <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>Silver</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>15~25</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+      <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>ComponentIndustrial</thingDef> <!-- Определение предмета (ThingDef) -->
+		<countRange>1~5</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>      
+	  
+	  <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>MedicineIndustrial</thingDef> <!-- Определение предмета (ThingDef) -->
+		<countRange>2~5</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+			<li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+				<thingDef>RH2_Ration_USArmyMRE</thingDef> <!-- Определение предмета (ThingDef) -->
+				<countRange>2~6</countRange> <!-- Диапазон генерируемого количества предметов -->
+			</li>
+			
+	  <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>RH2_Backpack</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>0~1</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>0~1</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+	  
+		 	 <!-- Clothes -->
+	 
+	 <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>RH2_XBelt_141</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>1~1</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>1~1</countRange> <!-- Диапазон генерируемого количества предметов -->
+     </li>	 
+	 	 
+     <li Class="StockGenerator_Tag"> <!-- Элемент списка -->
+        <tradeTag>RH2_BoonieHat_141</tradeTag> <!-- Торговый тег -->
+        <thingDefCountRange>1~1</thingDefCountRange> <!-- Диапазон количества конкретного предмета -->
+        <countRange>1~1</countRange> <!-- Диапазон генерируемого количества предметов -->
+     </li>	 
+	 
+	  <!-- ARMAS -->
+	  
+	  <li Class="StockGenerator_SingleDef"> <!-- Элемент списка -->
+        <thingDef>RNGun_M4A1TaskForce_Rifle</thingDef> <!-- Определение предмета (ThingDef) -->
+        <countRange>-1~1</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>	  	 	  
+
+      <li Class="StockGenerator_MultiDef"> <!-- Элемент списка -->
+        <thingDefs> <!-- Конкретные предметы в фильтре -->
+          <li>Cloth</li> <!-- Элемент списка -->
+          <li>Chocolate</li> <!-- Элемент списка -->
+        </thingDefs>
+      </li>
+
+	<li Class="StockGenerator_Animals"> <!-- Элемент списка -->
+        <tradeTagsSell> <!-- Теги продаваемых товаров -->
+		  <li>AnimalPet</li> <!-- Элемент списка -->
+        </tradeTagsSell>
+        <tradeTagsBuy> <!-- Теги закупаемых товаров -->
+          <li>AnimalUncommon</li> <!-- Элемент списка -->
+          <li>AnimalExotic</li> <!-- Элемент списка -->
+          <li>AnimalFarm</li> <!-- Элемент списка -->
+          <li>AnimalPet</li> <!-- Элемент списка -->
+        </tradeTagsBuy>
+        <kindCountRange>0~1</kindCountRange> <!-- Диапазон количества пешек данного вида -->
+        <countRange>1~2</countRange> <!-- Диапазон генерируемого количества предметов -->
+      </li>
+
+
+      <!-- Buying -->
+      <li Class="StockGenerator_BuyExpensiveSimple" /> <!-- Элемент списка -->
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li> <!-- Элемент списка -->
+      <li Class="StockGenerator_BuyTradeTag"><tag>ImplantEmpireCommon</tag></li> <!-- Элемент списка -->
+      <li Class="StockGenerator_BuyTradeTag"><tag>ImplantEmpireRoyal</tag></li> <!-- Элемент списка -->
+      <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>	 <!-- Элемент списка -->
+    </stockGenerators>
+  </TraderKindDef>
+
+</Defs>

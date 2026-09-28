@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+  <!-- ======= Basic quality thoughts ========= -->
+
+    <ThoughtDef> <!-- Определение мысли/настроения пешки (ThoughtDef) -->
+    <defName>RH2_AteRation_USArmyMRE</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <durationDays>0.5</durationDays> <!-- Длительность действия мысли в днях -->
+    <stackLimit>1</stackLimit> <!-- Максимальный лимит суммирования мысли -->
+    <stages> <!-- Стадии развития мысли или состояния здоровья -->
+      <li> <!-- Элемент списка -->
+        <label>ate an MRE</label> <!-- Отображаемое наименование -->
+        <description>Wow, I think I'm gonna be sick.. In a good way.</description> <!-- Текстовое описание предмета, сущности или механики -->
+        <baseMoodEffect>2</baseMoodEffect> <!-- Базовое изменение настроения пешки -->
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

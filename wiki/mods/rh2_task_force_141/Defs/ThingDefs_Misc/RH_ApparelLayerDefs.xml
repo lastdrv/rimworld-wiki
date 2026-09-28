@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+  
+  <!-- Backpacks and Harness-->
+  
+  <ApparelLayerDef> <!-- Определение слоя ношения одежды/экипировки (ApparelLayerDef) -->
+    <defName>RH2_Webbing</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>utility</label> <!-- Отображаемое наименование -->
+    <drawOrder>500</drawOrder> <!-- Порядок слоя отрисовки -->
+  </ApparelLayerDef>
+  
+  <ApparelLayerDef> <!-- Backpack override -->
+    <defName>Belt</defName> <!-- Уникальный идентификатор определения (Def) -->
+    <label>utility</label> <!-- Отображаемое наименование -->
+    <drawOrder>500</drawOrder> <!-- Порядок слоя отрисовки -->
+  </ApparelLayerDef>
+  
+</Defs>

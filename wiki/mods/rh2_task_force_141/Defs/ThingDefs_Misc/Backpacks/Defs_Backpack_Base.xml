@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs> <!-- Корневой контейнер описательных структур (Defs) RimWorld -->
+
+	<!-- RH2 Backpack Base -->
+
+  <ThingDef Name="RH2_BackpackBase" ParentName="ApparelBase" Abstract="True"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+	<techLevel>Industrial</techLevel>  <!-- Технологический уровень -->
+	<tradeability>All</tradeability> <!-- Доступность предмета для торговли (All, SellableByPlayer и т.д.) -->
+	<resourceReadoutPriority>Middle</resourceReadoutPriority> <!-- Приоритет отображения на панели ресурсов -->
+	
+	<recipeMaker> <!-- Генератор рецепта для изготовления предмета -->
+      <researchPrerequisite>ComplexClothing</researchPrerequisite> <!-- Необходимый исследовательский проект -->
+    </recipeMaker>
+	
+	<graphicData> <!-- Параметры графического отображения -->
+      <graphicClass>Graphic_Single</graphicClass>	 <!-- C#-класс отрисовки графики -->
+    </graphicData>		
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+	<countsAsClothingForNudity>false</countsAsClothingForNudity> <!-- Считается ли предмет одеждой для предотвращения наготы -->
+      <wornGraphicData> <!-- Параметры графики надетой экипировки по направлениям -->
+        <renderUtilityAsPack>true</renderUtilityAsPack>	 <!-- Отрисовка служебного снаряжения как рюкзака -->
+      </wornGraphicData>
+      <careIfWornByCorpse>false</careIfWornByCorpse> <!-- Учет штрафа к настроению за снятие с трупа ('одежда мертвеца') -->
+      <careIfDamaged>false</careIfDamaged> <!-- Учет штрафа за износ одежды -->
+      <wearPerDay>0</wearPerDay> <!-- Скорость естественного износа за день ношения -->
+      <bodyPartGroups> <!-- Защищаемые/покрываемые группы частей тела -->
+        <li>Shoulders</li> <!-- Элемент списка -->
+      </bodyPartGroups>
+      <layers> <!-- Слои ношения экипировки -->
+        <li>Belt</li> <!-- Элемент списка -->
+      </layers>
+      <tags> <!-- Теги классификации предмета -->
+        <li>RH2_Backpack</li> <!-- Элемент списка -->
+      </tags>
+	  <defaultOutfitTags> <!-- Теги назначения одежды в стандартных наборах поселения -->
+		<li>Soldier</li> <!-- Элемент списка -->
+	  </defaultOutfitTags>
+	  <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth> <!-- Возможность генерации для защиты от холода -->
+    </apparel>
+    <tradeTags> <!-- Торговые теги предмета -->
+      <li>RH2_Backpack</li> <!-- Элемент списка -->
+    </tradeTags>
+    <thingCategories> <!-- Категории складирования предметов -->
+      <li>RNApparel_Belts</li> <!-- Элемент списка -->
+    </thingCategories>	
+  </ThingDef>	
+  
+  
+  <!-- RH2 Backpack Base -->
+
+  <ThingDef Name="RH2_BackpackMakeableBase" ParentName="ApparelMakeableBase" Abstract="True"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+	<techLevel>Industrial</techLevel>  <!-- Технологический уровень -->
+	<tradeability>All</tradeability> <!-- Доступность предмета для торговли (All, SellableByPlayer и т.д.) -->
+	<resourceReadoutPriority>Middle</resourceReadoutPriority>	 <!-- Приоритет отображения на панели ресурсов -->
+	<graphicData> <!-- Параметры графического отображения -->
+      <graphicClass>Graphic_Single</graphicClass>	 <!-- C#-класс отрисовки графики -->
+    </graphicData>		
+    <apparel> <!-- Параметры предмета одежды/снаряжения -->
+      <wornGraphicData> <!-- Параметры графики надетой экипировки по направлениям -->
+        <renderUtilityAsPack>true</renderUtilityAsPack>	 <!-- Отрисовка служебного снаряжения как рюкзака -->
+      </wornGraphicData>
+      <careIfWornByCorpse>false</careIfWornByCorpse> <!-- Учет штрафа к настроению за снятие с трупа ('одежда мертвеца') -->
+      <careIfDamaged>false</careIfDamaged> <!-- Учет штрафа за износ одежды -->
+      <wearPerDay>0</wearPerDay> <!-- Скорость естественного износа за день ношения -->
+      <bodyPartGroups> <!-- Защищаемые/покрываемые группы частей тела -->
+        <li>Shoulders</li> <!-- Элемент списка -->
+      </bodyPartGroups>
+      <layers> <!-- Слои ношения экипировки -->
+        <li>Belt</li> <!-- Элемент списка -->
+      </layers>
+      <tags> <!-- Теги классификации предмета -->
+        <li>RH2_Backpack</li> <!-- Элемент списка -->
+      </tags>
+	  <defaultOutfitTags> <!-- Теги назначения одежды в стандартных наборах поселения -->
+		<li>Soldier</li> <!-- Элемент списка -->
+	  </defaultOutfitTags>
+	  <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth> <!-- Возможность генерации для защиты от холода -->
+    </apparel>
+    <tradeTags> <!-- Торговые теги предмета -->
+      <li>RH2_Backpack</li> <!-- Элемент списка -->
+    </tradeTags>
+    <thingCategories> <!-- Категории складирования предметов -->
+      <li>RNApparel_Belts</li> <!-- Элемент списка -->
+    </thingCategories>	
+  </ThingDef>	
+  
+  <!---->
+  
+  <ThingDef Name="RH2_Backpack_Heavy" ParentName="RH2_BackpackMakeableBase" Abstract="True"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+  <statBases> <!-- Базовые числовые характеристики -->
+  <MarketValue>400</MarketValue> <!-- Рыночная стоимость в серебре -->
+  </statBases>
+  	<generateCommonality>0.10</generateCommonality> <!-- Частота генерации товара -->
+	<generateAllowChance>0.10</generateAllowChance>   <!-- Шанс разрешения генерации предмета у торговца -->
+  </ThingDef>   
+  
+  <ThingDef Name="RH2_Backpack_HeavyLight" ParentName="RH2_BackpackMakeableBase" Abstract="True"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+  <statBases> <!-- Базовые числовые характеристики -->
+  <MarketValue>350</MarketValue> <!-- Рыночная стоимость в серебре -->
+  </statBases>
+  	<generateCommonality>0.10</generateCommonality> <!-- Частота генерации товара -->
+	<generateAllowChance>0.10</generateAllowChance>   <!-- Шанс разрешения генерации предмета у торговца -->
+  </ThingDef> 
+    
+  <ThingDef Name="RH2_Backpack_MediumHeavy" ParentName="RH2_BackpackMakeableBase" Abstract="True"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+  <statBases> <!-- Базовые числовые характеристики -->
+  <MarketValue>300</MarketValue> <!-- Рыночная стоимость в серебре -->
+  </statBases>
+  	<generateCommonality>0.35</generateCommonality> <!-- Частота генерации товара -->
+	<generateAllowChance>0.35</generateAllowChance>   <!-- Шанс разрешения генерации предмета у торговца -->
+  </ThingDef>   
+  
+  <ThingDef Name="RH2_Backpack_MediumLight" ParentName="RH2_BackpackMakeableBase" Abstract="True"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+  <statBases> <!-- Базовые числовые характеристики -->
+  <MarketValue>200</MarketValue> <!-- Рыночная стоимость в серебре -->
+  </statBases>
+  	<generateCommonality>0.35</generateCommonality> <!-- Частота генерации товара -->
+	<generateAllowChance>0.35</generateAllowChance>   <!-- Шанс разрешения генерации предмета у торговца -->
+	
+  </ThingDef>   <ThingDef Name="RH2_Backpack_Medium" ParentName="RH2_BackpackMakeableBase" Abstract="True">
+  <statBases> <!-- Базовые числовые характеристики -->
+  <MarketValue>250</MarketValue> <!-- Рыночная стоимость в серебре -->
+  </statBases>
+  	<generateCommonality>0.25</generateCommonality> <!-- Частота генерации товара -->
+	<generateAllowChance>0.25</generateAllowChance>   <!-- Шанс разрешения генерации предмета у торговца -->
+  </ThingDef>   
+  
+  <ThingDef Name="RH2_Backpack_Light" ParentName="RH2_BackpackMakeableBase" Abstract="True"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+  <statBases> <!-- Базовые числовые характеристики -->
+  <MarketValue>125</MarketValue> <!-- Рыночная стоимость в серебре -->
+  </statBases>
+  	<generateCommonality>0.35</generateCommonality> <!-- Частота генерации товара -->
+	<generateAllowChance>0.35</generateAllowChance>   <!-- Шанс разрешения генерации предмета у торговца -->
+  </ThingDef>   
+  
+  <ThingDef Name="RH2_Backpack_UltraLight" ParentName="RH2_BackpackMakeableBase" Abstract="True"> <!-- Определение сущности/предмета в игре (ThingDef) -->
+  <statBases> <!-- Базовые числовые характеристики -->
+  <MarketValue>75</MarketValue> <!-- Рыночная стоимость в серебре -->
+  </statBases>
+  	<generateCommonality>0.35</generateCommonality> <!-- Частота генерации товара -->
+	<generateAllowChance>0.4</generateAllowChance>   <!-- Шанс разрешения генерации предмета у торговца -->
+  </ThingDef> 
+
+<!-- Backpacks are separate in case anything goes wrong. I don't want parse failure and me not being able to narrow down why there's an error. This is why they are broken up. -->
+
+</Defs>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+  
+  <SoundDef> <!-- Определение звукового эффекта (SoundDef) -->
+    <defName>RH_141_MissionMenuAmbientSound</defName>   <!-- Уникальный идентификатор определения (Def) -->
+    <sustain>True</sustain>   <!-- Флаг непрерывного зацикленного звучания -->
+    <eventNames /> <!-- Имена игровых событий для воспроизведения звука -->
+    <maxVoices>2</maxVoices>   <!-- Максимальное количество одновременных голосов звука -->
+    <maxSimultaneous>1</maxSimultaneous>   <!-- Максимум одновременных источников звука -->
+    <priorityMode>PrioritizeNearest</priorityMode>   <!-- Режим определения приоритета -->
+    <subSounds> <!-- Список подзвуков/аудиодорожек -->
+      <li> <!-- Элемент списка -->
+        <onCamera>True</onCamera>       <!-- Привязка звука к положению камеры -->
+        <grains> <!-- Зерна/файлы воспроизведения звука -->
+          <li Class="AudioGrain_Clip"> <!-- Элемент списка -->
+            <clipPath>UI_Missions/141_Ambience</clipPath> <!-- Путь к аудиофайлу (.wav / .ogg) -->
+          </li>
+        </grains>      
+        <volumeRange> <!-- Диапазон громкости звука (дБ) -->
+          <min>55</min>         <!-- Минимальное значение -->
+          <max>55</max> <!-- Максимальное значение -->
+        </volumeRange>      
+        <sustainLoop>False</sustainLoop>       <!-- Параметры цикла непрерывного звука -->
+        <sustainLoopDurationRange> <!-- Длительность интервала зацикливания -->
+          <min>0</min>         <!-- Минимальное значение -->
+          <max>0</max> <!-- Максимальное значение -->
+        </sustainLoopDurationRange>      
+        <sustainAttack>5</sustainAttack>       <!-- Время нарастания громкости звука (сек.) -->
+        <sustainRelease>5</sustainRelease> <!-- Время затухания звука (сек.) -->
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>
