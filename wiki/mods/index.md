@@ -174,6 +174,7 @@
 | **Archotech Weaponry (Continued)** | `zal.archotechweaponry` | `1.6` (`3312021019`) | 📄 **[archotech_weaponry](archotech_weaponry/archotech_weaponry.md)** |
 | **Archotech Weaponry - Русификатор** | `Dmitry6.zal.archotechweaponry.rus` | `1.6` (`3595122671`) | 📄 **[ru_archotech_weaponry.md](ru_archotech_weaponry.md)** |
 | **Simple Utilities: Ceiling** | `Owlchemist.CeilingUtilities` | `1.6` (`3231909012`) | 📄 **[simple_utilities_ceiling.md](simple_utilities_ceiling.md)** |
+| **Realistic Rooms Rewritten** | `Lucifer.RealisticRooms` | `1.6` (`2558042766`) | 📄 **[realistic_rooms_rewritten.md](realistic_rooms_rewritten.md)** |
 
 
 
