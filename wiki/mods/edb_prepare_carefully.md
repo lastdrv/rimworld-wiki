@@ -97,11 +97,24 @@
 ---
 
 ## 8. Дополнительная важная информация
+* **Архитектура сериализации и форматы файлов (`.pcc` vs `.pcp`)**:
+  * Мод хранит пользовательские данные в папке `%USERPROFILE%\AppData\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\PrepareCarefully\`.
+  * **`.pcc` (Prepare Carefully Colonist)**: Файл конкретного поселенца (корневой тег `<character>`, DTO `SaveRecordPawnV5`). Загружается через кнопку «Загрузить» на панели списка пешек (`ControllerTabViewPawns.LoadColonyPawn`) и добавляет персонажа к текущему составу колонии.
+  * **`.pcp` (Prepare Carefully Preset)**: Файл полного пресета сценария высадки (корневой тег `<preset>`, DTO `SaveRecordPresetV5`). При загрузке пресета метод `ManagerPawns.ClearPawns()` **уничтожает всех существующих пешек** на карте и в памяти, полностью заменяя стартовый состав и ресурсы.
+* **Идентификация и разрешение коллизий через UUID (`<id>`)**:
+  * Каждая пешка и временная сущность идентифицируется строковым GUID: `<id>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</id>`.
+  * Все социальные связи (`SaveRecordRelationshipV3` / `SaveRecordParentChildGroupV5`) в пресетах связывают сущности по их строковым `source` и `target` ID.
+  * Если при ручном дублировании XML-файлов персонажей не изменить или не удалить тег `<id>`, мод считает обе пешки одним объектом. При отсутствии или пустом значении тега `<id>` загрузчик (`PawnLoaderV5.ConvertSaveRecordToCustomizedPawn`) автоматически вызывает `Guid.NewGuid().ToString()`.
+* **Встроенный механизм обратной совместимости и автомиграции Defs**:
+  * В классе `PawnLoaderV5` реализована таблица автоматической миграции устаревших Defs из ранних версий игры и модов:
+    * `Gun_SurvivalRifle` → `Gun_BoltActionRifle`, `Medicine` → `MedicineIndustrial`, `Component` → `ComponentIndustrial`, `WolfTimber` → `Wolf_Timber`.
+    * Черты характера: `Prosthophobe` → `BodyPurist`, `Prosthophile` → `Transhumanist`, `SuperImmune` → `Immunity`.
+    * Навыки: `Growing` → `Plants`, `Research` → `Intellectual`.
+    * Протезы: `InstallSyntheticHeart` → `InstallSimpleProstheticHeart`, `InstallAdvancedBionic*` → `InstallArchtechBionic*`.
+    * Автоматический fallback поиск `BackstoryDef` по усеченным префиксам идентификаторов.
 * **Технические риски и стабильность в долгих партиях**:
-  * Исторически архитектура мода использует собственные промежуточные структуры данных (`CustomizationsPawn`) вместо прямой модификации живых пешек. При сериализации и обратной сборке пешки часть внутренних трекеров (гены, идеолигии, скрытые зависимости отношений) могут инициализироваться с нарушением ванильного жизненного цикла.
-  * Это может приводить к отложенным ошибкам (через десятки часов игры при беременности, смене идеолигии или визитах фракций).
-* **Альтернативы в сообществе**:
-  * Для максимальной стабильности при игре с 100+ модами сообщество RimWorld часто использует **Character Editor** (прямое редактирование в памяти) или **Pawn Editor** (современный редактор от команды Vanilla Expanded).
+  * Поскольку мод использует собственные промежуточные DTO-структуры (`CustomizationsPawn`), обратная компиляция пешки через `PawnCustomizer` может приводить к рассинхронизации внутренних трекеров ванильных пешек (гены Biotech, идеологии, трекеры потребностей).
+  * Для максимальной бесконфликтности в больших сборках (100+ модов) в сообществе применяются **Character Editor** (редактирование объектов непосредственно в памяти) или **Pawn Editor** (Vanilla Expanded).
 
 ---
 
@@ -110,14 +123,22 @@
   * `EdB.PrepareCarefully`
   * `EdB.PrepareCarefully.HarmonyPatches`
   * `EdB.PrepareCarefully.Reflection`
-* **Основные классы и интерфейсы**:
-  * `EdB.PrepareCarefully.PawnCustomizer` — оркестратор применения кастомизаций
-  * `EdB.PrepareCarefully.PawnGenerationRequestBuilder` — билдер запросов `PawnGenerationRequest`
-  * `EdB.PrepareCarefully.CostCalculator` — калькулятор очков стоимости
-  * `EdB.PrepareCarefully.CarefullyPawnRelationDef` — Def отношений
-  * `EdB.PrepareCarefully.DialogColonist` / `DialogLoadPreset` / `DialogLoadColonist` — UI диалоговых окон
+* **Ключевые C#-классы и их ответственность**:
+  * `EdB.PrepareCarefully.PawnCustomizer` — преобразование DTO `CustomizationsPawn` в объекты `Verse.Pawn` и наложение характеристик.
+  * `EdB.PrepareCarefully.ManagerPawns` — управление коллекциями `ColonyPawns`, `WorldPawns`, создание, загрузка (`LoadPawn`) и уничтожение (`DestroyPawn`, `ClearPawns`).
+  * `EdB.PrepareCarefully.PawnLoaderV5` / `PawnSaver` — сериализация и десериализация файлов `.pcc` (`SaveRecordPawnV5`).
+  * `EdB.PrepareCarefully.PresetLoaderV5` / `PresetSaver` — сериализация и десериализация файлов `.pcp` (`SaveRecordPresetV5`).
+  * `EdB.PrepareCarefully.CostCalculator` — динамический пересчет стоимости пешек, имплантов, снаряжения и лимита очков сценария.
+  * `EdB.PrepareCarefully.ColonistFiles` / `PresetFiles` — управление путями файловой системы к сохраненным конфигурациям.
+  * `EdB.PrepareCarefully.DialogColonist` / `DialogLoadPreset` / `DialogLoadColonist` — интерфейсные диалоговые окна выбора и сохранения.
+* **Harmony-инъекции**:
+  * `PrepareCarefullyButtonPatch` → `[HarmonyPatch(typeof(Page_ConfigureStartingPawns), "DoWindowContents", new Type[] { typeof(Rect) })]`
+  * `ReplaceScenarioPatch` → `[HarmonyPatch(typeof(Game), "InitNewGame", new Type[] { })]`
+* **Пользовательские XML Defs**:
+  * `EdB.PrepareCarefully.CarefullyPawnRelationDef` (`Parent`, `Child`, `Sibling`, `HalfSibling`, `Grandparent`, `Grandchild`, `UncleOrAunt`, `NephewOrNiece`, `Cousin`, `GreatGrandparent`, `GreatGrandchild`, `Spouse`, `ExSpouse`, `Lover`, `Fiance`, `ExLover`, `Bond`).
 * **Ключевые XML-файлы**:
   * `Common/Defs/CarefullyPawnRelationDefs/CarefullyPawnRelations_FamilyByBlood.xml`
   * `Common/Defs/CarefullyPawnRelationDefs/CarefullyPawnRelations_FamilyByChoice.xml`
   * `Common/Defs/CarefullyPawnRelationDefs/CarefullyPawnRelations_Misc.xml`
   * `Common/Languages/Russian/Keyed/EdBPrepareCarefully.xml`
+
